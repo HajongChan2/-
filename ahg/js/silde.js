@@ -3,8 +3,11 @@ $(function() {
         pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-        slidesPerView: 1,
-        paginationClickable: true,
-        loop: true
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        pauseOnHover: true,
+        speed: 1000
     });
 });
