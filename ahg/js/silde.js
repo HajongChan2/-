@@ -7,6 +7,7 @@ $(function() {
         autoplay: true,
         speed: 1500,
         slidesPerView: 1,
-		paginationClickable: true
+		paginationClickable: true,
+        loop: true
     });
 });
