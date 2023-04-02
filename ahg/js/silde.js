@@ -4,10 +4,9 @@ $(function() {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
         autoplay: true,
-        pauseOnHover: true,
-        speed: 1000
+        speed: 1500,
+        slidesPerView: 1,
+		paginationClickable: true
     });
 });
