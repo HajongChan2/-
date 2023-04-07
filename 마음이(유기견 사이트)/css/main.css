@@ -7,6 +7,9 @@
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    font-family: 'NanumSquareNeo-Variable';
+    list-style:none;
 }
 body::-webkit-scrollbar {
     display: none; 
@@ -31,7 +34,7 @@ body::-webkit-scrollbar {
 #name {
     color: #77bffe;
     font-size: 25px;
-    font-family: 'NanumSquareNeo-Variable';
+    
     margin: 0 10px 0 0;
 }
 #nb_name{
@@ -40,11 +43,10 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: space-around;
 }
-#nb_name li{
+#nb_name li, #nb_name a{
     color: #2f9eff;
     list-style: none;
     font-size: 17px;
-    font-family: 'NanumSquareNeo-Variable';
 }
 #main_slider {
     width: 1440px;
@@ -96,11 +98,9 @@ body::-webkit-scrollbar {
     margin: 0 0 10px 0 ;
 }
 #dog_text{
-    font-family: 'NanumSquareNeo-Variable';
     font-size: 20px;
 }
 #dog_t{
-    font-family: 'NanumSquareNeo-Variable';
     text-align: center;
     font-size: 30px;
     padding: 100px 0 50px 50px;
@@ -120,7 +120,6 @@ body::-webkit-scrollbar {
     margin: 15px;
 }
 #shop_t{
-    font-family: 'NanumSquareNeo-Variable';
     text-align: center;
     font-size: 30px;
     padding: 150px 0 50px 0;
