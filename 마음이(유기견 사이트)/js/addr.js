@@ -31,3 +31,7 @@ function data(){
         }
     }).open();
 }
+
+$("#find").click(function(){
+    data();
+});

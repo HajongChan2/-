@@ -12,14 +12,7 @@
     list-style:none;
     color: #333;
 }
-.content{
-    margin-top: 100px;
-}
-#content_top_font > h2{
-    text-align: center;
-    font-size: 25px;
-    color:#2f9eff;
-}
+
 #delivery_status{
     display: flex;
     align-items: center;

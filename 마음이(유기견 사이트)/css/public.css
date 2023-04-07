@@ -21,11 +21,15 @@ body::-webkit-scrollbar {
     border-bottom:solid 0.1px #ececec;
     margin-bottom:10px;
 }
+#content_top_font > h2{
+    text-align: center;
+    font-size: 25px;
+    color:#2f9eff;
+}
 #container0 {
     width: 1440px;
-    margin-bottom:100px;
+    margin:100px auto;
     text-align: center;
-
 }
 #logo {
     width: 40px;
@@ -35,7 +39,6 @@ body::-webkit-scrollbar {
 #name {
     color: #77bffe;
     font-size: 25px;
-    
     margin: 0 10px 0 0;
 }
 #nb_name{
