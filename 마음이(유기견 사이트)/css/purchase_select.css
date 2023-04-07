@@ -11,3 +11,39 @@
     font-family: 'NanumSquareNeo-Variable';
     list-style:none;
 }
+.content{
+    margin-top: 100px;
+}
+#content_top_font > h2{
+    text-align: center;
+    font-size: 25px;
+    color:#2f9eff;
+}
+#delivery_status{
+    display: flex;
+    align-items: center;
+    margin-top:50px;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #335b9c;
+}
+#delivery_infomation{
+    margin:50px 0;
+}
+.delivery_box{
+    width: 20%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border:solid 1px #d9d9d9;
+    margin:50px 0 0 0;
+}
+.delivery_content{
+    display: flex;
+    align-items: center;
+}
+.delivery_content img{
+    width: 100px;
+    height: 100px;
+}
