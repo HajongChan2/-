@@ -43,6 +43,7 @@ body::-webkit-scrollbar {
     width: 50%;
     align-items: center;
     justify-content: space-around;
+    margin:0;
 }
 #nb_name li, #nb_name a{
     color: #2f9eff;
