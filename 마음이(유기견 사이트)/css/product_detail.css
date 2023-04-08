@@ -8,7 +8,68 @@
     width: 700px;
     height: 700px;
 }
-#product_image, #description{
+#product_image, .description{
     width: calc(100% / 2);
     margin:40px 20px;
+}
+.info{
+    height: 500px;
+    border-bottom:solid 1px #16448E;
+    width: 100%;
+    display: flex;
+    line-height: 80px;
+}
+.description_content{
+    margin:0 10px;
+}
+.description_content > li{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.count-wrap {
+    position: relative;
+    padding: 0 38px; 
+    margin:20px 0; 
+    border: 1px solid #ddd;
+    overflow: hidden;
+    width: 60px;
+}
+.count-wrap > button {
+    border: 0;
+    background: #ddd;
+    color: #000;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 0;font-size: 12px;
+}
+.count-wrap > button.minus {
+    left: 0;
+}
+.count-wrap > button.plus {
+    right: 0;
+}
+.count-wrap .inp {
+    border: 0;
+    height: 38px;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+#purchase{
+    position: relative;
+}
+#purchase > button{
+    width: 150px;
+    height: 38px;
+    background: #16448E;
+    color:#fff;
+    font-size: 20px;
+    position:absolute;
+    top: 0;
+    right:0;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
 }
