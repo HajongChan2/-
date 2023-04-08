@@ -1,0 +1,14 @@
+#product_info{
+    display: flex;
+}
+#product_image{
+    border: solid 1px #999999;
+}
+#product_image > img{
+    width: 700px;
+    height: 700px;
+}
+#product_image, #description{
+    width: calc(100% / 2);
+    margin:40px 20px;
+}
