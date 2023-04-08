@@ -52,14 +52,65 @@
                 <input type="text" id="direct_input">
             </div>
         </div>
+        <div id="delivery_infomation">
+            <div>
+                <ul id="content_header" class="delivery_content">
+                    <li>상품 정보</li>
+                    <li>수량</li>
+                    <li>배송 구분</li>
+                    <li>합계</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="delivery_content">
+                    <li class="first_content">
+                        <img src="img/product.jpg">
+                        <div class="description">
+                            <p><a href="#">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</a></p>
+                        </div>
+                    </li>
+                    <li>2</li>
+                    <li>기본배송</li>
+                    <li>0</li>
+                </ul>
+            </div>
+        </div>
+        
         <div>
-            
+            <div id="total_payment">
+                <h4>총 결제 예정 금액</h4>
+                <p>0</p>
+            </div>
+            <div id="payment_method">
+                <div id="payment_method_header" class="method">
+                    <h4>결제수단</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method">
+                    <h4>신용카드</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method">
+                    <h4>실시간 계좌이체</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method">
+                    <h4>휴대폰 결제</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method">
+                    <h4>무통장 입금</h4>
+                </div>
+            </div>
+            <div id="submit">
+                <button id="btn">구매하기</button>
+            </div>
         </div>
     </div>
     <footer>
         <div id="footer"></div>
     </footer>
 </body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="js/addr.js"></script>
+<!-- <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/addr.js"></script> -->
 </html>

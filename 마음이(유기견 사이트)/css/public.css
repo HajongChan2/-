@@ -24,7 +24,7 @@ body::-webkit-scrollbar {
 #content_top_font > h2{
     text-align: center;
     font-size: 25px;
-    color:#2f9eff;
+    color:#16448E;
 }
 #container0 {
     width: 1440px;
@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
     margin:0;
 }
 #nb_name li, #nb_name a{
-    color: #2f9eff;
+    color: #16448E;
     list-style: none;
     font-size: 17px;
 }
