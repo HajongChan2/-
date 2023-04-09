@@ -1,19 +1,11 @@
 $(document).ready(function(){
-    $("#btn").click(function(){
-        
-        console.log(selbox);
-    });
+    
     $("#btn").click(function(){
         let add_detail = $("#address_datail").val();
         let mem_add = $("#member_addr").val();
-        let phone = $("#phone").val();
-        let selbox = $("#selbox option:selected").text();
-
         let member_address = {
             address : mem_add,
-            address_detail : add_detail,
-            phone : phone,
-            selbox : selbox
+            address_detail : add_detail
         }
 
         $.ajax({

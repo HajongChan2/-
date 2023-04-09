@@ -21,6 +21,13 @@ body::-webkit-scrollbar {
     border-bottom:solid 0.1px #ececec;
     margin-bottom:10px;
 }
+#main_nb{
+    font-family: 'NanumSquareNeo-Variable';
+    font-size: 25px;
+    text-align: center;
+    color: #16448E;
+    margin: 0 0 100px 0;
+}
 #content_top_font > h2{
     text-align: center;
     font-size: 25px;

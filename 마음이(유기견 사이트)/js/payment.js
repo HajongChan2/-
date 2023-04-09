@@ -14,13 +14,4 @@ $(document).ready(function(){
             } 
         });
     });
-    $("#btn").click(function(){
-        if ( ! $('input[name="payment_method"]:checked').val() ) {
-            alert('옵션을 선택해주세요.');
-            $('input[name="payment_method"]').focus();
-            return false;
-        }else{
-            alert("결제성공");
-        }
-    });
 });
