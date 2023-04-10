@@ -1,0 +1,28 @@
+#content_top_font{
+    padding-bottom: 20px;
+    border-bottom:solid 1px #16448E;
+}
+#photo_sign_up{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+#photo_sign_up > img{
+    width: 300px;
+    height: 300px;
+    margin: 0 60px;
+}
+#image_choice, #image_choice > label > img{
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+}
+#imageFile{
+    display: none;
+}
+#iamge_caution{
+    color:#999;
+    font-size: 15px;
+    padding-top:15px;
+    text-align: left;
+}
