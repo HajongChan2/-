@@ -1,0 +1,81 @@
+.center_line {
+    border:solid 0.1px #16448E;
+}
+#imgbox_wrap{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    margin: 50px 0 50px 0;
+}
+.imgbox{
+    border:solid 1px #16448E;
+    width: 360px;
+    height: 350px;
+}
+.content_text{
+    font-size: 20px;
+}
+#container5{
+    display: flex;
+    width: 100%;
+}
+#container1{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+}
+#container2{
+    display: flex;
+    width: 700px;
+    flex-direction: column;
+}
+#container1 li{
+    font-size: 20px;
+    color: #16448E;
+    list-style-type:none;
+    margin: 50px;
+}
+.content_box{
+    width:350px;
+    height: 30px;
+    margin: 30px;
+}
+.content_box2{
+    width:700px;
+    height: 100px;
+    margin: 50px;
+}
+#container4{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+.register_button{
+    font-size: 20px;
+    color: #ffffff;
+    border: solid 1px;
+    border-radius: 7px;
+    background-color: #113267;
+    width: 300px;
+    height: 40px;
+    margin: 50px 0 0 50px;
+}
+.checkbox_st{
+    margin: 0 10px 0 10px;
+}
+select {
+    width: 200px;
+    height: 40px;
+    padding: .5em .3em;
+    font-size: 15px;
+    border: 1px solid #999;
+    background: url('../img/arrow.jpg') no-repeat 95% 50%;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}

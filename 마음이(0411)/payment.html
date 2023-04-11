@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/payment.js"></script> 
+
+    <title>결제페이지</title>
+</head>
+<body>
+    <header id="header">
+        <img id="logo" src="img\logo.png">
+        <h1 id="name">마음이</h1>
+
+        <ul id="nb_name">
+            <li><a href="">입양 안내</a></li>
+            <li><a href="">반려견 조회</a></li>
+            <li><a href="">유기견 분양</a></li>
+            <li><a href="">펫세사리</a></li> 
+        </ul>
+    </header>
+    <div id="container0">
+        <div id="content_top_font">
+            <h2>결제하기</h2>
+        </div>
+        <div id="member_infomation">
+            <div id="address" class="member_info">
+                <p>주소</p>
+                <input id="member_addr" type="text" placeholder="주소" disabled>
+                <button id="find">우편번호 찾기</button>     
+            </div>
+            
+            <div class="member_info">
+                <p>상세주소</p>
+                <input id="member_addr" type="text" placeholder="상세주소">
+            </div>
+            <div class="member_info">
+                <p>휴대전화</p>
+                <input type="text" placeholder="-를 뺴고 입력하세요">
+            </div>
+            <div class="member_info">
+                <p>배송메세지</p>
+                <select id="selbox">
+                    <option value="1">배송 전에 미리 연락 바랍니다.</option>
+                    <option value="2">부재시 경비실에 맡겨 주세요.</option>
+                    <option value="3">부재시 전화 주시거나 문자 남겨주세요.</option>
+                    <option value="4">배송메모를 직접 입력합니다.</option>
+                </select>
+                <input type="text" id="direct_input">
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/addr.js"></script>
+</html>
