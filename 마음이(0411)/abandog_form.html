@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/abandog_form.css">
+    <link rel="stylesheet" href="css/public.css">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <img id="logo" src="img\logo.png">
+        <h1 id="name">마음이</h1>
+
+        <ul id="nb_name">
+            <li><a href="">입양 안내</a></li>
+            <li><a href="">반려견 조회</a></li>
+            <li><a href="">유기견 분양</a></li>
+            <li><a href="">펫세사리</a></li>
+        </ul>
+    </header>
+    <div id="container0">
+        <div id="content_top_font">
+            <h2>유기견 입양 신청서</h2>
+        </div>
+        <form onsubmit="return false">
+                <div id="abandoned_info">
+                <div class="infomation">
+                    신청인<input type="text" name="title" id="title">
+                </div>
+                <div class="infomation">
+                    휴대전화<input type="text" name="register" id="register">
+                </div>
+                <div class="infomation">
+                    주소<input type="text" name="area" id="area">
+                </div>
+                <div class="infomation">
+                    상세주소<input type="text" name="kind" id="kind">
+                </div>
+                <div class="whether">
+                    입양 희망 이유<textarea id="text_box" placeholder="500자 이내로 쓰세요." maxlength="500"></textarea>
+                </div>
+            </div>
+            <button id="submit">입양 신청</button>
+        </form>
+    </div>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+
+</html>
