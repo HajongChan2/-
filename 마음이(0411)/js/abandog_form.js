@@ -1,7 +1,7 @@
-function checkNumber(e){
-    if(e.key >= 0 && e.key <= 9){
-        return true;
-    }else{
-        return false;
+function checkNumber(event) {
+    if(event.key >= 0 && event.key <= 9) {
+      return true;
     }
-}
+    
+    return false;
+  }
