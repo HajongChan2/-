@@ -4,21 +4,11 @@
     font-weight: normal;
     font-style: normal;
 }
-    * {
-    margin:0;
-    padding:0;
-    }
     
     body::-webkit-scrollbar {
     display:none;
     }
-    
-    #header {
-    display:flex;
-    align-items:center;
-    margin:20px 0 10px 240px;
-    }
-    
+
     #container0 {
     width:1440px;
     height:1800px;
