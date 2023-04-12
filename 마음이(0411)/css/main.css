@@ -3,8 +3,8 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-}
     
+}
     body::-webkit-scrollbar {
     display:none;
     }
@@ -16,17 +16,12 @@
     margin:auto;
     }
     
-    #logo {
-    width:40px;
-    height:50px;
-    margin:0 10px 0 0;
-    }
-    
     #name {
     color:#16448E;
     font-size:25px;
     font-family: 'NanumSquareNeo-Variable';
     margin:0 10px 0 0;
+    font-weight: bold;
     }
     
     #nb_name {
@@ -41,6 +36,7 @@
     list-style:none;
     font-size:17px;
     font-family: 'NanumSquareNeo-Variable';
+    font-weight: bold;
     }
     
     #main_slider {
@@ -196,4 +192,8 @@
     width:1940px;
     height:400px;
     background-color:#16448E;
+    }
+    .box_content3{
+        width: 300px;
+        display: flex;
     }

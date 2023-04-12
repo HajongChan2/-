@@ -39,7 +39,7 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 #logo {
-    width: 40px;
+    width: 60px;
     height: 50px;
     margin: 0 10px 0 0 ;
 }
@@ -59,6 +59,7 @@ body::-webkit-scrollbar {
     color: #16448E;
     list-style: none;
     font-size: 17px;
+    font-weight: bold;
 }
 #footer{
     width: 100%;
