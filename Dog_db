@@ -1,0 +1,43 @@
+등록 상품 유기견 반려견
+삭제 상품 유기견 
+조회 반려견 유기견 상품
+수정 유기견 상품
+기타 
+
+*{사진은 최대 3장}
+
+Create database mind;
+Use mind;
+
+비회원 상품조회 - 고유번호 / 구매자 이름 varchar(50) / 휴대폰 char(11)  / 
+(상품 이름 /수량 / 가격 / ) 
+유기견 입양신청 - 보호자 이름 varchar(50) / 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 희망사유 varchar(750)/ 
+
+
+Create table members (m_num int primary key auto_increament, m_name varchar(50), m_phone char(11));
+
+유기견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/ 분양 지역 varchar(30) / 성별 varchar(3)/ 종 varchar(6)/ 품종 varchar(50) / 접종여부 char(1) / 중성화 여부 char(1)/ 안락사 예정일 date/ 특이사항 varchar(1500)(500자) / 사진(url)
+
+Create table a_dog (a_num int primary key auto-increment, a_name varchar(2), a_area varchar(30), a_sex varchar(3), a_size varchar(6), a_spec varchar(50), a_vac char(1), a_neut char(1), a_dead date, a_memo varchar(1500), a_gallery varchar(1500));
+
+반려견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/  입양 날짜 date/ 성별 varchar(3) / 종 varchar(6) / 품종 varchar(50)/ 접종여부 char(1)/ 중성화 여부 char(1)/ 특이사항 varchar(1500)(500자) / 사진 (url)
+
+Create table b_dog (b_num int primary key auto-increment, b_name varchar(2), b_sex varchar(3), b_size varchar(6), b_spec varchar(50), b_vac char(1), b_neut char(1), b_dead date, b_memo varchar(1500), b_gallery varchar(1500));
+
+펫세사리 - 고유번호 / 상품 이름 varchar(50)/ 가격 int(6)/ 수량 int(3) / 평점(보류) / 상세설명 varchar(1500)/ 배송비 int(5)/ 사진 url
+
+Create table product (p_num int primary key auto_increament, p_name varchar(50), p_price int(6), p_count int(3), p_memo varchar(1500), p_dpay int(5), p_gallery varchar(1500)
+
+펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable
+
+Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_memo varchar(300) nullable
+
+
+
+( 가격 / 구매 수량 / 배송현황 :d 배송준비중>배송중>배송완료 / )
+구매 조회 - 배송 현황
+
+(1)	if(특정날짜 - newDate() == n){
+		배송중
+	}
+(2)	배송확정 버튼 클릭 시 배송완료
