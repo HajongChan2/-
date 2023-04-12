@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/abandog_form.css">
     <link rel="stylesheet" href="css/public.css">
     <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 <body>
     <header id="header">
@@ -28,10 +29,14 @@
                     신청인<input type="text" name="title" id="title">
                 </div>
                 <div class="infomation">
-                    휴대전화<input type="text" name="register" id="register">
+                    휴대전화<input type="text" onkeypress="return checkNumber(e)" name="register" id="register">
                 </div>
                 <div class="infomation">
-                    주소<input type="text" name="area" id="area">
+                    주소<input type="text" name="area" id="member_addr" disabled>
+                    <div class="find_btn">
+                        <input type="button" id="find" value="우편번호 찾기">
+                    </div>
+                    
                 </div>
                 <div class="infomation">
                     상세주소<input type="text" name="kind" id="kind">
@@ -47,5 +52,7 @@
         <div id="footer"></div>
     </footer>
 </body>
-
+<script src="js/abandog_form.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/addr.js"></script>
 </html>
