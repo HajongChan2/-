@@ -24,6 +24,7 @@
     text-align: center;
     width: 350px;
     margin: 50px;
+    cursor: pointer;
 }
 .petcesory-text{
     height: 60px;

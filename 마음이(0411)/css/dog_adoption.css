@@ -25,6 +25,7 @@ select {
     text-align: center;
     width: 350px;
     margin: 50px;
+    cursor: pointer;
 }
 .abandoned_dog-text{
     height: 60px;
