@@ -13,7 +13,7 @@ $(document).ready(function(){
         let phone = $("#register").val();
         let addr = $("#member_addr").val();
         let saddr = $("#kind").val();
-        let memo = $("text_box").val();
+        let memo = $("#text_box").val();
 
         const application = {
             title : title,
