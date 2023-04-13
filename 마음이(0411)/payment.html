@@ -27,7 +27,7 @@
         <div id="content_top_font">
             <h2>결제하기</h2>
         </div>
-        <form action="" onsubmit="return false;">
+        <form action="/payment/insert" onsubmit="return false" method="post" >
             <div id="member_infomation">
                 <div class="member_info">
                     <p>이름</p>
@@ -35,13 +35,13 @@
                 </div>
                 <div id="address" class="member_info">
                     <p>주소</p>
-                    <input id="member_addr" type="text" placeholder="주소" disabled>
-                    <button id="find">우편번호 찾기</button>     
+                    <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
+                    <button type="button" id="find">우편번호 찾기</button>
                 </div>
                 
                 <div class="member_info">
                     <p>상세주소</p>
-                    <input id="member_addr" type="text" placeholder="상세주소">
+                    <input id="address_detail" name="saddr" type="text" placeholder="상세주소">
                 </div>
                 <div class="member_info">
                     <p>휴대전화</p>
@@ -55,7 +55,7 @@
                         <option name="3" value="부재시 전화 주시거나 문자 남겨주세요.">부재시 전화 주시거나 문자 남겨주세요.</option>
                         <option name="4" value="4">배송메모를 직접 입력합니다.</option>
                     </select>
-                    <input type="text" id="direct_input">
+                    <input type="text" name="memo" id="direct_input">
                 </div>
             </div>
             <div id="delivery_infomation">

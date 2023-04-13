@@ -33,8 +33,7 @@
     align-items: flex-start;
 }
 .infomation, .whether{
-    margin-left: 0;
-    padding:25px 0;
+    margin: 10px 0 10px 0;
 }
 .infomation{
     display: flex;
@@ -42,13 +41,16 @@
     width: 30%;
     position: relative;
 }
+.infomation > input, .infomation > p, .whether > input, .whether > p{
+    width: calc(100%/2);
+}
 .infomation > input{
-    width: 320px;
-    height: 20px;
-    padding:5px 5px 5px 20px;
-    outline-color:#999;
-    border-radius: 5px;
-    border:solid 1px #6b6b6b;
+    width: 220px;
+    height: 23px;
+    border-radius: 10px;
+    padding: 5px;
+    border: solid 1px #d9d9d9;
+    outline-color: #aaa;
 }
 .whether{
     display: flex;
@@ -66,8 +68,7 @@
     padding:5px;
     outline-color:#999;
     border-radius: 5px;
-    border:solid 1px #6b6b6b;
-    margin-left: 20px;
+    border: solid 1px #d9d9d9;
 }
 .textLengthWrap{
     position: absolute;
@@ -91,12 +92,12 @@
     cursor: pointer;
 }
 #find {
-    font-size: 17px;
-    width: 150px;
-    height: 40px;
-    color: #ffffff;
+    width: 130px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
     background-color: #113267;
-    padding: 0;
     cursor: pointer;
 }
 .find_btn{

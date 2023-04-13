@@ -19,41 +19,34 @@ $(document).ready(function(){
 $(document).ready(function(){
     let direct_message;
     let choice;
-    let phone;
-    $("#aa").on('click',function(){
-        direct_message = $("#direct_input").val();
-        choice = $("#selbox option:selected");
-        if(choice.val() == 4){
-            choice.val(direct_message);
-        }else{
-            choice.val();
-        }
-    });
-    
-    
     $("#btn").click(function(){
-        let add_detail = $("#address_datail").val();
+        let add_detail = $("#address_detail").val();
         let mem_add = $("#member_addr").val();
         let phone = $("input[name=phone]").val();
         let name = $("#user_name").val();
+        direct_message = $("#direct_input");
+        choice = $("#selbox option:selected");
+        if(choice.val() == 4){
+            choice.val(direct_message.val());
+        }else{
+            direct_message.val(choice.val());
+        }
+        let memo = choice.val();
+        alert(mem_add);
         let member_address = {
             name : name,
             address : mem_add,
             address_detail : add_detail,
             phone : phone,
-            choice : choice.val()
+            memo : memo
         }
-
         $.ajax({
             type : "POST",
             url : "/address",
             data : member_address,
-            success : function(){
-                console.log("성공");
+            success : function(data){
+                alert("성공");
             }
-
-        });
-        
+        }); 
     });
-    
 });
