@@ -45,7 +45,7 @@ $(document).ready(function(){
         }
 
         $.ajax({
-            tyep : "POST",
+            type : "POST",
             url : "/address",
             data : member_address,
             success : function(){
