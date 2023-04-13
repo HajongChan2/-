@@ -34,6 +34,19 @@
     border-radius: 5px;
     border:none;
     color:#fff;
-    background-color:#335b9c;
+    background-color:#113267;
     cursor: pointer;
+}
+#submit{
+    margin-top:50px;
+}
+#btn{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #113267;
+    cursor: pointer;
+    font-size: 20px;
 }
