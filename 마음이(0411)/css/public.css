@@ -44,12 +44,7 @@ body::-webkit-scrollbar {
     margin: 0 10px 0 0 ;
     cursor: pointer;
 }
-#name {
-    color: #16448E;
-    font-size: 25px;
-    margin: 0 10px 0 0;
-    cursor: pointer;
-}
+
 #nb_name{
     display: flex;
     width: 50%;
