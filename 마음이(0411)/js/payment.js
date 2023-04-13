@@ -35,7 +35,7 @@ $(document).ready(function(){
         let add_detail = $("#address_datail").val();
         let mem_add = $("#member_addr").val();
         let phone = $("input[name=phone]").val();
-        let name = $("#name").val();
+        let name = $("#user_name").val();
         let member_address = {
             name : name,
             address : mem_add,
