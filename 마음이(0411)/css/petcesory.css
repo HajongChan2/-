@@ -21,7 +21,7 @@
 .pet_items-line {
     border-bottom: solid 2px #00acec;
 }
-#petcesory-wrap {
+.petcesory-wrap {
     display: inline-block;
     text-align: center;
     width: 350px;

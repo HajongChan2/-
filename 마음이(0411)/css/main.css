@@ -85,7 +85,7 @@
     width:600px;
     height:200px;
     display:flex;
-    align-items: flex-end;
+    align-items: center;
     }
     
     #box1 {
@@ -124,6 +124,7 @@
     width:300px;
     height:40px;
     cursor: pointer;
+    margin-right: 0;
     }
     
     .dog_t {
@@ -136,9 +137,9 @@
     .dog-wrap {
     display:inline-block;
     text-align:center;
-    width:290px;
+    width:330px;
     height:300px;
-    margin:30px;
+    margin:10px;
     cursor: pointer;
     }
     
@@ -151,15 +152,18 @@
     .dog-name {
     font-size: 20px;
     width:100%;
-    height:50px;
+    height:70px;
     background-color:#fff;
     border-radius:0 0 25% 25%;
     text-align:center;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
     }
     
     .dog-wrap img {
-    width:290px;
-    height:200px;
+    width:100%;
+    height:100%;
     background-color:#b7b7b7;
     border-radius:15% 15% 0 0;
     vertical-align:middle;
@@ -187,6 +191,9 @@
     font-family: 'NanumSquareNeo-Variable';
     text-align:center;
     font-size:20px;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
     }
     
     .shop-wrap img {
