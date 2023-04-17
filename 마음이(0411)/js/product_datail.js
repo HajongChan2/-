@@ -4,8 +4,13 @@ $(document).ready(function(){
     let input = $(".inp");
     plus.click(function(){
         let pl_in = parseInt(input.val());
-        input.val(pl_in + 1);
-        minus.removeAttr('disabled'); 
+        if(pl_in < 99){
+            input.val(pl_in + 1);
+            minus.removeAttr('disabled'); 
+        }else{
+            alert("더이상 추가할 수 없습니다.");
+        }
+        
     });
     minus.click(function(){
         let pl_in = parseInt(input.val());
@@ -18,6 +23,16 @@ $(document).ready(function(){
     });
     $("#purchase").on('click', function(){
         localStorage.setItem('count',input.val());
+    });
+
+    $(".inp").on("propertychange change keyup paste input", function(){
+        let input = $(".inp");
+        let inputval = $(this).val();
+        if(inputval >= 1 && inputval <= 100){
+            input.val(input.val());
+        }else{
+
+        }
     });
     
 });
