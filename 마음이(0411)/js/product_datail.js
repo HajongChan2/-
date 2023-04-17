@@ -16,4 +16,9 @@ $(document).ready(function(){
             minus.attr('disabled', true);
         }
     });
+    $("#purchase").on('click', function(){
+        localStorage.setItem('count',input.val());
+    });
+    
 });
+

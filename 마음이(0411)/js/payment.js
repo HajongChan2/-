@@ -49,4 +49,9 @@ $(document).ready(function(){
             }
         }); 
     });
+    if(localStorage.getItem('count')){
+        var lastData = localStorage.getItem('count');
+        $("#count").text(lastData);
+        console.log(lastData);
+    }
 });
