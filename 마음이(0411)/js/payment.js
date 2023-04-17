@@ -19,6 +19,13 @@ $(document).ready(function(){
 $(document).ready(function(){
     let direct_message;
     let choice;
+    let CountData;
+    let count;
+    if(localStorage.getItem('count')){
+        CountData = localStorage.getItem('count');
+        $("#count").val(CountData);
+        $("#counts").text(CountData);
+    }
     
     $("#btn").click(function(){
         let add_detail = $("#address_detail").val();
@@ -26,7 +33,8 @@ $(document).ready(function(){
         let phone = $("input[name=phone]").val();
         let name = $("#user_name").val();
         let payment_method = $('input[name=payment_method]:checked').val();
-        let count =  parseInt($("#count").text());
+        count = parseInt($("#counts").text());
+        console.log(count);
         direct_message = $("#direct_input");
         choice = $("#selbox option:selected");
         if(choice.val() == 4){
@@ -54,9 +62,5 @@ $(document).ready(function(){
             }
         }); 
     });
-    if(localStorage.getItem('count')){
-        var lastData = localStorage.getItem('count');
-        $("#count").text(lastData);
-        console.log(lastData);
-    }
+    
 });
