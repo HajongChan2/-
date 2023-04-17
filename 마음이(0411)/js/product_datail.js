@@ -31,7 +31,9 @@ $(document).ready(function(){
         if(inputval >= 1 && inputval <= 100){
             input.val(input.val());
         }else{
-
+            alert("이 수량은 선택할 수 없습니다.");
+            input.val("1");
+            input.focus();
         }
     });
     
