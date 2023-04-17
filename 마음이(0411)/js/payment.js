@@ -59,8 +59,4 @@ $(document).ready(function(){
         $("#count").text(lastData);
         console.log(lastData);
     }
-    $("#a").on('click', function(){
-        
-        console.log(listVar);
-    });
 });
