@@ -1,0 +1,9 @@
+1. intro - 조 이름(키워조), 조장 (ㅂㅎㅇ) 조원( front - ㅎㅈㅊ, ㅇㅇㅎ Back - ㅂㅎㅇ, ㅊㅎㅈ)
+2. 목차
+- 1. 팀 소개 및 역할 박희우 (조장, 백엔드(Spring boot, maria db, InteliJ)) 하종찬 (프론트(Jquery, vscode) 이아현 (figma, vscode) 최현종 (ppt, maria db, inteliJ)
+- 2. 사이트 개요 ( 사이트 이름(마음이), 사이트 목적(설명)
+- 3. 사이트 기능 (유기견 등록, 유기견 입양, 반려견 조회, 펫세사리, 비회원 기능, 주소 API)
+- 4. 스토리보드 ( 디자인 의미, 기능에 맞게 스토리보드 넣기)
+- 5. DB (테이블 명세서)
+- 6. 주요 개발 코드 ( (front - html & css, jquery), (back - spring boot(my baties, thyme leaf, java), mariadb) )
+- 7. 개발일정 (현재 개발 단계, 개발 목표 및 세부 일정)
