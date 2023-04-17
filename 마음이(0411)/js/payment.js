@@ -26,7 +26,7 @@ $(document).ready(function(){
         let phone = $("input[name=phone]").val();
         let name = $("#user_name").val();
         let payment_method = $('input[name=payment_method]:checked').val();
-        let count =  $("#count").text();
+        let count =  parseInt($("#count").text());
         direct_message = $("#direct_input");
         choice = $("#selbox option:selected");
         if(choice.val() == 4){
