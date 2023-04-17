@@ -43,7 +43,7 @@
     padding:20px 0;
     border-bottom: solid 1px #16448E;
 }
-.delivery_content > li{
+.delivery_content > li, .delivery_content > label{
     width: calc(100% / 4);
 }
 .delivery_content img{
@@ -137,7 +137,4 @@
     background-color: #113267;
     cursor: pointer;
     font-size: 20px;
-}
-#count{
-    display: none;
 }
