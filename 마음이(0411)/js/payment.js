@@ -19,11 +19,14 @@ $(document).ready(function(){
 $(document).ready(function(){
     let direct_message;
     let choice;
+    
     $("#btn").click(function(){
         let add_detail = $("#address_detail").val();
         let mem_add = $("#member_addr").val();
         let phone = $("input[name=phone]").val();
         let name = $("#user_name").val();
+        let payment_method = $('input[name=payment_method]:checked').val();
+        let count =  $("#count").text();
         direct_message = $("#direct_input");
         choice = $("#selbox option:selected");
         if(choice.val() == 4){
@@ -38,7 +41,9 @@ $(document).ready(function(){
             address : mem_add,
             address_detail : add_detail,
             phone : phone,
-            memo : memo
+            memo : memo,
+            payment_method : payment_method,
+            p_count : count
         }
         $.ajax({
             type : "POST",
@@ -54,4 +59,8 @@ $(document).ready(function(){
         $("#count").text(lastData);
         console.log(lastData);
     }
+    $("#a").on('click', function(){
+        
+        console.log(listVar);
+    });
 });
