@@ -21,7 +21,6 @@
     font-size:25px;
     font-family: 'NanumSquareNeo-Variable';
     margin:0 10px 0 0;
-    font-weight: bold;
     }
     
     #nb_name {
@@ -29,14 +28,6 @@
     width:50%;
     align-items:center;
     justify-content:space-around;
-    }
-    
-    #nb_name li {
-    color:#16448E;
-    list-style:none;
-    font-size:17px;
-    font-family: 'NanumSquareNeo-Variable';
-    font-weight: bold;
     }
     
     #main_slider {
@@ -117,18 +108,20 @@
     .box_button {
     font-family: 'NanumSquareNeo-Variable';
     font-size:20px;
+    font-weight: bold;
     color:#fff;
     border:solid 1px;
     border-radius:7px;
     background-color:#113267;
     width:300px;
-    height:40px;
+    height:50px;
     cursor: pointer;
     margin-right: 0;
     }
     
     .dog_t {
     font-family: 'NanumSquareNeo-Variable';
+    color: #16448E;
     text-align:center;
     font-size:32px;
     padding:100px 0 50px 50px;
@@ -182,7 +175,8 @@
     font-size:30px;
     background-color:#fff;
     text-align:center;
-    padding:100px 10px;
+    padding:100px 10px 0 0;
+    color: #16448E;
     }
     
     .shop_text {
