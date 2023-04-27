@@ -1,0 +1,111 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="publicHF/HFlayout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/payment.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/regular_expression.js"></script>
+    <script src="js/payment.js"></script>
+
+    <title>결제페이지</title>
+</head>
+<th:block layout:fragment="content">
+<div id="container0">
+    <div id="content_top_font">
+        <h2>결제하기</h2>
+    </div>
+    <form action="/payment/insert"  method="post" >
+        <div id="member_infomation">
+            <div class="member_info">
+                <p>이름</p>
+                <input type="text" id="user_name" name="user_name" placeholder="이름">
+            </div>
+            <div id="address" class="member_info">
+                <p>주소</p>
+                <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
+                <button type="button" id="find">우편번호 찾기</button>
+            </div>
+
+            <div class="member_info">
+                <p>상세주소</p>
+                <input id="address_detail" name="saddr" type="text" placeholder="상세주소">
+            </div>
+            <div class="member_info">
+                <p>휴대전화</p>
+                <input type="text" name="phone" placeholder="-를 뺴고 입력하세요">
+            </div>
+            <div class="member_info">
+                <p>배송메세지</p>
+                <select id="selbox">
+                    <option name="1" value="배송 전에 미리 연락 바랍니다.">배송 전에 미리 연락 바랍니다.</option>
+                    <option name="2" value="부재시 경비실에 맡겨 주세요.">부재시 경비실에 맡겨 주세요.</option>
+                    <option name="3" value="부재시 전화 주시거나 문자 남겨주세요.">부재시 전화 주시거나 문자 남겨주세요.</option>
+                    <option name="4" value="4">배송메모를 직접 입력합니다.</option>
+                </select>
+                <input type="text" name="memo" id="direct_input">
+            </div>
+        </div>
+        <div id="delivery_infomation">
+            <div>
+                <ul id="content_header" class="delivery_content">
+                    <li>상품 정보</li>
+                    <li>수량</li>
+                    <li>배송 구분</li>
+                    <li>합계</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="delivery_content">
+                    <li class="first_content">
+                        <img src="img/product.jpg">
+                        <div class="description">
+                            <p><a href="#">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</a></p>
+                        </div>
+                    </li>
+                    <label for="count" class="count"></label><input type="hidden" name="count" id="count" value="1">
+                    <li>기본배송</li>
+                    <li>0</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div id="total_payment">
+                <h4>총 결제 예정 금액</h4>
+                <p>0</p>
+            </div>
+            <div id="payment_method">
+                <div id="payment_method_header" class="method">
+                    <h4>결제수단</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method" value="신용카드">
+                    <h4>신용카드</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method" value="실시간 계좌이체">
+                    <h4>실시간 계좌이체</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method" value="휴대폰 결제">
+                    <h4>휴대폰 결제</h4>
+                </div>
+                <div class="method">
+                    <input type="radio" name="payment_method" value="무통장 입금">
+                    <h4>무통장 입금</h4>
+                </div>
+            </div>
+            <div id="submit">
+                <button id="btn">구매하기</button>
+            </div>
+        </div>
+    </form>
+</div>
+<footer>
+    <div id="footer"></div>
+</footer>
+</th:block>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/addr.js"></script>
+</html>
