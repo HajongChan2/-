@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="publicHF/HFlayout">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/abandog_detail.css">
+    <link rel="stylesheet" href="/css/public.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<th:block layout:fragment="content">
+
+    <div id="line"></div>
+
+    <div id="container0">
+        <h1 id="main_nb">보호중인 유기견 상세 정보</h1>
+        <div id="abandogbox_wrap">
+            <div id="abandogbox_wrap1">
+                <div class="abandogbox img"><img src="/img/dog0.jpg" alt=""></div>
+            </div>
+            <div class="abandogbox_wrap2">
+                <p class="content_text">등록 번호 :</p>
+                <p class="content_text">이름 :</p>
+                <p class="content_text">나이 :</p>
+                <p class="content_text">성별 :</p>
+            </div>
+
+        </div>
+        <div class="center_line"></div>
+
+        <h1 class="center_text">마음이</h1>
+        <p class="center_text2">마음이 따뜻한 보호소</p>
+        <div class="abandogbox_img1"></div>
+        <div id="container1">
+            <p class=center_text2>마음이 입양 안내 보러가기 ></p>
+        </div>
+        <div class="abandogbox_img1"></div>
+
+        <div class="abandogbox_wrap2">
+            <p class="content_text">분양 지역 :</p>
+            <p class="content_text">품종 :</p>
+            <p class="content_text">접종 :</p>
+            <p class="content_text">중성화 여부 :</p>
+            <p class="content_text">안락사 예정일 :</p>
+            <p class="content_text">특이사항 :</p>
+        </div>
+        <input type="button" class="adoption_button" value="입양 신청하러 가기 >">
+    </div>
+
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</th:block>
+
+</html>
