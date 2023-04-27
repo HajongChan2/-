@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<header id="header" th:fragment="header">
+    <img id="logo" src="/img\logo.png">
+    <h1 id="name">마음이</h1>
 
-<head>
-
-</head>
-
-    <body>
-    <th:block th:fragment="headerFragment">
-        <header id="header">
-            <img id="logo" src="/img\logo.png">
-            <h1 id="name">마음이</h1>
-
-            <ul id="nb_name">
-                <li><a href="">입양 안내</a></li>
-                <li><a href="">반려견 조회</a></li>
-                <li><a href="">유기견 분양</a></li>
-                <li><a href="">펫세사리</a></li>
-            </ul>
-        </header>
-
-        <!--thymeleaf header 설정-->
-</th:block>
-    </body>
-
-</html>
+    <ul id="nb_name">
+        <li><a href="">입양 안내</a></li>
+        <li><a href="">반려견 조회</a></li>
+        <li><a href="">유기견 분양</a></li>
+        <li><a href="/petcesary">펫세사리</a></li>
+    </ul>
+</header>
