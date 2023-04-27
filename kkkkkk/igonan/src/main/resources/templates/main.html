@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="publicHF/HFlayout">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,8 +10,8 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/silde.js"></script>
 </head>
-
-<th:block layout:fragment="content">
+<body>
+<header id="header" th:replace="publicHF/testheader::header"></header>
     <div class="line"></div>
 
     <div id="main_slider" class="swiper-container">
@@ -163,9 +163,9 @@
         </div>
     </div>
 
-    <footer>
-        <div id="footer"></div>
+    <footer id="footer" th:replace="publicHF/footer::footer">
+        <div></div>
     </footer>
-</th:block>
+</body>
 
 </html>

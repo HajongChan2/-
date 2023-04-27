@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="publicHF/HFlayout">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,17 +9,7 @@
 </head>
 
 <body>
-    <header id="header">
-        <img id="logo" src="img\logo.png">
-        <h1 id="name">마음이</h1>
-
-        <ul id="nb_name">
-            <li><a href="">입양 안내</a></li>
-            <li><a href="">반려견 조회</a></li>
-            <li><a href="">유기견 분양</a></li>
-            <li><a href="">펫세사리</a></li>
-        </ul>
-    </header>
+<header id="header" th:replace="publicHF/testheader::header"></header>
     <div id="line"></div>
 
 
