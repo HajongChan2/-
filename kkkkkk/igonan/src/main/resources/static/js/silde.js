@@ -6,6 +6,7 @@ $(function() {
         infinite: true,
         autoplay: true,
         speed: 1900,
+        delay: 2500,
         slidesPerView: 1,
 		paginationClickable: true,
         loop: true
