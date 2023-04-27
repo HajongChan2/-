@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/information.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/silde.js"></script>
+</head>
+
+<body>
+<header id="header" th:replace="publicHF/header::header"></header>
+
+<div id="line"></div>
+
+    <div id="main_slider" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/banner.jpg" alt="slide 1"></div>
+            <div class="swiper-slide"><img src="img/banner.jpg" alt="Slide 2" /></div>
+            <div class="swiper-slide"><img src="img/banner.jpg" alt="Slide 3" /></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+
+    <div id="container0">
+        <h1 id="main_nb">유기견 입양 안내</h1>
+
+        <div class="circle">
+            <p class="circle_text">01 자격 조건</p>
+        </div>
+        <div class="circle_line"></div>
+        <div class="container1">
+            <div class="circle">
+                <p class="circle_text">1. 신원 확인</p>
+            </div>
+            <div class="circle">
+                <p class="circle_text">2. 반려동물을<br>사랑하는 가정</p>
+            </div>
+            <div class="circle">
+                <p class="circle_text">3. 입양 후<br>1년간<br>연락 가능</p>
+            </div>
+        </div>
+        <div class="circle">
+            <p class="circle_text">02 입양 안내</p>
+        </div>
+        <div class="circle_line"></div>
+
+        <div class="container2">
+            <div class="box">
+                <p class="circle_text">하루에도 많은 아이들이 분양소에 입소하고<br>새로운 가정으로 입양이 보내집니다.</p>
+            </div>
+            <div class="box">
+                <p class="circle_text">하지만 쉬운 결정이 아닌 많은 고민과 생각을<br>가지고 입양을 결심 하시길 바랍니다.</p>
+            </div>
+            <div class="box">
+                <p class="circle_text">저희 마음이에서는 공정한 입양 기회를 주기 위해<br>특정한 아이들에 대한 상담은 진행하지 않습니다.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+<footer id="footer" th:replace="publicHF/footer::footer">
+    <div></div>
+</footer>
+</body>
+
+</html>
