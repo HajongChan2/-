@@ -13,17 +13,19 @@ $(document).ready(function(){
 
 
     function abandogList(list){
-        str = '';
+        let addr = "/abandog/detail/" + name;
+        let str = '';
         list.map(function(abandog){
-
-
             str +=
                 `<div class="abandoned_dog-wrap">
-                    <div class="abandoned_dog-image"><img src="${abandog.adGallery}" alt=""></div>
-                    <div class="abandoned_dog-text">
-                        <p>${abandog.adName}</p>
-                    </div>
-                </div>`
+                    <a href="${addr}">
+                            <div class="abandoned_dog-image"><img src="${abandog.adGallery}" alt=""></div>
+                                <div class="abandoned_dog-text">
+                                    <p>${abandog.adName}</p>
+                                </div>
+                        </div>
+                    </a>
+                    `
 
         });
         $("#container2").append(str);
