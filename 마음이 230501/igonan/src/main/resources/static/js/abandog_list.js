@@ -5,4 +5,12 @@ $(document).ready(function(){
         let a = na.text();
         console.log(a);
     });
+    $.ajax({
+        type : "POST",
+        dataType : "JSON",
+        url : "abandog/list"
+        success : function(data){
+            console.log(data); 
+        }
+    });
 });
