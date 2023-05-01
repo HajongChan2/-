@@ -1,6 +1,9 @@
 $(document).ready(function(){
+    let dogname = '';
+    if(localStorage.getItem('name')){
+        dogname = localStorage.getItem('name');
+    }
     srt = '';
-    let dogname="임시맨";
     $.ajax({
         type : "GET",
         url : "/abandog/detail/"+dogname,

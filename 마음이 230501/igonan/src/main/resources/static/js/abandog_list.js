@@ -28,10 +28,12 @@ $(document).ready(function(){
         });
         $("#container2").append(str);
     }
+    let name = '';
     $(document).on("click", ".abandoned_dog-text p", function(e){
         let na = $(e.target);
-        let a = na.text();
-        console.log(a);
+        let name = na.text();
+        console.log(name);
     });
+    localStorage.setItem('name',name);
 
 });
