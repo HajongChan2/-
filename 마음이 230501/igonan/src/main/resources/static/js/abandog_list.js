@@ -12,12 +12,6 @@ $(document).ready(function(){
     });
 
 
-    $(".abandoned_dog-text p").on('click',function(e){
-        let na = $(e.target);
-        let a = na.text();
-        console.log(a);
-    });
-
     function abandogList(list){
         str = '';
         list.map(function(abandog){
@@ -25,11 +19,19 @@ $(document).ready(function(){
 
             str +=
                 `<div class="abandoned_dog-wrap">
-                    <div class="abandoned_dog-image"><img src="${abandog.ad_gallery}" alt=""></div>
+                    <div class="abandoned_dog-image"><img src="${abandog.adGallery}" alt=""></div>
                     <div class="abandoned_dog-text">
-                        <p>{abandog.ad_name}</p>
+                        <p>${abandog.adName}</p>
                     </div>
                 </div>`
+
         });
+        $("#container2").append(str);
     }
+    $(document).on("click", ".abandoned_dog-text p", function(e){
+        let na = $(e.target);
+        let a = na.text();
+        console.log(a);
+    });
+
 });
