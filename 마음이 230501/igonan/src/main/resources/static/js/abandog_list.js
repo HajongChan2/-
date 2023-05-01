@@ -7,6 +7,7 @@ $(document).ready(function(){
         dataType : "json",
         success : function(data){
             console.log(data);
+            abandogList(data);
         }
     });
 
@@ -17,4 +18,18 @@ $(document).ready(function(){
         console.log(a);
     });
 
+    function abandogList(list){
+        str = '';
+        list.map(function(abandog){
+
+
+            str +=
+                `<div class="abandoned_dog-wrap">
+                    <div class="abandoned_dog-image"><img src="${abandog.ad_gallery}" alt=""></div>
+                    <div class="abandoned_dog-text">
+                        <p>{abandog.ad_name}</p>
+                    </div>
+                </div>`
+        });
+    }
 });
