@@ -13,12 +13,12 @@ $(document).ready(function(){
 
 
     function abandogList(list){
-        let addr = "/abandog/detail/" + name;
+        let addr = "/abandog/detail/";
         let str = '';
         list.map(function(abandog){
             str +=
                 `<div class="abandoned_dog-wrap">
-                    <a href="${addr}">
+                    <a href="${addr + abandog.adName}">
                             <div class="abandoned_dog-image"><img src="${abandog.adGallery}" alt=""></div>
                                 <div class="abandoned_dog-text">
                                     <p>${abandog.adName}</p>
@@ -33,7 +33,7 @@ $(document).ready(function(){
     let name = '';
     $(document).on("click", ".abandoned_dog-text p", function(e){
         let na = $(e.target);
-        let name = na.text();
+        name = na.text();
         console.log(name);
     });
     localStorage.setItem('name',name);
