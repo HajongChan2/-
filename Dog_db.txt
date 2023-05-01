@@ -9,12 +9,14 @@
 Create database mind;
 Use mind;
 
-비회원 상품조회 - 고유번호 / 구매자 이름 varchar(50) / 휴대폰 char(11)  / 
-(상품 이름 /수량 / 가격 / ) 
-유기견 입양신청 - 보호자 이름 varchar(50) / 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 희망사유 varchar(750)/ 
-
+비회원 상품조회 - 고유번호 / 구매자 이름 varchar(50) / 휴대폰 char(11) 
 
 Create table members (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
+
+(상품 이름 /수량 / 가격 / ) 
+유기견 입양신청 - 고유번호 / 보호자 이름 varchar(50) / 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 희망사유 varchar(750)/ 
+
+Create table adog_apply(ad_num int primarykey auto_increment, ad_name varchar(50), ad_phone_char(11), ad_addr varchar(150), ad_saddr varchar(80), ad_memo varchar(750));
 
 유기견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/ 분양 지역 varchar(30) / 성별 varchar(3)/ 종 varchar(6)/ 품종 varchar(50) / 접종여부 char(1) / 중성화 여부 char(1)/ 안락사 예정일 date/ 특이사항 varchar(1500)(500자) / 사진(url)
 
@@ -22,7 +24,7 @@ Create table a_dog(a_num int primary key auto_increment, a_name varchar(50), a_a
 
 반려견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/  입양 날짜 date/ 성별 varchar(3) / 종 varchar(6) / 품종 varchar(50)/ 접종여부 char(1)/ 중성화 여부 char(1)/ 특이사항 varchar(1500)(500자) / 사진 (url)
 
-Create table dog (num int primary key auto_increment, name varchar(50), age varchar(2), sex varchar(3), size varchar(6), spec varchar(50), vac char(1), neut char(1), dead date, memo varchar(1500), gallery varchar(1500));
+Create table b_dog (b_num int primary key auto_increment, b_name varchar(50), b_age varchar(2), b_sex varchar(3), b_size varchar(6), b_spec varchar(50), b_vac char(1), b_neut char(1), b_dead date, b_memo varchar(1500), b_gallery varchar(1500));
 
 펫세사리 - 고유번호 / 상품 이름 varchar(50)/ 가격 int(6)/ 재고 int(3) / 평점(보류) / 상세설명 varchar(1500)/ 배송비 int(5)/ 사진 url
 
