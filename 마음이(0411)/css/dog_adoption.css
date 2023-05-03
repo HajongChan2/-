@@ -21,11 +21,9 @@ select {
     margin: 10px;
 }
 .abandoned_dog-wrap {
-    display: inline-block;
-    text-align: center;
-    width: 350px;
-    margin: 50px;
+    width: calc(100%/3);
     cursor: pointer;
+    margin: 40px;
 }
 .abandoned_dog-text{
     height: 60px;
@@ -34,20 +32,12 @@ select {
     font-size: 32px;
 }
 .abandoned_dog-wrap img {
-    width: 350px;
+    width: 100%;
     height: 330px;
     background-color: #d8d8d8;
     border-radius: 5% 5% 0 0;
     vertical-align: middle;
 }
 #container1{
-    width: 1440px;
-    height: 100%;
-    margin: auto;
-    text-align: center;
-}
-#container2{
     display: flex;
-    justify-content: space-between;
-    width: 100%;
 }
