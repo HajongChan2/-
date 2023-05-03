@@ -56,7 +56,7 @@ public class InsertController {
 
 
 
-    @PostMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행
+    @RequestMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행
     public String abanDogInsert(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
 
         String name = "임시맨";//rq.getParameter("name");

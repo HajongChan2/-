@@ -20,24 +20,27 @@ $(document).ready(function(){
             str +=
                 `<div class="abandoned_dog-wrap">
                     <a href="${addr}">
-                            <div class="abandoned_dog-image"><img src="${abandog.adGallery}" alt=""></div>
-                                <div class="abandoned_dog-text">
-                                    <p>${abandog.adName}</p>
-                                </div>
+                        <div class="abandoned_dog-image">
+                            <img src="${abandog.adGallery}" alt="${abandog.adName}">
+                            <p>${abandog.adName}</p>
                         </div>
-                    </a>
-                    `
+                    </a>                    
+                </div>`
 
         });
         $("#container2").append(str);
     }
 
-    $(document).on("click", ".abandoned_dog-text p", function(e){
+    $(document).on("click",".abandoned_dog-image",function(e){
         let na = $(e.target);
-         name = na.text();
+        let name = na.attr("alt");
+        if(name == null){
+            name = na.text();
+        }
         console.log(name);
         localStorage.setItem('name',name);
     });
+
 
 
 });

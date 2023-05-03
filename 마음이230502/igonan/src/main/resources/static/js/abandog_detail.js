@@ -40,7 +40,6 @@ $(document).ready(function(){
         </div>
         <input type="button" class="adoption_button" value="입양 신청하러 가기 >">`
             $("#container0").append(srt);
-            console.log(data[0].adAge);
             console.log(data);
         }
     });
