@@ -23,7 +23,7 @@ $(document).ready(function(){
                 console.log(data);
 
 
-`        <div id="delivery_infomation">
+srt = srt + `    <div id="delivery_infomation">
              <div>
                  <ul id="content_header" class="delivery_content">
                      <li>상품 정보</li>
