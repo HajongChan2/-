@@ -39,7 +39,7 @@ $(document).ready(function(){
             <p class="content_text">특이사항 :${data[0].adMemo}</p>
         </div>
         <input type="button" class="adoption_button" value="입양 신청하러 가기 >">`
-            $("#container").append(srt);
+            $("#container0").append(srt);
             console.log(data);
         }
     });
