@@ -20,11 +20,11 @@ Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(
 
 유기견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/ 분양 지역 varchar(30) / 성별 varchar(3)/ 종 varchar(6)/ 품종 varchar(50) / 접종여부 char(1) / 중성화 여부 char(1)/ 안락사 예정일 date/ 특이사항 varchar(1500)(500자) / 사진(url)
 
-Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age varchar(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery varchar(1500));
+Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery varchar(1500));
 
 반려견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/  입양 날짜 date/ 성별 varchar(3) / 종 varchar(6) / 품종 varchar(50)/ 접종여부 char(1)/ 중성화 여부 char(1)/ 특이사항 varchar(1500)(500자) / 사진 (url)
 
-Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age varchar(2),pet_date date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery varchar(1500));
+Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age int(2),pet_date date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery varchar(1500));
 
 펫세사리 - 고유번호 / 상품 이름 varchar(50)/ 가격 int(6)/ 재고 int(3) / 평점(보류) / 상세설명 varchar(1500)/ 배송비 int(5)/ 사진 url
 
@@ -44,3 +44,42 @@ Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_
 		배송중
 	}
 (2)	배송확정 버튼 클릭 시 배송완료
+
+
+DB 생성, Table 생성 쿼리
+
+Create database mind;
+Use mind;
+Create table members (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
+Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(50), ap_phone char(11), ap_addr varchar(150), ap_saddr varchar(80), ap_memo varchar(750));
+Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery varchar(1500));
+Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age int(2),pet_date date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery varchar(1500));
+Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery varchar(1500));
+Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
+
+
+Insert ad_dog(유기견)
+
+insert into ad_dog values(null, '마음이', 2, '경기도 성남', '남', '대형견', '리트리버', 'O', 'X', '2023-06-30', '귀이염, 발바닥 습진, 고구마 알레르기', 'https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202302/08/bemypet/20230208182716232uvpm.jpg');
+insert into ad_dog values(null, '검둥이', 5, '서울 동대문구', '여', '중형견', '닥스훈트', 'O', 'O', '2023-07-20', '견과류 알레르기, 눈병', 'https://mblogthumb-phinf.pstatic.net/20150515_69/1212dalcom_14316779815088pKp4_JPEG/2015-05-15_17-03-07.jpg?type=w2');
+insert into ad_dog values(null, '흰둥이', 7, '충청북도 충주', '남', '소형견', '말티즈', 'O', 'X', '2023-10-30', '백신 알러지, 피부병', 'https://cdn.dailycc.net/news/photo/201708/382996_351552_2922.jpg');
+
+Insert pet_dog(반려견)
+
+insert into pet_dog values(null, '빵이', 1, '2021-11-13', '여', '중형견', '진돗개', 'O', 'O', '아주 건강해요!', 'https://t1.daumcdn.net/cfile/tistory/9949E333598C76C229');
+insert into pet_dog values(null, '구름', 1, '2022-09-19', '남', '소형견', '말티푸', 'O', 'O', '고구마 알러지, 간식을 많이 먹으면 설사해요', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lL7FU32w3bv8e_M4QE7SDrjFT1d7EDAr5Q&usqp=CAU');
+insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU');
+
+Insert product(상품)
+
+insert into product values(null, '군번 인식표', 3000, 20, '군대 인식표를 따라한 제품입니다! 우리 아이 강하게, 굳건하게 보이고 싶을 때 사용하세요!',3000, 1, 'https://m.guylook.co.kr/web/product/big/201612/2275_shop1_591440.jpg');
+insert into product values(null, '실리콘 인식표', 7000, 90, '우리 아이 피부가 예민한데요~ 이럴 때는 실리콘 인식표를 추천합니다!!!!!',3000, 1, 'https://foreverlove.co.kr/shopimages/jewoo/1250020001112.jpg?1680585555');
+insert into product values(null, '기본형 인식표', 2000, 100, '가장 기본적인 디자인의 인식표, 재질은 플라스틱입니다! 무난한 제품이라 추천 드립니다!',3000, 1, 'https://thumbnail.10x10.co.kr/webimage/image/basic600/193/B001936081.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false');
+insert into product values(null, '노랑이 외장칩', 1000, 120, '노랑이 외장칩은 귀여운 강아지 캐릭터로 강아지의 정보를 담아주세요!', 3000, 2, 'https://contents.creators.mypetlife.co.kr/content/uploads/2022/07/18150933/7-12.jpeg');
+insert into product values(null, '농림수산 무선칩', 12000, 1000, '농림수산부에서 만든 야심작!', 3000, 2, 'https://blog.kakaocdn.net/dn/BeQUW/btqw3OCk2Dq/Ikvt67OSpkso0dANj6Wmr1/img.png');
+insert into product values(null, 'LED 외장칩', 17000, 100, '야간 산책 시 우리 아이 찾기 힘들죠? 이겁니다 이거야!', 3000, 2, 'https://gdimg.gmarket.co.kr/2266390350/still/280?ver=1655951971');
+insert into product values(null, 'H형 하네스', 15000, 200, '슬개골 탈구 무섭죠? 이럴 때는 H형 하네스!!', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp9JRN9KsSx-7eLtpmsT6uj5BM37GRZuWYMr-LPggcKvqRj5xV0DndVzy1zcG4XHfdCJM&usqp=CAU');
+insert into product values(null, '로얄 캐닌', 30000, 50, '사료가 맛있어~ 맛있으면 로얄 캐닌~', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfavr7CjGEdFGd_8OHXPnNyr0rykAaT5OR4CBqxnxkIubq63ZN1fbEWdnPZ_ulPjK6PFA&usqp=CAU');
+insert into product values(null, '이쁜 목줄', 20000, 100, '움직이면서 줄이 쓸리면 손 아프시죠! 부드러운 스웨이드 소재로 주인님의 손을 보호 하세요!', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdfXk0zWiNWtO47lsoMiXvrGVI2I5TpAXV2g&usqp=CAU');
+
+
