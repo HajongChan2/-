@@ -38,7 +38,7 @@ $(document).ready(function(){
             <p class="content_text">안락사 예정일 :${data[0].adDead}</p>
             <p class="content_text">특이사항 :${data[0].adMemo}</p>
         </div>
-        <input type="button" class="adoption_button" value="입양 신청하러 가기 >">`
+        <input type="button" class="adoption_button" value="입양 신청하러 가기 >" onclick="location.href='/abandog/form'">`
             $("#container0").append(srt);
             console.log(data);
         }

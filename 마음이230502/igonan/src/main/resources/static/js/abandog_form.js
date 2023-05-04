@@ -5,8 +5,58 @@ function checkNumber(event) {
     
     return false;
 }
+
+
+
 $(document).ready(function(){
-    
+        let dogname = '';
+            srt = '';
+        if(localStorage.getItem('name')){
+            dogname = localStorage.getItem('name');
+        }
+        $.ajax({
+                type : "GET",
+                url : "/abandog/detail/"+dogname,
+                dataType : "json",
+                success : function(data){
+
+                console.log(data);
+
+
+`        <div id="delivery_infomation">
+             <div>
+                 <ul id="content_header" class="delivery_content">
+                     <li>상품 정보</li>
+                     <li>수량</li>
+                     <li>배송 구분</li>
+                     <li>합계</li>
+                 </ul>
+             </div>
+             <div>
+                 <ul class="delivery_content">
+                     <li class="first_content">
+                         <img src="img/product.jpg">
+                         <div class="description">
+                             <p><a href="#">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</a></p>
+                         </div>
+                     </li>
+                     <li><label for="count" class="count"></label></li><input type="hidden" name="count" id="count" value="1">
+                     <li>기본배송</li>
+                     <li>0</li>
+                 </ul>
+             </div>
+         </div>
+`
+
+
+
+
+
+
+
+
+                }
+                });
 
     $("#submit").on('click', function(){
         let name = $("#title").val();
@@ -24,7 +74,7 @@ $(document).ready(function(){
         }
         $.ajax({
             type : "POST",
-            url : "/address",
+            url : "/abandog/form/insert",
             data : application,
             success : function(data){
                 alert("성공");

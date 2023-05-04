@@ -43,7 +43,7 @@ public class MindController {
     public String abandog_form( ) {
 
 
-        return "abandog/abandog_form";
+        return "service/abandog_form";
     }
     @RequestMapping("/abandog/list")
     public String dog_adoption( ) {
@@ -80,6 +80,7 @@ public class MindController {
 
         return "product/product_detail";
     }
+
 
     @RequestMapping("/payment")
     public String payment(){
