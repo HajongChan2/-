@@ -13,7 +13,7 @@ $(document).ready(function(){
             srt = srt + `<h1 id="main_nb">보호중인 유기견 상세 정보</h1>
         <div id="abandogbox_wrap">
             <div id="abandogbox_wrap1">
-                <div class="abandogbox img"><img src="/img/dog0.jpg" alt=""></div>
+                <div class="abandogbox img"><img src="${data[0].adGallery}" alt=""></div>
             </div>
             <div class="abandogbox_wrap2">
                 <p class="content_text">등록 번호 : ${data[0].adNum}</p>
@@ -39,7 +39,7 @@ $(document).ready(function(){
             <p class="content_text">특이사항 :${data[0].adMemo}</p>
         </div>
         <input type="button" class="adoption_button" value="입양 신청하러 가기 >">`
-            $("#container0").append(srt);
+            $("#container").append(srt);
             console.log(data);
         }
     });

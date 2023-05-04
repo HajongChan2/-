@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    let dogname = '빼롱이';
-   /* if(localStorage.getItem('name')){
+  //  let dogname = '빼롱이';
+    if(localStorage.getItem('name')){
         dogname = localStorage.getItem('name');
-    }*/
+    }
     srt = '';
     $.ajax({
         type : "GET",
@@ -18,8 +18,8 @@ $(document).ready(function(){
 
         <div class="dogbox_wrap">
             <div id="dogbox_wrap1">
-                <div class="dogbox_img"></div>
-                <div class="dogbox_img"></div>
+                <div class="dogbox_img"><img src="${data[0].pdGallery}"></div>
+                <div class="dogbox_img"><img src="${data[0].pdGallery}"></div>
             </div>
             <div id="dogbox_wrap2">
                 <p class="content_text">이름 : ${data[0].pdName}</p>
