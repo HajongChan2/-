@@ -24,7 +24,7 @@ Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50),
 
 반려견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/  입양 날짜 date/ 성별 varchar(3) / 종 varchar(6) / 품종 varchar(50)/ 접종여부 char(1)/ 중성화 여부 char(1)/ 특이사항 varchar(1500)(500자) / 사진 (url)
 
-Create table pd_dog (pd_num int primary key auto_increment, pd_name varchar(50), pd_age varchar(2), pd_sex varchar(3), pd_size varchar(6), pd_spec varchar(50), pd_vac char(1), pd_neut char(1), pd_dead date, pd_memo varchar(1500), pd_gallery varchar(1500));
+Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age varchar(2),pet_day date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery varchar(1500));
 
 펫세사리 - 고유번호 / 상품 이름 varchar(50)/ 가격 int(6)/ 재고 int(3) / 평점(보류) / 상세설명 varchar(1500)/ 배송비 int(5)/ 사진 url
 
