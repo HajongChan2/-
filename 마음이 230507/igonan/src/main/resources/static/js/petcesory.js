@@ -1,11 +1,8 @@
 let str = '';
 $(document).ready(function(){
-    $(".pet_items").click(function(e){
-        e.preventDefault();
-    });
-    let load = true;
 
-    if(load){
+    let a = true;
+    if(a){
         $.ajax({
             type: "POST",
             url: "/petcesary/tag",
@@ -36,9 +33,10 @@ $(document).ready(function(){
             $("#container2").append(str);
         }
 
-        load = false;
+        a = false;
     }
     $("#tag").on("click", function(){
+        $(".line").animate({left:0},"fast");
         $("#container2").empty();
         $.ajax({
             type: "POST",
@@ -72,6 +70,7 @@ $(document).ready(function(){
     });
 
     $("#chip").on("click", function(){
+        $(".line").animate({left:'480px'},"fast");
         $("#container2").empty();
         $.ajax({
             type: "POST",
@@ -104,6 +103,7 @@ $(document).ready(function(){
         }
     });
     $("#etc").on("click", function(){
+        $(".line").animate({left:'960px'},"fast");
         $("#container2").empty();
         $.ajax({
             type: "POST",
