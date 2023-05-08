@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $.ajax({
         type : "POST",
-        url : "/product/tag",
+        url : "/petcesary/tag",
         dataType : "json",
         success : function(data){
             console.log(data);
@@ -9,12 +9,19 @@ $(document).ready(function(){
         }
     });
     function productTag(product){
-        product.map(function(Tag){
+        product.map(function(tag){
             let str = '';
+            let addr = "/product/detail";
 
             str += `
-                
-            `
+            <div class="petcesory-wrap">
+            <a href="${addr}">
+                        <div class="petcesory-image">
+                            <img src="${tag.prGallery}" alt="${tag.prName}">
+                            <p>${tag.prName}</p>
+                        </div>
+                    </a>                    
+                </div>`
 
             $("#container2").append(str);
         });
