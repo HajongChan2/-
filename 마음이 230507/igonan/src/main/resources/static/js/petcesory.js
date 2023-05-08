@@ -3,7 +3,41 @@ $(document).ready(function(){
     $(".pet_items").click(function(e){
         e.preventDefault();
     });
+    let load = true;
 
+    if(load){
+        $.ajax({
+            type: "POST",
+            url: "/petcesary/tag",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                productTag(data);
+            }
+        });
+        function productTag(product){
+            str = '';
+            product.map(function(tag){
+
+                let addr = "/product/detail";
+
+                str += `
+            <div class="petcesory-wrap">
+            <a href="${addr}" + "/" + "${tag.prName}">
+                        <div class="petcesory-image">
+                            <img src="${tag.prGallery}" alt="${tag.prName}">
+                            <p>${tag.prName}</p>
+                        </div>
+                    </a>                    
+                </div>`
+
+
+            });
+            $("#container2").append(str);
+        }
+
+        load = false;
+    }
     $("#tag").on("click", function(){
         $("#container2").empty();
         $.ajax({
