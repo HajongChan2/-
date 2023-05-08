@@ -1,1 +1,0 @@
-insert into ad_dog values (null,'마이크 타이슨',77,'청량리','여','소형','아메리카큰주머니쥐','O','O','2036-02-01','주먹이 빨라요','https://raw.githubusercontent.com/HajongChan2/abandoned_dog_site/main/%EB%A7%88%EC%9D%8C%EC%9D%B4230502/igonan/src/main/resources/static/img/d0365f123d564798a1a2287ac005024c.png');
