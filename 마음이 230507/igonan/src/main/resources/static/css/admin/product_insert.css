@@ -1,0 +1,105 @@
+.center_line {
+    border:solid 0.1px #16448E;
+    margin: 50px 0 100px 0;
+}
+#content_top_font{
+    padding-bottom: 20px;
+    border-bottom:solid 1px #16448E;
+}
+#photo_sign_up{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+#photo_sign_up > img{
+    width: 300px;
+    height: 300px;
+    margin: 0 60px;
+}
+#image_choice, #image_choice > label > img{
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+}
+#imageFile{
+    display: none;
+}
+#iamge_caution{
+    color:#999;
+    font-size: 15px;
+    padding-top:15px;
+    text-align: left;
+    padding-bottom: 20px;
+}
+#abandoned_info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.infomation, .whether{
+    margin-left: 0;
+    padding:25px 0;
+}
+.infomation{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+.infomation > input{
+    width: 350px;
+    height: 30px;
+    outline-color:#999;
+    border-radius: 5px;
+    border:solid 1px #6b6b6b;
+}
+.whether{
+    display: flex;
+    position: relative;
+}
+.whether > input{
+    width: 20px;
+    height: 20px;
+    margin: 0 20px;
+}
+.whether > textarea{
+    width: 500px;
+    height: 210px;
+    resize: none;
+    padding:5px;
+    outline-color:#999;
+    border-radius: 5px;
+    border:solid 1px #6b6b6b;
+    margin-left: 20px;
+}
+.textLengthWrap{
+    position: absolute;
+    top: 0;
+    right:0;
+}
+.textLengthWrap > p{
+    font-size: 13px;
+    display: inline-block;
+    color:#999;
+}
+#submit{
+    width: 300px;
+    height: 50px;
+    background: #123773;
+    border-radius: 10px;
+    color:#fff;
+    font-weight: 400;
+    font-size: 25px;
+    cursor: pointer;
+}
+.register_button{
+    font-size: 20px;
+    color: #ffffff;
+    border: solid 1px;
+    border-radius: 7px;
+    background-color: #113267;
+    width: 300px;
+    height: 40px;
+    margin: 50px 0 0 50px;
+    cursor: pointer;
+}

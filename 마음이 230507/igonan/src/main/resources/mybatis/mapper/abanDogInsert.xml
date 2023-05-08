@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.igonan.mindmapper.AbanDogmapper"> <!-- 해당 mapper를 사용하려는 파일 경로-->
+
+    <select id="mindAbanDogInsert" > <!-- 해당 id를 호출하면 아래의 구문 실행-->
+        insert into a_dog(ad_num,ad_name,ad_age,ad_area ,ad_sex,ad_size,ad_spec,ad_vac,ad_neut,ad_dead,admemo,ad_gallery) <!-- 테이블과 컬럼명 -->
+        values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7},#{param8}, #{param9},#{param10}, #{param11})
+        <!--데이터 순서에 맞춰 파라미터 순서 설정 -->
+    </select>
+<!--  a_neut | a_dead     | a_memo                           | a_gallery-->
+</mapper>
