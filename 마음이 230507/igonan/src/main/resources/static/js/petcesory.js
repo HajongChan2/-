@@ -103,4 +103,36 @@ $(document).ready(function(){
             $("#container2").append(str);
         }
     });
+    $("#etc").on("click", function(){
+        $("#container2").empty();
+        $.ajax({
+            type: "POST",
+            url: "/petcesary/etc",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                productEtc(data);
+            }
+        });
+        function productEtc(product){
+            str = '';
+            product.map(function(etc){
+
+                let addr = "/product/detail";
+
+                str += `
+                 <div class="petcesory-wrap">
+                    <a href="${addr}/${etc.prName}">
+                        <div class="petcesory-image">
+                            <img src="${etc.prGallery}" alt="${etc.prName}">
+                            <p>${etc.prName}</p>
+                        </div>
+                    </a>                    
+                </div>`
+
+
+            });
+            $("#container2").append(str);
+        }
+    });
 });
