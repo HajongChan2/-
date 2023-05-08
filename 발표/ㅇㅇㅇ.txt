@@ -1,0 +1,21 @@
+기능 : 강아지 등록히기 -  반려견 
+		     - 유기견 
+
+
+보호자 이름 
+전화번호 
+강이지 이름 
+등록번호 
+품종
+상세 설명 
+
+
+등록번호 같이 쓰기 
+
+
+반려견등록/찾기	유기견		펫세사리		고객센터
+등록		입양		인식표		자주묻는질문	
+찾기		상담		악세사리		1:1문의하기
+사망신고						공지사항
+
+	https://www.figma.com/file/6JQSICJSMkYPMYpUxHJuyx/%EB%A7%88%EC%9D%8C%EC%9D%B4-(%EC%9C%A0%EA%B8%B0%EA%B2%AC-%EC%82%AC%EC%9D%B4%ED%8A%B8)?node-id=180%3A153&t=TldFPO3H0ktymmjP-1
