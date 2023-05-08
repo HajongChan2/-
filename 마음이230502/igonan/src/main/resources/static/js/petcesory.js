@@ -15,6 +15,8 @@ $(document).ready(function(){
             str += `
                 
             `
+
+            $("#container2").append(str);
         });
     }
 });
