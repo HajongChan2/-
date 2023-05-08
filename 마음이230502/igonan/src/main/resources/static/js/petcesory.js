@@ -1,6 +1,4 @@
 $(document).ready(function(){
-
-
     $.ajax({
         type : "POST",
         url : "/product/tag",
@@ -10,7 +8,13 @@ $(document).ready(function(){
             productTag(data);
         }
     });
+    function productTag(product){
+        product.map(function(Tag){
+            let str = '';
 
-    function ProductTag () {
+            str += `
+                
+            `
+        });
     }
-}
+});
