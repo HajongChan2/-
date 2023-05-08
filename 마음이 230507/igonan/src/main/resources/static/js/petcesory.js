@@ -23,7 +23,7 @@ $(document).ready(function(){
 
                 str += `
             <div class="petcesory-wrap">
-            <a href="${addr}" + "/" + "${tag.prName}">
+            <a href="${addr}/${tag.prName}">
                         <div class="petcesory-image">
                             <img src="${tag.prGallery}" alt="${tag.prName}">
                             <p>${tag.prName}</p>
@@ -57,7 +57,7 @@ $(document).ready(function(){
 
                 str += `
             <div class="petcesory-wrap">
-            <a href="${addr}" + "/" + "${tag.prName}">
+            <a href="${addr}/${tag.prName}">
                         <div class="petcesory-image">
                             <img src="${tag.prGallery}" alt="${tag.prName}">
                             <p>${tag.prName}</p>
@@ -90,7 +90,7 @@ $(document).ready(function(){
 
                 str += `
                  <div class="petcesory-wrap">
-                    <a href="${addr}" +"/" + "${chip.prName}">
+                    <a href="${addr}/${chip.prName}">
                         <div class="petcesory-image">
                             <img src="${chip.prGallery}" alt="${chip.prName}">
                             <p>${chip.prName}</p>
