@@ -8,9 +8,10 @@ $(document).ready(function(){
             productTag(data);
         }
     });
+    let str = '';
     function productTag(product){
         product.map(function(tag){
-            let str = '';
+
             let addr = "/product/detail";
 
             str += `
@@ -26,4 +27,15 @@ $(document).ready(function(){
             $("#container2").append(str);
         });
     }
+    $(".pet_items1").on("click", function(){
+        $.ajax({
+            type: "POST",
+            url: "/petcesary/tag",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                productTag(data);
+            }
+        });
+    });
 });
