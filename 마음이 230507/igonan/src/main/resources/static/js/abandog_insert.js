@@ -41,9 +41,7 @@ $(document).ready(function(){
         
         // 글자수 제한
         if (content.length > 500) {
-            // 200자 부터는 타이핑 되지 않도록
             $(this).val($(this).val().substring(0, 500));
-            // 200자 넘으면 알림창 뜨도록
             alert('글자수는 500자까지 입력 가능합니다.');
         };
     });

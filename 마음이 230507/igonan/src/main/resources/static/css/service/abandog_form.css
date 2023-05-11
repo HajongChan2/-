@@ -104,3 +104,13 @@
     position: absolute;
     right: -160px;
 }
+.count{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.count > p{
+    font-size: 10pt;
+    color:#c5c5c5;
+    display: inline-block;
+}
