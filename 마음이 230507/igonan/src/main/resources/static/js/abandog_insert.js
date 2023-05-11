@@ -36,12 +36,13 @@ $(document).ready(function(){
         if (content.length == 0 || content == '') {
             $('.textCount').text('0자');
         } else {
-            $('.textCount').text(content.length + '자');
+            $('.textCount').text(content.length);
         }
         
         // 글자수 제한
         if (content.length > 500) {
             $(this).val($(this).val().substring(0, 500));
+            $('.textCount').text(500);
             alert('글자수는 500자까지 입력 가능합니다.');
         };
     });
