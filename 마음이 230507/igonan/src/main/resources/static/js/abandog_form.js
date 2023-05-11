@@ -14,7 +14,7 @@ $(document).ready(function(){
 
         // 글자수 세기
         if (content.length == 0 || content == '') {
-            $('.textCount').text('0자');
+            $('.textCount').text('0');
         } else {
             $('.textCount').text(content.length);
         }
