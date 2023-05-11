@@ -39,35 +39,36 @@
 .infomation{
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 35%;
     position: relative;
 }
+.infomation > p{
+    width: 30%;
+}
 .infomation > input{
-    width: 320px;
+    width: 70%;
     height: 20px;
-    padding:5px 5px 5px 20px;
+    padding:5px;
     outline-color:#999;
     border-radius: 5px;
     border:solid 1px #6b6b6b;
 }
 .whether{
     display: flex;
+    width: 35%;
     position: relative;
 }
-.whether > input{
-    width: 20px;
-    height: 20px;
-    margin: 0 20px;
+.whether > p{
+    width: 30%;
 }
 .whether > textarea{
-    width: 500px;
+    width: 70%;
     height: 210px;
     resize: none;
     padding:5px;
     outline-color:#999;
     border-radius: 5px;
     border:solid 1px #6b6b6b;
-    margin-left: 20px;
 }
 .textLengthWrap{
     position: absolute;
