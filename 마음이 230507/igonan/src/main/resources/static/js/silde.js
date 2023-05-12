@@ -5,7 +5,7 @@ $(function() {
         prevButton: '.swiper-button-prev',
         infinite: true,
         autoplay: true,
-        speed: 1500,
+        speed: 2500,
         slidesPerView: 1,
 		paginationClickable: true,
         loop: true
