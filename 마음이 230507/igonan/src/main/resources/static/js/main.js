@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     $.ajax({
         type : "POST",
-        url : "/main",
+        url : "/main/abandoglist",
         dataType : "json",
         success : function(data){
             console.log(data);
@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     function mainList(dogList) {
         let name = '';
-        let addr = "/abandog/list";
+        let addr = "/abandog/detail";
         let str = '';
         dogList.map(function (dog) {
             str +=
@@ -26,6 +26,7 @@ $(document).ready(function(){
                     </a>                    
                 </div>`
         });
+        $("#container0").append(str);
     }
 
 });
