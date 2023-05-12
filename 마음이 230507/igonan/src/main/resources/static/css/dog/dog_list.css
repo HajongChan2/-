@@ -21,27 +21,21 @@ select {
     padding: .5em .3em;
     font-size: 15px;
     border: 1px solid #999;
-    background: url('../img/arrow.jpg') no-repeat 95% 50%;
+    background: url('img/arrow.jpg') no-repeat 95% 50%;
     border-radius: 0px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
 .pet_dog-wrap {
-    display: inline-block;
-    text-align: center;
-    width: 350px;
-    margin: 50px;
+    width: calc(100% / 12 * 3);
     cursor: pointer;
-}
-.pet_dog-text{
-    height: 60px;
-    font-family: 'NanumSquareNeo-Variable';
-    text-align: center;
-    font-size: 32px;
+    padding:50px 20px 20px 20px;
+    font-size: 20px;
+    margin: 0 2% 0 3%;
 }
 .pet_dog-wrap img {
-    width: 350px;
+    width: 100%;
     height: 330px;
     background-color: #d8d8d8;
     border-radius: 5% 5% 0 0;
@@ -50,11 +44,8 @@ select {
 #container1{
     width: 1440px;
     height: 100%;
-    margin: auto;
-    text-align: center;
 }
 #container2{
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-wrap: wrap;
 }

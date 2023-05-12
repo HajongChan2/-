@@ -18,10 +18,10 @@ $(document).ready(function(){
             str +=
                 `<div class="pet_dog-wrap">
                     <a href="${addr}">
-                    <div class="pet_dog-image"><img src="${petdog.petGallery}" alt="${petdog.petName}"></div>
-                    <div class="pet_dog-text">
+                    <div class="pet_dog-image">
+                        <img src="${petdog.petGallery}" alt="${petdog.petName}">
                         <p>${petdog.petName}</p>
-                    </div>
+                        </div>
                 </div>
 `
 
