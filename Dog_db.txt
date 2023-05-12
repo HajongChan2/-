@@ -70,8 +70,8 @@ insert into user values(null, '최아찬', 'imuser', '2222', '01078979999', '서
 
 Insert nonmem (비회원)
 
-insert into user values(null, '장산수','01024245656');
-insert into user values(null, '구자창','01098987676');
+insert into nonmem values(null, '장산수','01024245656');
+insert into nonmem values(null, '구자창','01098987676');
 
 
 Insert ad_dog(유기견)
