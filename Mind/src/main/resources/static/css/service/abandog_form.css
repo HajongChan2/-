@@ -1,0 +1,117 @@
+#content_top_font{
+    padding-bottom: 20px;
+    border-bottom:solid 1px #16448E;
+}
+#photo_sign_up{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+}
+#photo_sign_up > img{
+    width: 300px;
+    height: 300px;
+    margin: 0 60px;
+}
+#image_choice, #image_choice > label > img{
+    width: 300px;
+    height: 300px;
+    margin-left: 0;
+}
+#imageFile{
+    display: none;
+}
+#iamge_caution{
+    color:#999;
+    font-size: 15px;
+    padding-top:15px;
+    text-align: left;
+}
+#abandoned_info{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.infomation, .whether{
+    margin-left: 0;
+    padding:25px 0;
+}
+.infomation{
+    display: flex;
+    align-items: center;
+    width: 35%;
+    position: relative;
+}
+.infomation > p{
+    width: 30%;
+}
+.infomation > input{
+    width: 70%;
+    height: 30px;
+    padding: 5px;
+    outline-color: #999;
+    border-radius: 5px;
+    border: solid 1px #6b6b6b;
+}
+.whether{
+    display: flex;
+    width: 35%;
+    position: relative;
+}
+.whether > p{
+    width: 30%;
+}
+.whether > textarea{
+    width: 70%;
+    height: 400px;
+    resize: none;
+    padding: 5px;
+    outline-color: #999;
+    border-radius: 5px;
+    border: solid 1px #6b6b6b;
+    line-height: 20px;
+}
+.textLengthWrap{
+    position: absolute;
+    top: 0;
+    right:0;
+}
+.textLengthWrap > p{
+    font-size: 13px;
+    display: inline-block;
+    color:#999;
+}
+#submit{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+    color: #ffffff;
+    border: solid 1px;
+    border-radius: 7px;
+    background-color: #113267;
+    font-weight: 400;
+    cursor: pointer;
+}
+#find {
+    font-size: 13px;
+    width: 100px;
+    height: 35px;
+    color: #ffffff;
+    background-color: #113267;
+    padding: 0;
+    cursor: pointer;
+}
+.find_btn{
+    position: absolute;
+    right: -120px;
+}
+.count{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.count > p{
+    font-size: 10pt;
+    color:#c5c5c5;
+    display: inline-block;
+}
