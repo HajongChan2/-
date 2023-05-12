@@ -17,6 +17,10 @@ body::-webkit-scrollbar {
     background-color: #16448E;
     border-radius: 5px;
     color: #fff;
+    display: none;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
 }
 #container0 {
     width:1440px;
