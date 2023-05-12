@@ -9,9 +9,13 @@
 Create database mind;
 Use mind;
 
+회원(유저) - user 고유번호 / 이름 / 아이디 / 비밀번호 / 전화번호 / 주소 / 상세주소 /
+
+Create table user (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone varchar(11), addr varchar(150), saddr varchar(150));
+
 비회원 상품조회 - 고유번호 / 구매자 이름 varchar(50) / 휴대폰 char(11) 
 
-Create table members (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
+Create table nonmem (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
 
 (상품 이름 /수량 / 가격 / ) 
 유기견 입양신청 - 고유번호 / 보호자 이름 varchar(50) / 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 희망사유 varchar(750)/ 
