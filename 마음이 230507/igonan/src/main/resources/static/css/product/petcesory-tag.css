@@ -28,11 +28,11 @@
 
 .pet_items{
     background-color: #ffffff;
-    width: 480px;
+    width: 370px;
     height: 80px;
     border: none;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     position: relative;
 }
@@ -80,7 +80,7 @@
 .line{
     border-bottom:solid 3px #2d6de3;
     position: absolute;
-    width: 480px;
+    width: 370px;
     bottom: 0px;
     left: 0;
 }
