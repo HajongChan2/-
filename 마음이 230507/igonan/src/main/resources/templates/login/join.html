@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/join.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/join.js"></script>
+    <script src="js/phone.js"></script>
+    <script src="js/addr.js"></script>
+</head>
+
+<body>
+<div class="top">top</div>
+<header id="header" th:replace="publicHF/header::header"></header>
+<div class="line"></div>
+
+        <div id="container0">
+                <div id="content_top_font">
+                    <h2>회원가입</h2>
+                </div>
+                <form onsubmit="return false">
+                        <div id="join_info">
+                        <div class="infomation">
+                            이름<input type="text" name="user_name" id="user_name" placeholder="이름">
+                        </div>
+                        <div class="infomation">
+                            아이디<input type="text" name="id" id="id" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                        </div>
+                        <div class="infomation">
+                            비밀번호<input type="password" name="pw" id="pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                        </div>
+                        <div class="infomation">
+                            비밀번호 확인<input type="password" name="pwcheck" id="pwcheck">
+                        </div>
+                        <div class="infomation">
+                            휴대전화<input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
+                        </div>
+                            <div id="address" class="infomation">
+                            주소
+                            <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
+                            <button type="button" id="find">우편번호 찾기</button>
+                        </div>
+                        <div class="infomation">
+                            상세주소
+                            <input id="address_detail" type="text"name="saddr" placeholder="상세주소">
+                         </div>
+                    </div>
+                   <div class="bottom_line"></div>
+
+                    <button id="submit" onclick="checkAll()">가입하기 </button>
+                </form>
+            </div>
+        </div>
+<footer id="footer" th:replace="publicHF/footer::footer">
+    <div></div>
+</footer>
+</body>
+
+</html>

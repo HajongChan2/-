@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/member_info.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+<div class="top">top</div>
+<header id="header" th:replace="publicHF/header::header"></header>
+<div class="line"></div>
+
+        <div id="container0">
+                <div id="content_top_font">
+                    <h2>회원 정보 수정</h2>
+                </div>
+                <form onsubmit="return false">
+                        <div id="join_info">
+                        <div class="infomation">
+                            이름<input type="text" name="title" id="title">
+                        </div>
+                        <div class="infomation">
+                            아이디<input type="text" name="id" id="id">
+                        </div>
+                        <div class="infomation">
+                            기존 비밀번호<input type="text" name="pw" id="pw">
+                        </div>
+                        <div class="infomation">
+                            새로운 비밀번호<input type="text" name="pw" id="pw">
+                        </div>
+                        <div class="infomation">
+                            휴대전화<input type="text" onkeypress='return checkNumber(event)' name="register" id="register">
+                        </div>
+                        <div class="infomation">
+                            주소<input type="text" name="area" id="member_addr" disabled>
+                            <div class="find_btn">
+                                <input type="button" id="find" value="우편번호 찾기">
+                            </div>
+                        </div>
+                        <div class="infomation">
+                            상세주소<input type="text" name="kind" id="kind">
+                        </div>
+                    </div>
+                    <div id="line"></div>
+                    <button id="submit">수정하기</button>
+                </form>
+            </div>
+            </div>
+<footer id="footer" th:replace="publicHF/footer::footer">
+    <div></div>
+</footer>
+</body>
+
+</html>

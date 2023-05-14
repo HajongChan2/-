@@ -1,0 +1,46 @@
+.idpw_input{
+    display: flex;
+    flex-direction: column;
+}
+#id{
+    width: 320px;
+    height: 30px;
+    outline-color: rgb(153, 153, 153);
+    padding: 5px 5px 5px 20px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(107, 107, 107);
+    border-image: initial;
+}
+#pw{
+    width: 320px;
+    height: 30px;
+    outline-color: rgb(153, 153, 153);
+    padding: 5px 5px 5px 20px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(107, 107, 107);
+    border-image: initial;
+}
+.login_bt{
+    width: 347px;
+    height: 35px;
+    background-color: #113267;
+    border: none;
+    font-size: 17px;
+    color: #eee;
+    margin-top: 25px;
+    cursor: pointer;
+    
+}
+.join_t{
+    display: flex;
+    width: 347px;
+    font-size: 13px;
+    color: #7b7b7b;
+    justify-content: flex-end;
+    margin-top: 10px;
+    cursor: pointer;
+}
