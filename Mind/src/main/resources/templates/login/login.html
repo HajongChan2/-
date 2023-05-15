@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/member/login.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+<header id="header" th:replace="publicHF/header::header"></header>
+    <div class="line"></div>
+
+        <div id="container0">
+            <h1 id="main_nb">회원 로그인</h1>
+
+            <div class="idpw_input">
+                <input type="text" name="id" id="id" placeholder="아이디" >
+                <input type="password" name="pw" id="pw" placeholder="비밀번호">
+                <input type="button" class="login_bt" value="로그인">
+                <div class="join_t">회원가입</div>
+            </div>
+        </div>
+
+<footer id="footer" th:replace="publicHF/footer::footer">
+    <div></div>
+</footer>
+</body>
+
+</html>

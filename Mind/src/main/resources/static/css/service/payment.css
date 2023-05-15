@@ -81,13 +81,13 @@
     justify-content: space-between;
 }
 #total_payment > h4{
-    font-size: 25px;
+    font-size: 22px;
     color:#16448E;
     font-style: normal;
     font-weight: 400;
 }
 #total_payment > p{
-    font-size: 30px;
+    font-size: 25px;
 }
 #payment_method{
     display: flex;
@@ -112,7 +112,7 @@
     color:#16448E;
     font-style: normal;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 20px;
 }
 #submit{
     margin:50px 0;

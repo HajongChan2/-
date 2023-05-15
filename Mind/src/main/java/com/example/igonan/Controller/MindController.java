@@ -8,15 +8,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MindController {
 
 
-    @RequestMapping("/mmain")
+    @RequestMapping("/")
     public String mmain( ) {
 
-        return "vvv/main";
+        return "main";
     }
     @RequestMapping("/main")
     public String main( ) {
 
         return "main";
+    }
+    @RequestMapping("/login")
+    public String login( ) {
+
+        return "login/login";
+    }
+    @RequestMapping("/join")
+    public String join( ) {
+
+        return "login/join";
+    }
+    @RequestMapping("/mypage")
+    public String mypage( ) {
+
+        return "login/member_info";
     }
     @RequestMapping("/info")
     public String information( ) {

@@ -44,9 +44,9 @@ public class InsertController {
         }
 
         paymentmapper.mindpaymentinsert(   //구매자 주문정보를 insert하는 mindpaymentinsert 호출과 파라미터 값 입력
-                rq.getParameter("user_name"),
-                rq.getParameter("phone"),rq.getParameter("addr"),
-                rq.getParameter("saddr"),rq.getParameter("memo"),
+                rq.getParameter("name"),
+                rq.getParameter("phone"),rq.getParameter("address"),
+                rq.getParameter("address_detail"),rq.getParameter("memo"),
                 //Integer.parseInt(rq.getParameter("p_count")),
                 pr_count,rq.getParameter("payment_method")
         );
