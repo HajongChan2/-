@@ -9,8 +9,6 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/join.js"></script>
     <script src="js/phone.js"></script>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="js/addr.js"></script>
 </head>
 
 <body>
@@ -32,35 +30,44 @@
                     <h2>회원가입</h2>
                 </div>
                 <form onsubmit="return false">
-                        <div id="join_info">
-                        <div class="infomation">
-                            이름<input type="text" name="user_name" id="user_name" placeholder="이름">
+                        <div id="join_infomation">
+                        <div class="join_info">
+                            <p>이름</p>
+                            <input type="text" name="user_name" id="user_name" placeholder="이름">
                         </div>
-                        <div class="infomation">
-                            아이디<input type="text" name="id" id="id" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                        <div class="join_info">
+                            <p>아이디</p>
+                            <input type="text" name="id" id="id" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                            <button type="button" id="idcheck">중복확인</button>
                         </div>
-                        <div class="infomation">
-                            비밀번호<input type="password" name="pw" id="pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                        <div class="join_info">
+                            <p>비밀번호</p>
+                            <input type="password" name="pw" id="pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
                         </div>
-                        <div class="infomation">
-                            비밀번호 확인<input type="password" name="pwcheck" id="pwcheck">
+                        <div class="join_info">
+                            <p>비밀번호 확인</p>
+                            <input type="password" name="pwcheck" id="pwcheck">
                         </div>
-                        <div class="infomation">
-                            휴대전화<input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
+                        <div class="join_info">
+                            <p>휴대전화</p>
+                            <input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
                         </div>
-                            <div id="address" class="infomation">
-                            주소
+                            <div id="address" class="join_info">
+                            <p>주소</p>
                             <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
                             <button type="button" id="find">우편번호 찾기</button>
                         </div>
-                        <div class="infomation">
-                            상세주소
+                        <div class="join_info">
+                            <p>상세주소</p>
                             <input id="address_detail" type="text"name="saddr" placeholder="상세주소">
                          </div>
                     </div>
                    <div class="bottom_line"></div>
-
-                    <button id="submit" onclick="checkAll()">가입하기 </button>
+                   
+                   <div id="sub_re">
+                   <input type ="button" id="return" value="취소">
+                   <input type ="button" id="submit" onclick="checkAll()" value="가입하기">
+                </div>
                 </form>
             </div>
         </div>
@@ -68,4 +75,6 @@
                 <div id="footer"></div>
             </footer>
 </body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/addr.js"></script>
 </html>
