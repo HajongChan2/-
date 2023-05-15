@@ -11,7 +11,7 @@ public class UserDTO {
     private String name;
     private String id;
     private String pw;
-    private String uPhone;
+    private String phone;
     private String addr;
     private String saddr;
 
@@ -32,8 +32,8 @@ public class UserDTO {
         return pw;
     }
 
-    public String getuPhone() {
-        return uPhone;
+    public String getphone() {
+        return phone;
     }
 
     public String getAddr() {

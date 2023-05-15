@@ -16,6 +16,6 @@ public interface Usermapper {
     List<UserDTO> userlist();
     // 모든 애완견의 정보를 List에 담음
 
-    @Select("select count(*) from user u where u.id = #{userid} ;")
+    @Select("select * from user u where u.id = #{userid} ;")
     List<UserDTO> OneUser(String userid);
 }
