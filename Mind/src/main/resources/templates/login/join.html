@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/join.css">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/join.js"></script>
+    <script src="js/phone.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="js/addr.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <img id="logo" src="img\logo.png">
+        <h1 id="name">마음이</h1>
+
+        <ul id="nb_name">
+            <li><a href="">입양 안내</a></li>
+            <li><a href="">반려견 조회</a></li>
+            <li><a href="">유기견 분양</a></li>
+            <li><a href="">펫세사리</a></li>
+        </ul>
+    </header>
+    <div class="line"></div>
+
+        <div id="container0">
+                <div id="content_top_font">
+                    <h2>회원가입</h2>
+                </div>
+                <form onsubmit="return false">
+                        <div id="join_info">
+                        <div class="infomation">
+                            이름<input type="text" name="user_name" id="user_name" placeholder="이름">
+                        </div>
+                        <div class="infomation">
+                            아이디<input type="text" name="id" id="id" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                        </div>
+                        <div class="infomation">
+                            비밀번호<input type="password" name="pw" id="pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                        </div>
+                        <div class="infomation">
+                            비밀번호 확인<input type="password" name="pwcheck" id="pwcheck">
+                        </div>
+                        <div class="infomation">
+                            휴대전화<input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
+                        </div>
+                            <div id="address" class="infomation">
+                            주소
+                            <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
+                            <button type="button" id="find">우편번호 찾기</button>
+                        </div>
+                        <div class="infomation">
+                            상세주소
+                            <input id="address_detail" type="text"name="saddr" placeholder="상세주소">
+                         </div>
+                    </div>
+                   <div class="bottom_line"></div>
+
+                    <button id="submit" onclick="checkAll()">가입하기 </button>
+                </form>
+            </div>
+        </div>
+            <footer>
+                <div id="footer"></div>
+            </footer>
+</body>
+</html>

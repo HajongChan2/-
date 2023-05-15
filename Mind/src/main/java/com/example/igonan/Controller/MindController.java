@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MindController {
 
 
-    @RequestMapping("/mmain")
+    @RequestMapping("/")
     public String mmain( ) {
 
-        return "vvv/main";
+        return "main";
     }
     @RequestMapping("/main")
     public String main( ) {

@@ -10,12 +10,11 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/silde.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/topButton.js"></script>
 </head>
 
 <body>
-<div class="top">top</div>
 <header id="header" th:replace="publicHF/header::header"></header>
-    <div class="line"></div>
 
     <div id="main_slider" class="swiper-container">
         <div class="swiper-wrapper">
@@ -31,41 +30,41 @@
     </div>
 
     <div id="container0">
-        <div id="container">
+        <div class="container">
             <div class="box" id="box1"></div>
             <div class="box_content2">
                 <div class="box_content">
                     <p class="box_text">아이들의 보금자리가 되어주고 싶다면 먼저 읽어주세요.</p>
-                    <input type="button" class="box_button" value="입양 안내 사항 보러가기">
+                    <input type="button" class="box_button" value="입양 안내 사항 보러가기" onclick="location.href='/info' ">
                 </div>
             </div>
         </div>
 
-        <div id="container">
+        <div class="container">
             <div class="box" id="box2"></div>
             <div class="box_content2">
                 <div class="box_content">
                     <p class="box_text">마음이에서는 우리의 반려견을 조회할 수 있어요.</p>
-                    <input type="button" class="box_button" value="반려견 조회 하러 가기">
+                    <input type="button" class="box_button" value="반려견 조회 하러 가기" onclick="location.href='/dog/list' ">
                 </div>
             </div>
         </div>
-        <div id="container">
+        <div class="container">
             <div class="box" id="box3"></div>
             <div class="box_content2">
                 <div class="box_content">
                     <p class="box_text">우리 마음이에서만 볼 수 있는 아이들을 보러가요.</p>
-                    <input type="button" class="box_button" value="마음이 아이들 보러가기">
+                    <input type="button" class="box_button" value="마음이 아이들 보러가기" onclick="location.href='/abandog/list' ">
                 </div>
             </div>
         </div>
 
-        <div id="container">
+        <div class="container">
             <div class="box" id="box4"></div>
             <div class="box_content2">
                 <div class="box_content">
                     <p class="box_text">우리 반려견들을 알아 볼 수 있는 아이템들이 있어요.</p>
-                    <input type="button" class="box_button" value="다양한 펫 아이템 보러가기">
+                    <input type="button" class="box_button" value="다양한 펫 아이템 보러가기" onclick="location.href='/petcesary' ">
                 </div>
             </div>
         </div>
@@ -73,57 +72,9 @@
 
     <div id="dog_bg">
         <h1 class="dog_t">마음이 유기견 안내</h1>
-        <div id="container0">
-            <div class="dog-wrap">
-                <div class="dog-image"></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src=""></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src=""></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src=""></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src=""></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src="" ></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src=""></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
-            <div class="dog-wrap">
-                <div class="dog-image"><img src=""></div>
-                <div class="dog-name">
-                    <p></p>
-                </div>
-            </div>
+        <div id="container3">
         </div>
-    </div>
+        <input type="button" id="add_bt" value="더보기">
 
 
     <h1 class="shop_t">인기 펫세사리 아이템</h1>
@@ -166,9 +117,9 @@
         </div>
     </div>
 
-    <footer id="footer" th:replace="publicHF/footer::footer">
-        <div></div>
-    </footer>
+        <footer id="footer" th:replace="publicHF/footer::footer">
+            <div></div>
+        </footer>
 </body>
 
 </html>
