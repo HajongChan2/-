@@ -67,3 +67,34 @@ const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
                 }
                 return true;
             }
+
+
+$(document).ready(function(){
+    $("#submit").click(function(){
+            let name = $("#user_name").val();
+            let id = $("#id").val();
+            let pw = $("#pw").val();
+            let phone = $("#txtPhone").val();
+            let addr = $("#member_addr").val();
+            let addr_detail = $("#address_detail").val();
+
+            const join_insert = {
+                name : name,
+                id : id,
+                pw : pw,
+                phone : phone,
+                addr : addr,
+                addr_detail : addr_detail
+            };
+
+            $.ajax({
+            type: "POST",
+            url : "join/insert",
+            data: join_insert,
+            datatype: "json",
+            success : function(data){
+
+            }
+        });
+    });
+});
