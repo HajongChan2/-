@@ -24,13 +24,13 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @GetMapping("/users")
-    public List<PaymentDTO> AllUser(){
+    @GetMapping("/userbuylists")
+    public List<PaymentDTO> AllUserbuylist(){
         return  paymentService.getUsersBuyList();
 
     }
-    @GetMapping("/user")
-    public PaymentDTO oneUser(){
+    @GetMapping("/userbuylist")
+    public PaymentDTO oneUsernuylist(){
         String buyername = "방국봉";
         return  paymentService.getOneBuyList(buyername);
 

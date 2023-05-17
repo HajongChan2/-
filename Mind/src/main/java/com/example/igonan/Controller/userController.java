@@ -3,6 +3,7 @@ package com.example.igonan.Controller;
 import com.example.igonan.Service.ProductService;
 import com.example.igonan.Service.UserService;
 import com.example.igonan.dto.AbandogDTO;
+import com.example.igonan.dto.PaymentDTO;
 import com.example.igonan.dto.UserDTO;
 import com.example.igonan.mindmapper.Productmapper;
 import com.example.igonan.mindmapper.Usermapper;
@@ -52,7 +53,11 @@ public class userController {
 
 
 
+    @GetMapping("/users")
+    public List<UserDTO> AllUserlist(){
+        return  userService.getUsersList();
 
+    }
 }
 
 /*
@@ -74,3 +79,9 @@ public Member login(String loginId, String password) {
 // 로그인의 핵심 비즈니스 로직은 회원을 조회한 다음에 파라미터로 넘어온 password와 비교해서, 같으면 회원을 반환하고, 다르면 null을 반환한다!
 
  */
+
+
+
+
+
+

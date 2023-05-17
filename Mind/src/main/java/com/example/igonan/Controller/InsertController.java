@@ -3,8 +3,10 @@ package com.example.igonan.Controller;
 
 import com.example.igonan.Service.AbanDogService;
 import com.example.igonan.Service.PaymentService;
+import com.example.igonan.Service.UserService;
 import com.example.igonan.mindmapper.AbanDogmapper;
 import com.example.igonan.mindmapper.Paymentmapper;
+import com.example.igonan.mindmapper.Usermapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +22,8 @@ public class InsertController {
 
     @Autowired
     AbanDogmapper abdmp;
+    @Autowired
+    Usermapper ump;
 
     private PaymentService paymentService;
 
@@ -32,6 +36,10 @@ public class InsertController {
     public AbanDogService getAbanDogService() {
         return abanDogService;
     }
+
+    private UserService userService;
+
+    public  UserService getUserService() {return userService;}
 
     @PostMapping("/payment/insert") //해당 url로 데이터가 post 되었을 경우 실행
     public String paymentinsert(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
@@ -51,7 +59,7 @@ public class InsertController {
                 pr_count,rq.getParameter("payment_method")
         );
 
-        return "redirect:/userlist"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+        return "redirect:/userbuylists"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
 
 
@@ -80,5 +88,29 @@ public class InsertController {
 
         return "dummyform";
     }
+
+
+
+
+
+    @RequestMapping("/join/insert") //해당 url로 데이터가 post 되었을 경우 실행
+    public String joinuserinsert(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
+
+        String name = rq.getParameter("name");
+        String id = rq.getParameter("area");
+        String pw = rq.getParameter("sex");
+        String phone = rq.getParameter("size");
+        String addr = rq.getParameter("spec");
+        String saddr = rq.getParameter("vac");
+
+        ump.mindjoinUserInsert(name,id,pw,phone,addr,saddr);
+//a_num,a_name,age,area ,sex,size,spec,vac,neut,dead,memo,gallery) <
+        return "redirect:/users"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+    }
+
+
+
+
+
 
 }
