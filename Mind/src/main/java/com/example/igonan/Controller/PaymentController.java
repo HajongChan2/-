@@ -23,12 +23,15 @@ public class PaymentController {
     public PaymentController(PaymentService paymentService) {
         this.paymentService = paymentService;
     }
-
+/*
     @GetMapping("/userbuylists")
     public List<PaymentDTO> AllUserbuylist(){
+
         return  paymentService.getUsersBuyList();
 
     }
+    */
+
     @GetMapping("/userbuylist")
     public PaymentDTO oneUsernuylist(){
         String buyername = "방국봉";
@@ -37,7 +40,7 @@ public class PaymentController {
     }
 
 
-    @RequestMapping(value = "/userlist", method = { RequestMethod.POST })
+    @RequestMapping(value = "/userbuylists", method = { RequestMethod.POST })
     @ResponseBody // 자바 객체를 HTTP 응답 본문의 객체로 변환
     public Object test(){ // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
 

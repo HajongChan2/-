@@ -14,11 +14,13 @@
 <table></table>
 </body>
 <script>
+
     let ttt;
     $(document).ready(function(){
+        alert('경고');
         $.ajax({
             type : "POST",
-            url : "/userlist",
+            url : "/userbuylists",
             dataType : "json",
             success : function(data){
                 for(var i in data){

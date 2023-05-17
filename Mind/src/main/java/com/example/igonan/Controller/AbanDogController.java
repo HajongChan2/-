@@ -22,9 +22,14 @@ public class AbanDogController {
         this.abanDogService = abanDogService;
     }
 
-    @GetMapping("/dogs")
-    public List<AbandogDTO> AllDogs() {
-        return abanDogService.getAbanDogList();
+
+    @RequestMapping(value = "/doglist", method = {RequestMethod.POST}) //데이터가 보내지는 주소와 메소드 설정
+    @ResponseBody // 자바 객체를 HTTP 응답 본문의 객체로 변환
+    public Object AllDogs() {
+        //유기견의 전체 리스트를 db에서 가져온다
+        List<AbandogDTO> list = abanDogService.getAbanDogList(); // List에 select 결과 list를 담음
+
+        return list; // Ajax로 넘겨줄 select 결과값
 
     }
 

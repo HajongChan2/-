@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,19 +24,19 @@ public class userController {
 
     private UserService userService;
 
-    public userController (UserService userService) {
+    public userController(UserService userService) {
         this.userService = userService;
     }
 
 
     @RequestMapping(value = "/idcheck")
     @ResponseBody
-    public Object malware(HttpServletRequest rq){
+    public Object malware(HttpServletRequest rq) {
 
         String id = rq.getParameter("id");
         //String id = "zxc";
         List<UserDTO> list = userService.getOneUser(id);
-        if(list.isEmpty()){
+        if (list.isEmpty()) {
             System.out.println("사용 가능한 아이디 ");
 
             return null;
@@ -45,21 +46,28 @@ public class userController {
 
     @RequestMapping(value = "/loginsuccess")
     @ResponseBody
-    public Object logedin(HttpServletRequest rq){
+    public Object logedin(HttpServletRequest rq, HttpSession hs) {
+
+// String resultname = select name from users where id = inputid;
+        //hs.setattribute("username",resultname);
 
 
         return null;
     }
 
 
+    @ResponseBody
+    @RequestMapping(value = "/userlist") //데이터가 보내지는 주소와 메소드 설정
+    public Object joinuserlist() { // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
+        //유기견의 이름으로 검색하여 db에서 데이터를 찾아옴
 
-    @GetMapping("/users")
-    public List<UserDTO> AllUserlist(){
-        return  userService.getUsersList();
+        List<UserDTO> list = userService.getUsersList(); // List에 select 결과 list를 담음
+
+
+        return list; // Ajax로 넘겨줄 select 결과값
 
     }
 }
-
 /*
 @Service
 @RequiredArgsConstructor

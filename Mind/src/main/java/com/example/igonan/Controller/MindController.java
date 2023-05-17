@@ -105,13 +105,13 @@ public class MindController {
 
 
 
-    @RequestMapping("/userlist")
+    @RequestMapping("/userbuylists")
     public String test(){
 
         return "test";
     }
 
-    @RequestMapping("/doglist")
+    @RequestMapping("/doglists")
     public String dogdogtest(){
 
         return "testdog";

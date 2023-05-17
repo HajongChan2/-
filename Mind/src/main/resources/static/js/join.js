@@ -84,7 +84,7 @@ $(document).ready(function(){
                 pw : pw,
                 phone : phone,
                 addr : addr,
-                addr_detail : addr_detail
+                saddr : addr_detail
             };
 
             $.ajax({
