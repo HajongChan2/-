@@ -32,7 +32,7 @@ public class UserService {
     public loggedInSession loginUser(String userid){
         loggedInSession getusername = ump.userlogin(userid);
         String asd = getusername.getName();
-        System.out.println(asd);
+       System.out.println("service : "+asd);
 
         return getusername;
     }

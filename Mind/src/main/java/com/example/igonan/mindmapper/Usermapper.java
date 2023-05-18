@@ -20,7 +20,7 @@ public interface Usermapper {
     @Select("select * from users u where u.id = #{userid} ;")
     List<UserDTO> OneUser(String userid);
 
-    @Select("select u.name from users u where u.id = #{userid} ;")
+    @Select("select u.name,u.pw from users u where u.id = #{userid} ;")
     loggedInSession userlogin(String userid);
 
 

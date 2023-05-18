@@ -47,7 +47,7 @@ public class userController {
       loggedInSession resultname = (userService.loginUser(userid));
         //hs.setAttribute("username",resultname.getName());
         System.out.println(resultname.getName());
-
+        System.out.println(resultname.getPw());
         return resultname;
     }
 /*
