@@ -39,6 +39,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     margin: 0;
+    width: 12%;
 }
 #main_nb{
     font-family: 'NanumSquareNeo-Variable';
@@ -58,7 +59,6 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 #logo {
-
     height: 50px;
     margin: 0 10px 0 0 ;
     cursor: pointer;
