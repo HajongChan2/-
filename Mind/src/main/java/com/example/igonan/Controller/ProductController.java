@@ -126,7 +126,6 @@ public class ProductController {
     @ResponseBody
     @RequestMapping(value = "/payment/show/{param}", method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
     public Object paymentproductOne(@PathVariable("param")String parameter){
-
         List<ProductDTO> list = productService.getOneProduct(parameter); // List에 select 결과 list를 담음
 
         return list; // Ajax로 넘겨줄 select 결과값
