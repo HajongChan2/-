@@ -17,6 +17,16 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
+    dogName = localStorage.getItem('name');
+    $.ajax({
+        type : "POST",
+        url : "payment/show/" + dogName,
+        dataType : "json",
+        success : function(data){
+            console.log(data);
+        }
+
+    });
     let direct_message;
     let choice;
     let CountData;
