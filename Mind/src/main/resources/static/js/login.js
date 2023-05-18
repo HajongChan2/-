@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#login_bt").click(function(){
+    $(".login_bt").click(function(){
         let id = $("#id").val();
         let pw = $("#pw").val();
         const login = {
