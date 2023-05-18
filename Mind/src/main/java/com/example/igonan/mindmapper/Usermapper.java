@@ -1,6 +1,7 @@
 package com.example.igonan.mindmapper;
 import com.example.igonan.dto.UserDTO;
 
+import com.example.igonan.util.loggedInSession;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +19,11 @@ public interface Usermapper {
 
     @Select("select * from users u where u.id = #{userid} ;")
     List<UserDTO> OneUser(String userid);
+
+    @Select("select u.name from users u where u.id = #{userid} ;")
+    loggedInSession userlogin(String userid);
+
+
 
     Integer mindjoinUserInsert(String name,String id,String pw, String phone,String addr, String saddr);
 
