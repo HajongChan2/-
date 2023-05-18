@@ -35,10 +35,17 @@ $(document).ready(function(){
                     </div>
                 </li>
                 <li><label for="count" class="count">${CountData}</label></li><input type="hidden" name="count" id="count" value="${CountData}">
+                <li>${data[0].prPrice}</li>
                 <li>기본배송</li>
+                <li>${data[0].prDpay}</li>
                 <li>${totalPay}</li>
             `
             $("#content").append(str);
+
+            str = `                <h4>총 결제 예정 금액</h4>
+                <p>${totalPay}</p>`
+            $("#total_payment").append(str);
+            console.log(data);
         }
 
     });
