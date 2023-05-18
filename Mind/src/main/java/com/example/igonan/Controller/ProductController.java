@@ -1,11 +1,9 @@
 package com.example.igonan.Controller;
 
 
-import com.example.igonan.Service.PetDogService;
+
 import com.example.igonan.Service.ProductService;
-import com.example.igonan.dto.PetdogDTO;
 import com.example.igonan.dto.ProductDTO;
-import com.example.igonan.mindmapper.PetDogmapper;
 import com.example.igonan.mindmapper.Productmapper;
 import com.example.igonan.util.Script;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,6 +120,18 @@ public class ProductController {
     }
 
 
+
+
+
+    @ResponseBody
+    @RequestMapping(value = "/payment/show/{param}", method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
+    public Object paymentproductOne(@PathVariable("param")String parameter){
+
+        List<ProductDTO> list = productService.getOneProduct(parameter); // List에 select 결과 list를 담음
+
+        return list; // Ajax로 넘겨줄 select 결과값
+
+    }
 
 
 
