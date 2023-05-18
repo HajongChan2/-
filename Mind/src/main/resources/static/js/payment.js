@@ -36,7 +36,7 @@ $(document).ready(function(){
                 </li>
                 <li><label for="count" class="count">${CountData}</label></li><input type="hidden" name="count" id="count" value="${CountData}">
                 <li>기본배송</li>
-                <li>${totlePay}</li>
+                <li>${totalPay}</li>
             `
             $("#content").append(str);
         }
