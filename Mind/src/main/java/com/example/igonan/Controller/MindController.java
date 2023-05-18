@@ -105,7 +105,7 @@ public class MindController {
 
 
 
-    @RequestMapping("/userbuylists")
+    @RequestMapping("/userbuylist")
     public String test(){
 
         return "test";

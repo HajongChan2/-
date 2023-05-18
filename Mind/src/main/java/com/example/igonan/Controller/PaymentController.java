@@ -34,13 +34,13 @@ public class PaymentController {
     }
     */
 
-    @GetMapping("/userbuylist")
-    public PaymentDTO oneUsernuylist(){
-        String buyername = "방국봉";
-        return  paymentService.getOneBuyList(buyername);
-
-    }
-
+//    @GetMapping("/userbuylist")
+//    public PaymentDTO oneUsernuylist(){
+//        String buyername = "방국봉";
+//        return  paymentService.getOneBuyList(buyername);
+//
+//    }
+//
 
     @RequestMapping(value = "/userbuylists", method = { RequestMethod.POST })
     @ResponseBody // 자바 객체를 HTTP 응답 본문의 객체로 변환
