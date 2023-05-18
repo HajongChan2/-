@@ -27,4 +27,17 @@ $(document).ready(function(){
         $("#container3").append(str);
     }
 
+    localStorage.clear();
+    if(sessionStorage.getItem("id") != null){
+        $.ajax({
+            type: "POST",
+            url:"loginsuccess",
+            dataType: "json",
+            success : function(data){
+                sessionStorage.setItem("name", data[0].name);
+            }
+        });
+    }
+
+
 });
