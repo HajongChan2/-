@@ -57,7 +57,6 @@ $(document).ready(function(){
             url : "/payment/insert",
             data : member_address,
             success : function(data){
-                location.href="/userbuylists";
                 alert("성공");
             }
         });

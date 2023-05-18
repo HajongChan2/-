@@ -1,6 +1,6 @@
 let str = '';
 $(document).ready(function(){
-
+    let addr = "product/detail";
     let a = true;
     if(a){
         $.ajax({
@@ -16,11 +16,9 @@ $(document).ready(function(){
             str = '';
             product.map(function(tag){
 
-                let addr = "/product/detail";
-
                 str += `
             <div class="petcesory-wrap">
-            <a href="${addr}/${tag.prName}">
+            <a href="${addr}">
                         <div class="petcesory-image">
                             <img src="${tag.prGallery}" alt="${tag.prName}">
                             <p>${tag.prName}</p>
@@ -51,11 +49,9 @@ $(document).ready(function(){
             str = '';
             product.map(function(tag){
 
-                let addr = "/product/detail";
-
                 str += `
             <div class="petcesory-wrap">
-            <a href="${addr}/${tag.prName}">
+            <a href="${addr}">
                         <div class="petcesory-image">
                             <img src="${tag.prGallery}" alt="${tag.prName}">
                             <p>${tag.prName}</p>
@@ -85,11 +81,10 @@ $(document).ready(function(){
             str = '';
             product.map(function(chip){
 
-                let addr = "/product/detail";
 
                 str += `
                  <div class="petcesory-wrap">
-                    <a href="${addr}/${chip.prName}">
+                    <a href="${addr}">
                         <div class="petcesory-image">
                             <img src="${chip.prGallery}" alt="${chip.prName}">
                             <p>${chip.prName}</p>
@@ -118,11 +113,10 @@ $(document).ready(function(){
             str = '';
             product.map(function(etc){
 
-                let addr = "/product/detail";
 
                 str += `
                  <div class="petcesory-wrap">
-                    <a href="${addr}/${etc.prName}">
+                    <a href="${addr}">
                         <div class="petcesory-image">
                             <img src="${etc.prGallery}" alt="${etc.prName}">
                             <p>${etc.prName}</p>
@@ -134,5 +128,14 @@ $(document).ready(function(){
             });
             $("#container2").append(str);
         }
+    });
+    $(document).on("click",".petcesory-image",function(e){
+        let na = $(e.target);
+        let name = na.attr("alt");
+        if(name == null){
+            name = na.text();
+        }
+        console.log(name);
+        localStorage.setItem('name',name);
     });
 });
