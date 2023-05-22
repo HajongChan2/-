@@ -49,10 +49,17 @@
     background-color:#113267;
     cursor: pointer;
 }
-.find_btn{
-    position: absolute;
-    right: -160px;
-}
 #address{
     position: relative;
+}
+#id_check {
+    position: absolute;
+    right: 1108px;
+    width: 130px;
+    height: 35px;
+    border-radius: 5px;
+    border:none;
+    color:#fff;
+    background-color:#113267;
+    cursor: pointer;
 }

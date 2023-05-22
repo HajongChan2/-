@@ -33,6 +33,7 @@
     background-color: #113267;
     font-weight: 400;
     cursor: pointer;
+    margin: 50px 0 0 0;
 }
 .bottom_line{
     border:solid 0.1px #16448E;
@@ -48,7 +49,6 @@
     color:#fff;
     background-color:#113267;
     cursor: pointer;
-    margin-top: 50px;
 }
 .find_btn{
     position: absolute;
