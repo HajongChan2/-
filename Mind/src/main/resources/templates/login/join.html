@@ -21,36 +21,41 @@
                     <h2>회원가입</h2>
                 </div>
                 <form action="/join/insert" method="post">
-                        <div id="join_info">
-                        <div class="infomation">
-                            이름<input type="text" name="user_name" id="user_name" placeholder="이름">
+                        <div id="join_information">
+                            <div class="member_info">
+                                <p>이름</p>
+                                <input type="text" id="user_name" name="user_name" placeholder="이름">
+                            </div>
+                            <div class="member_info">
+                            <p>아이디</p>
+                                <input type="text" name="id" id="id" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                                <button type="button" id="id_check">중복 확인</button>
                         </div>
-                        <div class="infomation">
-                            아이디<input type="text" name="id" id="id" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                            <div class="member_info">
+                            <p>비밀번호</p>
+                                <input type="password" name="pw" id="pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
                         </div>
-                        <div class="infomation">
-                            비밀번호<input type="password" name="pw" id="pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                            <div class="member_info">
+                            <p>비밀번호 확인</p>
+                                <input type="password" name="pwcheck" id="pwcheck" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
                         </div>
-                        <div class="infomation">
-                            비밀번호 확인<input type="password" name="pwcheck" id="pwcheck">
+                            <div class="member_info">
+                                <p>휴대전화</p>
+                                <input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
                         </div>
-                        <div class="infomation">
-                            휴대전화<input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
-                        </div>
-                            <div id="address" class="infomation">
-                            주소
-                            <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
-                            <button type="button" id="find">우편번호 찾기</button>
-                        </div>
-                        <div class="infomation">
-                            상세주소
-                            <input id="address_detail" type="text"name="saddr" placeholder="상세주소">
-                         </div>
+                            <div id="address" class="member_info">
+                                <p>주소</p>
+                                <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
+                                <button type="button" id="find">우편번호 찾기</button>
+                            </div>
+                            <div class="member_info">
+                                <p>상세주소</p>
+                                <input id="address_detail" name="saddr" type="text" placeholder="상세주소">
+                            </div>
                     </div>
                    <div class="bottom_line"></div>
 
                     <button id="submit" onclick="checkAll()">가입하기 </button>
-                </form>
             </div>
         </div>
 <footer id="footer" th:replace="publicHF/footer::footer">

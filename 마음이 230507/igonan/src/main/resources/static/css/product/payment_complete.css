@@ -1,0 +1,32 @@
+#product_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 30%;
+    height: 300px;
+    margin: 50px 0 50px 0;
+}
+#product_info li{
+    list-style: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+.product_detail {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #113267;
+    cursor: pointer;
+    font-size: 20px;
+}
+.return {
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    color: #113267;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}

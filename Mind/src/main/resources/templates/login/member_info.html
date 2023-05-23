@@ -16,45 +16,48 @@
     <div class="line"></div>
 
         <div id="container0">
-            <div id="container0">
                 <div id="content_top_font">
                     <h2>회원 정보 수정</h2>
                 </div>
-                <form onsubmit="return false">
-                        <div id="join_info">
-                        <div class="infomation">
-                            이름<input type="text" name="title" id="title" disabled>
-                        </div>
-                        <div class="infomation">
-                            아이디<input type="text" name="id" id="id" disabled>
-                        </div>
-                        <div class="infomation">
-                            기존 비밀번호<input type="text" name="pw" id="pw">
-                        </div>
-                        <div class="infomation">
-                            새로운 비밀번호<input type="text" name="pw" id="pw">
-                        </div>
-                        <div class="infomation">
-                            휴대전화<input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
-                        </div>
-                        <div class="infomation">
-                            주소<input type="text" name="area" id="member_addr" disabled>
-                            <div class="find_btn">
-                                <input type="button" id="find" value="우편번호 찾기">
-                            </div>
-                        </div>
-                        <div class="infomation">
-                            상세주소<input type="text" name="kind" id="kind">
-                        </div>
-                    </div>
-                    <div id="line"></div>
+            <div id="join_information">
+                <div class="member_info">
+                    <p>이름</p>
+                    <input type="text" id="user_name" name="user_name" placeholder="이름" readonly>
+                </div>
+                <div class="member_info">
+                    <p>아이디</p>
+                    <input type="text" name="id" id="id" readonly>
+                </div>
+                <div class="member_info">
+                    <p>기존 비밀번호</p>
+                    <input type="password" name="origin_pw" id="origin_pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                </div>
+                <div class="member_info">
+                    <p>새로운 비밀번호</p>
+                    <input type="text" name="new_pw" id="new_pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
+                </div>
+                <div class="member_info">
+                    <p>휴대전화</p>
+                    <input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
+                </div>
+                <div id="address" class="member_info">
+                    <p>주소</p>
+                    <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
+                    <button type="button" id="find">우편번호 찾기</button>
+                </div>
+                <div class="member_info">
+                    <p>상세주소</p>
+                    <input id="address_detail" name="saddr" type="text" placeholder="상세주소">
+                </div>
+            </div>
+                    <div class="bottom_line"></div>
                     <button id="submit">수정하기</button>
-                </form>
             </div>
             </div>
 <footer id="footer" th:replace="publicHF/footer::footer">
     <div></div>
 </footer>
 </body>
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="js/addr.js"></script>
 </html>
