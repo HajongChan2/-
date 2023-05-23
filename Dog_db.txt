@@ -54,7 +54,7 @@ DB 생성, Table 생성 쿼리
 
 Create database mind;
 Use mind;
-Create table user (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone varchar(11), addr varchar(150), saddr varchar(150));
+Create table users (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone varchar(11), addr varchar(150), saddr varchar(150));
 Create table nonmem (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
 Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(50), ap_phone char(11), ap_addr varchar(150), ap_saddr varchar(80), ap_memo varchar(750));
 Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery varchar(1500));
@@ -65,8 +65,8 @@ Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_
 
 Insert user(유저)
 
-insert into user values(null, '박종현', 'admin', '1111', '01043211234', '경기도 어딘가', '신구빌딩 3층 2호');
-insert into user values(null, '최아찬', 'imuser', '2222', '01078979999', '서울 어딘가', '신구아파트 8층 222호');
+insert into users values(null, '박종현', 'admin', '1111', '01043211234', '경기도 어딘가', '신구빌딩 3층 2호');
+insert into users values(null, '최아찬', 'imuser', '2222', '01078979999', '서울 어딘가', '신구아파트 8층 222호');
 
 Insert nonmem (비회원)
 
