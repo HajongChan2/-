@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -71,6 +72,15 @@ public String logincheck(HttpServletRequest rq) {
     return "redirect:/login";
 }
 
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession hs) {
+
+    System.out.println("로그아웃 완료");
+        hs.removeAttribute("userid");
+
+        return "redirect:/main";
+    }
 
 
 

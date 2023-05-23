@@ -45,7 +45,10 @@ public class userController {
     public loggedInSession logedin(HttpServletRequest rq, HttpSession hs) {
         String userid = rq.getParameter("id");
       loggedInSession resultname = (userService.loginUser(userid));
-        //hs.setAttribute("username",resultname.getName());
+        hs.setAttribute("username",resultname.getName());
+        String ssname = hs.getAttribute("username").toString();
+        System.out.println("세션 생성 완료 이름 : "+ssname);
+        hs.removeAttribute("username");
         System.out.println(resultname.getName());
         System.out.println(resultname.getPw());
         return resultname;
@@ -65,6 +68,26 @@ public class userController {
 
 
  */
+/*
+    @RequestMapping(value = "/logout")
+    @ResponseBody
+    public loggedInSession logedin(HttpSession hs) {
+        String userid = rq.getParameter("id");
+      loggedInSession resultname = (userService.loginUser(userid));
+        hs.setAttribute("username",resultname.getName());
+        String ssname = hs.getAttribute("username").toString();
+        System.out.println("세션 생성 완료 이름 : "+ssname);
+        hs.removeAttribute("username");
+        System.out.println(resultname.getName());
+        System.out.println(resultname.getPw());
+        return resultname;
+    }
+
+
+
+
+ */
+
 
     @ResponseBody
     @RequestMapping(value = "/userlist") //데이터가 보내지는 주소와 메소드 설정

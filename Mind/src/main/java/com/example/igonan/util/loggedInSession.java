@@ -13,6 +13,7 @@ public class loggedInSession {
 
     private String name;
     private String pw;
+
     public String getName() {
         return name;
     }
