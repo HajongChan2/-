@@ -5,14 +5,14 @@ $(document).ready(function(){
         let addr = document.referrer;
         const login = {
             id : id,
-            pw : pw,
-            addr : addr
+            pw : pw
         };
         $.ajax({
             type : "POST",
             url : "/logincheck",
             data : login,
             success : function(data){
+                $("form").attr("action", addr);
                 console.log("성공");
             }
         });
