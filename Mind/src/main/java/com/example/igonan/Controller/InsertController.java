@@ -80,7 +80,7 @@ public String paymentinsert(HttpServletRequest rq){ //보내진 데이터이용�
             pr_count,rq.getParameter("payment_method")
     );
 
-    return "redirect:/userbuylists"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+    return "/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
 }
 
     @PostMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행

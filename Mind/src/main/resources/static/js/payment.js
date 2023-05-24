@@ -110,10 +110,10 @@ $(document).ready(function(){
         }
         $.ajax({
             type : "POST",
-            url : "/",
+            url : "/payment/insert",
             data : member_address,
             success : function(data){
-                alert("성공");
+                location.href = "/productbuy";
             }
         });
     });
