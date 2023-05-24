@@ -15,8 +15,11 @@
 <header id="header" th:replace="publicHF/header::header"></header>
 
 <div id="container0">
-        <form action="/payment">
-
+        <form>
+            <div id="purchase">
+                <button id="mem_purchase" th:if="${session.username != null}" >구매하기</button>
+                <button id="non_purchase" th:if="${session.username == null}" >구매하기</button>
+            </div>
         </form>
     </div>
     <footer id="footer" th:replace="publicHF/footer::footer">

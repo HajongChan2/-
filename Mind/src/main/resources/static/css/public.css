@@ -90,14 +90,18 @@ body::-webkit-scrollbar {
     background-color: #16448E;
 }
 #nabvar {
-    display: flex;
-    width: 50%;
-    height: 80%;
-    justify-content: flex-end;
+    width: 30%;
+    height: 100%;
+    line-height: 50px;
+    text-align: right;
+    margin-right: 0;
+}
+#nabvar li{
+    margin-left: 10px;
+
 }
 #nabvar li, #nabvar a {
     color: #16448E;
     list-style: none;
     font-size: 13px;
-    margin: 10px;
 }

@@ -14,11 +14,11 @@
     <li><a href="/petcesary">펫세사리</a></li>
   </ul>
   <ul id="nabvar">
-    <li><a href="/login" th:if="${session.username == null}" >로그인</a></li>
-    <li><a href="/join" th:if="${session.username == null}" >회원가입</a></li>
-    <li> <p th:if="${session.username != null}" th:text="${session.username}+'님 안녕하세요'"> </p> </li>
-    <li><a href="/logout" th:if="${session.username != null}" >로그아웃</a></li>
-    <li><a href="/mypage" th:if="${session.username != null}" >마이페이지</a></li>
+    <li th:style="${session.username == null ? 'display:inline-block' : 'display:none'}"><a href="/login" th:if="${session.username == null}" >로그인</a></li>
+    <li th:style="${session.username == null ? 'display:inline-block' : 'display:none'}"><a href="/join" th:if="${session.username == null}" >회원가입</a></li>
+    <li th:style="${session.username != null ? 'display:inline-block' : 'display:none'}"> <p th:if="${session.username != null}" th:text="${session.username}+'님 안녕하세요'"> </p> </li>
+    <li th:style="${session.username != null ? 'display:inline-block' : 'display:none'}"><a href="/logout" th:if="${session.username != null}" >로그아웃</a></li>
+    <li th:style="${session.username != null ? 'display:inline-block' : 'display:none'}"><a href="/mypage" th:if="${session.username != null}" >마이페이지</a></li>
    <!-- <li th:if="${session.username != null}" th:text="${session.username}님 안녕하세요"> </li> -->
 
   </ul>

@@ -37,13 +37,11 @@ $(document).ready(function(){
                             </div>
                         </ul>
                     </div>
-                    <div id="purchase">
-                        <button id="purchase">구매하기</button>
-                    </div>  
+                      
                 </div>
             </div>
             `
-            $("form").append(str);
+            $("form").prepend(str);
             input = $(".inp");
         }
     });
@@ -72,8 +70,13 @@ $(document).ready(function(){
             minus.attr('disabled', true);
         }
     });
-    $(document).on('click',"#purchase", function(){
+    $(document).on('click',"#mem_purchase", function(){
+        $("form").attr("action", "/payment");
         localStorage.setItem('count',input.val());
+    });
+    $(document).on('click', '#non_purchase', function(){
+        alert("로그인 후 이용 가능합니다.");
+        $("form").attr("action", "/login");
     });
 
     $(document).on(".inp","propertychange change keyup paste input", function(){
