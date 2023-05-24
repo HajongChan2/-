@@ -12,7 +12,7 @@ public class Script {
         return sb.toString();
     }
     // href = 지정된 사이트 이동
-    public static String href(String path) {
+    public static String tohref(String path) {
         StringBuilder sb = new StringBuilder();
         sb.append("<script>");
         sb.append("location.href='"+path+"';");

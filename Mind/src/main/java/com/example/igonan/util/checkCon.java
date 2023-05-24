@@ -7,6 +7,7 @@ import com.example.igonan.mindmapper.Usermapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -51,6 +52,7 @@ public class checkCon {
     }
 */
 @RequestMapping("/logincheck")
+@ResponseBody
 public String logincheck(HttpServletRequest rq, HttpSession hs) {
     String addr = "loginsuccess?id=";
     String inputid = rq.getParameter("id");
@@ -67,25 +69,28 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
           //  hs.removeAttribute("username");
             System.out.println(result.getName());
             System.out.println(result.getPw());
-            return "redirect:/main";
+            return Script.tohref("/main");
         }else {
             System.out.println("비밀번호 틀림");
-            return "redirect:/login";
+
+            return Script.href("/login","비밀번호를 잘못 입력하셨습니다.");
         }
         }
 
     System.out.println("아이디 틀림");
-    return "redirect:/login";
+
+    return Script.href("/login","아이디를 틀리게 입력하셨습니다.");
 }
 
 
     @RequestMapping("/logout")
+    @ResponseBody
     public String logout(HttpSession hs) {
 
     System.out.println("로그아웃 완료");
         hs.removeAttribute("username");
 
-        return "redirect:/main";
+        return Script.href("/main","로그아웃되었습니다.");
     }
 
 
