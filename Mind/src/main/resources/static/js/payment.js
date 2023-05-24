@@ -110,7 +110,7 @@ $(document).ready(function(){
         }
         $.ajax({
             type : "POST",
-            url : "/payment/insert",
+            url : "/",
             data : member_address,
             success : function(data){
                 alert("성공");
