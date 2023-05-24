@@ -7,6 +7,7 @@ import com.example.igonan.mindmapper.Usermapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -52,29 +53,26 @@ public class checkCon {
         return "redirect:/login";
     }
 */
-@RequestMapping(value = "/logincheck")
+@RequestMapping(value = "/logincheck",method = RequestMethod.POST)
 @ResponseBody
 public String logincheck(HttpServletRequest rq, HttpSession hs) {
     String inputid = rq.getParameter("id");
      String inputpw = rq.getParameter("pw");
-    // String inputaddr = rq.getParameter("addr");
-    String inputaddr = "http://localhost:8080/info";
-     String useaddr = inputaddr.substring(21);
-     System.out.println(useaddr);
+
     List<UserDTO> loggedin = userService.getOneUser(inputid);
     System.out.println(loggedin.isEmpty());
     if(loggedin.isEmpty()==false){
         loggedInSession result = (userService.loginUser(inputid));
         if(inputpw.equals(result.getPw())){
             hs.setAttribute("username",result.getName());
-            hs.setAttribute("userid",result.getName());
+            hs.setAttribute("userid",inputid);
             String ssname = hs.getAttribute("username").toString();
             String ssid = hs.getAttribute("userid").toString();
             System.out.println("세션 생성 완료 이름 : "+ssname);
             System.out.println("세션 생성 완료 id : "+ssid);
           //  hs.removeAttribute("username");
 
-            return null;
+            return Script.tohref("/main");
         }else {
             System.out.println("비밀번호 틀림");
 
