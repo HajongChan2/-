@@ -70,9 +70,8 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
             System.out.println("세션 생성 완료 이름 : "+ssname);
             System.out.println("세션 생성 완료 id : "+ssid);
           //  hs.removeAttribute("username");
-            System.out.println(result.getName());
-            System.out.println(result.getPw());
-            return Script.tohref("/main");
+
+            return null;
         }else {
             System.out.println("비밀번호 틀림");
 
