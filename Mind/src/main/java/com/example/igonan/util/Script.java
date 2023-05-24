@@ -27,4 +27,12 @@ public class Script {
         sb.append("</script>");
         return sb.toString();
     }
+    public static  String reload(String msg){
+        StringBuilder sb = new StringBuilder();
+        sb.append("<script>");
+        sb.append("alert('"+msg+"');");
+        sb.append("window.location.reload();");
+        sb.append("</script>");
+        return sb.toString();
+    }
 }
