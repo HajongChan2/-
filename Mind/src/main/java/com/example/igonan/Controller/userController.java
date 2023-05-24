@@ -39,7 +39,7 @@ public class userController {
         }
         return list;
     }
-
+/*
     @RequestMapping(value = "/loginsuccess")
     @ResponseBody
     public loggedInSession logedin(HttpServletRequest rq, HttpSession hs) {
@@ -53,6 +53,8 @@ public class userController {
         System.out.println(resultname.getPw());
         return resultname;
     }
+    */
+
 /*
     @RequestMapping(value = "/loginsuccess")
     @ResponseBody
