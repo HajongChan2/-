@@ -12,7 +12,7 @@ $(document).ready(function(){
             url : "/logincheck",
             data : login,
             success : function(data){
-                $("form").attr("action", addr);
+                $("form").attr("action", `${addr}`);
                 console.log("성공");
             }
         });
