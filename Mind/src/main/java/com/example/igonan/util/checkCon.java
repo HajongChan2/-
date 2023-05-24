@@ -52,7 +52,7 @@ public class checkCon {
         return "redirect:/login";
     }
 */
-@RequestMapping("/logincheck")
+@RequestMapping(value = "/logincheck")
 @ResponseBody
 public String logincheck(HttpServletRequest rq, HttpSession hs) {
     String inputid = rq.getParameter("id");
