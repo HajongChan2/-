@@ -2,7 +2,7 @@ $(document).ready(function(){
     $(".login_bt").click(function(){
         let id = $("#id").val();
         let pw = $("#pw").val();
-        let addr = document.referrer;
+
         const login = {
             id : id,
             pw : pw
@@ -13,11 +13,11 @@ $(document).ready(function(){
             data : login,
             success : function(data){
                 $("form").attr("action", `${addr}`);
-                console.log("성공");
+
             }
         });
     });
-
-
+    let addr = document.referrer;
+    console.log(addr);
 
 });
