@@ -14,9 +14,10 @@
     <li><a href="/petcesary">펫세사리</a></li>
   </ul>
   <ul id="nabvar">
-    <li><a href="/login">로그인</a></li>
-    <li><a href="/join">회원가입</a></li>
-    <li><a href="/mypage">마이페이지</a></li>
+    <li><a href="/login" th:if="${session.username == null}" >로그인</a></li>
+    <li><a href="/join" th:if="${session.username == null}" >회원가입</a></li>
+    <li><a href="/logout" th:if="${session.username != null}" >로그아웃</a></li>
+    <li><a href="/mypage" th:if="${session.username != null}" >마이페이지</a></li>
   </ul>
 
 </header>
