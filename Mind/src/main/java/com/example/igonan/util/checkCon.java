@@ -64,10 +64,10 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
             hs.setAttribute("username",result.getName());
             String ssname = hs.getAttribute("username").toString();
             System.out.println("세션 생성 완료 이름 : "+ssname);
-            hs.removeAttribute("username");
+          //  hs.removeAttribute("username");
             System.out.println(result.getName());
             System.out.println(result.getPw());
-            return "redirect:/userlist";
+            return "redirect:/main";
         }else {
             System.out.println("비밀번호 틀림");
             return "redirect:/login";
@@ -83,7 +83,7 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
     public String logout(HttpSession hs) {
 
     System.out.println("로그아웃 완료");
-        hs.removeAttribute("userid");
+        hs.removeAttribute("username");
 
         return "redirect:/main";
     }

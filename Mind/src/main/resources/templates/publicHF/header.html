@@ -16,8 +16,11 @@
   <ul id="nabvar">
     <li><a href="/login" th:if="${session.username == null}" >로그인</a></li>
     <li><a href="/join" th:if="${session.username == null}" >회원가입</a></li>
+    <li> <p th:if="${session.username != null}" th:text="${session.username}+'님 안녕하세요'"> </p> </li>
     <li><a href="/logout" th:if="${session.username != null}" >로그아웃</a></li>
     <li><a href="/mypage" th:if="${session.username != null}" >마이페이지</a></li>
+   <!-- <li th:if="${session.username != null}" th:text="${session.username}님 안녕하세요"> </li> -->
+
   </ul>
 
 </header>
