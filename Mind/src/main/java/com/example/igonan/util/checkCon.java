@@ -54,11 +54,9 @@ public class checkCon {
 @RequestMapping("/logincheck")
 @ResponseBody
 public String logincheck(HttpServletRequest rq, HttpSession hs) {
-    String addr = "loginsuccess?id=";
     String inputid = rq.getParameter("id");
      String inputpw = rq.getParameter("pw");
     List<UserDTO> loggedin = userService.getOneUser(inputid);
-
     System.out.println(loggedin.isEmpty());
     if(loggedin.isEmpty()==false){
         loggedInSession result = (userService.loginUser(inputid));
