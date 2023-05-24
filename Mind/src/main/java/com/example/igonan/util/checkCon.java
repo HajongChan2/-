@@ -51,7 +51,7 @@ public class checkCon {
     }
 */
 @RequestMapping("/logincheck")
-public String logincheck(HttpServletRequest rq) {
+public String logincheck(HttpServletRequest rq, HttpSession hs) {
     String addr = "loginsuccess?id=";
     String inputid = rq.getParameter("id");
      String inputpw = rq.getParameter("pw");
@@ -61,7 +61,13 @@ public String logincheck(HttpServletRequest rq) {
     if(loggedin.isEmpty()==false){
         loggedInSession result = (userService.loginUser(inputid));
         if(inputpw.equals(result.getPw())){
-            return "redirect:/"+addr+inputid;
+            hs.setAttribute("username",result.getName());
+            String ssname = hs.getAttribute("username").toString();
+            System.out.println("세션 생성 완료 이름 : "+ssname);
+            hs.removeAttribute("username");
+            System.out.println(result.getName());
+            System.out.println(result.getPw());
+            return "redirect:/userlist";
         }else {
             System.out.println("비밀번호 틀림");
             return "redirect:/login";
