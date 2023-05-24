@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+
 @Controller
 public class checkCon {
 
@@ -56,6 +57,10 @@ public class checkCon {
 public String logincheck(HttpServletRequest rq, HttpSession hs) {
     String inputid = rq.getParameter("id");
      String inputpw = rq.getParameter("pw");
+    // String inputaddr = rq.getParameter("addr");
+    String inputaddr = "http://localhost:8080/info";
+     String useaddr = inputaddr.substring(21);
+     System.out.println(useaddr);
     List<UserDTO> loggedin = userService.getOneUser(inputid);
     System.out.println(loggedin.isEmpty());
     if(loggedin.isEmpty()==false){
