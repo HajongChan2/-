@@ -90,6 +90,16 @@ public class userController {
 
  */
 
+    @ResponseBody
+    @RequestMapping("/mypage/return")
+    public Object mypagedatareturn(HttpSession hs){
+    String ssid = hs.getAttribute("userid").toString();
+
+    List<UserDTO> list = userService.getOneUser(ssid);
+    return list;
+}
+
+
 
     @ResponseBody
     @RequestMapping(value = "/userlist") //데이터가 보내지는 주소와 메소드 설정

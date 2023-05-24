@@ -64,8 +64,11 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
         loggedInSession result = (userService.loginUser(inputid));
         if(inputpw.equals(result.getPw())){
             hs.setAttribute("username",result.getName());
+            hs.setAttribute("userid",result.getName());
             String ssname = hs.getAttribute("username").toString();
+            String ssid = hs.getAttribute("userid").toString();
             System.out.println("세션 생성 완료 이름 : "+ssname);
+            System.out.println("세션 생성 완료 id : "+ssid);
           //  hs.removeAttribute("username");
             System.out.println(result.getName());
             System.out.println(result.getPw());
@@ -89,7 +92,7 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
 
     System.out.println("로그아웃 완료");
         hs.removeAttribute("username");
-
+        hs.removeAttribute("userid");
         return Script.href("/main","로그아웃되었습니다.");
     }
 
