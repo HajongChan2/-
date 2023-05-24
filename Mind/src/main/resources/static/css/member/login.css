@@ -2,36 +2,27 @@
     display: flex;
     flex-direction: column;
 }
-#id{
+#id, #pw{
     width: 320px;
     height: 30px;
     outline-color: rgb(153, 153, 153);
-    padding: 5px 5px 5px 20px;
+    padding: 5px 5px 5px 5px;
     border-radius: 5px;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
     border-color: rgb(107, 107, 107);
     border-image: initial;
+    margin-bottom: 10px;
 }
-#pw{
-    width: 320px;
-    height: 30px;
-    outline-color: rgb(153, 153, 153);
-    padding: 5px 5px 5px 20px;
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(107, 107, 107);
-    border-image: initial;
-}
+
 .login_bt{
-    width: 347px;
+    width: 320px;
     height: 35px;
     background-color: #113267;
     border: none;
     font-size: 17px;
     color: #eee;
-    margin-top: 25px;
+    margin-top: 10px;
     cursor: pointer;
     
 }
