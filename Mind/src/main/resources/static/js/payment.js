@@ -14,6 +14,33 @@ $(document).ready(function(){
             }
         });
     });
+
+    let addr_detail = $("#address_detail");
+    let addr = $("#member_addr");
+    let phone = $("input[name=phone]");
+    let name = $("#user_name");
+    let now_addr;
+    $.ajax({
+        url : "/mypage/return",
+        dataType : "json",
+        type : "POST",
+        success : function(data){
+            name.val(data[0].name);
+            addr.val(data[0].addr);
+            addr_detail.val(data[0].saddr);
+            phone.val(data[0].phone);
+            now_addr = addr.val();
+        }
+    });
+
+    $("#new_addr").click(function(){
+        addr.val("");
+        $("#find").removeAttr('disabled');
+    });
+    $("#now_addr").click(function(){
+        addr.val(now_addr);
+        $("#find").attr("disabled", true);
+    });
 });
 
 $(document).ready(function(){

@@ -25,10 +25,14 @@
                 <p>이름</p>
                 <input type="text" id="user_name" name="user_name" placeholder="이름">
             </div>
+            <div class="member_info" id="addr_option">
+                <button type="button" id="now_addr">현주소</button>
+                <button type="button" id="new_addr">새주소</button>
+            </div>
             <div id="address" class="member_info">
                 <p>주소</p>
                 <input id="member_addr" type="text" name="addr" placeholder="주소" readonly>
-                <button type="button" id="find">우편번호 찾기</button>
+                <button type="button" id="find" disabled >우편번호 찾기</button>
             </div>
 
             <div class="member_info">

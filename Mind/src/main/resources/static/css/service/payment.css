@@ -138,3 +138,15 @@
     cursor: pointer;
     font-size: 20px;
 }
+#addr_option{
+    display: flex;
+}
+#addr_option button{
+    margin: 10px;
+    width: 70px;
+    height: 30px;
+    background-color: #16448E;
+    color:#fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
