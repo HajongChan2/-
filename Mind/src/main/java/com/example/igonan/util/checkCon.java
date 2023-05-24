@@ -53,38 +53,29 @@ public class checkCon {
         return "redirect:/login";
     }
 */
-@RequestMapping(value = "/logincheck",method = RequestMethod.POST)
-@ResponseBody
-public String logincheck(HttpServletRequest rq, HttpSession hs) {
-    String inputid = rq.getParameter("id");
-     String inputpw = rq.getParameter("pw");
 
-    List<UserDTO> loggedin = userService.getOneUser(inputid);
-    System.out.println(loggedin.isEmpty());
-    if(loggedin.isEmpty()==false){
-        loggedInSession result = (userService.loginUser(inputid));
-        if(inputpw.equals(result.getPw())){
-            hs.setAttribute("username",result.getName());
-            hs.setAttribute("userid",inputid);
-            String ssname = hs.getAttribute("username").toString();
-            String ssid = hs.getAttribute("userid").toString();
-            System.out.println("세션 생성 완료 이름 : "+ssname);
-            System.out.println("세션 생성 완료 id : "+ssid);
-          //  hs.removeAttribute("username");
+    @RequestMapping(value = "/logincheck",method = {RequestMethod.POST})
+    @ResponseBody
+    public Boolean logincheck(HttpServletRequest rq, HttpSession hs) {
+        String inputid = rq.getParameter("id");
+        String inputpw = rq.getParameter("pw");
 
-            return Script.tohref("/main");
-        }else {
-            System.out.println("비밀번호 틀림");
-
-            return Script.href("/login","비밀번호를 잘못 입력하셨습니다.");
+        List<UserDTO> loggedin = userService.getOneUser(inputid);
+        System.out.println(loggedin.isEmpty());
+        if(loggedin.isEmpty()==false){
+            loggedInSession result = (userService.loginUser(inputid));
+            if(inputpw.equals(result.getPw())){
+                hs.setAttribute("username",result.getName());
+                hs.setAttribute("userid",inputid);
+                return true;
+            }else {
+                System.out.println("비밀번호 틀림");
+                return false;
+            }
         }
-        }
-
-    System.out.println("아이디 틀림");
-
-    return Script.href("/login","아이디를 틀리게 입력하셨습니다.");
-}
-
+        System.out.println("아이디 틀림");
+        return false;
+    }
 
     @RequestMapping("/logout")
     @ResponseBody
@@ -99,3 +90,39 @@ public String logincheck(HttpServletRequest rq, HttpSession hs) {
 
 
 }
+
+
+/*
+@RequestMapping(value = "/logincheck",method = {RequestMethod.POST})
+@ResponseBody
+public String logincheck(HttpServletRequest rq, HttpSession hs) {
+    String inputid = rq.getParameter("id");
+     String inputpw = rq.getParameter("pw");
+    String inputaddr = rq.getParameter("addr");
+    System.out.println(inputaddr);
+    List<UserDTO> loggedin = userService.getOneUser(inputid);
+    System.out.println(loggedin.isEmpty());
+    if(loggedin.isEmpty()==false){
+        loggedInSession result = (userService.loginUser(inputid));
+        if(inputpw.equals(result.getPw())){
+            hs.setAttribute("username",result.getName());
+            hs.setAttribute("userid",inputid);
+            String ssname = hs.getAttribute("username").toString();
+            String ssid = hs.getAttribute("userid").toString();
+            System.out.println("세션 생성 완료 이름 : "+ssname);
+            System.out.println("세션 생성 완료 id : "+ssid);
+          //  hs.removeAttribute("username");
+
+            return Script.tohref(inputaddr);
+        }else {
+            System.out.println("비밀번호 틀림");
+
+            return Script.href("/login","비밀번호를 잘못 입력하셨습니다.");
+        }
+        }
+
+    System.out.println("아이디 틀림");
+
+    return Script.href("/login","아이디를 틀리게 입력하셨습니다.");
+}
+ */
