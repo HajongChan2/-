@@ -102,6 +102,11 @@ public class MindController {
 
         return "service/product_select";
     }
+    @RequestMapping("/productbuy")
+    public String productbuy(){
+
+        return "product/productbuy";
+    }
 
 
 
