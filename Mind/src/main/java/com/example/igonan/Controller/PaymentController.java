@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
@@ -41,6 +42,18 @@ public class PaymentController {
 //
 //    }
 //
+
+    @RequestMapping(value = "/productbuyresult", method = {RequestMethod.POST})
+    @ResponseBody
+    public Object buyresultreturn(HttpSession hs){
+       String wirename =  hs.getAttribute("username").toString();
+       String prName = hs.getAttribute("productname").toString();
+       PaymentDTO list = paymentService.getOneBuyResult(wirename,prName);
+        hs.removeAttribute(prName);
+       return list;
+
+    }
+
 
     @RequestMapping(value = "/userbuylists", method = { RequestMethod.POST })
     @ResponseBody // 자바 객체를 HTTP 응답 본문의 객체로 변환
