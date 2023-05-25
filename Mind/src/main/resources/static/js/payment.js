@@ -20,6 +20,7 @@ $(document).ready(function(){
     let phone = $("input[name=phone]");
     let name = $("#user_name");
     let now_addr;
+    let now_addr_detail;
     $.ajax({
         url : "/mypage/return",
         dataType : "json",
@@ -30,16 +31,41 @@ $(document).ready(function(){
             addr_detail.val(data[0].saddr);
             phone.val(data[0].phone);
             now_addr = addr.val();
+            now_addr_detail = addr_detail.val();
         }
     });
 
     $("#new_addr").click(function(){
         addr.val("");
+        addr_detail.val("");
         $("#find").removeAttr('disabled');
+        $("#now_addr").css({
+            "background-color": "#fff",
+            "color": "#000",
+            "font-weight": "bold",
+            "border": "solid 2px #113267"
+        });
+        $(this).css({
+            "background-color": "#2a6fe1",
+            "color": "#fff",
+            "border": "none",
+        })
     });
     $("#now_addr").click(function(){
         addr.val(now_addr);
+        addr_detail.val(now_addr_detail);
         $("#find").attr("disabled", true);
+        $("#new_addr").css({
+                "background-color": "#fff",
+                "color": "#000",
+                "font-weight": "bold",
+                "border": "solid 2px #113267"
+        });
+        $(this).css({
+            "background-color": "#2a6fe1",
+            "color": "#fff",
+            "border": "none",
+        })
     });
 });
 
