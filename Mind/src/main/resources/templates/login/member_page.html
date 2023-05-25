@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/member_page.css">
+</head>
+
+<body>
+<header id="header" th:replace="publicHF/header::header"></header>
+
+<div id="container0">
+            <div id="content_top_font">
+                <h2>마이 페이지</h2>
+            </div>
+
+            <div class="container1">
+            <div class="content_name">
+                <h3>나의 정보</h3>
+            </div>
+            </div>
+            <div class="content_line"></div>
+            <div class="container2">
+                <div class="myinfo">
+                    <p>이름</p>
+                    <input type="text" class="text_st" readonly>
+                </div>
+                <div class="myinfo">
+                    <p>아이디</p>
+                    <input type="text" class="text_st" readonly>
+                </div>
+                <div class="myinfo">
+                    <p>휴대전화</p>
+                    <input type="text" class="text_st" readonly>
+                </div>
+                <div class="myinfo">
+                    <p>주소</p>
+                    <input type="text" class="text_st" readonly>
+                </div>
+                <button class="bt_st"> <a href="">나의 정보 수정</a></button>
+                </div>
+            <div class="container1">
+            <div class="content_name">
+                <h3>나의 구매</h3>
+            </div>
+        </div>
+        <div class="content_line"></div>
+            <div id="delivery_status">
+                <div class="delivery_box">
+                    <h2>전체</h2>
+                    <h2>00</h2>
+                </div>
+                <div class="delivery_box">
+                    <h2>입금/결제</h2>
+                    <h2>00</h2>
+                </div>
+                <div class="delivery_box">
+                    <h2>배송중</h2>
+                    <h2>00</h2>
+                </div>
+                <button class="delivery_info">
+                    <a href="">배송 전체 보기</a>
+                </div>
+            <div id="content_line_end"></div>
+    </div>
+
+<footer id="footer" th:replace="publicHF/footer::footer">
+    <div></div>
+</footer>
+</body>
+
+</html>
+

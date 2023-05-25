@@ -1,0 +1,104 @@
+.content_name{
+    font-size: 15px;
+    margin: 50px 0 10px 0;
+}
+.content_line {
+    border: solid 1px #16448E;
+    margin: 0 0 50px 0;
+}
+#content_line_end {
+    border: solid 1px #16448E;
+    margin: 50px 0 50px 0;
+}
+.bt_st{
+    width: 150px;
+    height: 40px;
+    background-color: #fff;
+    color: #16448E;
+    font-size: 17px;
+    cursor: pointer;
+}
+.container1{
+    display: flex;
+    width: 1420px;
+}
+.text_st {
+    width: 220px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 0 5px 0 5px;
+    border:solid 1px #d9d9d9;
+    outline-color: #aaa;
+}
+#container3{
+    width: 1400px;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+#container2{
+    padding-bottom: 50px;
+    border-bottom:solid 1px #335b9c;
+}
+.myinfo{
+    display: flex;
+    width: 30%;
+    margin: 20px auto 20px 0;
+    align-items: center;
+}
+.myinfo > p, .myinfo > input{
+    width: calc(100% / 2);
+}
+.myinfo > input{
+    width: 220px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 0 5px 0 5px;
+    border:solid 1px #d9d9d9;
+    outline-color: #aaa;
+}
+#delivery_status{
+    display: flex;
+    align-items: center;
+    margin-top:50px;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+#delivery_infomation{
+    margin:50px 0;
+}
+.delivery_box{
+    width: 20%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border:solid 1px #d9d9d9;
+    margin:50px 0 0 0;
+}
+#content_header{
+    font-weight: bold;
+}
+.delivery_content{
+    display: flex;
+    align-items: center;
+    padding:20px 0;
+    border-bottom: solid 1px #d9d9d9;
+}
+.delivery_content > li{
+    width: calc(100% / 4);
+}
+.delivery_info{
+    width: 20%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border:solid 1px #225fc2;
+    background-color: #fff;
+    margin:50px 0 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
