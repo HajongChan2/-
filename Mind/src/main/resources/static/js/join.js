@@ -1,5 +1,6 @@
 const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
-            const idRegExp = /^[a-zA-Z0-9]{4,12}$/; //아이디 
+            const idRegExp = /^[a-zA-Z0-9]{4,12}$/; //아이디
+const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
 
             function checkAll(){
                 if(!checkName()){
@@ -11,7 +12,9 @@ const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
                     return false;
                 }else if(!checkPass()){
                     return false;
-                }else if(!checkPhone()){
+                }else if(!checkPhoneNumber()){
+                    return false;
+                }else if(!address()){
                     return false;
                 }
                 alert('회원가입 성공');
@@ -67,7 +70,25 @@ const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
                 }
                 return true;
             }
+            function checkPhoneNumber() {
+                if( regExp.test($("#txtPhone").val()) == true ) {
+                    return true;
+                }
+                else {
+                    alert("휴대폰 번호를 정확하게 입력해주세요.");
+                    return false;
+                }
+            }
 
+            function address(){
+                let addr = $("#member_addr").val();
+                let addr_detail = $("#address_detail").val();
+                if(addr == "" || addr_detail == ""){
+                    alert("주소를 입력해주세요.");
+                    return false;
+                }
+                return true;
+            }
 
 $(document).ready(function(){
     $("#submit").click(function(){
@@ -86,15 +107,17 @@ $(document).ready(function(){
                 addr : addr,
                 saddr : addr_detail
             };
-
-            $.ajax({
-            type: "POST",
-            url : "join/insert",
-            data: join_insert,
-            datatype: "json",
-            success : function(data){
-
+            if(checkAll()){
+                $.ajax({
+                    type: "POST",
+                    url : "join/insert",
+                    data: join_insert,
+                    datatype: "json",
+                    success : function(data){
+                        location.replace("/main");
+                    }
+                });
             }
-        });
+
     });
 });

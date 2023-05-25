@@ -47,8 +47,3 @@ function inputPhoneNumber( phone ) {
     }
 }
 
-function checkPhoneNumber( number ) {
-    const regExp = new RegExp( /^[0-9|-]*$/ );
-    if( regExp.test( number ) == true ) { return true; }
-    else { return false; }
-}
