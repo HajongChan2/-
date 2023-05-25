@@ -11,16 +11,16 @@ Use mind;
 
 회원(유저) - user 고유번호 / 이름 / 아이디 / 비밀번호 / 전화번호 / 주소 / 상세주소 /
 
-Create table users (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone varchar(11), addr varchar(150), saddr varchar(150));
+Create table users (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone char(13), addr varchar(150), saddr varchar(150));
 
 비회원 상품조회 - 고유번호 / 구매자 이름 varchar(50) / 휴대폰 char(11) 
 
-Create table nonmem (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
+Create table nonmem (m_num int primary key auto_increment, m_name varchar(50), m_phone char(13));
 
 (상품 이름 /수량 / 가격 / ) 
-유기견 입양신청 - 고유번호 / 보호자 이름 varchar(50) / 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 희망사유 varchar(750)/ 
+유기견 입양신청 - 고유번호 / 보호자 이름 varchar(50) / 휴대폰 char(13)/ 주소 varchar(150) / 상세주소 varchar(80) / 희망사유 varchar(750)/ 
 
-Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(50), ap_phone char(11), ap_addr varchar(150), ap_saddr varchar(80), ap_memo varchar(750));
+Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(50), ap_phone char(13), ap_addr varchar(150), ap_saddr varchar(80), ap_memo varchar(750));
 
 유기견 - 등록번호 / 강아지이름 varchar(50) / 나이 varchar(2)/ 분양 지역 varchar(30) / 성별 varchar(3)/ 종 varchar(6)/ 품종 varchar(50) / 접종여부 char(1) / 중성화 여부 char(1)/ 안락사 예정일 date/ 특이사항 varchar(1500)(500자) / 사진(url)
 
@@ -34,9 +34,9 @@ Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(5
 
 Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery varchar(1500));
 
-펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 수량 int(2) / 결제 수단 varchar(30)
+펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(13)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 수량 int(2) / 결제 수단 varchar(30)
 
-Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
+Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(13), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
 
 
 
@@ -53,23 +53,23 @@ DB 생성, Table 생성 쿼리
 
 Create database mind;
 Use mind;
-Create table users (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone varchar(11), addr varchar(150), saddr varchar(150));
-Create table nonmem (m_num int primary key auto_increment, m_name varchar(50), m_phone char(11));
+Create table users (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone char(13), addr varchar(150), saddr varchar(150));
+Create table nonmem (m_num int primary key auto_increment, m_name varchar(50), m_phone char(13));
 Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(50), ap_phone char(11), ap_addr varchar(150), ap_saddr varchar(80), ap_memo varchar(750));
 Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery varchar(1500));
 Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age int(2),pet_date date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery varchar(1500));
 Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery varchar(1500));
-Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
+Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(13), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
 
 
 
-insert into users values(null, '박종현', 'admin', '1111', '01043211234', '경기도 어딘가', '신구빌딩 3층 2호');
-insert into users values(null, '최아찬', 'imuser', '2222', '01078979999', '서울 어딘가', '신구아파트 8층 222호');
+insert into users values(null, '박종현', 'admin', '1111', '010-4321-1234', '경기도 어딘가', '신구빌딩 3층 2호');
+insert into users values(null, '최아찬', 'imuser', '2222', '010-7897-9999', '서울 어딘가', '신구아파트 8층 222호');
 
 
 
-insert into nonmem values(null, '장산수','01024245656');
-insert into nonmem values(null, '구자창','01098987676');
+insert into nonmem values(null, '장산수','010-2424-5656');
+insert into nonmem values(null, '구자창','010-9898-7676');
 
 
 
