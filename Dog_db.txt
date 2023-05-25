@@ -36,8 +36,7 @@ Create table product (pr_num int primary key auto_increment, pr_name varchar(50)
 
 펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(11)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 수량 int(2) / 결제 수단 varchar(30)
 
-Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
-
+Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
 
 
 
@@ -60,7 +59,8 @@ Create table adog_apply (ap_num int primary key auto_increment, ap_name varchar(
 Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery varchar(1500));
 Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age int(2),pet_date date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery varchar(1500));
 Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery varchar(1500));
-Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
+Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
+
 
 
 insert into users values(null, '박종현', 'admin', '1111', '01043211234', '경기도 어딘가', '신구빌딩 3층 2호');
@@ -82,7 +82,7 @@ insert into ad_dog values(null, '흰둥이', 7, '충청북도 충주', '남', '�
 
 insert into pet_dog values(null, '빵이', 1, '2021-11-13', '여', '중형견', '진돗개', 'O', 'O', '아주 건강해요!', 'https://t1.daumcdn.net/cfile/tistory/9949E333598C76C229');
 insert into pet_dog values(null, '구름', 1, '2022-09-19', '남', '소형견', '말티푸', 'O', 'O', '고구마 알러지, 간식을 많이 먹으면 설사해요', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lL7FU32w3bv8e_M4QE7SDrjFT1d7EDAr5Q&usqp=CAU');
-insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU');
+insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU'); 
 
 
 

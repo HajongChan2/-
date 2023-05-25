@@ -21,14 +21,22 @@
             <div id="content_top_font">
                 <h2>주문이 완료되었습니다.</h2>
             </div>
-            <ul id="product_info">
-                <li>받는 사람</li>
-                <li>받는 주소</li>
-                <li>상품명</li>
-                <li>총 상품 가격</li>
-            </ul>
-            <input type="button" class="product_detail" value="주문 상세 보기">
-            <input type="button" class="return" value="쇼핑 계속 하기">
+            <div class="content">
+                <ul class="product_info" id="first_info">
+                    <li>받는 사람 : </li>
+                    <li>받는 주소 : </li>
+                    <li>상품명 : </li>
+                    <li>총 상품 가격 : </li>
+                </ul>
+                <ul class="product_info" id="data_info">
+
+                </ul>
+            </div>
+            <div class="btn_content">
+                <button type="button" class="product_detail"><a href="#">주문 내역 보기</a></button>
+                <button  type="button" class="return"><a href="/petcesary">쇼핑 계속 하기</a></button>
+            </div>
+
         </div>
     <footer id="footer" th:replace="publicHF/footer::footer">
         <div></div>

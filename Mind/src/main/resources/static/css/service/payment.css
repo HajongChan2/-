@@ -13,7 +13,7 @@
     align-items: center;
 }
 .member_info > p, .member_info > input{
-    width: calc(100% / 2);
+    width: calc(100% / 4);
 }
 .member_info > input, #selbox{
     width: 220px;
@@ -142,11 +142,19 @@
     display: flex;
 }
 #addr_option button{
-    margin: 10px;
     width: 70px;
     height: 30px;
-    background-color: #16448E;
-    color:#fff;
     border-radius: 5px;
     cursor: pointer;
+}
+#new_addr{
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    border: solid 2px #113267;
+}
+#now_addr{
+    color: #fff;
+    background-color: #2a6fe1;
+    border: none;
 }

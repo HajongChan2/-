@@ -25,6 +25,16 @@ public class PaymentService {
 
         return oneBuy;
     }
+    public PaymentDTO getOneBuyResult(String buyername,String productname){
+        PaymentDTO oneBuyResult = pmm.finduserbuyresult(buyername,productname);
+        //     System.out.println(oneBuy.getuPhone());
+
+        return oneBuyResult;
+    }
+
+
+
+
 
 
 

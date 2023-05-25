@@ -12,6 +12,8 @@ public class PaymentDTO {
     private String uPhone;
     private String uAddr;
     private String uSaddr;
+    private String uPrname;
+    private  int uTotalpay;
     private String uMemo;
     private int uCount;
     private String uCashsel;
@@ -29,6 +31,14 @@ public class PaymentDTO {
 
     public String getuSaddr() {
         return uSaddr;
+    }
+
+    public String getuPrname() {
+        return uPrname;
+    }
+
+    public int getuTotalpay() {
+        return uTotalpay;
     }
 
     public String getuMemo() {
