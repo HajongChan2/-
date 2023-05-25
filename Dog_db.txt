@@ -63,30 +63,28 @@ Create table product (pr_num int primary key auto_increment, pr_name varchar(50)
 Create table ubuy (u_name varchar(50), u_phone char(11), u_addr varchar(150), u_saddr varchar(80), u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
 
 
-Insert user(유저)
-
 insert into users values(null, '박종현', 'admin', '1111', '01043211234', '경기도 어딘가', '신구빌딩 3층 2호');
 insert into users values(null, '최아찬', 'imuser', '2222', '01078979999', '서울 어딘가', '신구아파트 8층 222호');
 
-Insert nonmem (비회원)
+
 
 insert into nonmem values(null, '장산수','01024245656');
 insert into nonmem values(null, '구자창','01098987676');
 
 
-Insert ad_dog(유기견)
+
 
 insert into ad_dog values(null, '마음이', 2, '경기도 성남', '남', '대형견', '리트리버', 'O', 'X', '2023-06-30', '귀이염, 발바닥 습진, 고구마 알레르기', 'https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202302/08/bemypet/20230208182716232uvpm.jpg');
 insert into ad_dog values(null, '검둥이', 5, '서울 동대문구', '여', '중형견', '닥스훈트', 'O', 'O', '2023-07-20', '견과류 알레르기, 눈병', 'https://mblogthumb-phinf.pstatic.net/20150515_69/1212dalcom_14316779815088pKp4_JPEG/2015-05-15_17-03-07.jpg?type=w2');
 insert into ad_dog values(null, '흰둥이', 7, '충청북도 충주', '남', '소형견', '말티즈', 'O', 'X', '2023-10-30', '백신 알러지, 피부병', 'https://cdn.dailycc.net/news/photo/201708/382996_351552_2922.jpg');
 
-Insert pet_dog(반려견)
+
 
 insert into pet_dog values(null, '빵이', 1, '2021-11-13', '여', '중형견', '진돗개', 'O', 'O', '아주 건강해요!', 'https://t1.daumcdn.net/cfile/tistory/9949E333598C76C229');
 insert into pet_dog values(null, '구름', 1, '2022-09-19', '남', '소형견', '말티푸', 'O', 'O', '고구마 알러지, 간식을 많이 먹으면 설사해요', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lL7FU32w3bv8e_M4QE7SDrjFT1d7EDAr5Q&usqp=CAU');
 insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU');
 
-Insert product(상품)
+
 
 insert into product values(null, '군번 인식표', 3000, 20, '군대 인식표를 따라한 제품입니다! 우리 아이 강하게, 굳건하게 보이고 싶을 때 사용하세요!',3000, 1, 'https://m.guylook.co.kr/web/product/big/201612/2275_shop1_591440.jpg');
 insert into product values(null, '실리콘 인식표', 7000, 90, '우리 아이 피부가 예민한데요~ 이럴 때는 실리콘 인식표를 추천합니다!!!!!',3000, 1, 'https://foreverlove.co.kr/shopimages/jewoo/1250020001112.jpg?1680585555');
