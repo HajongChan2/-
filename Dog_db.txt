@@ -84,7 +84,7 @@ insert into ad_dog values(null, '흰둥이', 7, '충청북도 충주', '남', '�
 
 insert into pet_dog values(null, '빵이', 1, '2021-11-13', '여', '중형견', '진돗개', 'O', 'O', '아주 건강해요!', 'https://t1.daumcdn.net/cfile/tistory/9949E333598C76C229');
 insert into pet_dog values(null, '구름', 1, '2022-09-19', '남', '소형견', '말티푸', 'O', 'O', '고구마 알러지, 간식을 많이 먹으면 설사해요', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lL7FU32w3bv8e_M4QE7SDrjFT1d7EDAr5Q&usqp=CAU');
-insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU');
+insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU'); 
 
 
 
