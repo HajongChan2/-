@@ -16,7 +16,7 @@
     width: calc(100% / 2);
 }
 .member_info > input, #selbox{
-    width: 220px;
+    width: 400px;
     height: 25px;
     border-radius: 10px;
     padding:5px;
