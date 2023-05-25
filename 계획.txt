@@ -1,0 +1,1 @@
+db userbuiylist : primary key 추가 / 상품명 추가 / 상품 구매 총액 추가 / 상품 이미지 추가 /  
