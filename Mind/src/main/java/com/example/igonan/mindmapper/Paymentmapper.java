@@ -19,6 +19,6 @@ public interface Paymentmapper {
 PaymentDTO findOne(String buyername);
 
 
- Integer mindpaymentinsert(String name, String phone,String addr, String saddr,String memo,int count,String cashsel);
+ Integer mindpaymentinsert(String name, String phone,String addr, String saddr,String prName,int totalPay,String memo,int count,String cashsel);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달
 }
