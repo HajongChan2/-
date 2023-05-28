@@ -27,7 +27,7 @@ public class userController {
 
     @RequestMapping(value = "/idcheck")
     @ResponseBody
-    public Object malware(HttpServletRequest rq) {
+    public boolean malware(HttpServletRequest rq) {
 
         String id = rq.getParameter("id");
         //String id = "zxc";
@@ -35,9 +35,9 @@ public class userController {
         if (list.isEmpty()) {
             System.out.println("사용 가능한 아이디 ");
 
-            return null;
+            return true;
         }
-        return list;
+        return false;
     }
 /*
     @RequestMapping(value = "/loginsuccess")

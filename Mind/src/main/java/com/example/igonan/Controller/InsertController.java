@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
 
 @Controller
 public class InsertController {
@@ -72,6 +73,8 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         pr_count = Integer.parseInt(rq.getParameter("count"));
         //사용자가 구매하려는 상품의 개수를 int형으로 변환하여 담음
     }
+    LocalDate buydate = LocalDate.now();
+    System.out.println("이번 달 : "+buydate.getMonthValue());
     hs.setAttribute("productname",rq.getParameter("prName"));
     paymentmapper.mindpaymentinsert(   //구매자 주문정보를 insert하는 mindpaymentinsert 호출과 파라미터 값 입력
             rq.getParameter("name"),
@@ -80,7 +83,7 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
             Integer.parseInt(rq.getParameter("totalPay")),
             rq.getParameter("memo"),
             //Integer.parseInt(rq.getParameter("p_count")),
-            pr_count,rq.getParameter("payment_method")
+            pr_count,rq.getParameter("payment_method"),buydate
     );
 
     return "/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
