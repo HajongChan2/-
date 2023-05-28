@@ -21,17 +21,17 @@ public class MindController {
     @RequestMapping("/login")
     public String login( ) {
 
-        return "login/login";
+        return "member/login";
     }
     @RequestMapping("/join")
     public String join( ) {
 
-        return "login/join";
+        return "member/join";
     }
     @RequestMapping("/mypage")
     public String mypage( ) {
 
-        return "login/member_info";
+        return "member/member_info";
     }
     @RequestMapping("/info")
     public String information( ) {
