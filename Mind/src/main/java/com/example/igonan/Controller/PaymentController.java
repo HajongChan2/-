@@ -46,9 +46,10 @@ public class PaymentController {
     @RequestMapping(value = "/productbuyresult", method = {RequestMethod.POST})
     @ResponseBody
     public Object buyresultreturn(HttpSession hs){
-       String wirename =  hs.getAttribute("username").toString();
+
+       String wireid =  hs.getAttribute("userid").toString();
        String prName = hs.getAttribute("productname").toString();
-       PaymentDTO list = paymentService.getOneBuyResult(wirename,prName);
+       PaymentDTO list = paymentService.getOneBuyResult(wireid,prName);
         hs.removeAttribute(prName);
        return list;
 

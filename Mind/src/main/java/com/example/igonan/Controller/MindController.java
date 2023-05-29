@@ -33,7 +33,7 @@ public class MindController {
 
         return "member/member_page";
     }
-    @RequestMapping("/mypage/alter")
+    @RequestMapping("/alter")
     public String mypagealter( ) {
 
         return "member/member_info";

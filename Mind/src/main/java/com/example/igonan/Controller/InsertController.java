@@ -76,11 +76,12 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         //사용자가 구매하려는 상품의 개수를 int형으로 변환하여 담음
     }
     String id = hs.getAttribute("userid").toString();
+    System.out.println(id);
     LocalDate buydate = LocalDate.now();
     System.out.println("이번 달 : "+buydate.getMonthValue());
     hs.setAttribute("productname",rq.getParameter("prName"));
     paymentmapper.mindpaymentinsert(   //구매자 주문정보를 insert하는 mindpaymentinsert 호출과 파라미터 값 입력
-
+            id,
             rq.getParameter("name"),
             rq.getParameter("phone"),rq.getParameter("address"),
             rq.getParameter("address_detail"),rq.getParameter("prName"),
@@ -153,7 +154,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 }
 
     @PostMapping("/mypage/update")
-    public boolean mypagedataupdate(HttpSession hs, HttpServletRequest rq){
+    public String mypagedataupdate(HttpSession hs, HttpServletRequest rq){
 
         String name = rq.getParameter("name");
         String id = hs.getAttribute("userid").toString();
@@ -165,7 +166,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         hs.removeAttribute("username");
         ump.userinfoupdate(name,pw,phone,addr,saddr,id);
         hs.setAttribute("username",name);
-        return true; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+        return "member/member_page"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
 
 
