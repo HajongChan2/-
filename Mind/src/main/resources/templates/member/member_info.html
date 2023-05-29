@@ -3,12 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/member/member_info.css">
-    <link rel="stylesheet" href="css/public.css">
-    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="/css/member/member_info.css">
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/swiper.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/member_info.js"></script>
-    <script src="js/phone.js"></script>
+    <script src="/js/member_info.js"></script>
 </head>
 
 <body>
@@ -29,16 +28,16 @@
                     <input type="text" name="id" id="id" readonly>
                 </div>
                 <div class="member_info">
-                    <p>기존 비밀번호</p>
+                    <p>새로운 비밀번호</p>
                     <input type="password" name="origin_pw" id="origin_pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
                 </div>
                 <div class="member_info">
-                    <p>새로운 비밀번호</p>
+                    <p>비밀번호 확인</p>
                     <input type="text" name="new_pw" id="new_pw" placeholder="4~12자의 영문 대소문자와 숫자로만 입력">
                 </div>
                 <div class="member_info">
                     <p>휴대전화</p>
-                    <input type="text" onkeypress='return checkNumber(event)' name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
+                    <input type="text" name="txtPhone" id="txtPhone" maxlength="13" placeholder="-를 뺴고 입력하세요">
                 </div>
                 <div id="address" class="member_info">
                     <p>주소</p>
@@ -52,12 +51,11 @@
             </div>
                     <div class="bottom_line"></div>
                     <button id="submit">수정하기</button>
-            </div>
-            </div>
+        </div>
 <footer id="footer" th:replace="publicHF/footer::footer">
     <div></div>
 </footer>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="js/addr.js"></script>
+<script src="/js/addr.js"></script>
 </html>
