@@ -1,8 +1,12 @@
 const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
             const idRegExp = /^[a-zA-Z0-9]{4,12}$/; //아이디
 const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
+let boolean = false;
+let firstId = '';
+let secId = '';
 
             function checkAll(){
+                console.log(boolean);
                 if(!checkName()){
                     return false;
                 } else if(!checkId()){ 
@@ -15,6 +19,13 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
                 }else if(!checkPhoneNumber()){
                     return false;
                 }else if(!address()){
+                    return false;
+                }else if(!boolean){
+                    alert("아이디 중복체크를 하세요.");
+                    return false;
+                }else if(firstId != secId){
+                    alert("아이디 중복체크를 해주세요.");
+                    $("#id").focus();
                     return false;
                 }
                 alert('회원가입 성공');
@@ -74,10 +85,9 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
                 if( regExp.test($("#txtPhone").val()) == true ) {
                     return true;
                 }
-                else {
-                    alert("휴대폰 번호를 정확하게 입력해주세요.");
+                    console.log("휴대폰 번호를 정확하게 입력해주세요.ss");
                     return false;
-                }
+
             }
 
             function address(){
@@ -90,6 +100,52 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
                 return true;
             }
 
+            function IdCheck(){
+                let id = $("#id").val();
+                firstId = id;
+                let datas = {
+                    id : id
+                }
+                $.ajax({
+                   url : "/idcheck",
+                   datatype: "json",
+                   data : datas,
+                   type : "POST",
+                   success : function (data){
+                       if(!data){
+                           alert("사용 불가능한 아이디입니다.");
+                           boolean = false;
+                           return false;
+                       }
+                       boolean = true;
+                       alert("사용 가능한 아이디입니다.");
+                       return ;
+                   }
+                });
+            }
+
+
+
+        $(document).ready(function() {
+            $("#id_check").click(function(){
+                if($("#id").val() != ''){
+                    IdCheck();
+                }else{
+                    alert("아이디를 입력하세요.");
+                    $("#id").focus();
+                }
+
+            });
+            $("#txtPhone").focusout(function() {
+
+            })
+            $("#txtPhone").on("change keyup paste", function(){
+                let test = $("#txtPhone").val();
+                let testDate = test.replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+
+                $("#txtPhone").val(testDate);
+            })
+        });
 $(document).ready(function(){
     $("#submit").click(function(){
             let name = $("#user_name").val();
@@ -98,7 +154,7 @@ $(document).ready(function(){
             let phone = $("#txtPhone").val();
             let addr = $("#member_addr").val();
             let addr_detail = $("#address_detail").val();
-
+            secId = id;
             const join_insert = {
                 name : name,
                 id : id,

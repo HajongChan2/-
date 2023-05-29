@@ -139,10 +139,9 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     String name = rq.getParameter("name");
     String id = rq.getParameter("id");
     String pw = rq.getParameter("pw");
-    String phone = "01022223333";//rq.getParameter("phone");
+    String phone = rq.getParameter("phone");
     String addr = rq.getParameter("addr");
     String saddr = rq.getParameter("saddr");
-
     ump.mindjoinUserInsert(name,id,pw,phone,addr,saddr);
     hs.setAttribute("userid",id);
     hs.setAttribute("username",name);
