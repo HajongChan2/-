@@ -1,29 +1,34 @@
-#content_top_font{
+#content_top_font {
     padding-bottom: 20px;
-    border-bottom:solid 2px #16448E;
+    border-bottom: solid 2px #16448E;
 }
-#join_information{
+
+#join_information {
     padding-bottom: 50px;
-    border-bottom:solid 1px #335b9c;
+    border-bottom: solid 1px #335b9c;
 }
-.member_info{
+
+.member_info {
     display: flex;
     width: 30%;
     margin: 20px auto 20px 0;
     align-items: center;
 }
-.member_info > p, .member_info > input{
+
+.member_info > p, .member_info > input {
     width: calc(100% / 2);
 }
-.member_info > input, #selbox{
+
+.member_info > input, #selbox {
     width: 220px;
     height: 25px;
     border-radius: 10px;
-    padding:5px;
-    border:solid 1px #d9d9d9;
+    padding: 5px;
+    border: solid 1px #d9d9d9;
     outline-color: #aaa;
 }
-#submit{
+
+#submit {
     width: 300px;
     height: 40px;
     font-size: 20px;
@@ -35,25 +40,29 @@
     cursor: pointer;
     margin: 50px 0 0 0;
 }
-.bottom_line{
-    border:solid 0.1px #16448E;
+
+.bottom_line {
+    border: solid 0.1px #16448E;
     margin: 0 0 50px 0;
 }
+
 #find {
     position: absolute;
     right: -140px;
     width: 130px;
     height: 35px;
     border-radius: 5px;
-    border:none;
-    color:#fff;
-    background-color:#113267;
+    border: none;
+    color: #fff;
+    background-color: #113267;
     cursor: pointer;
 }
-.find_btn{
+
+.find_btn {
     position: absolute;
     right: -160px;
 }
-#address{
+
+#address {
     position: relative;
 }
