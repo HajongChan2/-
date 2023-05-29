@@ -69,6 +69,17 @@ public class PaymentController {
 
     }
 
+    @RequestMapping(value = "/mypagebuytotal")
+    @ResponseBody
+    public Object usersbuytotal(HttpSession hs){
+
+        String wireid =  hs.getAttribute("userid").toString();
+        List<PaymentDTO> list = paymentService.getuserBuytotal(wireid);
+
+        return list;
+
+    }
+
     @RequestMapping(value = "/userbuylists", method = { RequestMethod.POST })
     @ResponseBody // 자바 객체를 HTTP 응답 본문의 객체로 변환
     public Object test(){ // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능

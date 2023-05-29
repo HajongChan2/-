@@ -24,6 +24,7 @@
             success : function(data){
                 for(var i in data){
                     var table = "<tr>"
+                    table += "<td>"+data[i].uId+"</td>"
                     table += "<td>"+data[i].uName+"</td>"
                     table += "<td>"+data[i].uPhone+"</td>"
                     table += "<td>"+data[i].uAddr+"</td>"
