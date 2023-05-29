@@ -47,8 +47,6 @@ $(document).ready(function(){
             dataType : "json",
             type : "POST",
             success : function(data){
-                alert("a");
-                location.href = "/main";
 
             }
         });
