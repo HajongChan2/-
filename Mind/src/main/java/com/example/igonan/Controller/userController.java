@@ -32,7 +32,7 @@ public class userController {
         String id = rq.getParameter("id");
         //String id = "zxc";
         List<UserDTO> list = userService.getOneUser(id);
-        if (list.isEmpty()) {
+        if (list == null) {
             System.out.println("사용 가능한 아이디 ");
 
             return true;
