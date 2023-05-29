@@ -163,7 +163,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         hs.removeAttribute("username");
         ump.userinfoupdate(name,pw,phone,addr,saddr,id);
         hs.setAttribute("username",name);
-        return "redirect:/mypage"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+        return "/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
 
 

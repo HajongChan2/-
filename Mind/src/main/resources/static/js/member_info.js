@@ -23,9 +23,11 @@ $(document).ready(function(){
     })
 
     $("#submit").click(function(){
-        if(new_pw != ''){
+        if(new_pw.val() != ''){
             pw = origin_pw.val();
+            alert(pw);
         }
+        alert(pw);
         const datas = {
             name : name.val(),
             id : id.val(),
@@ -41,6 +43,7 @@ $(document).ready(function(){
             type : "POST",
             success : function(data){
 
+                location.href = "/mypage";
             }
         })
     });
