@@ -78,7 +78,6 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
     String id = hs.getAttribute("userid").toString();
     System.out.println(id);
     LocalDate buydate = LocalDate.now();
-    System.out.println("이번 달 : "+buydate.getMonthValue());
     hs.setAttribute("productname",rq.getParameter("prName"));
     paymentmapper.mindpaymentinsert(   //구매자 주문정보를 insert하는 mindpaymentinsert 호출과 파라미터 값 입력
             id,

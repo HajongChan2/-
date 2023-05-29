@@ -59,10 +59,10 @@ public class PaymentController {
     @ResponseBody
     public Object usersbuylist(HttpServletRequest rq,HttpSession hs){
 
-        String wirename =  hs.getAttribute("username").toString();
+        String wireid =  hs.getAttribute("userid").toString();
         int startnum = Integer.parseInt(rq.getParameter("start"));
         int endnum = Integer.parseInt(rq.getParameter("end"));
-        List<PaymentDTO> list = paymentService.mypageuserbuylist(wirename,startnum,endnum);
+        List<PaymentDTO> list = paymentService.mypageuserbuylist(wireid,startnum,endnum);
 
 
         return list;

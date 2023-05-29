@@ -16,8 +16,6 @@ public interface Paymentmapper {
 @Select("select * from ubuy;")
  List<PaymentDTO> userBuyList();
 
-@Select("select * from ubuy u where u.u_name = #{buyername} ;")
-PaymentDTO findOne(String buyername);
 
 @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_prname= #{productname} order by u.u_num desc limit 1; ")
 PaymentDTO finduserbuyresult(String buyerid, String productname);
@@ -26,8 +24,8 @@ PaymentDTO finduserbuyresult(String buyerid, String productname);
 //"select * from ubuy u where u.u_name = #{buyername} order by u.u_date asc limit #{startnum}, #{endnum} ;"
 List<PaymentDTO> mypageuserbuylist(String buyerid, int startnum, int endnum);
 
-//@Select("select u.u_name,count(*),sum(u_totalpay) from ubuy u where u.u_id = #{buyerid};")
-
+@Select("select u.u_name,count(*),sum(u_totalpay) from ubuy u where u.u_id = #{buyerid};")
+List<PaymentDTO> mypageuserbuytotal(String buyerid);
 
 
 

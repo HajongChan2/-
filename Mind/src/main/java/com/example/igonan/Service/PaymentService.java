@@ -30,7 +30,12 @@ public class PaymentService {
 
         return oneBuyResult;
     }
+    public List<PaymentDTO> getuserBuytotal(String buyerid){
+        List<PaymentDTO> userBuyTotal = pmm.mypageuserbuytotal(buyerid);
+        //     System.out.println(oneBuy.getuPhone());
 
+        return userBuyTotal;
+    }
 
 
 
