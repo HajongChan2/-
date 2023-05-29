@@ -10,4 +10,8 @@
     </select>
     <!--  addr varchar(150), saddr varchar(150));
 -->
+    <select id="userinfoupdate" > <!-- 해당 id를 호출하면 아래의 구문 실행-->
+        update users set name=#{param1},pw= #{param2} ,phone=#{param3},addr=#{param4},saddr=#{param5} where id =#{param6}
+    </select>
+
 </mapper>

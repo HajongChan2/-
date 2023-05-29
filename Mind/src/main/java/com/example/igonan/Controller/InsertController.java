@@ -9,6 +9,7 @@ import com.example.igonan.mindmapper.Paymentmapper;
 import com.example.igonan.mindmapper.Usermapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -150,10 +151,11 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 }
 
     @PostMapping("/mypage/update")
-    public Object mypagedataupdate(HttpSession hs, HttpServletRequest rq){
+    public String mypagedataupdate(HttpSession hs, HttpServletRequest rq){
 
         String name = rq.getParameter("name");
         String id = hs.getAttribute("userid").toString();
+        System.out.println(id);
         String pw = rq.getParameter("pw");
         String phone = rq.getParameter("phone");
         String addr = rq.getParameter("addr");

@@ -36,10 +36,4 @@ public class UserService {
     }
 
 
-    public UserDTO userUpdate(String name,String pw,String phone,String addr,String saddr,String userid){
-        UserDTO userupdate = ump.userinfoupdate(name,pw,phone,addr,saddr,userid);
-
-        return userupdate;
-    }
-
 }

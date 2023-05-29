@@ -3,7 +3,7 @@ package com.example.igonan.dto;
 
 import lombok.*;
 
-import java.util.Date;
+import java.util.*;
 
 @NoArgsConstructor
 @AllArgsConstructor

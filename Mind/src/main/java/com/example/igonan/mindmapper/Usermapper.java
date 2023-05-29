@@ -24,9 +24,8 @@ public interface Usermapper {
     @Select("select u.name,u.pw from users u where u.id = #{userid} ;")
     loggedInSession userlogin(String userid);
 
-    @Update("update users set name = #{name},pw = #{pw},phone = #{phone},addr = #{addr},saddr = #{saddr} where id = #{id};")
-    UserDTO userinfoupdate(String name,String pw,String phone,String addr,String saddr,String id);
+
 
     Integer mindjoinUserInsert(String name,String id,String pw, String phone,String addr, String saddr);
-
+    Integer userinfoupdate(String name,String pw,String phone,String addr,String saddr,String id);
 }
