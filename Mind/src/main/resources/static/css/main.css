@@ -202,10 +202,14 @@ body::-webkit-scrollbar {
     width: 600px;
     height: 50px;
     font-size: 20px;
-    color: #16448E;
     background-color: #ffffff;
-    border: solid 1px #16448E;
+    border: solid 1px #dcdcdc;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+#add_bt > a{
+    color: #16448E;
 }
