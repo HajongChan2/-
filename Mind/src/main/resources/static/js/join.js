@@ -73,15 +73,14 @@ let boolean = false;
                 }
                 return true;
             }
-            // function checkPhoneNumber() {
-            //     if( regExp.test($("#txtPhone").val()) == true ) {
-            //         return true;
-            //     }
-            //     else {
-            //         alert("휴대폰 번호를 정확하게 입력해주세요.");
-            //         return false;
-            //     }
-            // }
+            function checkPhoneNumber() {
+                if( regExp.test($("#txtPhone").val()) == true ) {
+                    return true;
+                }
+                    console.log("휴대폰 번호를 정확하게 입력해주세요.ss");
+                    return false;
+
+            }
 
             function address(){
                 let addr = $("#member_addr").val();
@@ -95,10 +94,13 @@ let boolean = false;
 
             function IdCheck(){
                 let id = $("#id_check").val();
+                let datas = {
+                    id : id
+                }
                 $.ajax({
                    url : "/idcheck",
                    datatype: "json",
-                   data : {id : id},
+                   data : datas,
                    type : "POST",
                    success : function (data){
                        if(!data){
@@ -112,11 +114,25 @@ let boolean = false;
                 });
             }
 
-            $("#id_check").click(function(){
-                console.log("a");
-                IdCheck();
-            });
 
+
+        $(document).ready(function() {
+            $("#id_check").click(function(){
+                if($("#id").val() != ''){
+                    IdCheck();
+                }else{
+                    alert("아이디를 입력하세요.");
+                    $("#id").focus();
+                }
+
+            });
+            $("#txtPhone").focusout(function() {
+                let test = $("#txtPhone").val();
+                let testDate = test.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+
+                $("#txtPhone").val(testDate);
+            })
+        });
 $(document).ready(function(){
     $("#submit").click(function(){
             let name = $("#user_name").val();
