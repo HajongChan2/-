@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -148,7 +149,20 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     return "redirect:/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
 }
 
+    @PostMapping("/mypage/update")
+    public Object mypagedataupdate(HttpSession hs, HttpServletRequest rq){
 
+        String name = rq.getParameter("name");
+        String id = hs.getAttribute("userid").toString();
+        String pw = rq.getParameter("pw");
+        String phone = rq.getParameter("phone");
+        String addr = rq.getParameter("addr");
+        String saddr = rq.getParameter("saddr");
+        hs.removeAttribute("username");
+        ump.userinfoupdate(name,pw,phone,addr,saddr,id);
+        hs.setAttribute("username",name);
+        return "redirect:/mypage"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+    }
 
 
 

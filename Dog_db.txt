@@ -36,7 +36,7 @@ Create table product (pr_num int primary key auto_increment, pr_name varchar(50)
 
 펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(13)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 수량 int(2) / 결제 수단 varchar(30)
 
-Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(13), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30));
+Create table ubuy (u_num int primary key auto_increment, u_name varchar(50), u_phone char(13), u_addr varchar(150), u_saddr varchar(80), u_prname varchar(100), u_totalpay int(9),u_memo varchar(300), u_count int (2), u_cashsel varchar(30),u_date date);
 
 
 
