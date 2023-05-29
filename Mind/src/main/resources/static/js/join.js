@@ -127,8 +127,11 @@ let boolean = false;
 
             });
             $("#txtPhone").focusout(function() {
+
+            })
+            $("#txtPhone").on("change keyup paste", function(){
                 let test = $("#txtPhone").val();
-                let testDate = test.replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/,"$1-$2-$3");
+                let testDate = test.replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
 
                 $("#txtPhone").val(testDate);
             })
