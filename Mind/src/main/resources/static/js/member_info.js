@@ -47,8 +47,10 @@ $(document).ready(function(){
             dataType : "json",
             type : "POST",
             success : function(data){
+                if(data){
                 alert("a");
                 location.href = "/main";
+                }
             }
         });
     });
