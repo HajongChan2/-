@@ -3,6 +3,8 @@ package com.example.igonan.dto;
 
 import lombok.*;
 
+import java.util.Date;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
@@ -17,6 +19,7 @@ public class PaymentDTO {
     private String uMemo;
     private int uCount;
     private String uCashsel;
+    private Date uDate;
     public String getuName() {
         return uName;
     }
@@ -48,4 +51,8 @@ public class PaymentDTO {
     public int getuCount() {return uCount;}
 
     public String getuCashsel() {return uCashsel;}
+
+    public Date getuDate() {
+        return uDate;
+    }
 }

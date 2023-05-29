@@ -19,11 +19,10 @@ public class PaymentService {
         List<PaymentDTO> userBuyList= pmm.userBuyList();
         return userBuyList;
     }
-    public PaymentDTO getOneBuyList(String buyername){
-        PaymentDTO oneBuy = pmm.findOne(buyername);
-   //     System.out.println(oneBuy.getuPhone());
+    public List<PaymentDTO> mypageuserbuylist(String buyername,int startnum, int endnum){
+        List<PaymentDTO> oneUserBuyList = pmm.mypageuserbuylist(buyername,startnum,endnum);
 
-        return oneBuy;
+        return oneUserBuyList;
     }
     public PaymentDTO getOneBuyResult(String buyername,String productname){
         PaymentDTO oneBuyResult = pmm.finduserbuyresult(buyername,productname);
@@ -31,6 +30,8 @@ public class PaymentService {
 
         return oneBuyResult;
     }
+
+
 
 
 
