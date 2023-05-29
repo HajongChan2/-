@@ -30,13 +30,14 @@ public class userController {
     public boolean malware(HttpServletRequest rq) {
 
         String id = rq.getParameter("id");
-        //String id = "zxc";
+
         List<UserDTO> list = userService.getOneUser(id);
-        if (list == null) {
+        if (list.isEmpty()) {
             System.out.println("사용 가능한 아이디 ");
 
             return true;
         }
+
         return false;
     }
 /*

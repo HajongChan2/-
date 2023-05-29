@@ -93,7 +93,7 @@ let boolean = false;
             }
 
             function IdCheck(){
-                let id = $("#id_check").val();
+                let id = $("#id").val();
                 let datas = {
                     id : id
                 }
