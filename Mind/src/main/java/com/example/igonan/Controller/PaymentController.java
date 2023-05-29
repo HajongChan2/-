@@ -69,7 +69,7 @@ public class PaymentController {
 
     }
 
-    @RequestMapping(value = "/mypagebuytotal")
+    @RequestMapping(value = "/mypagebuytotal", method = { RequestMethod.POST})
     @ResponseBody
     public Object usersbuytotal(HttpSession hs){
 
