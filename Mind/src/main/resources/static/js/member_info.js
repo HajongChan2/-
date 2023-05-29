@@ -1,12 +1,20 @@
+let name;
+let id;
+let origin_pw;
+let new_pw;
+let phone;
+let addr;
+let saddr;
+let pw;
 $(document).ready(function(){
-    let name = $("#user_name");
-    let id = $("#id");
-    let origin_pw = $("#origin_pw");
-    let new_pw = $("#new_pw");
-    let phone = $("#txtPhone");
-    let addr = $("#member_addr");
-    let saddr = $("#address_detail");
-    let pw = '';
+    name = $("#user_name");
+    id = $("#id");
+    origin_pw = $("#origin_pw");
+    new_pw = $("#new_pw");
+    phone = $("#txtPhone");
+    addr = $("#member_addr");
+    saddr = $("#address_detail");
+    pw = '';
     $.ajax({
         url : "/mypage/return",
         dataType : "json",
@@ -20,14 +28,11 @@ $(document).ready(function(){
             pw = data[0].pw;
             console.log(data, pw);
         }
-    })
-
+    });
     $("#submit").click(function(){
         if(new_pw.val() != ''){
             pw = origin_pw.val();
-            alert(pw);
         }
-        alert(pw);
         const datas = {
             name : name.val(),
             id : id.val(),
@@ -42,9 +47,9 @@ $(document).ready(function(){
             dataType : "json",
             type : "POST",
             success : function(data){
-
-                location.href = "/mypage";
+                alert("a");
+                location.href = "/main";
             }
-        })
+        });
     });
 });
