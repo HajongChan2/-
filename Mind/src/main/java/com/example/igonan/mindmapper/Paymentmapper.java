@@ -24,7 +24,7 @@ PaymentDTO finduserbuyresult(String buyerid, String productname);
 //"select * from ubuy u where u.u_name = #{buyername} order by u.u_date asc limit #{startnum}, #{endnum} ;"
 List<PaymentDTO> mypageuserbuylist(String buyerid, int startnum, int endnum);
 
-@Select("select u.u_name,count(*),sum(u_totalpay) from ubuy u where u.u_id = #{buyerid};")
+@Select("select u.u_name,count(*) as u_count,sum(u_totalpay) as u_totalpay from ubuy u where u.u_id = #{buyerid};")
 List<PaymentDTO> mypageuserbuytotal(String buyerid);
 
 
