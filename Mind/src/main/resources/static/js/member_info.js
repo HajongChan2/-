@@ -33,7 +33,7 @@ $(document).ready(function(){
         if(new_pw.val() != ''){
             pw = origin_pw.val();
         }
-        const datas = {
+        const member_update = {
             name : name.val(),
             id : id.val(),
             phone : phone.val(),
@@ -42,12 +42,11 @@ $(document).ready(function(){
             pw : pw
         }
         $.ajax({
-            url : "/mypage/update",
-            data : datas,
-            dataType : "json",
             type : "POST",
+            url : "/mypage/update",
+            data : member_update,
             success : function(data){
-
+                location.href = '/mypage';
             }
         });
     });
