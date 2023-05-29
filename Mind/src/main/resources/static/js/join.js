@@ -3,6 +3,7 @@ const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
 const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
 let boolean = false;
             function checkAll(){
+                console.log(boolean);
                 if(!checkName()){
                     return false;
                 } else if(!checkId()){ 
@@ -105,6 +106,7 @@ let boolean = false;
                    success : function (data){
                        if(!data){
                            alert("사용 불가능한 아이디입니다.");
+                           boolean = false;
                            return false;
                        }
                        boolean = true;
