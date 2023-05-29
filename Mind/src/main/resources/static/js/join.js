@@ -1,7 +1,7 @@
 const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
             const idRegExp = /^[a-zA-Z0-9]{4,12}$/; //아이디
 const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
-
+let boolean = false;
             function checkAll(){
                 if(!checkName()){
                     return false;
@@ -15,6 +15,9 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
                 }else if(!checkPhoneNumber()){
                     return false;
                 }else if(!address()){
+                    return false;
+                }else if(!boolean){
+                    alert("아이디 중복체크를 하세요.");
                     return false;
                 }
                 alert('회원가입 성공');
@@ -70,15 +73,15 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
                 }
                 return true;
             }
-            function checkPhoneNumber() {
-                if( regExp.test($("#txtPhone").val()) == true ) {
-                    return true;
-                }
-                else {
-                    alert("휴대폰 번호를 정확하게 입력해주세요.");
-                    return false;
-                }
-            }
+            // function checkPhoneNumber() {
+            //     if( regExp.test($("#txtPhone").val()) == true ) {
+            //         return true;
+            //     }
+            //     else {
+            //         alert("휴대폰 번호를 정확하게 입력해주세요.");
+            //         return false;
+            //     }
+            // }
 
             function address(){
                 let addr = $("#member_addr").val();
@@ -89,6 +92,30 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
                 }
                 return true;
             }
+
+            function IdCheck(){
+                let id = $("#id_check").val();
+                $.ajax({
+                   url : "/idcheck",
+                   datatype: "json",
+                   data : {id : id},
+                   type : "POST",
+                   success : function (data){
+                       if(!data){
+                           alert("사용 불가능한 아이디입니다.");
+                           return false;
+                       }
+                       boolean = true;
+                       alert("사용 가능한 아이디입니다.");
+                       return ;
+                   }
+                });
+            }
+
+            $("#id_check").click(function(){
+                console.log("a");
+                IdCheck();
+            });
 
 $(document).ready(function(){
     $("#submit").click(function(){
