@@ -13,7 +13,7 @@
         <div id="content_top_font">
             <h2>유기견 입양 신청서</h2>
         </div>
-        <form action="/members/insert"  method="post">
+        <form method="post">
                 <div id="abandoned_info">
                 <div class="infomation">
                     <p>신청인</p> 
@@ -44,7 +44,7 @@
                     <textarea id="text_box" placeholder="500자 이내로 쓰세요." maxlength="500" name="memo"></textarea>
                 </div>
             </div>
-            <button id="submit">입양 신청</button>
+            <button type="button" id="submit">입양 신청</button>
         </form>
     </div>
     <footer id="footer" th:replace="publicHF/footer::footer">

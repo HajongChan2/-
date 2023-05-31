@@ -26,4 +26,29 @@ $(document).ready(function(){
             alert('글자수는 500자까지 입력 가능합니다.');
         };
     });
+
+    $("#submit").click(function (){
+        let name = $("#title").val();
+        let phone = $("#register").val();
+        let addr = $("#member_addr").val();
+        let saddr = $("#kind").val();
+        let memo = $("#text_box").val();
+
+        const abandogFormData = {
+            name : name,
+            phone : phone,
+            addr : addr,
+            saddr : saddr,
+            memo : memo
+        }
+
+        $.ajax({
+            type : "POST",
+            url : "/abandog/add",
+            data : abandogFormData,
+            success : function (data){
+                location.replace("/main");
+            }
+        });
+    });
 });
