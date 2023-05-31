@@ -65,6 +65,7 @@ public class checkCon {
         if(loggedin.isEmpty()==false){
             loggedInSession result = (userService.loginUser(inputid));
             if(inputpw.equals(result.getPw())){
+
                 hs.setAttribute("username",result.getName());
                 hs.setAttribute("userid",inputid);
                 return true;
