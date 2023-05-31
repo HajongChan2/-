@@ -1,6 +1,7 @@
 package com.example.igonan.mindmapper;
 
 import com.example.igonan.dto.PaymentDTO;
+import com.example.igonan.util.myPageTotalDTO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -25,9 +26,10 @@ PaymentDTO finduserbuyresult(String buyerid, String productname);
 List<PaymentDTO> mypageuserbuylist(String buyerid, int startnum, int endnum);
 
 @Select("select u.u_name,count(*) as u_count,sum(u_totalpay) as u_totalpay from ubuy u where u.u_id = #{buyerid};")
-List<PaymentDTO> mypageuserbuytotal(String buyerid);
+List<myPageTotalDTO> mypageuserbuytotal(String buyerid);
 
-
+ @Select("select u.u_name,count(*) as u_count,sum(u_totalpay) as u_totalpay from ubuy u where u.u_id = #{buyerid} and u.u_date like #{thisdate};")
+ List<myPageTotalDTO> mypageuserbuytotalmonth(String buyerid,String thisdate);
 
  Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달

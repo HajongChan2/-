@@ -3,12 +3,15 @@ package com.example.igonan.Controller;
 import com.example.igonan.Service.PaymentService;
 import com.example.igonan.dto.PaymentDTO;
 import com.example.igonan.mindmapper.Paymentmapper;
+import com.example.igonan.util.myPageTotalDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -74,7 +77,32 @@ public class PaymentController {
     public Object usersbuytotal(HttpSession hs){
 
         String wireid =  hs.getAttribute("userid").toString();
-        List<PaymentDTO> list = paymentService.getuserBuytotal(wireid);
+        List<myPageTotalDTO> list = paymentService.getuserBuytotal(wireid);
+
+        return list;
+
+    }
+    @RequestMapping(value = "/mypagebuytotalmonth", method = { RequestMethod.POST})
+    @ResponseBody
+    public Object usersbuytotalmonth(HttpSession hs){
+
+       String wireid =  hs.getAttribute("userid").toString();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy");
+        DateTimeFormatter formatmonth = DateTimeFormatter.ofPattern("mm");
+        // 포맷 적용
+
+        LocalDate asd = LocalDate.now();
+        int thismonth = asd.getMonthValue();
+
+        String thisyear = asd.format(formatter);
+
+        String thisdate = thisyear+"-%"+thismonth+"-%";
+
+        System.out.println(wireid);
+        System.out.println(thisdate);
+
+        List<myPageTotalDTO> list = paymentService.getuserBuytotalmonth(wireid,thisdate);
 
         return list;
 
