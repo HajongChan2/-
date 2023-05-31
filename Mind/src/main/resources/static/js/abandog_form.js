@@ -9,6 +9,17 @@ function checkNumber(event) {
 
 
 $(document).ready(function(){
+    $.ajax({
+        url : "/mypage/return",
+        dataType : "json",
+        type: "POST",
+        success : function (data){
+            $("#title").val(data[0].name);
+            $("#register").val(data[0].phone);
+            $("#member_addr").val(data[0].addr);
+            $("#kind").val(data[0].saddr);
+        }
+    });
     $('#text_box').keyup(function () {
         let content = $(this).val();
 
