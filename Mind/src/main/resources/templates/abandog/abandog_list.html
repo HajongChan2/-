@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/public.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="/js/abandog_list.js"></script>
-    <script src="/js/topButton"></script>
+    <script src="/js/topButton.js"></script>
 </head>
 
 <body>
@@ -18,8 +18,8 @@
     <div id="container0">
         <h1 id="main_nb">유기견 무료 입양</h1>
         <div id="container">
-            <div id="add_content">
-                <button id="add_list"> <a href="/abandog/detail/insert">유기견 등록하기</a> </button>
+            <div id="add_content" th:if="${session.userid == 'admin'}">
+                <button id="add_list"> <a href="/admin/abandog/insert">유기견 등록하기</a> </button>
             </div>
             <select>
                 <option>
