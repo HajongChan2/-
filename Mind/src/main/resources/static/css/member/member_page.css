@@ -95,6 +95,10 @@
 
 .button_st a {
     color: #ffffff;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    line-height: calc(100% * 2);
 }
 
 #purchase_dt {
