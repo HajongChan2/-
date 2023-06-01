@@ -64,4 +64,6 @@ select {
     height: 100%;
     font-size: 17px;
     color: #fff;
+    display: inline-block;
+    line-height: calc(100% * 2);
 }

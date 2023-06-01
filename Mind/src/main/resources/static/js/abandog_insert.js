@@ -1,5 +1,5 @@
 let count = 0;
-let a = [];
+let imgs = [];
 
 function readURL(obj) {
     let reader = new FileReader();
@@ -12,10 +12,10 @@ function readURL(obj) {
         $(img).attr('src', e.target.result);
         $(img).addClass("imgs");
         $('#photo_sign_up').prepend(img);
-        a.push(e.target.result);
+        imgs.push(e.target.result);
     }
     count++;
-    console.log(a);
+    console.log(imgs);
 }
 
 
@@ -32,12 +32,12 @@ $(document).ready(function(){
 		this.remove();
         count -= 1;
         let b = $(this).attr("src");
-        for(let i = 0; i < a.length; i++){
-            if(a[i] == b){
-                a.splice(i, 1);
+        for(let i = 0; i < imgs.length; i++){
+            if(imgs[i] == b){
+                imgs.splice(i, 1);
             }
         }
-        console.log(a);
+        console.log(imgs);
 
 
 
@@ -60,6 +60,33 @@ $(document).ready(function(){
             $('.textCount').text(500);
             alert('글자수는 500자까지 입력 가능합니다.');
         };
+    });
+
+    $("#submit").click(function(){
+        let title  = $("#title").val();
+        let name = $("#register").val();
+        let area = $("#area").val();
+        let kind = $("#kind").val();
+        let neutered = $("input[name='neutered']:checked").val();
+        let inoculation = $("input[name='inoculation']:checked").val();
+        let memo = $("#text_box").val();
+        const ad_insert = {
+            title : title,
+            name : name,
+            area : area,
+            kind : kind,
+            neutered : neutered,
+            inoculation : inoculation,
+            memo : memo
+        }
+        $.ajax({
+            type : "POST",
+            url : "/payment/insert",
+            data : ad_insert ,
+            success : function (data){
+                location.replace("/abandog/list");
+            }
+        });
     });
 
 });
