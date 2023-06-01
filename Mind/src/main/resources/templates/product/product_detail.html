@@ -28,6 +28,8 @@
             <button id="mem_purchase" th:if="${session.username != null}">구매하기</button>
             <button id="non_purchase" th:if="${session.username == null}">구매하기</button>
         </div>
+        <div id="product_img"></div>
+        
     </form>
 </div>
 <footer id="footer" th:replace="publicHF/footer::footer">

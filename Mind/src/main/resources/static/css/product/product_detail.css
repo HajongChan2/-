@@ -204,3 +204,18 @@ img {
     font-size: 17px;
     color: #fff;
 }
+
+.line {
+    border: solid 0.1px #16448E;
+    margin: 50px 0 100px 0;
+}
+#product_img{
+    border: solid 1px #16448E;
+    width: 1400px;
+    height: 300px;
+    margin: 50px 0 50px 0;
+}
+.product_name {
+    font-size: 50px;
+    font-weight: bold;
+}
