@@ -202,6 +202,36 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     }
 */
 
+@RequestMapping("/product/insert")
+    public String productinsert(HttpSession hs, HttpServletRequest rq){
+/*
+        String[] imgs = rq.getParameterValues("imgs");
+        for ( int i  = 0; i < imgs.length; i++){
+            //이미지 어떻게 받아올지 다시 생각해서 작성하기
+            System.out.println(imgs[i]);
+        }
+        String name = rq.getParameter("name");
+        String prcie = rq.getParameter("price");
+        String dpay = rq.getParameter("dpay");
+        String seller = rq.getParameter("seller");
+        int count = Integer.parseInt(rq.getParameter("count"));
+*/
+        String name = "사진 테스트";
+        int price = 30000;
+        int dpay= 3000;
+        String seller = "E_AhyeonPig";
+        int count = 100;
+        String memo = "이아현 도애지이야";
+        int type = 3;
+        String imgs[] ={"https://img.freepik.com/premium-photo/fun-pig-animation_183364-42986.jpg","zxc.jpg","qwe.jpg"};
+
+        pmp.mindProductInsert(name,price,count,memo,dpay,type,imgs[0]);
+        int igonanProducNumber = Integer.parseInt(pmp.productImageWireNumberReturn(name).getPrNum());
+        for(int i =0;i<3;i++) {
+            pmp.mindProductImageInsert(igonanProducNumber,imgs[i]);
+        }
+        return "product/petcesory";
+    }
 
 
 }

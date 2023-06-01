@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import java.util.List;
 
 @Mapper
@@ -25,4 +26,11 @@ public interface Productmapper {
 
     @Select("select * from product order by pr_count asc limit 6;")
     List<ProductDTO> mainProductList();
+
+    @Select("select * from product pr where pr.pr_name=#{productName} order by pr.pr_num desc limit 1;")
+    ProductDTO productImageWireNumberReturn(String productName);
+
+    Integer mindProductInsert(String name,int price,int count,String memo,int dpay,int type,String gall);
+
+    Integer mindProductImageInsert(int num,String imgsrc);
 }
