@@ -53,18 +53,6 @@ img {
     height: 100%;
 }
 
-.panel>li:nth-of-type(1) {
-    background-color: red;
-}
-
-.panel>li:nth-of-type(2) {
-    background-color: blue;
-}
-
-.panel>li:nth-of-type(3) {
-    background-color: green;
-}
-
 .dot:after {
     content: "";
     display: block;

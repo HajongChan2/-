@@ -5,6 +5,8 @@ $(document).ready(function(){
        dataType : "json",
        type : "POST",
        success : function(data){
+           str = '';
+
            str += `
             <li>${data[0].name}</li>
             <li>${data[0].id}</li>
@@ -12,7 +14,6 @@ $(document).ready(function(){
             <li>${data[0].addr}</li>
             <li>${data[0].saddr}</li>
            `
-           console.log(data);
            $(".member_info2").append(str);
        }
     });
@@ -23,7 +24,7 @@ $(document).ready(function(){
         dataType : "json",
         success : function (data){
             str = '';
-            console.log(data);
+
             str += `
             <div class="border_box">
                 <h2>총 구매 횟수</h2>
@@ -43,7 +44,7 @@ $(document).ready(function(){
         dataType : "json",
         success : function (data){
             str = '';
-            console.log(data);
+
             str += `
 
             <div class="border_box">
