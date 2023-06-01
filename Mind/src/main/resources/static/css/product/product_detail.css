@@ -1,38 +1,44 @@
-#product_info{
+#product_info {
     display: flex;
+    margin: 50px 0 0 0;
 }
 
-#product_image > img{
+#product_image > img {
     width: 100%;
     height: 600px;
 }
-#product_image, .description{
+
+#product_image, .description {
     width: calc(100% / 2);
-    margin:40px 20px;
+    margin: 40px 20px;
 }
-.info{
+
+.info {
     height: 500px;
-    border-bottom:solid 1px #16448E;
+    border-bottom: solid 1px #16448E;
     width: 100%;
     display: flex;
     line-height: 80px;
 }
-.description_content{
-    margin:0 10px;
+
+.description_content {
+    margin: 0 10px;
 }
-.description_content > li{
+
+.description_content > li {
     font-weight: 400;
     font-size: 20px;
 }
 
 .count-wrap {
     position: relative;
-    padding: 0 38px; 
-    margin:20px 0; 
+    padding: 0 38px;
+    margin: 20px 0;
     border: 1px solid #ddd;
     overflow: hidden;
     width: 60px;
 }
+
 .count-wrap > button {
     border: 0;
     background: #ddd;
@@ -40,14 +46,18 @@
     width: 38px;
     height: 38px;
     position: absolute;
-    top: 0;font-size: 12px;
+    top: 0;
+    font-size: 12px;
 }
+
 .count-wrap > button.minus {
     left: 0;
 }
+
 .count-wrap > button.plus {
     right: 0;
 }
+
 .count-wrap .inp {
     border: 0;
     height: 38px;
@@ -55,19 +65,57 @@
     display: block;
     width: 100%;
 }
-#purchase{
+
+#purchase {
     position: relative;
 }
-#purchase > button{
+
+#purchase > button {
     width: 150px;
     height: 38px;
-    background: #16448E;
-    color:#fff;
+    background: #113267;
+    color: #fff;
     font-size: 20px;
-    position:absolute;
+    position: absolute;
     top: 0;
-    right:0;
-    border:none;
+    right: 0;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#add_content > button {
+    width: 150px;
+    height: 40px;
+    background-color: #fff;
+    border: solid 1px #113267;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#correct_bt > a {
+    font-size: 17px;
+    color: #113267;
+}
+
+#bt_container {
+    display: flex;
+    width: 22%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#add_content2 > button {
+    width: 150px;
+    height: 40px;
+    background-color: #113267;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#del_bt > a {
+    font-size: 17px;
+    color: #fff;
 }

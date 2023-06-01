@@ -16,20 +16,23 @@
 <div id="line"></div>
 
 
-    <div id="container0">
-        <h1 id="main_nb">펫세사리</h1>
-        <div id="container">
-            <input type="button" onclick="return false;" id="tag" class="pet_items" value="인식표">
-            <input type="button" onclick="return false;" id="chip" class="pet_items" value="외장칩">
-            <input type="button" id="etc" class="pet_items" value="기타">
-            <div class="line"></div>
-        </div>
-        <div id="container1">
-            <div id="container2">
+<div id="container0">
+    <h1 id="main_nb">펫세사리</h1>
+    <div id="add_content">
+        <button id="add_list"><a href="/product/detail/insert">상품 등록하기</a></button>
+    </div>
+    <div id="container">
+        <input type="button" onclick="return false;" id="tag" class="pet_items" value="인식표">
+        <input type="button" onclick="return false;" id="chip" class="pet_items" value="외장칩">
+        <input type="button" id="etc" class="pet_items" value="기타">
+        <div class="line"></div>
+    </div>
+    <div id="container1">
+        <div id="container2">
 
-            </div>
         </div>
     </div>
+</div>
 <footer id="footer" th:replace="publicHF/footer::footer">
     <div></div>
 </footer>

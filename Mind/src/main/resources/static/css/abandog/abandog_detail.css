@@ -1,68 +1,80 @@
-.content_text{
+.content_text {
     font-size: 20px;
     color: #16448E;
     margin: 50px;
 }
-.center_text{
+
+.center_text {
     font-size: 50px;
     color: #16448E;
-    margin: 0 0 20px 0 ;
+    margin: 0 0 20px 0;
 }
-.center_text2{
+
+.center_text2 {
     font-size: 30px;
     color: #16448E;
     margin: 0 0 50px 0;
     cursor: pointer;
 }
-#container1{
+
+#container1 {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: flex-end;
 }
-#abandogbox_wrap{
+
+#abandogbox_wrap {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-#abandogbox_wrap1{
+
+#abandogbox_wrap1 {
     width: 700px;
     height: 100%;
 }
+
 .abandogbox_wrap1 img {
     width: 100%;
     height: 100%;
     background-repeat: no;
 }
-.abandogbox_wrap2{
+
+.abandogbox_wrap2 {
     width: 650px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
-#abandogbox_wrap3{
+
+#abandogbox_wrap3 {
     width: 100%;
     display: flex;
 }
-.abandogbox img{
+
+.abandogbox img {
     width: 700px;
     height: 500px;
     margin: 20px 0 20px 0;
 }
-.abandogbox_img1{
+
+.abandogbox_img1 {
     border: solid 1px #16448E;
     width: 100%;
     height: 800px;
     margin: 100px 0 100px 0;
 }
+
 .center_line {
-    border:solid 0.1px #16448E;
+    border: solid 0.1px #16448E;
     margin: 50px 0 100px 0;
 }
-.adoption_button{
+
+.adoption_button {
     font-size: 20px;
     color: #ffffff;
     border: solid 1px;
@@ -73,3 +85,40 @@
     margin: 50px 0 0 50px;
     cursor: pointer;
 }
+
+#add_content > button {
+    width: 150px;
+    height: 40px;
+    background-color: #fff;
+    border: solid 1px #113267;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#correct_bt > a {
+    font-size: 17px;
+    color: #113267;
+}
+
+#bt_container {
+    display: flex;
+    width: 22%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#add_content2 > button {
+    width: 150px;
+    height: 40px;
+    background-color: #113267;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#del_bt > a {
+    font-size: 17px;
+    color: #fff;
+}
+
