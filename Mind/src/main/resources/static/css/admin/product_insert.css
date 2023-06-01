@@ -78,3 +78,50 @@
     margin: 50px 0 0 50px;
     cursor: pointer;
 }
+.contents{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    margin:0;
+    flex-direction: column;
+
+}
+.contents > h4{
+    color:#7b7b7b;
+    font-size: 0.8em;
+    margin:10px 0;
+    text-align: left;
+}
+#product_content_img{
+    display: none;
+}
+.contents_text{
+    margin:0;
+    display: flex;
+    align-items: center;
+}
+.contents_text > p{
+    margin:20px 0;
+    display: inline-block;
+}
+.contents_text > label{
+    background-image: url(data:image/png;base64,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);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 0 10px;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    border:solid 1px #333;
+    margin:0;
+    padding:5px;
+    overflow-y: scroll;
+}
+.content img {
+    max-width: 100%;
+    max-height: 100%;
+}
