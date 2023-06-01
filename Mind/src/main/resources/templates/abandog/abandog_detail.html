@@ -15,7 +15,7 @@
 <div id="line"></div>
 
 <div id="container0">
-    <div id="bt_container">
+    <div id="bt_container" th:if="${session.userid == 'admin'}">
         <div id="add_content">
             <button id="correct_bt"><a href="">수정</a></button>
         </div>

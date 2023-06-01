@@ -82,7 +82,7 @@ $(document).ready(function(){
         let count = $("#count").val();
         let memo = $("#memo").val();
         let content = $(".content").html();
-
+        console.log(content);
         const product_data = {
             name : name,
             price : price,
