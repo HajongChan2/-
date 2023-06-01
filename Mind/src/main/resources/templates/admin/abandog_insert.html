@@ -4,11 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/public.css">
-    <link rel="stylesheet" href="/css/abandog/abandog_insert.css">
+    <link rel="stylesheet" href="/css/admin/abandog_insert.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/js/abandog_insert.js"></script>
-    <script src="js/topButton.js"></script>
+    <script src="/js/topButton.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -27,31 +27,38 @@
             <div id="iamge_caution"><h5>※ +버튼을 누르면 사진을 선택할 수 있습니다.(최대 3장 이하)</h5></div>
             <div id="abandoned_info">
                 <div class="infomation">
-                    제목<input type="text" name="title" id="title">
+                    <p>제목</p>
+                    <input type="text" name="title" id="title">
                 </div>
                 <div class="infomation">
-                    등록자<input type="text" name="register" id="register">
+                    <p>등록자</p>
+                    <input type="text" name="register" id="register">
                 </div>
                 <div class="infomation">
-                    분양 지역<input type="text" name="area" id="area">
+                    <p>분양 지역</p>
+                    <input type="text" name="area" id="area">
                 </div>
                 <div class="infomation">
-                    품종<input type="text" name="kind" id="kind">
+                    <p>품종</p>
+                    <input type="text" name="kind" id="kind">
                 </div>
                 <div class="whether">
-                    중성화 여부<input type="radio" name="neutered" value="yes">예
-                    <input type="radio" name="neutered" value="no">아니오
+                    <p>중성화 여부</p>
+                    <input type="radio" name="neutered" value="O">예
+                    <input type="radio" name="neutered" value="X">아니오
                 </div>
                 <div class="whether">
-                    접종 여부<input type="radio" name="inoculation" value="yes">예
-                    <input type="radio" name="inoculation" value="no">아니오
+                    <p>접종 여부</p>
+                    <input type="radio" name="inoculation" value="O">예
+                    <input type="radio" name="inoculation" value="X">아니오
                 </div>
                 <div class="whether">
                     <div class="textLengthWrap">
                         <p class="textCount">0자</p>
                         <p class="textTotal">/500자</p>
                     </div>
-                    특이사항 <textarea id="text_box" placeholder="500자 이내로 쓰세요." maxlength="500"></textarea>
+                    <p>특이사항</p>
+                    <textarea id="text_box" placeholder="500자 이내로 쓰세요." maxlength="500"></textarea>
                 </div>
             </div>
             <button id="submit">등록하기</button>

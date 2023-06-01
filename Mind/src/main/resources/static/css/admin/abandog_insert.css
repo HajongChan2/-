@@ -41,6 +41,9 @@
     align-items: center;
     width: 30%;
 }
+.infomation > p{
+    width: 30%;
+}
 .infomation > input{
     width: 350px;
     height: 30px;
@@ -52,6 +55,11 @@
 .whether{
     display: flex;
     position: relative;
+    width: 30%;
+}
+.whether > p{
+    width: 30%;
+    margin: 0;
 }
 .whether > input{
     width: 20px;
@@ -59,8 +67,8 @@
     margin: 0 20px;
 }
 .whether > textarea{
-    width: 500px;
-    height: 210px;
+    width: 70%;
+    height: 240px;
     resize: none;
     padding:5px;
     outline-color:#999;

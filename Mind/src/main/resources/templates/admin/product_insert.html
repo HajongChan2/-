@@ -3,27 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/admin/product_insert.css">
-    <link rel="stylesheet" href="css/public.css">
-    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="/css/admin/product_insert.css">
+    <link rel="stylesheet" href="/css/public.css">
+    <link rel="stylesheet" href="/css/swiper.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/silde.js"></script>
-    <script src="js/topButton.js"></script>
+    <script src="/js/topButton.js"></script>
+    <script src="/js/product_insert.js"></script>
 </head>
 
 <body>
-    <header id="header">
-        <img id="logo" src="img\logo.png">
-        <h1 id="name">마음이</h1>
-
-        <ul id="nb_name">
-            <li><a href="">입양 안내</a></li>
-            <li><a href="">반려견 조회</a></li>
-            <li><a href="">유기견 분양</a></li>
-            <li><a href="">펫세사리</a></li>
-        </ul>
-    </header>
+<header id="header" th:replace="publicHF/header::header"></header>
     <div class="line"></div>
     
     <div id="container0">
@@ -33,36 +22,39 @@
 
         <div id="photo_sign_up">
             <div id="image_choice">
-                <label for="imageFile"><img src="img/plus_button.png" id="image_plus"></label>
-                <input type="file" id="imageFile">
+                <label for="imageFile"><img src="https://github.com/HajongChan2/abandoned_dog_site/blob/main/Mind/src/main/resources/static/img/plus_button.png?raw=true" id="image_plus"></label>
+                <input type="file" id="imageFile" accept=".jpg,.png,.jpeg,.GIF">
             </div>
         </div>
         <div id="iamge_caution"><h5>※ +버튼을 누르면 사진을 선택할 수 있습니다.</h5></div>
 
         <div id="abandoned_info">
             <div class="infomation">
-                상품 이름<input type="text" name="title" id="title">
+                <p>상품 이름</p>
+                <input type="text" name="title" id="title">
             </div>
             <div class="infomation">
-                가격<input type="text" name="register" id="register">
+                <p>가격</p>
+                <input type="text" name="register" id="register">
             </div>
             <div class="infomation">
-                배송<input type="text" name="area" id="area">
+                <p>배송</p>
+                <input type="text" name="area" id="area">
             </div>
             <div class="infomation">
-                판매자<input type="text" name="area" id="area">
+                <p>판매자</p>
+                <input type="text" name="area" id="area">
             </div>
             <div class="infomation">
-                수량<input type="text" name="area" id="area">
+                <p>수량</p>
+                <input type="text" name="area" id="area">
             </div>
 
 </div>
 <div class="center_line"></div>
 <input type="button" class="register_button" value="등록하기">
 </div>
-    <footer>
-        <div id="footer"></div>
-    </footer>
+<footer id="footer" th:replace="publicHF/footer::footer"></footer>
 </body>
 
 </html>

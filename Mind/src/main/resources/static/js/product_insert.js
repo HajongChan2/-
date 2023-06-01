@@ -26,10 +26,10 @@ $(document).ready(function(){
         }else{
             alert("3장 이상은 선택할 수 없습니다.");
             $("#image_plus").css('display', 'none');
-        }      
+        }
     });
     $(document).on("click",".imgs",function(e) {
-		this.remove();
+        this.remove();
         count -= 1;
         let b = $(this).attr("src");
         for(let i = 0; i < a.length; i++){
@@ -42,18 +42,18 @@ $(document).ready(function(){
 
 
         $("#image_plus").css('display', 'inline-block');
-	});
+    });
 
     $('#text_box').keyup(function () {
         let content = $(this).val();
-        
+
         // 글자수 세기
         if (content.length == 0 || content == '') {
             $('.textCount').text('0자');
         } else {
             $('.textCount').text(content.length);
         }
-        
+
         // 글자수 제한
         if (content.length > 500) {
             $(this).val($(this).val().substring(0, 500));

@@ -9,6 +9,17 @@ function checkNumber(event) {
 
 
 $(document).ready(function(){
+    $.ajax({
+        url : "/mypage/return",
+        dataType : "json",
+        type: "POST",
+        success : function (data){
+            $("#title").val(data[0].name);
+            $("#register").val(data[0].phone);
+            $("#member_addr").val(data[0].addr);
+            $("#kind").val(data[0].saddr);
+        }
+    });
     $('#text_box').keyup(function () {
         let content = $(this).val();
 
@@ -25,5 +36,31 @@ $(document).ready(function(){
             $('.textCount').text(500);
             alert('글자수는 500자까지 입력 가능합니다.');
         };
+    });
+
+    $("#submit").click(function (){
+        let name = $("#title").val();
+        let phone = $("#register").val();
+        let addr = $("#member_addr").val();
+        let saddr = $("#kind").val();
+        let memo = $("#text_box").val();
+
+        const abandogFormData = {
+            name : name,
+            phone : phone,
+            addr : addr,
+            saddr : saddr,
+            memo : memo
+        }
+
+        $.ajax({
+            type : "POST",
+            url : "/abandog/add",
+            data : abandogFormData,
+            success : function (data){
+                alert("입양 신청이 완료되었습니다.");
+                location.replace("/main");
+            }
+        });
     });
 });

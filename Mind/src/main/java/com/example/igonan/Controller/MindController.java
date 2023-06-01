@@ -4,6 +4,8 @@ package com.example.igonan.Controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
+
 @Controller
 public class MindController {
 
@@ -79,7 +81,7 @@ public class MindController {
 
         return "admin/product_insert";
     }
-    @RequestMapping("/abandog/detail/insert")
+    @RequestMapping("/admin/abandog/insert")
     public String abandogdetailinsert( ) {
 
         return "admin/abandog_insert";
