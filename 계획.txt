@@ -1,1 +1,9 @@
-db userbuiylist : primary key 추가 / 상품명 추가 / 상품 구매 총액 추가 / 상품 이미지 추가 /  
+product 등록자 HTML 컬럼 추가
+abandog 
+관리자 insert 쿼리 추가(insert 후 이미지는 따로 관계 테이블에 insert)
+
+이미지 관계테이블 생성
+
+
+
+
