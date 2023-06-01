@@ -26,6 +26,7 @@ select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    margin: 10px;
 }
 .pet_dog-wrap {
     width: calc(100% / 12 * 3);
@@ -50,4 +51,5 @@ select {
 }
 .pet_dog-image p {
     color: #333;
+    margin: 7px 0 0 0;
 }

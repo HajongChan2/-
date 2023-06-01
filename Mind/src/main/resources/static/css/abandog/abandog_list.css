@@ -45,6 +45,7 @@ select {
 
 .abandoned_dog-image p {
     color: #333;
+    margin: 7px 0 0 0;
 }
 
 #add_content > button {
