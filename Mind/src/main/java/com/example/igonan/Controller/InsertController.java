@@ -94,26 +94,32 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
             //Integer.parseInt(rq.getParameter("p_count")),
             pr_count,rq.getParameter("payment_method"),buydate
     );
-
+  //  String name="아롱이";
+  //  int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
+  //  System.out.println("아롱이번호 : "+dognum);
     return "/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
 }
 
     @PostMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행
     public String abanDogInsert(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
 
-        String name = "임시맨";//rq.getParameter("name");
-        int age = 21;//Integer.parseInt(rq.getParameter("age")),
-        String area = "임시맨"; //rq.getParameter("area");
-        String sex = "여";//rq.getParameter("sex");
-        String size = "임시맨";//rq.getParameter("size");
-        String spec = "임시맨";//rq.getParameter("spec");
-        String vac = "O";//rq.getParameter("vac");
-        String neut = "O";//rq.getParameter("neut");
-        String dead = "2022-09-09";//rq.getParameter("dead");
-        String memo = "임시맨";//rq.getParameter("memo");
+
+        String name =rq.getParameter("name");
+        int age = Integer.parseInt(rq.getParameter("age"));
+        String area=  rq.getParameter("area");
+        String sex = rq.getParameter("sex");
+        String size = rq.getParameter("size");
+        String spec = rq.getParameter("spec");
+        String vac = rq.getParameter("vac");
+        String neut = rq.getParameter("neut");
+        String dead = rq.getParameter("dead");
+        String memo = rq.getParameter("memo");
         String gallery = null;//rq.getParameter("gallery");
 
+
         abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,gallery);
+        int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
+        System.out.println(dognum);
 //a_num,a_name,age,area ,sex,size,spec,vac,neut,dead,memo,gallery) <
         return "redirect:/abandog/list"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
