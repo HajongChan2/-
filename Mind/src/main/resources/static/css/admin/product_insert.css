@@ -120,6 +120,7 @@
     margin:0;
     padding:5px;
     overflow-y: scroll;
+    text-align: left;
 }
 .content img {
     max-width: 100%;

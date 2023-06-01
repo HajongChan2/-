@@ -6,6 +6,7 @@ import com.example.igonan.Service.PaymentService;
 import com.example.igonan.Service.UserService;
 import com.example.igonan.mindmapper.AbanDogmapper;
 import com.example.igonan.mindmapper.Paymentmapper;
+import com.example.igonan.mindmapper.Productmapper;
 import com.example.igonan.mindmapper.Usermapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +28,8 @@ public class InsertController {
     AbanDogmapper abdmp;
     @Autowired
     Usermapper ump;
+    @Autowired
+    Productmapper pmp;
 
     private PaymentService paymentService;
 

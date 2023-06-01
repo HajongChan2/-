@@ -1,5 +1,5 @@
 let count = 0;
-let a = [];
+let imgs = [];
 
 function readURL(obj) {
     let reader = new FileReader();
@@ -12,10 +12,10 @@ function readURL(obj) {
         $(img).attr('src', e.target.result);
         $(img).addClass("imgs");
         $('#photo_sign_up').prepend(img);
-        a.push(e.target.result);
+        imgs.push(e.target.result);
     }
     count++;
-    console.log(a);
+    console.log(imgs);
 }
 
 function productcontent(obj) {
@@ -44,12 +44,12 @@ $(document).ready(function(){
         this.remove();
         count -= 1;
         let b = $(this).attr("src");
-        for(let i = 0; i < a.length; i++){
-            if(a[i] == b){
-                a.splice(i, 1);
+        for(let i = 0; i < imgs.length; i++){
+            if(imgs[i] == b){
+                imgs.splice(i, 1);
             }
         }
-        console.log(a);
+        console.log(imgs);
 
 
 
@@ -78,16 +78,17 @@ $(document).ready(function(){
         let name = $("#title").val();
         let price = $("#price").val();
         let dpay = $("#dpay").val();
-        let register = $("#register").val();
+        let seller = $("#register").val();
         let count = $("#count").val();
         let memo = $("#memo").val();
         let content = $(".content").html();
         console.log(content);
         const product_data = {
+            imgs : imgs,
             name : name,
             price : price,
             dpay : dpay,
-            register : register,
+            seller : seller,
             count : count,
             memo : memo,
             content : content
