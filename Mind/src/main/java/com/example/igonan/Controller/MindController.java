@@ -76,7 +76,7 @@ public class MindController {
 
         return "dog/dog_list";
     }
-    @RequestMapping("/product/detail/insert")
+    @RequestMapping("/admin/product/insert")
     public String dog_infomation_detail( ) {
 
         return "admin/product_insert";
