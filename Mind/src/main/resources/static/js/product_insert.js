@@ -18,6 +18,18 @@ function readURL(obj) {
     console.log(a);
 }
 
+function productcontent(obj) {
+    let reader = new FileReader();
+    if(!obj.files.length) {
+        return;
+    }
+    reader.readAsDataURL(obj.files[0]);
+    reader.onload = function (e) {
+        let img = $('<img />');
+        $(img).attr('src', e.target.result);
+        $('.content').append(img);
+    }
+}
 
 $(document).ready(function(){
     $("#imageFile").on("change",function(){
@@ -60,6 +72,34 @@ $(document).ready(function(){
             $('.textCount').text(500);
             alert('글자수는 500자까지 입력 가능합니다.');
         };
+    });
+
+    $(".register_button").click(function(){
+        let name = $("#title").val();
+        let price = $("#price").val();
+        let dpay = $("#dpay").val();
+        let register = $("#register").val();
+        let count = $("#count").val();
+        let memo = $("#memo").val();
+        let content = $(".content").html();
+
+        const product_data = {
+            name : name,
+            price : price,
+            dpay : dpay,
+            register : register,
+            count : count,
+            memo : memo,
+            content : content
+        }
+        $.ajax({
+            type : "POST",
+            url : "/product/insert",
+            data : product_data,
+            success : function (data){
+                location.replace("/main");
+            }
+        });
     });
 
 });
