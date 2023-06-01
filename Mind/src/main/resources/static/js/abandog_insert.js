@@ -20,6 +20,17 @@ function readURL(obj) {
 
 
 $(document).ready(function(){
+    let d = new Date();
+
+    let month = d.getMonth()+1;
+    let day = d.getDate();
+
+    let output = d.getFullYear() + '-' +
+        (month<10 ? '0' : '') + month + '-' +
+        (day<10 ? '0' : '') + day;
+    $("#date").val(output);
+    $("#date").attr('min', output);
+
     $("#imageFile").on("change",function(){
         if(count < 3){
             readURL(this);
@@ -63,26 +74,30 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
-        let title  = $("#title").val();
         let name = $("#register").val();
+        let age = $("#age").val();
         let area = $("#area").val();
         let kind = $("#kind").val();
-        let neutered = $("input[name='neutered']:checked").val();
-        let inoculation = $("input[name='inoculation']:checked").val();
+        let dead = $("#date").val();
+        let sex = $("input[name='sex']:checked").val();
+        let neut = $("input[name='neutered']:checked").val();
+        let vac = $("input[name='inoculation']:checked").val();
         let memo = $("#text_box").val();
         const ad_insert = {
-            title : title,
             name : name,
+            age : age,
             area : area,
+            dead : dead,
             kind : kind,
-            neutered : neutered,
-            inoculation : inoculation,
+            sex : sex,
+            neut : neut,
+            vac : vac,
             memo : memo
         }
         $.ajax({
             type : "POST",
-            url : "/payment/insert",
-            data : ad_insert ,
+            url : "/abandog/insert",
+            data : ad_insert,
             success : function (data){
                 location.replace("/abandog/list");
             }
