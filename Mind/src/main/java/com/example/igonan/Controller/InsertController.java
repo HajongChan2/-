@@ -205,7 +205,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     }
 */
 
-@RequestMapping("/product/insert")
+@PostMapping("/product/insert")
     public String productinsert(HttpSession hs, HttpServletRequest rq){
 /*
         String[] imgs = rq.getParameterValues("imgs");
@@ -233,7 +233,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         for(int i =0;i<3;i++) {
             pmp.mindProductImageInsert(igonanProducNumber,imgs[i]);
         }
-        return "product/petcesory";
+        return "redirect:/petcesory/tag";
     }
 
 
