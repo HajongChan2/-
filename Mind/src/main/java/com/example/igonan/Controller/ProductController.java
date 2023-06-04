@@ -37,6 +37,7 @@ public class ProductController {
 
         return list; // Ajax로 넘겨줄 select 결과값
 
+
     }
 /*
     // 특정 상품의 데이터만 출력 (상품의 이름으로 검색하여 출력)
