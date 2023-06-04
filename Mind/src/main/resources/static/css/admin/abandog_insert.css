@@ -96,3 +96,7 @@
     font-size: 25px;
     cursor: pointer;
 }
+#size{
+    width: 350px;
+    height: 30px;
+}

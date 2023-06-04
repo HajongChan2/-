@@ -83,6 +83,7 @@ $(document).ready(function(){
         let neut = $("input[name='neutered']:checked").val();
         let vac = $("input[name='inoculation']:checked").val();
         let memo = $("#text_box").val();
+        let size = $("#size option:selected").val();
         const ad_insert = {
             name : name,
             age : age,
@@ -92,7 +93,8 @@ $(document).ready(function(){
             sex : sex,
             neut : neut,
             vac : vac,
-            memo : memo
+            memo : memo,
+            size: size
         }
         $.ajax({
             type : "POST",
