@@ -9,4 +9,9 @@
         <!--데이터 순서에 맞춰 파라미터 순서 설정 -->
     </select>
 
+    <select id="mindAbanDogImageInsert">
+        insert into abandog_image(num,ad_num,img_src)
+        values (null,#{param1}, #{param2})
+    </select>
+
 </mapper>

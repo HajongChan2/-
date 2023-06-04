@@ -29,12 +29,7 @@ public class AbanDogService {
         return abanDogList;// abanDogList 를 리턴하여 데이터 전달
 
     }
-    public int getAbanDogInsertWirename(String dogname){
 
-        AbandogDTO list = adm.Abandoginsertwire(dogname);
-        int getdognum = Integer.parseInt(list.getAdNum());
-        return getdognum;
-    }
 }
 
 

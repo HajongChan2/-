@@ -98,7 +98,7 @@ $(document).ready(function(){
             url : "/product/insert",
             data : product_data,
             success : function (data){
-                location.replace("/main");
+                location.replace("/petcesary");
             }
         });
     });

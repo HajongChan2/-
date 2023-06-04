@@ -118,14 +118,17 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
         String gallery = null;//rq.getParameter("gallery");
-
+        String img[] = rq.getParameterValues("imgs");
 
         abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,gallery);
         int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
-        System.out.println(dognum);
-//a_num,a_name,age,area ,sex,size,spec,vac,neut,dead,memo,gallery) <
+
+        for(int i = 0; i< img.length;i++) {
+            abdmp.mindAbanDogImageInsert(dognum, img[i]);
+        }
         return "redirect:/abandog/list"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
+
     @RequestMapping("/imsiman")
     public String petcesary(){
 
@@ -133,24 +136,6 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
     }
 
 
-
-
-/*
-    @RequestMapping("/join/insert") //해당 url로 데이터가 post 되었을 경우 실행
-    public String joinuserinsert(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
-
-        String name = rq.getParameter("name");
-        String id = rq.getParameter("id");
-        String pw = rq.getParameter("pw");
-        String phone = "01022223333";//rq.getParameter("phone");
-        String addr = rq.getParameter("addr");
-        String saddr = rq.getParameter("saddr");
-
-        ump.mindjoinUserInsert(name,id,pw,phone,addr,saddr);
-//a_num,a_name,age,area ,sex,size,spec,vac,neut,dead,memo,gallery) <
-        return "redirect:/userbuylists"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
-    }
-*/
 @PostMapping("/join/insert") //해당 url로 데이터가 post 되었을 경우 실행
 public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
 
@@ -181,31 +166,9 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         hs.setAttribute("username",name);
         return "member/member_page"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
-/*
-    @PostMapping("/abandog/add") //해당 url로 데이터가 post 되었을 경우 실행
-    public String abanDogAdd(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
 
-    // user id
-        // dogname
-        String name = "임시맨";//rq.getParameter("name");
-        int age = 21;//Integer.parseInt(rq.getParameter("age")),
-        String area = "임시맨"; //rq.getParameter("area");
-        String sex = "여";//rq.getParameter("sex");
-        String size = "임시맨";//rq.getParameter("size");
-        String phone = "임시맨";//rq.getParameter("spec");
-        String addr = "O";//rq.getParameter("vac");
-        String saddr = "O";//rq.getParameter("neut");
-        String memo = "2022-09-09";//rq.getParameter("dead");
-        String memo = "임시맨";//rq.getParameter("memo");
-        String gallery = null;//rq.getParameter("gallery");
 
-        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,gallery);
-//a_num,a_name,age,area ,sex,size,spec,vac,neut,dead,memo,gallery) <
-        return "redirect:/doglists"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
-    }
-*/
-
-@RequestMapping("/product/insert")
+@PostMapping("/product/insert")
     public String productinsert(HttpSession hs, HttpServletRequest rq){
 /*
         String[] imgs = rq.getParameterValues("imgs");
@@ -219,6 +182,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         String seller = rq.getParameter("seller");
         int count = Integer.parseInt(rq.getParameter("count"));
 */
+
         String name = "사진 테스트";
         int price = 30000;
         int dpay= 3000;
