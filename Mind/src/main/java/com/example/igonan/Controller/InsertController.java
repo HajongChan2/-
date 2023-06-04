@@ -81,26 +81,19 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
     String id = hs.getAttribute("userid").toString();
     System.out.println(id);
     LocalDate buydate = LocalDate.now();
-    LocalDate asd = LocalDate.now();
-  //  int asdmonth = Integer.parseInt(String.valueOf(asd.getMonth()));
-  //  System.out.println(asdmonth);
-    System.out.println(asd.getMonth());
-   // System.out.println("이번 달 : "+buydate.getMonthValue());
+
     hs.setAttribute("productname",rq.getParameter("prName"));
-    paymentmapper.mindpaymentinsert(   //구매자 주문정보를 insert하는 mindpaymentinsert 호출과 파라미터 값 입력
+    paymentmapper.mindpaymentinsert(
             id,
             rq.getParameter("name"),
             rq.getParameter("phone"),rq.getParameter("address"),
             rq.getParameter("address_detail"),rq.getParameter("prName"),
             Integer.parseInt(rq.getParameter("totalPay")),
             rq.getParameter("memo"),
-            //Integer.parseInt(rq.getParameter("p_count")),
             pr_count,rq.getParameter("payment_method"),buydate
     );
-  //  String name="아롱이";
-  //  int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
-  //  System.out.println("아롱이번호 : "+dognum);
-    return "/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+
+    return "/main";
 }
 
     @PostMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행
@@ -117,14 +110,14 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         String neut = rq.getParameter("neut");
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
-        String gallery = null;//rq.getParameter("gallery");
-        String img[] = rq.getParameterValues("imgs");
-
-        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,gallery);
+        String[] img = rq.getParameterValues("imgs");
+        System.out.println(img[0]);
+        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img[0]);
         int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
 
         for(int i = 0; i< img.length;i++) {
-            abdmp.mindAbanDogImageInsert(dognum, img[i]);
+
+           abdmp.mindAbanDogImageInsert(dognum, img[i]);
         }
         return "redirect:/abandog/list"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }

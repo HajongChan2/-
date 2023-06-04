@@ -32,7 +32,7 @@ Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(5
 
 펫세사리 - 고유번호 / 상품 이름 varchar(50)/ 가격 int(6)/ 재고 int(3) / 평점(보류) / 상세설명 varchar(1500)/ 배송비 int(5)/ 사진 url
 
-Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery varchar(1500));
+Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery varchar(1500),pr_content longtext);
 
 펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(13)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 수량 int(2) / 결제 수단 varchar(30)
 

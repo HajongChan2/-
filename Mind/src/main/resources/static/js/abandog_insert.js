@@ -84,17 +84,19 @@ $(document).ready(function(){
         let vac = $("input[name='inoculation']:checked").val();
         let memo = $("#text_box").val();
         let size = $("#size option:selected").val();
+
         const ad_insert = {
             name : name,
             age : age,
             area : area,
             dead : dead,
-            kind : kind,
+            spec : kind,
             sex : sex,
             neut : neut,
             vac : vac,
             memo : memo,
-            size: size
+            size: size,
+            imgs: imgs
         }
         $.ajax({
             type : "POST",
