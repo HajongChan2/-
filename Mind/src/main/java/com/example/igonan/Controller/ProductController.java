@@ -64,8 +64,7 @@ public class ProductController {
     @RequestMapping(value = "/petcesary/{productType}") //데이터가 보내지는 주소와 메소드 설정
     @ResponseBody
     public Object productType(@PathVariable String productType)throws IOException { // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
-        //상품의 이름으로 검색하여 db에서 데이터를 찾아옴
-        // 웹에서 보내진 파라미터 값을 변수에 저장 여기선 임시로 '군번줄'로 설정
+
         int prType = 1;
 
         switch (productType){
