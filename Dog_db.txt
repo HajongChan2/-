@@ -45,6 +45,10 @@ create table product_image(num int primary key auto_increment,pr_num int,img_src
 
 Create table delivery
 
+유기견 입양 신청 - 고유번호/ 유저아이디/ 유저 이름/ 강아지 번호/ 강아지 이름/ 번호/ 주소/ 상세주소/ 메모
+
+Create table adopt(num int primary key auto_increament, id varchar(50), ad_num int, ad_name varchar(50), phone char(13), addr varchar(150), saddr varchar(150), memo varchar(1500));
+
 
 ( 가격 / 구매 수량 / 배송현황 :d 배송준비중>배송중>배송완료 / )
 구매 조회 - 배송 현황
