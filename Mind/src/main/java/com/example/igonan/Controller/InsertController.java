@@ -45,29 +45,7 @@ public class InsertController {
     private UserService userService;
 
     public  UserService getUserService() {return userService;}
-/*
 
-@PostMapping("/payment/insert") //해당 url로 데이터가 post 되었을 경우 실행
-public String paymentinsert(HttpServletRequest rq){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
-    int pr_count = 0; // 사용자가 구매하려는 상품의 개수를 담는 변수
-    if(rq.getParameter("count")==null){ // 사용자가 구매하려는 상품의 개수가 post되지 않으면 0을 담음
-        pr_count = 0;
-    }else {
-        pr_count = Integer.parseInt(rq.getParameter("count"));
-        //사용자가 구매하려는 상품의 개수를 int형으로 변환하여 담음
-    }
-
-    paymentmapper.mindpaymentinsert(   //구매자 주문정보를 insert하는 mindpaymentinsert 호출과 파라미터 값 입력
-            rq.getParameter("name"),
-            rq.getParameter("phone"),rq.getParameter("address"),
-            rq.getParameter("address_detail"),rq.getParameter("memo"),
-            //Integer.parseInt(rq.getParameter("p_count")),
-            pr_count,rq.getParameter("payment_method")
-    );
-
-    return "/main"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
-}
-*/
 @PostMapping("/payment/insert") //해당 url로 데이터가 post 되었을 경우 실행
 public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
     int pr_count = 0; // 사용자가 구매하려는 상품의 개수를 담는 변수
@@ -110,16 +88,13 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
 
-
-
         abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(0));
         int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
-
         for(int i = 0; i< img.size();i++) {
 
            abdmp.mindAbanDogImageInsert(dognum, img.get(i));
         }
-
+//select ad_num , ad_name , ad_age, ad_area, ad_sex , ad_size , ad_spec , ad_vac , ad_neut , ad_dead, ad_memo from ad_dog;
 
         return "redirect:/abandog/list"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
@@ -164,18 +139,8 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 
 
 @RequestMapping("/product/insert")
-    public String productinsert(HttpSession hs, HttpServletRequest rq//,@RequestParam(name = "imgs[]") List<String> img
-){
-/*
-
-        String name = rq.getParameter("name");
-        int price = Integer.parseInt(rq.getParameter("price"));
-        int dpay = rq.getParameter("dpay");
-        String seller = rq.getParameter("seller");
-        int count = Integer.parseInt(rq.getParameter("count"));
-
-*/
-        String name = "사진 테스트";
+    public String productinsert(HttpSession hs, HttpServletRequest rq){
+        String name = "사진 테스트2";
         int price = 30000;
         int dpay= 3000;
         String seller = "E_AhyeonPig";
@@ -213,8 +178,15 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         return "redirect:/petcesary";
 }
 
-
-
  */
+
+
+
+
+
+
+
+
+
 
 }
