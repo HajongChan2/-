@@ -26,7 +26,7 @@ public interface AbanDogmapper {
                               String dead,String memo,String gallery);
 
     Integer mindAbanDogImageInsert(int num,String img_src);
-    @Select("select * from ad_dog order by ad_dead;")
+    @Select("select * from ad_dog order by ad_dead limit 9;")
     List<AbandogDTO> mainAbandogList();
 
     @Select("select * from ad_dog ad where ad.ad_name = #{dogname} order by ad.ad_num desc limit 1; ")

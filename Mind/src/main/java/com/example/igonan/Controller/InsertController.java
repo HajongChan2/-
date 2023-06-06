@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
-import java.util.Enumeration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -151,6 +151,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         String content = "";
         pmp.mindProductInsert(name,price,count,memo,dpay,type,imgs[0],seller,content);
         int igonanProductNumber = Integer.parseInt(pmp.productImageWireNumberReturn(name).getPrNum());
+
         for(int i =0;i<3;i++) {
             pmp.mindProductImageInsert(igonanProductNumber,imgs[i]);
         }
