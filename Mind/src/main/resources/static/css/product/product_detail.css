@@ -96,10 +96,12 @@ img {
     width: 100%;
     height: 600px;
 }
-
+.description{
+    margin: auto 10px;
+}
 #product_image, .description {
     width: calc(100% / 2);
-    margin: 40px 20px;
+    margin: 40px 10px;
 }
 
 .info {

@@ -81,6 +81,7 @@ $(document).ready(function(){
         let seller = $("#register").val();
         let count = $("#count").val();
         let memo = $("#memo").val();
+        let type = $("#type option:selected").val();
         let content = $(".content").html();
         console.log(content);
         const product_data = {
@@ -91,6 +92,7 @@ $(document).ready(function(){
             seller : seller,
             count : count,
             memo : memo,
+            type : type,
             content : content
         }
         $.ajax({

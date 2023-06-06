@@ -9,7 +9,7 @@ function readURL(obj) {
     reader.readAsDataURL(obj.files[0]);
     reader.onload = function (e) {
         let img = $('<img />');
-        $(img).attr('src', e.target.result);
+        $(img).attr('src',e.target.result);
         $(img).addClass("imgs");
         $('#photo_sign_up').prepend(img);
         imgs.push(e.target.result);
@@ -45,7 +45,7 @@ $(document).ready(function(){
         let b = $(this).attr("src");
         for(let i = 0; i < imgs.length; i++){
             if(imgs[i] == b){
-                imgs.splice(i, 1);
+                imgs.splice(i,1);
             }
         }
         console.log(imgs);
