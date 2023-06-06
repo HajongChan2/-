@@ -8,7 +8,9 @@ product insert ajax 구축
 num, userid, username, ad_num,dogname,  phone,addr,saddr,memo
 
 배송조회 테이블 만들기
-num(송장번호),userid,ubuynum(상품 구매 번호),prname,결제상태 배송상태
+num(송장번호),userid,,상품이름,결제상태 배송상태
+대기중
+PFK 
 
 결제확인 배송상태변경
 

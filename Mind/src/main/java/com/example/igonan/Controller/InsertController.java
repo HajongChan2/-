@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
 
@@ -69,7 +70,6 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
             rq.getParameter("memo"),
             pr_count,rq.getParameter("payment_method"),buydate
     );
-
     return "/main";
 }
 
@@ -179,13 +179,6 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 }
 
  */
-
-
-
-
-
-
-
 
 
 
