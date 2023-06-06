@@ -16,7 +16,7 @@
 }
 
 .login_bt{
-    width: 320px;
+    width: 337px;
     height: 35px;
     background-color: #113267;
     border: none;
@@ -27,11 +27,13 @@
     
 }
 .join_t{
-    display: flex;
-    width: 347px;
-    font-size: 13px;
-    color: #7b7b7b;
-    justify-content: flex-end;
     margin-top: 10px;
     cursor: pointer;
+}
+.join_t > a{
+    display: flex;
+    width: 337px;
+    justify-content: flex-end;
+    font-size: 13px;
+    color: #7b7b7b;
 }
