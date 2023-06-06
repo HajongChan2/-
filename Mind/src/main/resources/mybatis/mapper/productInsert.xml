@@ -4,8 +4,8 @@
 <mapper namespace="com.example.igonan.mindmapper.Productmapper">
 
     <select id="mindProductInsert" >
-        insert into product(pr_num,pr_name,pr_price,pr_count,pr_memo,pr_dpay,pr_type,pr_gallery) <!-- 테이블과 컬럼명 -->
-        values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7})
+        insert into product(pr_num,pr_name,pr_price,pr_count,pr_memo,pr_dpay,pr_type,pr_gallery,pr_seller,pr_content) <!-- 테이블과 컬럼명 -->
+        values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7},#{param8},#{param9})
         <!--데이터 순서에 맞춰 파라미터 순서 설정 -->
     </select>
     <select id="mindProductImageInsert" >

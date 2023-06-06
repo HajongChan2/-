@@ -163,21 +163,18 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     }
 
 
-@PostMapping("/product/insert")
-    public String productinsert(HttpSession hs, HttpServletRequest rq){
+@RequestMapping("/product/insert")
+    public String productinsert(HttpSession hs, HttpServletRequest rq//,@RequestParam(name = "imgs[]") List<String> img
+){
 /*
-        String[] imgs = rq.getParameterValues("imgs");
-        for ( int i  = 0; i < imgs.length; i++){
-            //이미지 어떻게 받아올지 다시 생각해서 작성하기
-            System.out.println(imgs[i]);
-        }
+
         String name = rq.getParameter("name");
-        String prcie = rq.getParameter("price");
-        String dpay = rq.getParameter("dpay");
+        int price = Integer.parseInt(rq.getParameter("price"));
+        int dpay = rq.getParameter("dpay");
         String seller = rq.getParameter("seller");
         int count = Integer.parseInt(rq.getParameter("count"));
-*/
 
+*/
         String name = "사진 테스트";
         int price = 30000;
         int dpay= 3000;
@@ -186,14 +183,38 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         String memo = "이아현 도애지이야";
         int type = 3;
         String imgs[] ={"https://img.freepik.com/premium-photo/fun-pig-animation_183364-42986.jpg","zxc.jpg","qwe.jpg"};
-
-        pmp.mindProductInsert(name,price,count,memo,dpay,type,imgs[0]);
-        int igonanProducNumber = Integer.parseInt(pmp.productImageWireNumberReturn(name).getPrNum());
+        String content = "";
+        pmp.mindProductInsert(name,price,count,memo,dpay,type,imgs[0],seller,content);
+        int igonanProductNumber = Integer.parseInt(pmp.productImageWireNumberReturn(name).getPrNum());
         for(int i =0;i<3;i++) {
-            pmp.mindProductImageInsert(igonanProducNumber,imgs[i]);
+            pmp.mindProductImageInsert(igonanProductNumber,imgs[i]);
         }
         return "redirect:/petcesary";
     }
+/*
+@PostMapping("/product/insert")
+    public String productinsert(HttpSession hs, HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img){
 
+        String name = rq.getParameter("name");
+        int price = Integer.parseInt(rq.getParameter("price"));
+        int count = Integer.parseInt(rq.getParameter("count"));
+        int dpay =  Integer.parseInt(rq.getParameter("dpay"));
+        String memo = rq.getParameter("memo");
+        int type = Integer.parseInt(rq.getParameter("type"));
+        String seller = rq.getParameter("seller");
+        String content = rq.getParameter("content");
+        pmp.mindProductInsert(name,price,count,memo,dpay,type,img.get(0),seller,content);
+        int igonanProductNumber = Integer.parseInt(pmp.productImageWireNumberReturn(name).getPrNum());
+
+        for(int i =0;i<3;i++) {
+            pmp.mindProductImageInsert(igonanProductNumber,img.get(i));
+        }
+
+        return "redirect:/petcesary";
+}
+
+
+
+ */
 
 }
