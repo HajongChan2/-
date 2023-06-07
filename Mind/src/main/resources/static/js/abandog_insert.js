@@ -74,6 +74,12 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
+        /*if(count == 1){
+            let img = imgs[0];
+            imgs = '';
+            imgs = img;
+            alert(imgs);
+        }*/
         let name = $("#register").val();
         let age = $("#age").val();
         let area = $("#area").val();
@@ -84,7 +90,7 @@ $(document).ready(function(){
         let vac = $("input[name='inoculation']:checked").val();
         let memo = $("#text_box").val();
         let size = $("#size option:selected").val();
-
+        let img = imgs[0];
         const ad_insert = {
             name : name,
             age : age,
@@ -96,7 +102,8 @@ $(document).ready(function(){
             vac : vac,
             memo : memo,
             size: size,
-            imgs: imgs
+            imgs: imgs,
+            img : img
         }
         $.ajax({
             type : "POST",
