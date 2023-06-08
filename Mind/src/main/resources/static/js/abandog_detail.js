@@ -6,7 +6,7 @@ $(document).ready(function(){
     srt = '';
     $.ajax({
         type : "GET",
-        url : "/abandog/detail/"+dogname,
+        url : "/abandog/detail/"+dogname, 
         dataType : "json",
         success : function(data){
 
