@@ -23,9 +23,9 @@ $(document).ready(function(){
                             <li><img src="${data[0].prGallery}" alt="asd"></li>
                         </ul>
                         <ul class="dot">
-                            <li class="on">슬라이드 버튼1번</li>
-                            <li>슬라이드 버튼2번</li>
-                            <li>슬라이드 버튼3번</li>  
+                            <li class="on">슬라이드 버튼</li>
+                            <li>슬라이드 버튼</li>
+                            <li>슬라이드 버튼</li>  
                         </ul>
                      </div>
                 </div>

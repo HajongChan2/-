@@ -16,7 +16,10 @@ public class ProductDTO {
     private int prDpay;
     private int prType;
     private String prGallery;
+    private String prSeller;
+    private String prContent;
 
+  //  pr_seller varchar(50),pr_content longtext);
 
     public String getPrNum() {
         return prNum;
@@ -48,5 +51,13 @@ public class ProductDTO {
 
     public String getPrGallery() {
         return prGallery;
+    }
+
+    public String getPrSeller() {
+        return prSeller;
+    }
+
+    public String getPrContent() {
+        return prContent;
     }
 }
