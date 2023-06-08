@@ -29,15 +29,13 @@ $(document).ready(function(){
         $("#container2").append(str);
     }
 
-    $(document).on("click",".pet_dog-image",function(e){
-        let na = $(e.target);
-        let name = na.attr("alt");
-        if(name == null){
-            name = na.text();
-        }
-        console.log(name);
-        localStorage.setItem('name',name);
+    $(document).on('click','.pet_dog-wrap',function(){
+        let target = this
+        let list = target.querySelector('h2').innerText;
+        num = list;
+        localStorage.setItem('num',num);
     });
+
 
 
 
