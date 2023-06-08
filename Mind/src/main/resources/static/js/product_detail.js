@@ -25,9 +25,8 @@ $(document).ready(function(){
                         <ul class="dot">
                             <li class="on">슬라이드 버튼1번</li>
                             <li>슬라이드 버튼2번</li>
-                            <li>슬라이드 버튼3번</li>
+                            <li>슬라이드 버튼3번</li>  
                         </ul>
-                    
                      </div>
                 </div>
                 <div class="description">

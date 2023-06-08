@@ -1,5 +1,5 @@
 let count = 0;
-let imgs = [];
+let imgs = ["product_list"];
 
 function readURL(obj) {
     let reader = new FileReader();
@@ -83,7 +83,7 @@ $(document).ready(function(){
         let memo = $("#memo").val();
         let type = $("#type option:selected").val();
         let content = $(".content").html();
-        console.log(content);
+
         const product_data = {
             imgs : imgs,
             name : name,

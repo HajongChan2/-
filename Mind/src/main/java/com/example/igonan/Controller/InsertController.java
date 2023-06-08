@@ -92,8 +92,8 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         System.out.println("1번쨰 : " + img.get(1));
         abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
         int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
-        for(int i = 1; i< img.size();i++) {
-            
+        for(int i = 1; i < img.size();i++) {
+
            abdmp.mindAbanDogImageInsert(dognum, img.get(i));
         }
 //select ad_num , ad_name , ad_age, ad_area, ad_sex , ad_size , ad_spec , ad_vac , ad_neut , ad_dead, ad_memo from ad_dog;
@@ -139,6 +139,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         return "member/member_page"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
 
+/*
 
 @RequestMapping("/product/insert")
     public String productinsert(HttpSession hs, HttpServletRequest rq){
@@ -159,7 +160,8 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         }
         return "redirect:/petcesary";
     }
-/*
+*/
+
 @PostMapping("/product/insert")
     public String productinsert(HttpSession hs, HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img){
 
@@ -171,17 +173,18 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         int type = Integer.parseInt(rq.getParameter("type"));
         String seller = rq.getParameter("seller");
         String content = rq.getParameter("content");
-        pmp.mindProductInsert(name,price,count,memo,dpay,type,img.get(0),seller,content);
+        pmp.mindProductInsert(name,price,count,memo,dpay,type,img.get(1),seller,content);
         int igonanProductNumber = Integer.parseInt(pmp.productImageWireNumberReturn(name).getPrNum());
 
-        for(int i =0;i<3;i++) {
+        for(int i = 1;i < img.size();i++) {
             pmp.mindProductImageInsert(igonanProductNumber,img.get(i));
+
         }
 
         return "redirect:/petcesary";
 }
 
- */
+
 
 
 

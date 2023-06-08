@@ -50,16 +50,16 @@
                 <input type="text" name="area" id="count">
             </div>
             <div class="infomation">
-                <p>품종</p>
+                <p>소제목</p>
+                <input type="text" name="memo" id="memo">
+            </div>
+            <div class="infomation list">
+                <p>품목</p>
                 <select name="type" id="type">
                     <option value="1">인식표</option>
                     <option value="2">외장칩</option>
                     <option value="3">기타</option>
                 </select>
-            </div>
-            <div class="infomation">
-                <p>소제목</p>
-                <input type="text" name="memo" id="memo">
             </div>
             <div class="contents">
                 <div class="contents_text">
@@ -75,7 +75,8 @@
 
 </div>
 <div class="center_line"></div>
-<input type="button" class="register_button" value="등록하기">
+
+        <button type="button" class="register_button">등록하기</button>
 </div>
 <footer id="footer" th:replace="publicHF/footer::footer"></footer>
 </body>
