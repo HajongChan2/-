@@ -1,6 +1,7 @@
 let adNum;
+let dogNum;
 $(document).ready(function(){
-    let dogNum;
+
 
     if(localStorage.getItem('num')){
         dogNum = localStorage.getItem('num');
@@ -64,12 +65,9 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
-    datas = {
-        adNum : adNum
-    }
+
     $.ajax({
-        url : "/abandogimagelist",
-        data : datas,
+        url : "/abandogimagelist/"+dogNum,
         type : "POST",
         dataType : "json",
         success : function(data){

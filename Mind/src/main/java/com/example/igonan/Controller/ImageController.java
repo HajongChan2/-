@@ -28,9 +28,9 @@ public class ImageController {
 
 
 
-    @RequestMapping(value = "/productimagelist", method = { RequestMethod.POST })
+    @RequestMapping(value = "/productimagelist/{param}", method = { RequestMethod.POST })
     @ResponseBody
-    public Object productimagelist(@RequestParam(value = "adNum") int whatIsproductNumber){
+    public Object productimagelist(@PathVariable("param")int whatIsproductNumber){
 
         List<ImageDTO> list = imageService.getProductImageReturn(whatIsproductNumber);
 
@@ -38,9 +38,9 @@ public class ImageController {
 
     }
 
-    @RequestMapping(value = "/abandogimagelist", method = { RequestMethod.POST })
+    @RequestMapping(value = "/abandogimagelist/{param}", method = { RequestMethod.POST })
     @ResponseBody
-    public Object abandogimagelist(@RequestParam(value = "num") int whatIsDogsNumber){
+    public Object abandogimagelist(@PathVariable("param")int  whatIsDogsNumber){
 
         List<ImageDTO> list = imageService.getabanDogImageReturn(whatIsDogsNumber);
 

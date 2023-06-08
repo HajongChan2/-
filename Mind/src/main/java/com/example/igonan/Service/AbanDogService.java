@@ -19,8 +19,8 @@ public class AbanDogService {
 
     }
 
-    public List<AbandogDTO> getOneDog(String dogname) { // DB에서 조회된 특정 유기견의 정보를 리턴하는 getOneDog
-        List<AbandogDTO> oneDog = adm.findOneDog(dogname);// 특정 유기견의 정보를 List oneDog에 담음
+    public List<AbandogDTO> getOneDog(int dognum) { // DB에서 조회된 특정 유기견의 정보를 리턴하는 getOneDog
+        List<AbandogDTO> oneDog = adm.findOneDog(dognum);// 특정 유기견의 정보를 List oneDog에 담음
         return oneDog; // oneDog 를 리턴하여 데이터 전달
     }
 

@@ -16,8 +16,8 @@ public interface AbanDogmapper {
     List<AbandogDTO> abanDogList();
     // 모든 유기견의 정보를 List에 담음
 
-    @Select("select * from ad_dog ad where ad.ad_name = #{dogname} ;")
-    List<AbandogDTO> findOneDog(String dogname);
+    @Select("select * from ad_dog ad where ad.ad_num = #{dognum} ;")
+    List<AbandogDTO> findOneDog(int dognum);
     // 특정 유기견의 정보를 List에 담음
 
 
