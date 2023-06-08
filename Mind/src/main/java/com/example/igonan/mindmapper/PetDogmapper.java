@@ -16,8 +16,8 @@ public interface PetDogmapper {
     List<PetdogDTO> PetDogList();
     // 모든 애완견의 정보를 List에 담음
 
-    @Select("select * from pet_dog pd where pd.pet_name = #{dogname} ;")
-    List<PetdogDTO> findOnePet(String dogname);
+    @Select("select * from pet_dog pd where pd.pet_num = #{dognum} ;")
+    List<PetdogDTO> findOnePet(int dognum);
     // 특정 애완견의 정보를 List에 담음
 
    /* Integer mindAbanDogInsert(String name,int age, String area,

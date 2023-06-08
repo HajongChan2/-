@@ -51,46 +51,18 @@ public Object petdoglist(){
 
 }
 
+
     @ResponseBody
     @RequestMapping(value = "/dog/detail/{param}", method = { RequestMethod.GET }) //데이터가 보내지는 주소와 메소드 설정
-    public Object petdogone(@PathVariable("param")String parameter){ // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
+    public Object petdogone(@PathVariable("param")int dognum){ // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
         //유기견의 이름으로 검색하여 db에서 데이터를 찾아옴
 
-        List<PetdogDTO> list = petDogService.getOnePet(parameter); // List에 select 결과 list를 담음
+        List<PetdogDTO> list = petDogService.getOnePet(dognum); // List에 select 결과 list를 담음
 
         return list; // Ajax로 넘겨줄 select 결과값
 
     }
 
 
-/*
-    @RequestMapping("/dog/detail") //데이터가 보내지는 주소와 메소드 설정
-    @ResponseBody
-    public List<PetdogDTO> petdogone(@RequestParam("dogname") String dogname)throws IOException {
-        //유기견의 이름으로 검색하여 db에서 데이터를 찾아옴
-        List<PetdogDTO> list = petDogService.getOnePet(dogname);
-
-        return list; // Ajax로 넘겨줄 select 결과값
-
-    }
-*/
-
-
-
-
-    /*
-    // 특정 반려견 데이터만 출력 (반려견 이름으로 검색하여 출력)
-    @RequestMapping(value = "/onepet", method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
-    @ResponseBody
-    public Object petdogone(HttpServletRequest rq){ // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
-        //반려견의 이름으로 검색하여 db에서 데이터를 찾아옴
-        String dogname = "아롱이"; // = rq.getParameter("petdog_name");
-        // 웹에서 보내진 파라미터 값을 변수에 저장 여기선 임시로 '아롱이'로 설정
-        List<PetdogDTO> list = petDogService.getOnePet(dogname); // List에 select 결과 list를 담음
-
-        return list; // Ajax로 넘겨줄 select 결과값
-
-    }
-*/
 
 }
