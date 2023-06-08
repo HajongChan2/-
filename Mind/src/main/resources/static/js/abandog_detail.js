@@ -1,11 +1,11 @@
 let adNum;
 $(document).ready(function(){
-    let dogNum = '';
+    let dogNum;
 
     if(localStorage.getItem('num')){
-        dogname = localStorage.getItem('num');
-        console.log(dogNum);
+        dogNum = localStorage.getItem('num');
     }
+    console.log(dogNum);
     srt = '';
     $.ajax({
         type : "GET",

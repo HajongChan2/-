@@ -36,6 +36,7 @@ $(document).ready(function(){
         let target = this
         let list = target.querySelector('h2').innerText;
         num = list;
+        alert(num);
     });
 
 
