@@ -9,7 +9,7 @@
         <!--데이터 순서에 맞춰 파라미터 순서 설정 -->
     </select>
     <select id="mindProductImageInsert" >
-        insert into product_image(num,pr_num,img_src)
+        insert into product_image(num,f_num,img_src)
         values (null,#{param1}, #{param2})
 
     </select>

@@ -30,6 +30,8 @@ public interface Productmapper {
     @Select("select * from product pr where pr.pr_name=#{productName} order by pr.pr_num desc limit 1;")
     ProductDTO productImageWireNumberReturn(String productName);
 
+
+
     Integer mindProductInsert(String name,int price,int count,String memo,int dpay,int type,String gall,String seller,String content);
 
     Integer mindProductImageInsert(int num,String imgsrc);
