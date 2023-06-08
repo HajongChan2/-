@@ -74,12 +74,6 @@ $(document).ready(function(){
     });
 
     $("#submit").click(function(){
-        /*if(count == 1){
-            let img = imgs[0];
-            imgs = '';
-            imgs = img;
-            alert(imgs);
-        }*/
         let name = $("#register").val();
         let age = $("#age").val();
         let area = $("#area").val();
