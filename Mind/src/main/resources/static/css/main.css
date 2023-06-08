@@ -18,9 +18,9 @@ body::-webkit-scrollbar {
 }
 
 #container3 {
-    display: flex;
+    display: grid;
     width: 1440px;
-    flex-wrap: wrap;
+    grid-template-columns: 33% 33% 33%;
 }
 
 #name {
