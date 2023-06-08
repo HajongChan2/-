@@ -37,8 +37,10 @@ $(document).ready(function(){
         let list = target.querySelector('h2').innerText;
         num = list;
         alert(num);
+        localStorage.setItem('num',num);
     });
 
 
-    localStorage.setItem('num',num);
+
+
 });

@@ -12,7 +12,7 @@ $(document).ready(function(){
         url : "/abandog/detail/"+dogNum,
         dataType : "json",
         success : function(data){
-        daNum = parseInt(data[0].adNum);
+        adNum = parseInt(data[0].adNum);
             srt = srt + `<h1 id="main_nb">보호중인 유기견 상세 정보</h1>
         <div id="abandogbox_wrap">
             <div id="abandogbox_wrap1">
