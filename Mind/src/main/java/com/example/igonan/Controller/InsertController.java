@@ -87,13 +87,13 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         String neut = rq.getParameter("neut");
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
-        String imgs = rq.getParameter("img");
-        System.out.println("size : "+img.size());
-        System.out.println("1번쨰 : " + img.get(0));
-        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,imgs);
-        int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
-        for(int i = 0; i< img.size();i++) {
 
+        System.out.println("size : "+img.size());
+        System.out.println("1번쨰 : " + img.get(1));
+        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
+        int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
+        for(int i = 1; i< img.size();i++) {
+            
            abdmp.mindAbanDogImageInsert(dognum, img.get(i));
         }
 //select ad_num , ad_name , ad_age, ad_area, ad_sex , ad_size , ad_spec , ad_vac , ad_neut , ad_dead, ad_memo from ad_dog;

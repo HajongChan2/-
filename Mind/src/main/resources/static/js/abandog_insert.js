@@ -1,5 +1,5 @@
 let count = 0;
-let imgs = [];
+let imgs = ["list"];
 
 function readURL(obj) {
     let reader = new FileReader();
@@ -90,7 +90,6 @@ $(document).ready(function(){
         let vac = $("input[name='inoculation']:checked").val();
         let memo = $("#text_box").val();
         let size = $("#size option:selected").val();
-        let img = imgs[0];
         const ad_insert = {
             name : name,
             age : age,
@@ -102,8 +101,7 @@ $(document).ready(function(){
             vac : vac,
             memo : memo,
             size: size,
-            imgs: imgs,
-            img : img
+            imgs: imgs
         }
         $.ajax({
             type : "POST",
