@@ -1,15 +1,18 @@
+let adNum;
 $(document).ready(function(){
-    let dogname = '';
-    if(localStorage.getItem('name')){
-        dogname = localStorage.getItem('name');
+    let dogNum = '';
+
+    if(localStorage.getItem('num')){
+        dogname = localStorage.getItem('num');
+        console.log(dogNum);
     }
     srt = '';
     $.ajax({
         type : "GET",
-        url : "/abandog/detail/"+dogname, 
+        url : "/abandog/detail/"+dogNum,
         dataType : "json",
         success : function(data){
-
+        daNum = parseInt(data[0].adNum);
             srt = srt + `<h1 id="main_nb">보호중인 유기견 상세 정보</h1>
         <div id="abandogbox_wrap">
             <div id="abandogbox_wrap1">
@@ -56,6 +59,21 @@ $(document).ready(function(){
             $("#container0").append(srt);
             console.log(data);
             slide();
+        }
+    });
+});
+
+$(window).load(function(){
+    datas = {
+        adNum : adNum
+    }
+    $.ajax({
+        url : "/abandogimagelist",
+        data : datas,
+        type : "POST",
+        dataType : "json",
+        success : function(data){
+            console.log(data);
         }
     });
 });

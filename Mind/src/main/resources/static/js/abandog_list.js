@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    let num;
 
     $.ajax({
         type : "POST",
@@ -13,7 +14,6 @@ $(document).ready(function(){
 
 
     function abandogList(list){
-        let name = '';
         let addr = "/abandog/detail";
         let str = '';
         list.map(function(abandog){
@@ -23,6 +23,7 @@ $(document).ready(function(){
                         <div class="abandoned_dog-image">
                             <img src="${abandog.adGallery}" alt="${abandog.adName}">
                             <p>${abandog.adName}</p>
+                            <h2 id="number">${abandog.adNum}</h2>
                         </div>
                     </a>                    
                 </div>`
@@ -31,16 +32,12 @@ $(document).ready(function(){
         $("#container2").append(str);
     }
 
-    $(document).on("click",".abandoned_dog-image",function(e){
-        let na = $(e.target);
-        let name = na.attr("alt");
-        if(name == null){
-            name = na.text();
-        }
-        console.log(name);
-        localStorage.setItem('name',name);
+    $(document).on('click','.abandoned_dog-wrap',function(){
+        let target = this
+        let list = target.querySelector('h2').innerText;
+        num = list;
     });
 
 
-
+    localStorage.setItem('num',num);
 });
