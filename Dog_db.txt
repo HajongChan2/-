@@ -111,13 +111,48 @@ insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '�
 
 
 insert into product values(null, '군번 인식표', 3000, 20, '군대 인식표를 따라한 제품입니다! 우리 아이 강하게, 굳건하게 보이고 싶을 때 사용하세요!',3000, 1, 'https://m.guylook.co.kr/web/product/big/201612/2275_shop1_591440.jpg','관리자','');
+insert into product_image(num,f_num,img_src) values(null,1,'https://m.robheart.com/web/product/big/201812/ef9c7ac0d29c94282ad28e0dc988a9f9.jpg');
+insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1_HPW9Wt1BdQMhJVu580uK-44sVqgXf39_Q&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQVM38ZsNKf8G2HsJhi-YElqkZTjbF7Fh_gQ&usqp=CAU');
+
 insert into product values(null, '실리콘 인식표', 7000, 90, '우리 아이 피부가 예민한데요~ 이럴 때는 실리콘 인식표를 추천합니다!!!!!',3000, 1, 'https://foreverlove.co.kr/shopimages/jewoo/1250020001112.jpg?1680585555','관리자','');
+insert into product_image(num,f_num,img_src) values(null,2,'https://m.bandalpet.com/web/product/big/201710/34_shop1_802539.png');
+insert into product_image(num,f_num,img_src) values(null,2,'https://m.mambone.com/web/product/big/201511/6681_shop1_999940.jpg');
+insert into product_image(num,f_num,img_src) values(null,2,'https://cdn-pro-web-218-5.cdn-nhncommerce.com/gegomatr6642_godomall_com/data/goods/16/10/25/5665/1477389374295l0.jpg');
+
 insert into product values(null, '기본형 인식표', 2000, 100, '가장 기본적인 디자인의 인식표, 재질은 플라스틱입니다! 무난한 제품이라 추천 드립니다!',3000, 1, 'https://thumbnail.10x10.co.kr/webimage/image/basic600/193/B001936081.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false','관리자','');
+insert into product_image(num,f_num,img_src) values(null,3,'https://contents.lotteon.com/itemimage/_v170557/LO/10/11/49/93/41/_1/01/14/99/34/2/LO1011499341_1011499342_1.jpg/dims/optimize/dims/resizemc/400x400');
+insert into product_image(num,f_num,img_src) values(null,3,'https://m.woorr.com/web/product/big/201907/d38fcde1d258bf8329b825895b7f6afa.jpg');
+insert into product_image(num,f_num,img_src) values(null,3,'https://shop.peopet.co.kr/data/goods/1/2022/10/16328_2022101708475610.jpg');
+
 insert into product values(null, '노랑이 외장칩', 1000, 120, '노랑이 외장칩은 귀여운 강아지 캐릭터로 강아지의 정보를 담아주세요!', 3000, 2, 'https://contents.creators.mypetlife.co.kr/content/uploads/2022/07/18150933/7-12.jpeg','관리자','');
+insert into product_image(num,f_num,img_src) values(null,4,'https://img.dogpre.com/mobile/dogpre/product/94/93914_detail_01131795.jpg');
+insert into product_image(num,f_num,img_src) values(null,4,'https://peopet-image.s3.ap-northeast-2.amazonaws.com/product/description/IWzla05Z1617111557925동글이실사%20인식표_001.png');
+insert into product_image(num,f_num,img_src) values(null,4,'https://shop.peopet.co.kr/data/goods/538/2022/05/_temp_16530396085145view.png');
+
 insert into product values(null, '농림수산 무선칩', 12000, 1000, '농림수산부에서 만든 야심작!', 3000, 2, 'https://blog.kakaocdn.net/dn/BeQUW/btqw3OCk2Dq/Ikvt67OSpkso0dANj6Wmr1/img.png','관리자','');
+insert into product_image(num,f_num,img_src) values(null,5,'https://www.dailyvet.co.kr/wp-content/uploads/2020/08/20200821registration.jpg');
+insert into product_image(num,f_num,img_src) values(null,5,'https://www.nzine.co.kr/files/editor/attached/e6481431972d3044a3b149ad673df38d.jpg');
+insert into product_image(num,f_num,img_src) values(null,5,'https://img.danawa.com/prod_img/500000/066/714/img/9714066_1.jpg?_v=20191021105929');
+
 insert into product values(null, 'LED 외장칩', 17000, 100, '야간 산책 시 우리 아이 찾기 힘들죠? 이겁니다 이거야!', 3000, 2, 'https://raw.githubusercontent.com/HajongChan2/abandoned_dog_site/main/%EB%A7%88%EC%9D%8C%EC%9D%B4%20230507/igonan/src/main/resources/static/img/d0365f123d564798a1a2287ac005024c.png','관리자','');
+insert into product_image(num,f_num,img_src) values(null,6,'');
+insert into product_image(num,f_num,img_src) values(null,6,'');
+insert into product_image(num,f_num,img_src) values(null,6,'');
+
 insert into product values(null, 'H형 하네스', 15000, 200, '슬개골 탈구 무섭죠? 이럴 때는 H형 하네스!!', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp9JRN9KsSx-7eLtpmsT6uj5BM37GRZuWYMr-LPggcKvqRj5xV0DndVzy1zcG4XHfdCJM&usqp=CAU','관리자','');
+insert into product_image(num,f_num,img_src) values(null,7,'');
+insert into product_image(num,f_num,img_src) values(null,7,'');
+insert into product_image(num,f_num,img_src) values(null,7,'');
+
 insert into product values(null, '로얄 캐닌', 30000, 50, '사료가 맛있어~ 맛있으면 로얄 캐닌~', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfavr7CjGEdFGd_8OHXPnNyr0rykAaT5OR4CBqxnxkIubq63ZN1fbEWdnPZ_ulPjK6PFA&usqp=CAU','관리자','');
+insert into product_image(num,f_num,img_src) values(null,8,'');
+insert into product_image(num,f_num,img_src) values(null,8,'');
+insert into product_image(num,f_num,img_src) values(null,8,'');
+
 insert into product values(null, '이쁜 목줄', 20000, 100, '움직이면서 줄이 쓸리면 손 아프시죠! 부드러운 스웨이드 소재로 주인님의 손을 보호 하세요!', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdfXk0zWiNWtO47lsoMiXvrGVI2I5TpAXV2g&usqp=CAU','관리자','');
+insert into product_image(num,f_num,img_src) values(null,9,'');
+insert into product_image(num,f_num,img_src) values(null,9,'');
+insert into product_image(num,f_num,img_src) values(null,9,'');
 
 
