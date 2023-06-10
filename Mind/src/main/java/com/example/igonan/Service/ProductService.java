@@ -23,11 +23,14 @@ public class ProductService {
 
     }
 
-    public List<ProductDTO> getOneProduct(String productName) { // DB에서 조회된 특정 유기견의 정보를 리턴하는 getOneDog
-        List<ProductDTO> oneProduct = productmapper.findOneProduct(productName);// 특정 유기견의 정보를 List oneDog에 담음
+    public List<ProductDTO> getOneProduct(int productNum) { // DB에서 조회된 특정 유기견의 정보를 리턴하는 getOneDog
+        List<ProductDTO> oneProduct = productmapper.findOneProduct(productNum);// 특정 유기견의 정보를 List oneDog에 담음
         return oneProduct; // oneDog 를 리턴하여 데이터 전달
     }
-
+    public List<ProductDTO> getOneProductName(String productName) { // DB에서 조회된 특정 유기견의 정보를 리턴하는 getOneDog
+        List<ProductDTO> oneProduct = productmapper.findOneProductName(productName);// 특정 유기견의 정보를 List oneDog에 담음
+        return oneProduct; // oneDog 를 리턴하여 데이터 전달
+    }
 
     public List<ProductDTO> getOnProductType(int prtype) { // DB에서 조회된 특정 유기견의 정보를 리턴하는 getOneDog
         List<ProductDTO> productType = productmapper.findOneType(prtype);// 특정 유기견의 정보를 List oneDog에 담음

@@ -17,9 +17,12 @@ public interface Productmapper {
     List<ProductDTO> productList();
     // 모든 상품의 정보를 List에 담음
 
-    @Select("select * from product pr where pr.pr_name = #{productName} ;")
-    List<ProductDTO> findOneProduct(String productName);
+    @Select("select * from product pr where pr.pr_num = #{productNum} ;")
+    List<ProductDTO> findOneProduct(int productNum);
     // 특정 상품의 정보를 List에 담음
+    @Select("select * from product pr where pr.pr_name = #{productName} ;")
+    List<ProductDTO> findOneProductName(String productName);
+
 
     @Select("select * from product pr where pr.pr_type = #{productType} ;")
     List<ProductDTO> findOneType(int productType);
