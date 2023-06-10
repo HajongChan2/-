@@ -1,12 +1,13 @@
+let dogNum;
 $(document).ready(function(){
-    //let dogname = '빵이';
-    if(localStorage.getItem('name')){
-       dogname = localStorage.getItem('name');
+
+    if(localStorage.getItem('num')){
+        dogNum = localStorage.getItem('num');
     }
     srt = '';
     $.ajax({
         type : "GET",
-        url : "/dog/detail/"+dogname,
+        url : "/dog/detail/"+dogNum,
         dataType : "json",
         success : function(data){
 

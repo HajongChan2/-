@@ -22,6 +22,7 @@ $(document).ready(function(){
                         <div class="petcesory-image">
                             <img src="${tag.prGallery}" alt="${tag.prName}">
                             <p>${tag.prName}</p>
+                            <h2 id="number">${tag.prNum}</h2>
                         </div>
                     </a>                    
                 </div>`
@@ -55,6 +56,7 @@ $(document).ready(function(){
                         <div class="petcesory-image">
                             <img src="${tag.prGallery}" alt="${tag.prName}">
                             <p>${tag.prName}</p>
+                            <h2 id="number">${tag.prNum}</h2>
                         </div>
                     </a>                    
                 </div>`
@@ -88,6 +90,7 @@ $(document).ready(function(){
                         <div class="petcesory-image">
                             <img src="${chip.prGallery}" alt="${chip.prName}">
                             <p>${chip.prName}</p>
+                            <h2 id="number">${chip.prNum}</h2>
                         </div>
                     </a>                    
                 </div>`
@@ -120,6 +123,7 @@ $(document).ready(function(){
                         <div class="petcesory-image">
                             <img src="${etc.prGallery}" alt="${etc.prName}">
                             <p>${etc.prName}</p>
+                            <h2 id="number">${etc.prNum}</h2>
                         </div>
                     </a>                    
                 </div>`
@@ -129,13 +133,11 @@ $(document).ready(function(){
             $("#container2").append(str);
         }
     });
-    $(document).on("click",".petcesory-image",function(e){
-        let na = $(e.target);
-        let name = na.attr("alt");
-        if(name == null){
-            name = na.text();
-        }
-        console.log(name);
-        localStorage.setItem('name',name);
+
+    $(document).on('click','.petcesory-image',function(){
+        let target = this
+        let list = target.querySelector('h2').innerText;
+        num = list;
+        localStorage.setItem('num',num);
     });
 });

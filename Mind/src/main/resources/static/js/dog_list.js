@@ -21,6 +21,7 @@ $(document).ready(function(){
                     <div class="pet_dog-image">
                         <img src="${petdog.petGallery}" alt="${petdog.petName}">
                         <p>${petdog.petName}</p>
+                        <h2 id="number">${petdog.petNum}</h2>
                         </div>
                 </div>
 `

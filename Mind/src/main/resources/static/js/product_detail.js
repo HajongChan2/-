@@ -1,10 +1,10 @@
 $(document).ready(function(){
-    let name = localStorage.getItem("name");
+    let num = localStorage.getItem("num");
     let str = '';
     let input;
     $.ajax({
         type:"GET",
-        url:"/product/detail/"+name,
+        url:"/product/detail/"+num,
         dataType : "json",
         success : function(data){
             console.log(data);
