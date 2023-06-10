@@ -21,6 +21,8 @@ public interface Paymentmapper {
 @Select("select * from ubuy u where u.u_id = #{buyerid} ;")
 List<PaymentDTO> oneUsersAllIgonanBuyListReturn(String buyerid);
 
+ @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_num = #{num} ;")
+ PaymentDTO oneUsersOneRowWithNum(String buyerid,int num);
 @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_prname= #{productname} order by u.u_num desc limit 1; ")
 PaymentDTO finduserbuyresult(String buyerid, String productname);
 
@@ -42,8 +44,14 @@ List<myPageTotalDTO> mypageuserbuytotal(String buyerid);
 PaymentDTO oneUsersDeliveryStatuscountReturn(String buyerid, String deliveryStatus);
 
 
+
  Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달
+
+ Integer paymentDeleveryStatusUpdate(String Status,int num);
+
+
+
 }
 
 

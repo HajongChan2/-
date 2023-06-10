@@ -9,4 +9,13 @@
         <!--데이터 순서에 맞춰 파라미터 순서 설정 -->
     </select>
 
+    <select id="paymentDeleveryStatusUpdate">
+        update ubuy set u_del=#{param1} where u_num=#{param2}
+
+    </select>
+
+
+
+
+
 </mapper>

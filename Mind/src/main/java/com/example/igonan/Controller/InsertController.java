@@ -4,6 +4,7 @@ package com.example.igonan.Controller;
 import com.example.igonan.Service.AbanDogService;
 import com.example.igonan.Service.PaymentService;
 import com.example.igonan.Service.UserService;
+import com.example.igonan.dto.PaymentDTO;
 import com.example.igonan.mindmapper.AbanDogmapper;
 import com.example.igonan.mindmapper.Paymentmapper;
 import com.example.igonan.mindmapper.Productmapper;
@@ -185,7 +186,32 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 }
 
 
+    @PostMapping("/delivery/update")
+    @ResponseBody
+    public Object deliveryStatusUpdate(HttpSession hs, HttpServletRequest rq){
 
+        int num = Integer.parseInt(rq.getParameter("num"));
+        String id = hs.getAttribute("userid").toString();
+        String status = "입금/결제";
+
+        String nowStatus = paymentmapper.oneUsersOneRowWithNum(id,num).getuDel();
+        System.out.println("현재 배송 상태 : "+nowStatus);
+        switch (nowStatus){
+
+            case "입금/결제":
+                status = "배송중";
+                paymentmapper.paymentDeleveryStatusUpdate(status,num);
+                System.out.println("변경된 배송 상태 : "+status);
+                break;
+            case "배송중":
+                status = "배송완료";
+                paymentmapper.paymentDeleveryStatusUpdate(status,num);
+                System.out.println("변경된 배송 상태 : "+status);
+                break;
+        }
+       List<PaymentDTO> list =  paymentmapper.oneUsersAllIgonanBuyListReturn(id);
+        return list; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+    }
 
 
 }

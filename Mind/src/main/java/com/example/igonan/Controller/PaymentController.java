@@ -137,7 +137,7 @@ public class PaymentController {
     }
 
 
-    @RequestMapping(value = "/userdeliveryreturn/{Status}") //데이터가 보내지는 주소와 메소드 설정
+    @RequestMapping(value = "/userdeliveryreturn/{Status}",method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
     @ResponseBody
     public Object productType(@PathVariable String Status, HttpSession hs)throws IOException {
 
@@ -169,8 +169,7 @@ public class PaymentController {
 
 
 
-    @RequestMapping(value = "/userdeliverycount"//, method = { RequestMethod.POST }
-    )
+    @RequestMapping(value = "/userdeliverycount", method = { RequestMethod.POST })
     @ResponseBody
     public Object userdeliverycount(HttpSession hs, Model model ){
 
@@ -181,24 +180,24 @@ public class PaymentController {
         int shipCount = mindm.oneUsersDeliveryStatuscountReturn(buyerid,"배송중").getuCount();
         int completeCount = mindm.oneUsersDeliveryStatuscountReturn(buyerid,"배송완료").getuCount();
 
-      /*  model.addAttribute(allCount);
-        model.addAttribute(payCount);
-        model.addAttribute(shipCount);
-        model.addAttribute(completeCount);
-        */
+      //  model.addAttribute(allCount);
+      //  model.addAttribute(payCount);
+      //  model.addAttribute(shipCount);
+      //  model.addAttribute(completeCount);
+
 
         list.add(0,allCount);
         list.add(payCount);
         list.add(shipCount);
         list.add(completeCount);
 
-        List test = new ArrayList();
-        test.add(new countDTO("전체",allCount));
-        test.add(new countDTO("입금/결제",payCount));
-        test.add(new countDTO("배송중",shipCount));
-        test.add(new countDTO("배송완료",completeCount));
+        List deleveryStatusCountList = new ArrayList();
+        deleveryStatusCountList.add(new countDTO("전체",allCount));
+        deleveryStatusCountList.add(new countDTO("입금/결제",payCount));
+        deleveryStatusCountList.add(new countDTO("배송중",shipCount));
+        deleveryStatusCountList.add(new countDTO("배송완료",completeCount));
 
-        return test;
+        return deleveryStatusCountList;
 
     }
 
