@@ -21,6 +21,7 @@
 }
 #content_header{
     font-weight: bold;
+    border-top: solid 1px #d9d9d9;
 }
 .delivery_content{
     display: flex;
