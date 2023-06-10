@@ -1,6 +1,7 @@
 package com.example.igonan.mindmapper;
 
 import com.example.igonan.dto.PaymentDTO;
+import com.example.igonan.util.countDTO;
 import com.example.igonan.util.myPageTotalDTO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,6 +18,8 @@ public interface Paymentmapper {
 @Select("select * from ubuy;")
  List<PaymentDTO> userBuyList();
 
+@Select("select * from ubuy u where u.u_id = #{buyerid} ;")
+List<PaymentDTO> oneUsersAllIgonanBuyListReturn(String buyerid);
 
 @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_prname= #{productname} order by u.u_num desc limit 1; ")
 PaymentDTO finduserbuyresult(String buyerid, String productname);
@@ -31,6 +34,23 @@ List<myPageTotalDTO> mypageuserbuytotal(String buyerid);
  @Select("select u.u_name,count(*) as u_count,sum(u_totalpay) as u_totalpay from ubuy u where u.u_id = #{buyerid} and u.u_date like #{thisdate};")
  List<myPageTotalDTO> mypageuserbuytotalmonth(String buyerid,String thisdate);
 
+ @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_del = #{deliveryStatus};")
+ List<PaymentDTO> oneUsersDeliveryStatusDataReturn(String buyerid, String deliveryStatus);
+
+
+@Select("select u.u_id,count(*) as u_count from ubuy u where u.u_id = #{buyerid} and u.u_del like #{deliveryStatus};")
+PaymentDTO oneUsersDeliveryStatuscountReturn(String buyerid, String deliveryStatus);
+
+
  Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달
 }
+
+
+ /*
+@Select("select u.u_id,count(*) from ubuy u where u.u_id = #{buyerid} and u.u_del like #{deliveryStatus};")
+countDTO oneUsersDeliveryStatuscountReturn(String buyerid, String deliveryStatus);
+*/
+//SELECT SUBDATE('2008-01-02', INTERVAL 30 DAY);
+//select subdate(u_date,30) from ubuy;
+//select * from ubuy where u_date >= subdate(now(), 30);

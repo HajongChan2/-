@@ -61,11 +61,11 @@ public class checkCon {
         String inputpw = rq.getParameter("pw");
 
         List<UserDTO> loggedin = userService.getOneUser(inputid);
-        System.out.println(loggedin.isEmpty());
+
         if(loggedin.isEmpty()==false){
             loggedInSession result = (userService.loginUser(inputid));
             if(inputpw.equals(result.getPw())){
-
+                System.out.println(inputid + "로그인 성공");
                 hs.setAttribute("username",result.getName());
                 hs.setAttribute("userid",inputid);
                 return true;

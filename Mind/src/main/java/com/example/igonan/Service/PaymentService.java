@@ -20,6 +20,11 @@ public class PaymentService {
         List<PaymentDTO> userBuyList= pmm.userBuyList();
         return userBuyList;
     }
+    public List<PaymentDTO> getOneUsersAllBuyList(String buyerid){
+        List<PaymentDTO> userAllBuyList= pmm.oneUsersAllIgonanBuyListReturn(buyerid);
+        return userAllBuyList;
+    }
+
     public List<PaymentDTO> mypageuserbuylist(String buyerid,int startnum, int endnum){
         List<PaymentDTO> oneUserBuyList = pmm.mypageuserbuylist(buyerid,startnum,endnum);
 
@@ -46,8 +51,12 @@ public class PaymentService {
     }
 
 
+    public List<PaymentDTO> oneUsersDeliveryStatusReturn(String buyerid,String Status){
+        List<PaymentDTO> oneUsersDeliveryStatus = pmm.oneUsersDeliveryStatusDataReturn(buyerid,Status);
 
-
+        return oneUsersDeliveryStatus;
+    }
+//
 
 
 

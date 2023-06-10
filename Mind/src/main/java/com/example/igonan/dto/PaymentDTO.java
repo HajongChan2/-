@@ -21,6 +21,7 @@ public class PaymentDTO {
     private int uCount;
     private String uCashsel;
     private String uDate;
+    private String uDel;
 
     public String getuId() {
         return uId;
@@ -60,5 +61,9 @@ public class PaymentDTO {
 
     public String getuDate() {
         return uDate;
+    }
+
+    public String getuDel() {
+        return uDel;
     }
 }
