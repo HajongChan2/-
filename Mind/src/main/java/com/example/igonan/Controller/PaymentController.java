@@ -147,7 +147,9 @@ public class PaymentController {
             status = hs.getAttribute("stauts").toString();
         }
         List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,status);
+        if(hs.getAttribute("stauts").toString() !=null){
         hs.removeAttribute("status");
+        }
         return list;
 
     }
