@@ -160,7 +160,7 @@ public class PaymentController {
         String buyerid = hs.getAttribute("userid").toString();
         String deliveryStatus = "입금/결제";
         switch (Status){
-            case "%":
+            case "all":
                 deliveryStatus = "%";
                 break;
             case "pay":
