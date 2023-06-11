@@ -1,6 +1,6 @@
+let status = '';
 $(document).ready(function(){
     let str = '';
-    let status = '%';
     let status_content = '';
     $.ajax({
         type : "POST",
@@ -137,7 +137,7 @@ $(document).ready(function(){
             data : date_date,
             type : "POST",
             success : function(data){
-                console.log(data);
+                console.log(status);
             }
 
 
