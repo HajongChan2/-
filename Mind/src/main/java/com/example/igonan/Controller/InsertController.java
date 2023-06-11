@@ -5,6 +5,7 @@ import com.example.igonan.Service.AbanDogService;
 import com.example.igonan.Service.PaymentService;
 import com.example.igonan.Service.UserService;
 import com.example.igonan.dto.PaymentDTO;
+import com.example.igonan.dto.ProductDTO;
 import com.example.igonan.mindmapper.AbanDogmapper;
 import com.example.igonan.mindmapper.Paymentmapper;
 import com.example.igonan.mindmapper.Productmapper;
@@ -60,8 +61,15 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
     String id = hs.getAttribute("userid").toString();
     System.out.println(id);
     LocalDate buydate = LocalDate.now();
-
+    String prName = rq.getParameter("prName");
     hs.setAttribute("productname",rq.getParameter("prName"));
+    int asd = Integer.parseInt(prName);
+    String prMemo = "";
+    prMemo = pmp.findOneProduct(asd).get(0).getPrMemo().toString();
+    System.out.println(prMemo);
+    String prImg = "";
+    prImg = pmp.findOneProduct(asd).get(0).getPrGallery().toString();
+    System.out.println(prImg);
     paymentmapper.mindpaymentinsert(
             id,
             rq.getParameter("name"),
@@ -69,7 +77,7 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
             rq.getParameter("address_detail"),rq.getParameter("prName"),
             Integer.parseInt(rq.getParameter("totalPay")),
             rq.getParameter("memo"),
-            pr_count,rq.getParameter("payment_method"),buydate
+            pr_count,rq.getParameter("payment_method"),buydate,prMemo,prImg
     );
     return "/main";
 }

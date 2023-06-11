@@ -4,8 +4,8 @@
 <mapper namespace="com.example.igonan.mindmapper.Paymentmapper"> <!-- 해당 mapper를 사용하려는 파일 경로-->
 
     <select id="mindpaymentinsert" > <!-- 해당 id를 호출하면 아래의 구문 실행-->
-        insert into ubuy(u_num,u_id,u_name,u_phone,u_addr,u_saddr,u_prname,u_totalpay,u_memo,u_count,u_cashsel,u_date,u_del) <!-- 테이블과 컬럼명 -->
-        values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7},#{param8},#{param9},#{param10},#{param11},'입금/결제')
+        insert into ubuy(u_num,u_id,u_name,u_phone,u_addr,u_saddr,u_prname,u_totalpay,u_memo,u_count,u_cashsel,u_date,u_del,u_prmemo,u_primg) <!-- 테이블과 컬럼명 -->
+        values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7},#{param8},#{param9},#{param10},#{param11},'입금/결제',#{param12},#{param13})
         <!--데이터 순서에 맞춰 파라미터 순서 설정 -->
     </select>
 

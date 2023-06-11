@@ -22,7 +22,8 @@ public class PaymentDTO {
     private String uCashsel;
     private String uDate;
     private String uDel;
-
+    private String uPrmemo;
+    private String uPrimg;
     public String getuId() {
         return uId;
     }
@@ -65,5 +66,13 @@ public class PaymentDTO {
 
     public String getuDel() {
         return uDel;
+    }
+
+    public String getuPrmemo() {
+        return uPrmemo;
+    }
+
+    public String getuPrimg() {
+        return uPrimg;
     }
 }

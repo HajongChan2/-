@@ -20,7 +20,7 @@ public class ImageService {
 
     }
 
-    public List<ImageDTO> getabanDogImageReturn(int igonanDogImageForeignNumber) { 
+    public List<ImageDTO> getabanDogImageReturn(int igonanDogImageForeignNumber) {
         List<ImageDTO> abanDogimagelist = imp.abandogImageReturn(igonanDogImageForeignNumber);
         return abanDogimagelist;
 

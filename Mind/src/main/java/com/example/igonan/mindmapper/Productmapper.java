@@ -37,4 +37,8 @@ public interface Productmapper {
     Integer mindProductInsert(String name,int price,int count,String memo,int dpay,int type,String gall,String seller,String content);
 
     Integer mindProductImageInsert(int num,String imgsrc);
+
+
+    @Select("select * from product pr where pr.pr_name = #{productName} ;")
+    ProductDTO findOneProductNameass(String productName);
 }

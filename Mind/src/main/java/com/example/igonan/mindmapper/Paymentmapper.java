@@ -46,7 +46,7 @@ PaymentDTO oneUsersDeliveryStatuscountReturn(String buyerid, String deliveryStat
 @Select("select * from ubuy u where u.u_id = #{buyerId} and u.u_date >= #{startDate} and u.u_date <= #{endDate} and u.u_del like #{status};")
 List<PaymentDTO> oneUsersBuyListWireDateRange(String buyerId, String startDate, String endDate,String status);
 
- Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate);
+ Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate,String prMemo,String prImg);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달
 
  Integer paymentDeleveryStatusUpdate(String Status,int num);
