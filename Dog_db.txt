@@ -143,7 +143,7 @@ insert into product_image(num,f_num,img_src) values(null,3,'https://shop.peopet.
 
 insert into product values(null, '노랑이 외장칩', 1000, 120, '노랑이 외장칩은 귀여운 강아지 캐릭터로 강아지의 정보를 담아주세요!', 3000, 2, 'https://contents.creators.mypetlife.co.kr/content/uploads/2022/07/18150933/7-12.jpeg','관리자','');
 insert into product_image(num,f_num,img_src) values(null,4,'https://img.dogpre.com/mobile/dogpre/product/94/93914_detail_01131795.jpg');
-insert into product_image(num,f_num,img_src) values(null,4,'https://peopet-image.s3.ap-northeast-2.amazonaws.com/product/description/IWzla05Z1617111557925동글이실사%20인식표_001.png');
+insert into product_image(num,f_num,img_src) values(null,4,'https://img.dogpre.com/web/dogpre/product/94/93914_origin_03783404.jpg');
 insert into product_image(num,f_num,img_src) values(null,4,'https://shop.peopet.co.kr/data/goods/538/2022/05/_temp_16530396085145view.png');
 
 insert into product values(null, '농림수산 무선칩', 12000, 1000, '농림수산부에서 만든 야심작!', 3000, 2, 'https://blog.kakaocdn.net/dn/BeQUW/btqw3OCk2Dq/Ikvt67OSpkso0dANj6Wmr1/img.png','관리자','');
