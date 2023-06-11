@@ -135,24 +135,24 @@ insert into product_image(num,f_num,img_src) values(null,5,'https://www.dailyvet
 insert into product_image(num,f_num,img_src) values(null,5,'https://www.nzine.co.kr/files/editor/attached/e6481431972d3044a3b149ad673df38d.jpg');
 insert into product_image(num,f_num,img_src) values(null,5,'https://img.danawa.com/prod_img/500000/066/714/img/9714066_1.jpg?_v=20191021105929');
 
-insert into product values(null, 'LED 외장칩', 17000, 100, '야간 산책 시 우리 아이 찾기 힘들죠? 이겁니다 이거야!', 3000, 2, 'https://raw.githubusercontent.com/HajongChan2/abandoned_dog_site/main/%EB%A7%88%EC%9D%8C%EC%9D%B4%20230507/igonan/src/main/resources/static/img/d0365f123d564798a1a2287ac005024c.png','관리자','');
-insert into product_image(num,f_num,img_src) values(null,6,'');
-insert into product_image(num,f_num,img_src) values(null,6,'');
-insert into product_image(num,f_num,img_src) values(null,6,'');
+insert into product values(null, 'LED 외장칩', 17000, 100, '야간 산책 시 우리 아이 찾기 힘들죠? 이겁니다 이거야!', 3000, 2, 'https://media.bunjang.co.kr/product/221076438_2_1681446274_w360.jpg','관리자','');
+insert into product_image(num,f_num,img_src) values(null,6,'https://media.bunjang.co.kr/product/213278449_7_1675212700_w360.jpg');
+insert into product_image(num,f_num,img_src) values(null,6,'https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/3255866149/B.jpg?295000000');
+insert into product_image(num,f_num,img_src) values(null,6,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVg0mh7CTdtbovI5pfNt9bsi1BZ80i_LWbjQ&usqp=CAU');
 
 insert into product values(null, 'H형 하네스', 15000, 200, '슬개골 탈구 무섭죠? 이럴 때는 H형 하네스!!', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp9JRN9KsSx-7eLtpmsT6uj5BM37GRZuWYMr-LPggcKvqRj5xV0DndVzy1zcG4XHfdCJM&usqp=CAU','관리자','');
-insert into product_image(num,f_num,img_src) values(null,7,'');
-insert into product_image(num,f_num,img_src) values(null,7,'');
-insert into product_image(num,f_num,img_src) values(null,7,'');
+insert into product_image(num,f_num,img_src) values(null,7,'https://m.petbos.com/web/product/big/20200227/1924f35bb36907f2c37e46a1f8fa1a13.jpg');
+insert into product_image(num,f_num,img_src) values(null,7,'https://image.bom.co.kr/product/detail/BNO/2011250619514075/_600.jpg');
+insert into product_image(num,f_num,img_src) values(null,7,'https://shop.peopet.co.kr/data/goods/348/2022/03/9054_temp_16480194599092view.jpg');
 
 insert into product values(null, '로얄 캐닌', 30000, 50, '사료가 맛있어~ 맛있으면 로얄 캐닌~', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfavr7CjGEdFGd_8OHXPnNyr0rykAaT5OR4CBqxnxkIubq63ZN1fbEWdnPZ_ulPjK6PFA&usqp=CAU','관리자','');
-insert into product_image(num,f_num,img_src) values(null,8,'');
-insert into product_image(num,f_num,img_src) values(null,8,'');
-insert into product_image(num,f_num,img_src) values(null,8,'');
+insert into product_image(num,f_num,img_src) values(null,8,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjUMJ0uZRQwMHtMOCdPFiOBkY_TFLSxFYytg&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,8,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ag675YmNveXZ8dh6MaeJUFtFl4pl4DB7Vg&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,8,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR2rCT4AM6EgbnNNvsbilIq5D8tovYJIBI1Q&usqp=CAU');
 
 insert into product values(null, '이쁜 목줄', 20000, 100, '움직이면서 줄이 쓸리면 손 아프시죠! 부드러운 스웨이드 소재로 주인님의 손을 보호 하세요!', 3000, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdfXk0zWiNWtO47lsoMiXvrGVI2I5TpAXV2g&usqp=CAU','관리자','');
-insert into product_image(num,f_num,img_src) values(null,9,'');
-insert into product_image(num,f_num,img_src) values(null,9,'');
-insert into product_image(num,f_num,img_src) values(null,9,'');
+insert into product_image(num,f_num,img_src) values(null,9,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL5y8J3tLwIFZE6dxR-hDDiIEoBNmtbWU9jw&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,9,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTPC1AYQfNJuJxMTRUC_nS3wmACsTGJyPTFw&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,9,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0M9HP-nr62idfQLir1HmFvWk1tKoOweRm8Q&usqp=CAU');
 
 
