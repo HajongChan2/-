@@ -64,9 +64,7 @@ $(document).ready(function(){
             type : "POST",
             dataType : "json",
             success : function(data){
-                console.log(str);
                 str = '';
-                console.log(str);
                 delivery_status(data);
                 $(".contents").empty();
                 $(".contents").append(str);
