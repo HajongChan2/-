@@ -71,7 +71,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     let CountData = localStorage.getItem('count');;
-    productName = localStorage.getItem('name');
+    productName = localStorage.getItem('num');
     let str = '';
     let totlePay = 1;
     $.ajax({
