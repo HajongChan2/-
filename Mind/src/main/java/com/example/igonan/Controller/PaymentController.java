@@ -145,7 +145,6 @@ public class PaymentController {
         String status = rq.getParameter("status");
         String deliveryStatus = "%";
 
-        System.out.println(status);
         switch (status){
             case "all":
                 deliveryStatus = "%";
@@ -160,7 +159,7 @@ public class PaymentController {
                 deliveryStatus = "배송완료";
                 break;
         }
-        System.out.println(deliveryStatus);
+        System.out.println("구매내역 조회 - 배송상태 : "+deliveryStatus);
         List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,deliveryStatus);
 
         return list;
