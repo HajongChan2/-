@@ -18,15 +18,11 @@ public interface Productmapper {
     // 모든 상품의 정보를 List에 담음
 
     @Select("select * from product pr where pr.pr_num = #{productNum} ;")
-
-    List<ProductDTO> findOneProduct(String productName);
-
     List<ProductDTO> findOneProduct(int productNum);
-
     // 특정 상품의 정보를 List에 담음
+
     @Select("select * from product pr where pr.pr_name = #{productName} ;")
     List<ProductDTO> findOneProductName(String productName);
-
 
     @Select("select * from product pr where pr.pr_type = #{productType} ;")
     List<ProductDTO> findOneType(int productType);
@@ -36,7 +32,6 @@ public interface Productmapper {
 
     @Select("select * from product pr where pr.pr_name=#{productName} order by pr.pr_num desc limit 1;")
     ProductDTO productImageWireNumberReturn(String productName);
-
 
 
     Integer mindProductInsert(String name,int price,int count,String memo,int dpay,int type,String gall,String seller,String content);
