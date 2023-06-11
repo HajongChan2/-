@@ -40,7 +40,7 @@ Create table ubuy (u_num int primary key auto_increment,u_id varchar(50), u_name
 
 create table abandog_image(num int primary key auto_increment,ad_num int,img_src text(50000) not null, foreign key(ad_num) references ad_dog(ad_num));
 create table product_image(num int primary key auto_increment,pr_num int,img_src text(50000) not null, foreign key(pr_num) references product(pr_num));
-create table pet_image(num int primary key auto_increment,pet_num int,img_src text(50000) not null, foreign key(pr_num) references pet_dog(pet_num));
+create table pet_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references pet_dog(pet_num));
 
 
 배송 조회 - 고유번호 / 유저 아이디 varchar(50) Foreign Key / 이름 varchar(50) / 휴대폰 char(13) / 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 상품 이름 varchar(50) / 가격 int(6) / 수량 int(3) / 결제 수단 varchar(30)
@@ -109,8 +109,20 @@ insert into abandog_image(num,f_num,img_src) values(null,3,'https://blog.kakaocd
 
 
 insert into pet_dog values(null, '빵이', 1, '2021-11-13', '여', '중형견', '진돗개', 'O', 'O', '아주 건강해요!', 'https://t1.daumcdn.net/cfile/tistory/9949E333598C76C229');
+insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu26KrFfsUYqazHtGRUbaLMZN1ubt1BHJUGg&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI59bXuRxfJ6Cih4pMSbPFu3JySaUDZCcSSg&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpY8wyZXEcpZGvKjHm0D1ymbh60ae7XrV6kA&usqp=CAU');
+
 insert into pet_dog values(null, '구름', 1, '2022-09-19', '남', '소형견', '말티푸', 'O', 'O', '고구마 알러지, 간식을 많이 먹으면 설사해요', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lL7FU32w3bv8e_M4QE7SDrjFT1d7EDAr5Q&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1TQHfqrTrfwtxle3NrAg3pkoiKSJ43MJ1w&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXa41FFU52W-Bybl7K6UEYlXSKJHTUonNKGA&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzXiI-P2BGRtUtLzgXxZr8I1laSJkIGwTwg&usqp=CAU');
+
 insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU'); 
+insert into product_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9SKUToORG4vnjrkrgxfeNsM_mNBSN8hzPuI5eRR6aqMc8KrnAExsZ-DRWp03ElLo8kI&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfl2Zv4bmeeM6K-xLMrHZRsCZEI6amzPftkQ&usqp=CAU');
+insert into product_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSseNhlgEaVyc17FV7drfrlsqLCbR-pbxL79A&usqp=CAU');
+
 
 
 
