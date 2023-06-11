@@ -1,6 +1,7 @@
 $(document).ready(function(){
     let str = '';
     let status = '%';
+    let status_content = '';
     $.ajax({
         type : "POST",
         datatype: "json",
@@ -12,12 +13,40 @@ $(document).ready(function(){
         }
     });
 
+    $.ajax({
+        url : "userdeliverycount",
+        dataType : "json",
+        type : "POST",
+        success : function(data){
+            status_content += `
+                <div class="delivery_box">
+                    <h2>전체</h2>
+                    <h2>${data[0].count}</h2>
+                </div>
+                <div class="delivery_box">
+                    <h2>입금/결제</h2>
+                    <h2>${data[1].count}</h2>
+                </div>
+                <div class="delivery_box">
+                    <h2>배송중</h2>
+                    <h2>${data[2].count}</h2>
+                </div>
+                <div class="delivery_box">
+                    <h2>배송완료</h2>
+                    <h2>${data[3].count}</h2>
+                </div>
+            `
+
+            $("#delivery_status").append(status_content);
+        }
+    });
+
     $(document).on('click','.delivery_box',function(){
         let target = this
         let list = target.querySelector('h2').innerText;
         switch (list){
             case "전체":
-                status = "%";
+                status = "all";
                 break;
             case "입금/결제":
                 status = "pay";
@@ -35,9 +64,13 @@ $(document).ready(function(){
             type : "POST",
             dataType : "json",
             success : function(data){
+                console.log(str);
+                str = '';
+                console.log(str);
                 delivery_status(data);
+                $(".contents").empty();
+                $(".contents").append(str);
             }
-
         });
 
         console.log(status);
@@ -156,5 +189,7 @@ $(document).ready(function(){
             }
         });
     }
+
+
 
 });
