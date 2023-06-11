@@ -14,21 +14,21 @@ public class ImageService {
    private Imagemapper imp;
 
 
-    public List<ImageDTO> getProductImageReturn(int igonanProductImageForeignNumber) { // DB에서 조회된 모든 유기견의 정보를 리턴하는 getAbanDogList
-        List<ImageDTO> productimagelist = imp.productImageReturn(igonanProductImageForeignNumber);// 모든 유기견의 정보를 List abanDogList에 담음
-        return productimagelist;// abanDogList 를 리턴하여 데이터 전달
+    public List<ImageDTO> getProductImageReturn(int igonanProductImageForeignNumber) {
+        List<ImageDTO> productimagelist = imp.productImageReturn(igonanProductImageForeignNumber);
+        return productimagelist;
 
     }
 
-    public List<ImageDTO> getabanDogImageReturn(int igonanDogImageForeignNumber) { // DB에서 조회된 모든 유기견의 정보를 리턴하는 getAbanDogList
-        List<ImageDTO> abanDogimagelist = imp.abandogImageReturn(igonanDogImageForeignNumber);// 모든 유기견의 정보를 List abanDogList에 담음
-        return abanDogimagelist;// abanDogList 를 리턴하여 데이터 전달
+    public List<ImageDTO> getabanDogImageReturn(int igonanDogImageForeignNumber) { 
+        List<ImageDTO> abanDogimagelist = imp.abandogImageReturn(igonanDogImageForeignNumber);
+        return abanDogimagelist;
 
     }
 
-    public List<ImageDTO> getPetDogImageReturn(int igonanDogImageForeignNumber) { // DB에서 조회된 모든 유기견의 정보를 리턴하는 getAbanDogList
-        List<ImageDTO> petDogimagelist = imp.petDogImageReturn(igonanDogImageForeignNumber);// 모든 유기견의 정보를 List abanDogList에 담음
-        return petDogimagelist;// abanDogList 를 리턴하여 데이터 전달
+    public List<ImageDTO> getPetDogImageReturn(int igonanDogImageForeignNumber) {
+        List<ImageDTO> petDogimagelist = imp.petDogImageReturn(igonanDogImageForeignNumber);
+        return petDogimagelist;
 
     }
 
