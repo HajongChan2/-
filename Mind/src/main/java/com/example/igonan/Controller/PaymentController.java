@@ -143,16 +143,9 @@ public class PaymentController {
         String startDate = rq.getParameter("start_date");
         String endDate = rq.getParameter("end_date");
         String status = "%";
-        System.out.println(status);
-        String asd = hs.getAttribute("status").toString();
-        if( asd != null){
-            status = hs.getAttribute("status").toString();
-        }
 
         List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,status);
-        if(asd != null){
-        hs.removeAttribute("status");
-        }
+
         return list;
 
     }
@@ -163,26 +156,18 @@ public class PaymentController {
     @ResponseBody
     public Object productType(@PathVariable String Status, HttpSession hs)throws IOException {
 
-      if ( hs.getAttribute("status") !=null){
-          hs.removeAttribute("status");
-      }
 
         String buyerid = hs.getAttribute("userid").toString();
         String deliveryStatus = "입금/결제";
         switch (Status){
             case "pay":
                  deliveryStatus = "입금/결제";
-                hs.setAttribute("status",deliveryStatus);
                 break;
-
             case "ship" :
                  deliveryStatus = "배송중";
-                hs.setAttribute("status",deliveryStatus);
                 break;
-
             case "complete" :
                  deliveryStatus = "배송완료";
-                hs.setAttribute("status",deliveryStatus);
                 break;
             default:
                 if (Status != "pay" || Status != "ship" || Status != "complete"){
