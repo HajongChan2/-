@@ -142,8 +142,8 @@ public class PaymentController {
         String buyerid = hs.getAttribute("userid").toString();
         String startDate = rq.getParameter("start_date");
         String endDate = rq.getParameter("end_date");
-        String status = "%";
-
+        String status = "";
+        status = rq.getParameter("status");
         List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,status);
 
         return list;
