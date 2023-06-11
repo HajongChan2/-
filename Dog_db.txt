@@ -148,7 +148,7 @@ insert into product_image(num,f_num,img_src) values(null,4,'https://shop.peopet.
 
 insert into product values(null, '농림수산 무선칩', 12000, 1000, '농림수산부에서 만든 야심작!', 3000, 2, 'https://blog.kakaocdn.net/dn/BeQUW/btqw3OCk2Dq/Ikvt67OSpkso0dANj6Wmr1/img.png','관리자','');
 insert into product_image(num,f_num,img_src) values(null,5,'https://www.dailyvet.co.kr/wp-content/uploads/2020/08/20200821registration.jpg');
-insert into product_image(num,f_num,img_src) values(null,5,'https://www.nzine.co.kr/files/editor/attached/e6481431972d3044a3b149ad673df38d.jpg');
+insert into product_image(num,f_num,img_src) values(null,5,'https://tgzzmmgvheix1905536.cdn.ntruss.com/2019/07/a1daa54f124b42b4a12a19040f50cebd');
 insert into product_image(num,f_num,img_src) values(null,5,'https://img.danawa.com/prod_img/500000/066/714/img/9714066_1.jpg?_v=20191021105929');
 
 insert into product values(null, 'LED 외장칩', 17000, 100, '야간 산책 시 우리 아이 찾기 힘들죠? 이겁니다 이거야!', 3000, 2, 'https://media.bunjang.co.kr/product/221076438_2_1681446274_w360.jpg','관리자','');
