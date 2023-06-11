@@ -43,9 +43,6 @@ $(document).ready(function(){
         }
     });
 
-});
-
-$(window).load(function(){
     let img = '';
     $.ajax({
         url : "/petdogimagelist/"+dogNum,
@@ -57,25 +54,17 @@ $(window).load(function(){
             $("#container2").append(img);
         }
     });
-
-    function petdogimage(list){
-
-        /*list.map(function(pet){
+});
+function petdogimage(list){
+    for(let i = 0; i < list.length; i++){
+        if(i != 0){
             img +=
-                `<div class="dogbox_img3"><img src="${pet.imgSrc}" alt=""></div>
-            `
-        });*/
-        for(let i = 0; i < list.length; i++){
-            if(i != 0){
-                img +=
-                    `<div class="dogbox_img3"><img src="${list[i].imgSrc}" alt=""></div>
+                `<div class="dogbox_img3"><img src="${list[i].imgSrc}" alt=""></div>
                 `
-
-            }else{
-                continue;
-            }
-
+        }else{
+            continue;
         }
 
     }
-});
+
+}
