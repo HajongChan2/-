@@ -1,10 +1,12 @@
 $(document).ready(function(){
+    let str = '';
     $.ajax({
         type : "POST",
         datatype: "json",
         url : "/userallbuylist",
         success : function(data){
-            console.log(data)
+            console.log(data);
+            product_all_select(list);
         }
     });
 
@@ -52,11 +54,29 @@ $(document).ready(function(){
             data : date_date,
             type : "POST",
             success : function(data){
-                console.log(data)
+                console.log(data);
+
+
             }
 
 
         });
     });
+
+    function product_all_select(list){
+        list.map(function(all){
+        str += `
+            <li class="first_content">
+                <img src="img/product.jpg">
+                <div class="description">
+                    <p><a href="#">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</a></p>
+                </div>
+            </li>
+            <li>2</li>
+            <li>배송완료</li>
+            <li>2</li>
+        `
+        });
+    }
 
 });

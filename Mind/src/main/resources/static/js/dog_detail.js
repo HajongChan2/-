@@ -4,7 +4,8 @@ $(document).ready(function(){
     if(localStorage.getItem('num')){
         dogNum = localStorage.getItem('num');
     }
-    srt = '';
+    let srt = '';
+
     $.ajax({
         type : "GET",
         url : "/dog/detail/"+dogNum,
@@ -34,12 +35,47 @@ $(document).ready(function(){
         <div id="dogbox_img2"></div>
         <h1 id="main_nb2">입양 후 근황</h1>
         <div id="container2">
-            <div class="dogbox_img3"></div>
-            <div class="dogbox_img3"></div>
+
         </div>`
             $("#container").append(srt);
 
             console.log(data);
         }
     });
+
+});
+
+$(window).load(function(){
+    let img = '';
+    $.ajax({
+        url : "/petdogimagelist/"+dogNum,
+        type : "POST",
+        dataType : "json",
+        success : function(data){
+            console.log(data);
+            petdogimage(data);
+            $("#container2").append(img);
+        }
+    });
+
+    function petdogimage(list){
+
+        /*list.map(function(pet){
+            img +=
+                `<div class="dogbox_img3"><img src="${pet.imgSrc}" alt=""></div>
+            `
+        });*/
+        for(let i = 0; i < list.length; i++){
+            if(i != 0){
+                img +=
+                    `<div class="dogbox_img3"><img src="${list[i].imgSrc}" alt=""></div>
+                `
+
+            }else{
+                continue;
+            }
+
+        }
+
+    }
 });
