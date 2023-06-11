@@ -51,8 +51,8 @@ public class PaymentService {
     }
 
 
-    public List<PaymentDTO> oneUsersBuyListWireDateRangeReturn(String buyerid,String startDate,String endDate){
-        List<PaymentDTO> oneUsersDateRange = pmm.oneUsersBuyListWireDateRange(buyerid,startDate,endDate);
+    public List<PaymentDTO> oneUsersBuyListWireDateRangeReturn(String buyerid,String startDate,String endDate,String status){
+        List<PaymentDTO> oneUsersDateRange = pmm.oneUsersBuyListWireDateRange(buyerid,startDate,endDate,status);
 
         return oneUsersDateRange;
     }

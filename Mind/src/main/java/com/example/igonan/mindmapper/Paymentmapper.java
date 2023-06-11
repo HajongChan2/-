@@ -43,8 +43,8 @@ List<myPageTotalDTO> mypageuserbuytotal(String buyerid);
 @Select("select u.u_id,count(*) as u_count from ubuy u where u.u_id = #{buyerid} and u.u_del like #{deliveryStatus};")
 PaymentDTO oneUsersDeliveryStatuscountReturn(String buyerid, String deliveryStatus);
 
-@Select("select * from ubuy u where u.u_id = #{buyerId} and u.u_date >= #{startDate} and u.u_date <= #{endDate} ;")
-List<PaymentDTO> oneUsersBuyListWireDateRange(String buyerId, String startDate, String endDate);
+@Select("select * from ubuy u where u.u_id = #{buyerId} and u.u_date >= #{startDate} and u.u_date <= #{endDate} and u.u_del like #{status};")
+List<PaymentDTO> oneUsersBuyListWireDateRange(String buyerId, String startDate, String endDate,String status);
 
  Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달

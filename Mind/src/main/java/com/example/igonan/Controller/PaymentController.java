@@ -142,7 +142,12 @@ public class PaymentController {
         String buyerid = hs.getAttribute("userid").toString();
         String startDate = rq.getParameter("start_date");
         String endDate = rq.getParameter("end_date");
-        List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate);
+        String status = "%";
+        if(hs.getAttribute("stauts").toString() !=null){
+            status = hs.getAttribute("stauts").toString();
+        }
+        List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,status);
+        hs.removeAttribute("status");
         return list;
 
     }
@@ -153,19 +158,26 @@ public class PaymentController {
     @ResponseBody
     public Object productType(@PathVariable String Status, HttpSession hs)throws IOException {
 
+      if ( hs.getAttribute("status") !=null){
+          hs.removeAttribute("status");
+      }
+
         String buyerid = hs.getAttribute("userid").toString();
         String deliveryStatus = "입금/결제";
         switch (Status){
             case "pay":
                  deliveryStatus = "입금/결제";
+                hs.setAttribute("status",deliveryStatus);
                 break;
 
             case "ship" :
                  deliveryStatus = "배송중";
+                hs.setAttribute("status",deliveryStatus);
                 break;
 
             case "complete" :
                  deliveryStatus = "배송완료";
+                hs.setAttribute("status",deliveryStatus);
                 break;
             default:
                 if (Status != "pay" || Status != "ship" || Status != "complete"){
@@ -181,12 +193,13 @@ public class PaymentController {
 
 
 
-    @RequestMapping(value = "/userdeliverycount", method = { RequestMethod.POST })
+    @RequestMapping(value = "/userdeliverycount"//, method = { RequestMethod.POST }
+    )
     @ResponseBody
     public Object userdeliverycount(HttpSession hs, Model model ){
 
         String buyerid = hs.getAttribute("userid").toString();
-        List<Integer> list = new ArrayList<Integer>();
+
         int allCount = mindm.oneUsersDeliveryStatuscountReturn(buyerid,"%").getuCount();
         int payCount = mindm.oneUsersDeliveryStatuscountReturn(buyerid,"입금/결제").getuCount();
         int shipCount = mindm.oneUsersDeliveryStatuscountReturn(buyerid,"배송중").getuCount();
@@ -198,10 +211,6 @@ public class PaymentController {
       //  model.addAttribute(completeCount);
 
 
-        list.add(0,allCount);
-        list.add(payCount);
-        list.add(shipCount);
-        list.add(completeCount);
 
         List deleveryStatusCountList = new ArrayList();
         deleveryStatusCountList.add(new countDTO("전체",allCount));
