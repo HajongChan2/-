@@ -1,13 +1,14 @@
 
 let dogNum;
 $(document).ready(function(){
-
+    let img = '';
+    let btn = '';
 
     if(localStorage.getItem('num')){
         dogNum = localStorage.getItem('num');
     }
     console.log(dogNum);
-    srt = '';
+    let srt = '';
     $.ajax({
         type : "GET",
         url : "/abandog/detail/"+dogNum,
@@ -21,14 +22,10 @@ $(document).ready(function(){
                     <img src="https://github.com/HajongChan2/abandoned_dog_site/blob/main/Mind/src/main/resources/static/img/btn_arrow_right.png?raw=true" alt="right" class="next">
                      <div class="slide">
                           <ul class="panel">
-                            <li><img src="${data[0].adGallery}" alt="asd"></li>
-                            <li><img src="${data[0].adGallery}" alt="asd"></li>
-                            <li><img src="${data[0].adGallery}" alt="asd"></li>
+                            
                           </ul>
                           <ul class="dot">
-                            <li class="on">슬라이드 버튼1번</li>
-                            <li>슬라이드 버튼2번</li>
-                            <li>슬라이드 버튼3번</li>
+                            
                           </ul>
                     
                      </div>
@@ -58,13 +55,9 @@ $(document).ready(function(){
         </div>
         <input type="button" class="adoption_button" value="입양 신청하러 가기 >" onclick="location.href='/abandog/form'">`
             $("#container0").append(srt);
-            console.log(data);
-            slide();
+
         }
     });
-});
-
-$(window).load(function(){
 
     $.ajax({
         url : "/abandogimagelist/"+dogNum,
@@ -72,11 +65,26 @@ $(window).load(function(){
         dataType : "json",
         success : function(data){
             console.log(data);
+            abandogimage(data);
+            $(".panel").append(img);
+            $(".dot").append(btn);
+            slide();
         }
     });
+
+    function abandogimage(list){
+
+        list.map(function(abandog){
+            img +=
+                `<li><img src="${abandog.imgSrc}" alt="asd"></li>
+            `
+            btn += `
+                <li>슬라이드</li>
+            `
+        });
+
+    }
 });
-
-
 
 // 슬라이드
 function slide() {
@@ -87,7 +95,7 @@ function slide() {
     var $dotli = $('.dot>li');
     var $panel = $('.panel');
     var $panelLi = $panel.children('li');
-
+    $(".dot li:first-child").attr('class', 'on');
     // 변수 초기화
     function init() {
         wid = $('.slide').width();

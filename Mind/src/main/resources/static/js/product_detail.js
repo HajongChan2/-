@@ -2,6 +2,8 @@ $(document).ready(function(){
     let num = localStorage.getItem("num");
     let str = '';
     let input;
+    let img = '';
+    let btn = '';
     $.ajax({
         type:"GET",
         url:"/product/detail/"+num,
@@ -18,14 +20,10 @@ $(document).ready(function(){
                         <img src="https://github.com/HajongChan2/abandoned_dog_site/blob/main/Mind/src/main/resources/static/img/btn_arrow_left.png?raw=true" alt="left" class="prev">
                         <img src="https://github.com/HajongChan2/abandoned_dog_site/blob/main/Mind/src/main/resources/static/img/btn_arrow_right.png?raw=true" alt="right" class="next">
                         <ul class="panel">
-                            <li><img src="${data[0].prGallery}" alt="asd"></li>
-                            <li><img src="${data[0].prGallery}" alt="asd"></li>
-                            <li><img src="${data[0].prGallery}" alt="asd"></li>
+
                         </ul>
                         <ul class="dot">
-                            <li class="on">슬라이드 버튼</li>
-                            <li>슬라이드 버튼</li>
-                            <li>슬라이드 버튼</li>  
+
                         </ul>
                      </div>
                 </div>
@@ -55,11 +53,34 @@ $(document).ready(function(){
             </div>
             `
             $("form").prepend(str);
-            slide();
             input = $(".inp");
         }
     });
+    $.ajax({
+        url : "/productimagelist/"+num,
+        type : "POST",
+        dataType : "json",
+        success : function(data){
+            console.log(data);
+            productimage(data);
+            $(".panel").append(img);
+            $(".dot").append(btn);
+            slide();
+        }
+    });
 
+    function productimage(list){
+
+        list.map(function(product){
+            img +=
+                `<li><img src="${product.imgSrc}" alt="asd"></li>
+            `
+            btn += `
+                <li>슬라이드</li>
+            `
+        });
+
+    }
 
 
 
@@ -117,6 +138,7 @@ function slide() {
     var $dotli = $('.dot>li');
     var $panel = $('.panel');
     var $panelLi = $panel.children('li');
+    $(".dot li:first-child").attr('class', 'on');
 
     // 변수 초기화
     function init() {
