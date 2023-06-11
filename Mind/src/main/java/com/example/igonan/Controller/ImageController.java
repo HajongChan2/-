@@ -47,5 +47,16 @@ public class ImageController {
         return list;
 
     }
+    @RequestMapping(value = "/petdogimagelist/{param}", method = { RequestMethod.POST })
+    @ResponseBody
+    public Object petdogimagelist(@PathVariable("param")int  whatIsDogsNumber){
+
+        List<ImageDTO> list = imageService.getPetDogImageReturn(whatIsDogsNumber);
+
+        return list;
+
+    }
+
+
 
 }

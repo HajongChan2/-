@@ -19,6 +19,8 @@ public interface Imagemapper {
     @Select("select * from product_image where f_num = #{productNumber};")
     List<ImageDTO> productImageReturn(int productNumber);
 
+    @Select("select * from pet_image where f_num = #{dogNumber};")
+    List<ImageDTO> petDogImageReturn(int dogNumber);
 
 
 

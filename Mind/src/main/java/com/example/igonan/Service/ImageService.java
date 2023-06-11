@@ -26,4 +26,11 @@ public class ImageService {
 
     }
 
+    public List<ImageDTO> getPetDogImageReturn(int igonanDogImageForeignNumber) { // DB에서 조회된 모든 유기견의 정보를 리턴하는 getAbanDogList
+        List<ImageDTO> petDogimagelist = imp.petDogImageReturn(igonanDogImageForeignNumber);// 모든 유기견의 정보를 List abanDogList에 담음
+        return petDogimagelist;// abanDogList 를 리턴하여 데이터 전달
+
+    }
+
+
 }
