@@ -1,3 +1,28 @@
+update, delete 쿼리 작성
+
+update -> 상품, 유기견
+delete -> 상품, 유기견, 구매
+
+update 상품
+update product set pr_gallery = '{param}', pr_name = '{param}', pr_price = {param}, pr_dpay = {param}, pr_seller = '{param}', pr_count = {param}, pr_memo = '{param}', pr_type = {parma}, pr_content = '{param}' where pr_num = {param};
+update product_image set img_src = '{parma}' where f_num = {param};
+
+update 유기견
+update ad_dog set
+
+delete 상품
+delete from proudct where pr_num = {param});
+delete from product_image where f_num = {param};
+
+delete 유기견
+delete from ad_dog where ad_num = {param};
+delete from abandog_image where f_num = {param};
+
+delete 구매(ubuy)
+delete from u_buy where u_num = {param};
+
+
+
 등록 상품 유기견 반려견
 삭제 상품 유기견 
 조회 반려견 유기견 상품
@@ -32,7 +57,7 @@ Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(5
 
 펫세사리 - 고유번호 / 상품 이름 varchar(50)/ 가격 int(6)/ 재고 int(3) / 평점(보류) / 상세설명 varchar(1500)/ 배송비 int(5)/ 사진 url
 
-Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery text(50000),pr_content longtext);
+Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery text(50000),pr_seller varchar(50),pr_content longtext);
 
 펫세사리 구매 - 구매자 이름 varchar(50)/ 휴대폰 char(13)/ 주소 varchar(150) / 상세주소 varchar(80) / 배송 메세지 varchar(300) nullable / 수량 int(2) / 결제 수단 varchar(30)/ 배송상태 varchar(50)/ 구매날짜 date
 
