@@ -1,6 +1,6 @@
 $(document).ready(function(){
     let str = '';
-    let status = '';
+    let status = '%';
     $.ajax({
         type : "POST",
         datatype: "json",
@@ -15,9 +15,55 @@ $(document).ready(function(){
     $(document).on('click','.delivery_box',function(){
         let target = this
         let list = target.querySelector('h2').innerText;
-        status = list;
-        console.log(list);
+        switch (list){
+            case "전체":
+                status = "%";
+                break;
+            case "입금/결제":
+                status = "pay";
+                break;
+            case "배송중":
+                status = "ship";
+                break;
+            case "배송완료":
+                status = "complete";
+                break;
+
+        }
+        $.ajax({
+            url : "/userdeliveryreturn/"+status,
+            type : "POST",
+            dataType : "json",
+            success : function(data){
+                delivery_status(data);
+            }
+
+        });
+
+        console.log(status);
     });
+
+    function delivery_status(list){
+        list.map(function(all){
+            str += `
+            <ul class="delivery_content">
+                <li class="first_content">
+                    <img src="${all.uPrimg}">
+                    <div class="description">
+                        <p><a href="/product/detail/+${all.uPrname}">${all.uPrmemo}</a></p>
+                    </div>
+                </li>
+                <li>${all.uCount}</li>
+                <li>${all.uDel}</li>
+                <li>${all.uTotalpay}</li>
+                <div class="user_choice">
+                    <button class="${all.uNum}" id="confir">결제확정</button>
+                    <button class="${all.uNum}" id="cancel">주문취소</button>
+                </div>
+            </ul>
+        `
+        });
+    }
 
     // 조회 끝나는 날짜 구하기 
     let d = new Date();
