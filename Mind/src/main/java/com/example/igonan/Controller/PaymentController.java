@@ -142,9 +142,24 @@ public class PaymentController {
         String buyerid = hs.getAttribute("userid").toString();
         String startDate = rq.getParameter("start_date");
         String endDate = rq.getParameter("end_date");
-        String status = "";
+        String status = "all";
+        String deliveryStatus = "%";
         status = rq.getParameter("status");
-        List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,status);
+        switch (status){
+            case "all":
+                deliveryStatus = "%";
+                break;
+            case "pay":
+                deliveryStatus = "입금/결제";
+                break;
+            case "ship" :
+                deliveryStatus = "배송중";
+                break;
+            case "complete" :
+                deliveryStatus = "배송완료";
+                break;
+        }
+        List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,deliveryStatus);
 
         return list;
 
