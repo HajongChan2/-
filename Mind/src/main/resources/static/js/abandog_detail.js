@@ -55,22 +55,25 @@ $(document).ready(function(){
         </div>
         <input type="button" class="adoption_button" value="입양 신청하러 가기 >" onclick="location.href='/abandog/form'">`
             $("#container0").append(srt);
-
-        }
-    });
-
-    $.ajax({
-        url : "/abandogimagelist/"+dogNum,
-        type : "POST",
-        dataType : "json",
-        success : function(data){
-            console.log(data);
-            abandogimage(data);
-            $(".panel").append(img);
-            $(".dot").append(btn);
+            aa();
             slide();
         }
     });
+    function aa(){
+        $.ajax({
+            url : "/abandogimagelist/"+dogNum,
+            type : "POST",
+            dataType : "json",
+            success : function(data){
+                console.log(data);
+                abandogimage(data);
+                $(".panel").append(img);
+                $(".dot").append(btn);
+                slide();
+            }
+        });
+    };
+
 
     function abandogimage(list){
 
