@@ -2,7 +2,7 @@ $(document).ready(function(){
     $.ajax({
         type : "POST",
         datatype: "json",
-        url : "/product/select",
+        url : "/userallbuylist",
         success : function(data){
             console.log(data)
         }
@@ -39,5 +39,24 @@ $(document).ready(function(){
     $("#date_start").val(dt);
     $("#date_start").attr('max', output);
     console.log(dt);
+
+    $("#select").click(function(){
+        let start_date = $("#date_start").val();
+        let end_date = $("#date_end").val();
+        const date_date = {
+            start_date :start_date,
+            end_date : end_date
+        }
+        $.ajax({
+            url : "/userbuylistdate",
+            data : date_date,
+            type : "POST",
+            success : function(data){
+                console.log(data)
+            }
+
+
+        });
+    });
 
 });
