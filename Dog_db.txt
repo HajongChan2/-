@@ -109,19 +109,19 @@ insert into abandog_image(num,f_num,img_src) values(null,3,'https://blog.kakaocd
 
 
 insert into pet_dog values(null, '빵이', 1, '2021-11-13', '여', '중형견', '진돗개', 'O', 'O', '아주 건강해요!', 'https://t1.daumcdn.net/cfile/tistory/9949E333598C76C229');
-insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu26KrFfsUYqazHtGRUbaLMZN1ubt1BHJUGg&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI59bXuRxfJ6Cih4pMSbPFu3JySaUDZCcSSg&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpY8wyZXEcpZGvKjHm0D1ymbh60ae7XrV6kA&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu26KrFfsUYqazHtGRUbaLMZN1ubt1BHJUGg&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI59bXuRxfJ6Cih4pMSbPFu3JySaUDZCcSSg&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,1,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpY8wyZXEcpZGvKjHm0D1ymbh60ae7XrV6kA&usqp=CAU');
 
 insert into pet_dog values(null, '구름', 1, '2022-09-19', '남', '소형견', '말티푸', 'O', 'O', '고구마 알러지, 간식을 많이 먹으면 설사해요', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6lL7FU32w3bv8e_M4QE7SDrjFT1d7EDAr5Q&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1TQHfqrTrfwtxle3NrAg3pkoiKSJ43MJ1w&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXa41FFU52W-Bybl7K6UEYlXSKJHTUonNKGA&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzXiI-P2BGRtUtLzgXxZr8I1laSJkIGwTwg&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTL1TQHfqrTrfwtxle3NrAg3pkoiKSJ43MJ1w&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXa41FFU52W-Bybl7K6UEYlXSKJHTUonNKGA&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,2,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOzXiI-P2BGRtUtLzgXxZr8I1laSJkIGwTwg&usqp=CAU');
 
 insert into pet_dog values(null, '달', 1, '2022-09-19', '여', '소형견', '말티푸', 'O', 'O', '아주 건강해요!', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx6CQD-ldxU-FMPlYHOhFlB3ys_FrE7IWoJA&usqp=CAU'); 
-insert into product_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9SKUToORG4vnjrkrgxfeNsM_mNBSN8hzPuI5eRR6aqMc8KrnAExsZ-DRWp03ElLo8kI&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfl2Zv4bmeeM6K-xLMrHZRsCZEI6amzPftkQ&usqp=CAU');
-insert into product_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSseNhlgEaVyc17FV7drfrlsqLCbR-pbxL79A&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy9SKUToORG4vnjrkrgxfeNsM_mNBSN8hzPuI5eRR6aqMc8KrnAExsZ-DRWp03ElLo8kI&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfl2Zv4bmeeM6K-xLMrHZRsCZEI6amzPftkQ&usqp=CAU');
+insert into pet_image(num,f_num,img_src) values(null,3,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSseNhlgEaVyc17FV7drfrlsqLCbR-pbxL79A&usqp=CAU');
 
 
 
