@@ -142,9 +142,10 @@ public class PaymentController {
         String buyerid = hs.getAttribute("userid").toString();
         String startDate = rq.getParameter("start_date");
         String endDate = rq.getParameter("end_date");
-        String status = "all";
+        String status = rq.getParameter("status");
         String deliveryStatus = "%";
-        status = rq.getParameter("status");
+
+        System.out.println(status);
         switch (status){
             case "all":
                 deliveryStatus = "%";
@@ -159,6 +160,7 @@ public class PaymentController {
                 deliveryStatus = "배송완료";
                 break;
         }
+        System.out.println(deliveryStatus);
         List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,deliveryStatus);
 
         return list;

@@ -135,7 +135,7 @@ $(document).ready(function(){
             data : date_date,
             type : "POST",
             success : function(data){
-                console.log(status);
+                console.log(data);
             }
 
 
