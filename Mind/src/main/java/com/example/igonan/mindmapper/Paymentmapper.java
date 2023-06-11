@@ -36,7 +36,7 @@ List<myPageTotalDTO> mypageuserbuytotal(String buyerid);
  @Select("select u.u_name,count(*) as u_count,sum(u_totalpay) as u_totalpay from ubuy u where u.u_id = #{buyerid} and u.u_date like #{thisdate};")
  List<myPageTotalDTO> mypageuserbuytotalmonth(String buyerid,String thisdate);
 
- @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_del = #{deliveryStatus};")
+ @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_del like #{deliveryStatus} and u_date >= subdate(now(), 180);")
  List<PaymentDTO> oneUsersDeliveryStatusDataReturn(String buyerid, String deliveryStatus);
 
 
