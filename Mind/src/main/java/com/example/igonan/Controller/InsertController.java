@@ -85,7 +85,6 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
     @PostMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행
     public String abanDogInsert(HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
 
-
         String name =rq.getParameter("name");
         int age = Integer.parseInt(rq.getParameter("age"));
         String area=  rq.getParameter("area");

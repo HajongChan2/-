@@ -10,6 +10,7 @@ import java.util.*;
 @ToString
 public class PaymentDTO {
 
+    private int uNum;
     private String uId;
     private String uName;
     private String uPhone;
@@ -24,6 +25,10 @@ public class PaymentDTO {
     private String uDel;
     private String uPrmemo;
     private String uPrimg;
+
+    public int getuNum() {
+        return uNum;
+    }
     public String getuId() {
         return uId;
     }
