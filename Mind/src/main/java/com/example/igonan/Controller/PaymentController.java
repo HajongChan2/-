@@ -143,12 +143,14 @@ public class PaymentController {
         String startDate = rq.getParameter("start_date");
         String endDate = rq.getParameter("end_date");
         String status = "%";
+        System.out.println(status);
         String asd = hs.getAttribute("status").toString();
-        if( asd!=null){
+        if( asd != null){
             status = hs.getAttribute("status").toString();
         }
+
         List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate,status);
-        if(asd !=null){
+        if(asd != null){
         hs.removeAttribute("status");
         }
         return list;

@@ -1,18 +1,21 @@
 $(document).ready(function(){
     let str = '';
+    let status = '';
     $.ajax({
         type : "POST",
         datatype: "json",
         url : "/userallbuylist",
         success : function(data){
             console.log(data);
-            product_all_select(list);
+            product_all_select(data);
+            $(".contents").append(str);
         }
     });
 
     $(document).on('click','.delivery_box',function(){
         let target = this
         let list = target.querySelector('h2').innerText;
+        status = list;
         console.log(list);
     });
 
@@ -48,6 +51,7 @@ $(document).ready(function(){
         const date_date = {
             start_date :start_date,
             end_date : end_date
+
         }
         $.ajax({
             url : "/userbuylistdate",
@@ -55,8 +59,6 @@ $(document).ready(function(){
             type : "POST",
             success : function(data){
                 console.log(data);
-
-
             }
 
 
@@ -66,16 +68,46 @@ $(document).ready(function(){
     function product_all_select(list){
         list.map(function(all){
         str += `
-            <li class="first_content">
-                <img src="img/product.jpg">
-                <div class="description">
-                    <p><a href="#">설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명설명</a></p>
+            <ul class="delivery_content">
+                <li class="first_content">
+                    <img src="${all.uPrimg}">
+                    <div class="description">
+                        <p><a href="/product/detail/+${all.uPrname}">${all.uPrmemo}</a></p>
+                    </div>
+                </li>
+                <li>${all.uCount}</li>
+                <li>${all.uDel}</li>
+                <li>${all.uTotalpay}</li>
+                <div class="user_choice">
+                    <button class="${all.uNum}" id="confir">결제확정</button>
+                    <button class="${all.uNum}" id="cancel">주문취소</button>
                 </div>
-            </li>
-            <li>2</li>
-            <li>배송완료</li>
-            <li>2</li>
+            </ul>
         `
+        });
+    }
+
+    $(document).on('click','.user_choice > button',function(){
+        let target = this;
+        let unum = $(this).attr('class');
+        console.log(unum);
+        let list = target.innerText;
+        if(list == '결제확정'){
+            confir(unum);
+        }else if(list == '주문취소'){
+
+        }
+
+    });
+
+    function confir(num){
+        $.ajax({
+            url : "/delivery/update",
+            data : {num : num},
+            type : "POST",
+            success : function(data){
+                location.reload();
+            }
         });
     }
 
