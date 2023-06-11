@@ -129,8 +129,8 @@ $(document).ready(function(){
         let end_date = $("#date_end").val();
         const date_date = {
             start_date :start_date,
-            end_date : end_date
-
+            end_date : end_date,
+            status : status
         }
         $.ajax({
             url : "/userbuylistdate",
