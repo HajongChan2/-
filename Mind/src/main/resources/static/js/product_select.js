@@ -1,4 +1,4 @@
-let status = '';
+let status = 'all';
 $(document).ready(function(){
     let str = '';
     let status_content = '';
