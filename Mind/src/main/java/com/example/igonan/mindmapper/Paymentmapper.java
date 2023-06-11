@@ -18,7 +18,7 @@ public interface Paymentmapper {
 @Select("select * from ubuy;")
  List<PaymentDTO> userBuyList();
 
-@Select("select * from ubuy u where u.u_id = #{buyerid} ;")
+@Select("select * from ubuy u where u.u_id = #{buyerid} and u_date >= subdate(now(), 180);")
 List<PaymentDTO> oneUsersAllIgonanBuyListReturn(String buyerid);
 
  @Select("select * from ubuy u where u.u_id = #{buyerid} and u.u_num = #{num} ;")
@@ -43,7 +43,8 @@ List<myPageTotalDTO> mypageuserbuytotal(String buyerid);
 @Select("select u.u_id,count(*) as u_count from ubuy u where u.u_id = #{buyerid} and u.u_del like #{deliveryStatus};")
 PaymentDTO oneUsersDeliveryStatuscountReturn(String buyerid, String deliveryStatus);
 
-
+@Select("select * from ubuy u where u.u_id = #{buyerId} and u.u_date >= #{startDate} and u.u_date <= #{endDate} ;")
+List<PaymentDTO> oneUsersBuyListWireDateRange(String buyerId, String startDate, String endDate);
 
  Integer mindpaymentinsert(String id,String name, String phone, String addr, String saddr, String prName, int totalPay, String memo, int count, String cashsel, LocalDate buydate);
 // insert명령문의 id인 mindpaymentinsert 호출과 컬럼에 맞게 파라미터 전달

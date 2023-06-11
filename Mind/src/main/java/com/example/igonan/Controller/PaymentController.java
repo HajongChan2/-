@@ -135,6 +135,18 @@ public class PaymentController {
         return list;
 
     }
+    @RequestMapping(value = "/userbuylistdate", method = { RequestMethod.POST })
+    @ResponseBody
+    public Object userbuylistdate(HttpSession hs,HttpServletRequest rq){
+
+        String buyerid = hs.getAttribute("userid").toString();
+        String startDate = rq.getParameter("start_date");
+        String endDate = rq.getParameter("end_date");
+        List<PaymentDTO> list = paymentService.oneUsersBuyListWireDateRangeReturn(buyerid,startDate,endDate);
+        return list;
+
+    }
+
 
 
     @RequestMapping(value = "/userdeliveryreturn/{Status}",method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
