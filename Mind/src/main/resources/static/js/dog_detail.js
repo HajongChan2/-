@@ -1,4 +1,5 @@
 let dogNum;
+let img = '';
 $(document).ready(function(){
 
     if(localStorage.getItem('num')){
@@ -43,7 +44,7 @@ $(document).ready(function(){
         }
     });
 
-    let img = '';
+
     $.ajax({
         url : "/petdogimagelist/"+dogNum,
         type : "POST",
