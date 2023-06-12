@@ -29,7 +29,7 @@
     </select>
 
     <select id="mindAbanDogAppInsert" > <!-- 해당 id를 호출하면 아래의 구문 실행-->
-        insert into ad_dog(num,id,name,dognum,dogname,phone,addr,saddr,memo,date)
+        insert into abandog_app(num,id,name,dognum,dogname,phone,addr,saddr,memo,date)
         values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7},#{param8}, #{param9})
 
         <!--Create table a phone char(11), addr varchar(150), saddr varchar(80), memo varchar(750),date date);
