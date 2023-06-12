@@ -152,7 +152,6 @@ $(document).ready(function(){
             data : ad_update,
             success : function(data){
                 alert("수정이 완료되었습니다.");
-                alert(data);
                 location.replace("/abandog/detail");
             }
         });
