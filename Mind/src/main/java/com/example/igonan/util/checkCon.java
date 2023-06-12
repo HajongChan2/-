@@ -68,6 +68,7 @@ public class checkCon {
                 System.out.println(inputid + "로그인 성공");
                 hs.setAttribute("username",result.getName());
                 hs.setAttribute("userid",inputid);
+                hs.setAttribute("status","입금/결제");
                 return true;
             }else {
                 System.out.println("비밀번호 틀림");
