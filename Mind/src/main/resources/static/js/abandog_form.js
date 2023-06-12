@@ -7,7 +7,7 @@ function checkNumber(event) {
 }
 
 
-
+let num = localStorage.getItem("num");
 $(document).ready(function(){
     $.ajax({
         url : "/mypage/return",
@@ -50,7 +50,8 @@ $(document).ready(function(){
             phone : phone,
             addr : addr,
             saddr : saddr,
-            memo : memo
+            memo : memo,
+            num  : num
         }
 
         $.ajax({

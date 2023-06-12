@@ -1,6 +1,6 @@
 let count = 0;
 let imgs = ["list"];
-
+let dogNum = localStorage.getItem('num');
 function readURL(obj) {
     let reader = new FileReader();
     if(!obj.files.length) {
@@ -32,7 +32,7 @@ $(document).ready(function(){
     $("#date").attr('min', output);
 
     $("#imageFile").on("change",function(){
-        if(count < 3){
+        if(imgs.length <= 4){
             readURL(this);
         }else{
             alert("3장 이상은 선택할 수 없습니다.");
@@ -73,6 +73,92 @@ $(document).ready(function(){
         };
     });
 
+    // update
+
+    function update_image(){
+        $.ajax({
+            url : "/abandogimagelist/"+dogNum,
+            type : "POST",
+            success : function(data){
+                data.map(function(images){
+                    let img = $('<img />');
+                    $(img).attr('src',images.imgSrc);
+                    $(img).addClass("imgs");
+                    $('#photo_sign_up').prepend(img);
+                    imgs.push(images.imgSrc);
+                });
+            }
+        });
+    }
+
+    function update_query(){
+        $.ajax({
+            url : "/abandog/detail/"+dogNum,
+            dataType : "json",
+            type : "POST",
+            success : function(data){
+                console.log(data);
+                let sex = data[0].adSex;
+
+                let neu = data[0].adNeut;
+                let ino = data[0].adVac;
+                $("#register").val(data[0].adName);
+                $("#age").val(data[0].adAge);
+                $("#area").val(data[0].adArea);
+                $("#kind").val(data[0].adSpec);
+                $("#date").val(data[0].adDead);
+                $('input:radio[name=sex]:input[value=' + sex + ']').attr("checked", true);
+                $('input:radio[name=neutered]:input[value=' + neu + ']').attr("checked", true);
+                $('input:radio[name=inoculation]:input[value=' + ino + ']').attr("checked", true);
+                $("#text_box").val(data[0].adMemo);
+                $("#size option:selected").val(data[0].size);
+            }
+        });
+
+    }
+    if(dogNum != null || dogNum != ''){
+        update_query();
+        update_image();
+        console.log("aa");
+    }
+
+    function update_success(){
+        let name = $("#register").val();
+        let age = $("#age").val();
+        let area = $("#area").val();
+        let kind = $("#kind").val();
+        let dead = $("#date").val();
+        let sex = $("input[name='sex']:checked").val();
+        let neut = $("input[name='neutered']:checked").val();
+        let vac = $("input[name='inoculation']:checked").val();
+        let memo = $("#text_box").val();
+        let size = $("#size option:selected").val();
+        const ad_update = {
+            name : name,
+            age : age,
+            area : area,
+            dead : dead,
+            spec : kind,
+            sex : sex,
+            neut : neut,
+            vac : vac,
+            memo : memo,
+            size: size,
+            imgs: imgs,
+            num : dogNum
+        }
+        $.ajax({
+            url : "/abandog/update",
+            data : ad_update,
+            success : function(data){
+                alert("수정이 완료되었습니다.");
+                alert(data);
+                location.replace("/abandog/detail");
+            }
+        });
+    }
+
+
     $("#submit").click(function(){
         let name = $("#register").val();
         let age = $("#age").val();
@@ -97,14 +183,18 @@ $(document).ready(function(){
             size: size,
             imgs: imgs
         }
-        $.ajax({
-            type : "POST",
-            url : "/abandog/insert",
-            data : ad_insert,
-            success : function (data){
-                location.replace("/abandog/list");
-            }
-        });
+        if(dogNum != null || dogNum != ''){
+            update_success();
+        }else{
+            $.ajax({
+                type : "POST",
+                url : "/abandog/insert",
+                data : ad_insert,
+                success : function (data){
+                    location.replace("/abandog/list");
+                }
+            });
+        }
     });
 
 });

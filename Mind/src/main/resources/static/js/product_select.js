@@ -101,6 +101,8 @@ $(document).ready(function(){
 
     function product_all_select(list){
         list.map(function(all){
+            let aa = '';
+            del = all.uDel;
         str += `
             <ul class="delivery_content">
                 <li class="first_content">
@@ -113,12 +115,21 @@ $(document).ready(function(){
                 <li>${all.uDel}</li>
                 <li>${all.uTotalpay}</li>
                 <div class="user_choice">
-                    <button class="${all.uNum}" id="confir">결제확정</button>
-                    <button class="${all.uNum}" id="cancel">주문취소</button>
+                    ${btn(del, all)}
                 </div>
             </ul>
         `
         });
+    }
+    function btn(del, all){
+        if(del == '입금/결제'){
+            return `<button class="${all.uNum}" id="confir">결제확정</button><button className="${all.uNum}" id="cancel">주문취소</button>`;
+        }else if(del != '입금/결제'){
+            console.log('null');
+            return `<button id="confir" style="background-color: #fff; cursor:default;"></button>`;
+        }
+
+
     }
 
     $(document).on('click','.user_choice > button',function(){

@@ -272,7 +272,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
 
-        abdmp.mindAbanDogUpdate(num,name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
+        abdmp.mindAbanDogUpdate(num,name,age,area,sex,spec,size,vac,neut,dead,memo,img.get(1));
         int dognum = num;
 
         abdmp.mindAbanDogImageDelete(dognum);

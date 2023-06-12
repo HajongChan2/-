@@ -92,10 +92,10 @@ $(document).ready(function(){
 
     }
     $("#del_bt").click(function(){
-        if (confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
+        if (confirm("해당 글을 삭제하시겠습니까 ?")) {
             del_btn();
         } else {
-            // 확인(예) 버튼 클릭 시 이벤트
+
         }
     });
 
