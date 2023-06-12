@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    window.localStorage.clear();
     $.ajax({
         type : "POST",
         url : "/main/abandoglist",
@@ -20,20 +21,21 @@ $(document).ready(function(){
                         <div class="dog-image">
                             <img src="${dog.adGallery}" alt="${dog.adName}">
                             <p>${dog.adName}</p>
+                            <h2 id="number">${dog.adNum}</h2>
                         </div>
                     </a>                    
                 </div>`
         });
         $("#container3").append(str);
     }
-    $(document).on("click",".dog-image",function(e){
-        let na = $(e.target);
-        let name = na.attr("alt");
-        if(name == null){
-            name = na.text();
-        }
-        console.log(name);
-        localStorage.setItem('name',name);
+    $(document).on('click','.dog-image',function(){
+        let target = this
+        let list = target.querySelector('h2').innerText;
+        num = list;
+        localStorage.setItem('num',num);
+    });
+    $(".add_bt").click(function(){
+        location.href="/abandog/list"
     });
 
 });

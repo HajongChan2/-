@@ -4,13 +4,17 @@ $(document).ready(function(){
     let img = '';
     let btn = '';
 
+    $("#correct_bt a").click(function(){
+        location.replace("/abandog/update");
+
+    });
     if(localStorage.getItem('num')){
         dogNum = localStorage.getItem('num');
     }
     console.log(dogNum);
     let srt = '';
     $.ajax({
-        type : "GET",
+        type : "POST",
         url : "/abandog/detail/"+dogNum,
         dataType : "json",
         success : function(data){
@@ -86,6 +90,8 @@ $(document).ready(function(){
         });
 
     }
+
+
 });
 
 // 슬라이드
