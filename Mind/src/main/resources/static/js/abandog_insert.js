@@ -1,6 +1,5 @@
 let count = 0;
 let imgs = ["list"];
-//let dogNum = localStorage.getItem('num');
 
 function readURL(obj) {
     let reader = new FileReader();
@@ -19,54 +18,8 @@ function readURL(obj) {
     console.log(imgs);
 }
 
+
 $(document).ready(function(){
-
-    if(dogNum != '' || dogNum != null){
-        let img = '';
-
-        console.log(dogNum);
-        let srt = '';
-        $.ajax({
-            type : "POST",
-            url : "/abandog/detail/"+dogNum,
-            dataType : "json",
-            success : function(data){
-                abandogImage();
-            }
-        });
-        function abandogImage(){
-
-            $.ajax({
-                url : "/abandogimagelist/"+dogNum,
-                type : "POST",
-                dataType : "json",
-                success : function(data){
-                    console.log(data);
-                    let name = $("#register").val();
-                    let age = $("#age").val();
-                    let area = $("#area").val();
-                    let kind = $("#kind").val();
-                    let dead = $("#date").val();
-                    let sex = $("input[name='sex']:checked").val();
-                    let neut = $("input[name='neutered']:checked").val();
-                    let vac = $("input[name='inoculation']:checked").val();
-                    let memo = $("#text_box").val();
-                    let size = $("#size option:selected").val();
-                    abandogimage(data);
-                }
-            });
-        };
-
-
-        function abandogimage(list){
-
-            list.map(function(abandog){
-
-            });
-
-        }
-    }
-
     let d = new Date();
 
     let month = d.getMonth()+1;
@@ -79,7 +32,7 @@ $(document).ready(function(){
     $("#date").attr('min', output);
 
     $("#imageFile").on("change",function(){
-        if($(".imgs").index <= 2){
+        if(count < 3){
             readURL(this);
         }else{
             alert("3장 이상은 선택할 수 없습니다.");
@@ -144,25 +97,14 @@ $(document).ready(function(){
             size: size,
             imgs: imgs
         }
-        if(dogNum != '' || dogNum != null){
-            $.ajax({
-                type : "POST",
-                data : ad_insert,
-                url : "/abandog/update/"+dogNum,
-                success : function (data){
-
-                }
-            });
-        }else{
-            $.ajax({
-                type : "POST",
-                url : "/abandog/insert",
-                data : ad_insert,
-                success : function (data){
-                    location.replace("/abandog/list");
-                }
-            });
-        }
+        $.ajax({
+            type : "POST",
+            url : "/abandog/insert",
+            data : ad_insert,
+            success : function (data){
+                location.replace("/abandog/list");
+            }
+        });
     });
 
 });
