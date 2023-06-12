@@ -275,16 +275,8 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         abdmp.mindAbanDogUpdate(num,name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
         int dognum = num;
 
-       int asd=  imageService.getabanDogImageReturn(dognum).size();
-
-        int zzz = 0;
-       for(int i = 0; i<asd;i++){
-           zzz += imageService.getProductImageReturn(dognum).get(i).getNum();
-       }
-        int firstNum = (zzz/3)-1;
-
+        abdmp.mindAbanDogImageDelete(dognum);
         for(int i = 1; i < img.size();i++) {
-
             abdmp.mindAbanDogImageInsert(dognum, img.get(i));
         }
 
@@ -307,7 +299,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 
         int igonanProductNumber = num;
 
-
+        pmp.mindProductImageDelete(igonanProductNumber);
         for(int i = 1;i < img.size();i++) {
             pmp.mindProductImageInsert(igonanProductNumber,img.get(i));
 

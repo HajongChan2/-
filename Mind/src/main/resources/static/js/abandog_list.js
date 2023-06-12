@@ -13,6 +13,7 @@ $(document).ready(function(){
     });
 
 
+
     function abandogList(list){
         let addr = "/abandog/detail";
         let str = '';
@@ -40,6 +41,9 @@ $(document).ready(function(){
     });
 
 
+    $("#add_list").click(function (){
 
+        window.localStorage.clear();
 
+    })
 });

@@ -7,13 +7,6 @@ num, userid, username, ad_num,dogname,  phone,addr,saddr,memo
 
 유기겨 입양신청 아직 안됌.
 
-
-update, delete 쿼리 작성
-
-update -> 상품, 유기견
-delete -> 상품, 유기견, 구매
-
-abandog product image update쿼리 mapping num select쿼리
 유기견 입양신청 insert select 
 
 

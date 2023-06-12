@@ -93,7 +93,6 @@ DB 생성, Table 생성 쿼리
 Create database mind;
 Use mind;
 Create table users (num int primary key auto_increment, name varchar(50), id varchar(50), pw varchar(50), phone char(13), addr varchar(150), saddr varchar(150));
-Create table abandog_app (num int primary key auto_increment, id varchar(50), phone char(11), addr varchar(150), ap_saddr varchar(80), ap_memo varchar(750));
 Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery text(50000));
 Create table pet_dog (pet_num int primary key auto_increment, pet_name varchar(50), pet_age int(2),pet_date date, pet_sex varchar(3), pet_size varchar(6), pet_spec varchar(50), pet_vac char(1), pet_neut char(1), pet_memo varchar(1500), pet_gallery text(50000));
 Create table product (pr_num int primary key auto_increment, pr_name varchar(50), pr_price int(6), pr_count int(3), pr_memo varchar(1500), pr_dpay int(5),pr_type int(1), pr_gallery text(50000),pr_seller varchar(50),pr_content longtext);
@@ -101,6 +100,7 @@ Create table ubuy (u_num int primary key auto_increment,u_id varchar(50), u_name
 create table abandog_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references ad_dog(ad_num));
 create table product_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references product(pr_num));
 create table pet_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references pet_dog(pet_num));
+Create table abandog_app (num int primary key auto_increment, id varchar(50),name varchar(50),dognum int,dogname varchar(50), phone char(11), addr varchar(150), saddr varchar(80), memo varchar(750),date date);
 
 
 
