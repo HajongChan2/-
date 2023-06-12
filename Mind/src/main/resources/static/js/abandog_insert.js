@@ -116,7 +116,7 @@ $(document).ready(function(){
         });
 
     }
-    if(dogNum != null || dogNum != ''){
+    if(dogNum != null){
         update_query();
         update_image();
         console.log("aa");
