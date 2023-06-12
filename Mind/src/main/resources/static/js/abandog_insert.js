@@ -149,8 +149,9 @@ $(document).ready(function(){
         }
         $.ajax({
             url : "/abandog/update",
+            type : "POST",
             data : ad_update,
-            success : function(data){
+            success : function(){
                 alert("수정이 완료되었습니다.");
                 location.replace("/abandog/detail");
             }
@@ -182,7 +183,7 @@ $(document).ready(function(){
             size: size,
             imgs: imgs
         }
-        if(dogNum != null || dogNum != ''){
+        if(dogNum != null){
             update_success();
         }else{
             $.ajax({
