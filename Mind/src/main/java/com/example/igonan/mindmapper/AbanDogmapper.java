@@ -26,6 +26,10 @@ public interface AbanDogmapper {
                               String dead,String memo,String gallery);
 
     Integer mindAbanDogImageInsert(int num,String img_src);
+    Integer mindAbanDogDelete(int num);
+    Integer mindAbanDogUpdate(int num,String name,int age, String area,
+                              String sex,String size,String spec,String vac,String neut,
+                              String dead,String memo,String gallery);
     @Select("select * from ad_dog order by ad_dead limit 9;")
     List<AbandogDTO> mainAbandogList();
 

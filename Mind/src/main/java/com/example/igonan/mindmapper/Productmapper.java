@@ -38,6 +38,9 @@ public interface Productmapper {
 
     Integer mindProductImageInsert(int num,String imgsrc);
 
+    Integer mindProductDelete(int num);
+
+    Integer mindProductUpdate(int num,String name,int price,int count,String memo,int dpay,int type,String gall,String seller,String content);
 
     @Select("select * from product pr where pr.pr_name = #{productName} ;")
     ProductDTO findOneProductNameass(String productName);

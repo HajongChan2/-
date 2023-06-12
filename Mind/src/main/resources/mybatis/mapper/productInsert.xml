@@ -13,4 +13,14 @@
         values (null,#{param1}, #{param2})
 
     </select>
+
+    <select id="mindProductDelete">
+        delete from product_image where f_num = #{param1};
+        delete from product where pr_num = #{param1};
+    </select>
+    <select id="mindProductUpdate">
+        update product_image set pr_name =#{param2},pr_price=#{param3},pr_count=#{param4},pr_memo=#{param5},pr_dpay=#{param6},pr_type=#{param7},pr_gallery=#{param8},pr_seller=#{param9},pr_content=#{param10}
+        where pr_num = {param1};
+    </select>
+
 </mapper>

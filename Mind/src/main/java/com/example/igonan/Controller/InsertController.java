@@ -2,14 +2,12 @@ package com.example.igonan.Controller;
 
 
 import com.example.igonan.Service.AbanDogService;
+import com.example.igonan.Service.ImageService;
 import com.example.igonan.Service.PaymentService;
 import com.example.igonan.Service.UserService;
 import com.example.igonan.dto.PaymentDTO;
 import com.example.igonan.dto.ProductDTO;
-import com.example.igonan.mindmapper.AbanDogmapper;
-import com.example.igonan.mindmapper.Paymentmapper;
-import com.example.igonan.mindmapper.Productmapper;
-import com.example.igonan.mindmapper.Usermapper;
+import com.example.igonan.mindmapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
@@ -35,6 +33,8 @@ public class InsertController {
     Usermapper ump;
     @Autowired
     Productmapper pmp;
+    @Autowired
+    Imagemapper imp;
 
     private PaymentService paymentService;
 
@@ -51,6 +51,9 @@ public class InsertController {
     private UserService userService;
 
     public  UserService getUserService() {return userService;}
+
+    private ImageService imageService;
+    public ImageService getImageService(){return  imageService;}
 
 @PostMapping("/payment/insert") //해당 url로 데이터가 post 되었을 경우 실행
 public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
@@ -69,10 +72,10 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
     int asd = Integer.parseInt(prName);
     String prMemo = "";
     prMemo = pmp.findOneProduct(asd).get(0).getPrMemo().toString();
-    System.out.println(prMemo);
+
     String prImg = "";
     prImg = pmp.findOneProduct(asd).get(0).getPrGallery().toString();
-    System.out.println(prImg);
+
     paymentmapper.mindpaymentinsert(
             id,
             rq.getParameter("name"),
@@ -221,6 +224,105 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
        List<PaymentDTO> list =  paymentmapper.oneUsersAllIgonanBuyListReturn(id);
         return list; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
     }
+
+
+
+    @PostMapping("/delivery/delete")
+    public String deliveryStatusDelete(HttpSession hs, HttpServletRequest rq){
+
+        int num = Integer.parseInt(rq.getParameter("num"));
+
+        paymentmapper.paymentDataDelete(num);
+
+        return "redirect:/purchase"; //insert 완료 시 /users 로 리다이렉트하여 주문자 리스트를 보여줌
+    }
+
+    @PostMapping("/abandog/delete")
+    public String AbandogDelete(HttpSession hs, HttpServletRequest rq){
+
+        int num = Integer.parseInt(rq.getParameter("num"));
+
+        abdmp.mindAbanDogDelete(num);
+
+        return "redirect:/abandog/list";
+    }
+
+    @PostMapping("/product/delete")
+    public String productDelete(HttpSession hs, HttpServletRequest rq){
+
+        int num = Integer.parseInt(rq.getParameter("num"));
+
+        pmp.mindProductDelete(num);
+
+        return "redirect:/petcesary";
+    }
+
+    @PostMapping("/abandog/update")
+    public String AbandogUpdate(HttpSession hs, HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img) {
+
+        int num = Integer.parseInt(rq.getParameter("num"));
+        String name =rq.getParameter("name");
+        int age = Integer.parseInt(rq.getParameter("age"));
+        String area=  rq.getParameter("area");
+        String sex = rq.getParameter("sex");
+        String size = rq.getParameter("size");
+        String spec = rq.getParameter("spec");
+        String vac = rq.getParameter("vac");
+        String neut = rq.getParameter("neut");
+        String dead = rq.getParameter("dead");
+        String memo = rq.getParameter("memo");
+
+        abdmp.mindAbanDogUpdate(num,name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
+        int dognum = num;
+
+       int asd=  imageService.getabanDogImageReturn(dognum).size();
+
+        int zzz = 0;
+       for(int i = 0; i<asd;i++){
+           zzz += imageService.getProductImageReturn(dognum).get(i).getNum();
+       }
+        int firstNum = (zzz/3)-1;
+
+        for(int i = 1; i < img.size();i++) {
+
+            abdmp.mindAbanDogImageInsert(dognum, img.get(i));
+        }
+
+        return "redirect:/abandog/list";
+    }
+
+    @PostMapping("/product/update")
+    public String ProductUpdate(HttpSession hs, HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img){
+
+        int num = Integer.parseInt(rq.getParameter("num"));
+        String name = rq.getParameter("name");
+        int price = Integer.parseInt(rq.getParameter("price"));
+        int count = Integer.parseInt(rq.getParameter("count"));
+        int dpay =  Integer.parseInt(rq.getParameter("dpay"));
+        String memo = rq.getParameter("memo");
+        int type = Integer.parseInt(rq.getParameter("type"));
+        String seller = rq.getParameter("seller");
+        String content = rq.getParameter("content");
+        pmp.mindProductUpdate(num,name,price,count,memo,dpay,type,img.get(1),seller,content);
+
+        int igonanProductNumber = num;
+
+
+        for(int i = 1;i < img.size();i++) {
+            pmp.mindProductImageInsert(igonanProductNumber,img.get(i));
+
+        }
+
+        return "redirect:/petcesary";
+    }
+
+
+
+
+
+
+
+
 
 
 }
