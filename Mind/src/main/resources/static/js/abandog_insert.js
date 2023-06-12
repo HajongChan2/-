@@ -111,7 +111,7 @@ $(document).ready(function(){
                 $('input:radio[name=neutered]:input[value=' + neu + ']').attr("checked", true);
                 $('input:radio[name=inoculation]:input[value=' + ino + ']').attr("checked", true);
                 $("#text_box").val(data[0].adMemo);
-                $("#size option:selected").val(data[0].size);
+                $("#size").val(data[0].adSize).prop("selected", true);
             }
         });
 

@@ -4,6 +4,13 @@ $(document).ready(function(){
     let input;
     let img = '';
     let btn = '';
+
+    $("#correct_bt a").click(function(){
+        alert("aa");
+        location.replace("/product/update");
+
+    });
+
     $.ajax({
         type:"GET",
         url:"/product/detail/"+num,
@@ -126,6 +133,25 @@ $(document).ready(function(){
             alert("이 수량은 선택할 수 없습니다.");
             input.val("1");
             input.focus();
+        }
+    });
+
+    function del_btn(){
+        $.ajax({
+            url : "/product/delete",
+            type : "POST",
+            data : {num : num},
+            success : function(){
+                alert('삭제가 완료되었습니다.');
+                location.replace("/petcesary");
+            }
+        });
+    }
+    $("#del_bt").click(function(){
+        if (confirm("해당 글을 삭제하시겠습니까 ?")) {
+            del_btn();
+        } else {
+
         }
     });
     
