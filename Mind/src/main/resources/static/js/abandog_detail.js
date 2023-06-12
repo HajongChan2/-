@@ -55,11 +55,10 @@ $(document).ready(function(){
         </div>
         <input type="button" class="adoption_button" value="입양 신청하러 가기 >" onclick="location.href='/abandog/form'">`
             $("#container0").append(srt);
-            aa();
-            slide();
+            abandogImage();
         }
     });
-    function aa(){
+    function abandogImage(){
         $.ajax({
             url : "/abandogimagelist/"+dogNum,
             type : "POST",

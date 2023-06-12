@@ -53,21 +53,24 @@ $(document).ready(function(){
             </div>
             `
             $("form").prepend(str);
+            productImage();
             input = $(".inp");
         }
     });
-    $.ajax({
-        url : "/productimagelist/"+num,
-        type : "POST",
-        dataType : "json",
-        success : function(data){
-            console.log(data);
-            productimage(data);
-            $(".panel").append(img);
-            $(".dot").append(btn);
-            slide();
-        }
-    });
+    function productImage(){
+        $.ajax({
+            url : "/productimagelist/"+num,
+            type : "POST",
+            dataType : "json",
+            success : function(data){
+                console.log(data);
+                productimage(data);
+                $(".panel").append(img);
+                $(".dot").append(btn);
+                slide();
+            }
+        });
+    }
 
     function productimage(list){
 

@@ -39,22 +39,23 @@ $(document).ready(function(){
 
         </div>`
             $("#container").append(srt);
-
+            petdogImage();
             console.log(data);
         }
     });
 
-
-    $.ajax({
-        url : "/petdogimagelist/"+dogNum,
-        type : "POST",
-        dataType : "json",
-        success : function(data){
-            console.log(data);
-            petdogimage(data);
-            $("#container2").append(img);
-        }
-    });
+    function petdogImage(){
+        $.ajax({
+            url : "/petdogimagelist/"+dogNum,
+            type : "POST",
+            dataType : "json",
+            success : function(data){
+                console.log(data);
+                petdogimage(data);
+                $("#container2").append(img);
+            }
+        });
+    }
 });
 function petdogimage(list){
     for(let i = 0; i < list.length; i++){
