@@ -7,11 +7,10 @@ update 상품
 update product set pr_gallery = '{param}', pr_name = '{param}', pr_price = {param}, pr_dpay = {param}, pr_seller = '{param}', pr_count = {param}, pr_memo = '{param}', pr_type = {parma}, pr_content = '{param}' where pr_num = {param};
 update product_image set img_src = '{parma}' where f_num = {param};
 
-Create table ad_dog (ad_num int primary key auto_increment, ad_name varchar(50), ad_age int(2),  ad_area varchar(30), ad_sex varchar(3), ad_size varchar(6), ad_spec varchar(50), ad_vac char(1), ad_neut char(1), ad_dead date, ad_memo varchar(1500), ad_gallery text(50000));
-
 update 유기견
 update ad_dog set ad_gallery = '{param}', ad_age = {param}, ad_area = '{param}', ad_spec = '{param}', ad_size = '{param}', ad_dead = '{param}', ad_sex = {param},
 ad_neut = '{param}', ad_vac = '{param}', ad_memo = '{param}' where ad_num = {param};
+update abandog_image set img_src = '{param}' where f_num = {param};
 
 delete 상품
 delete from proudct where pr_num = {param});
