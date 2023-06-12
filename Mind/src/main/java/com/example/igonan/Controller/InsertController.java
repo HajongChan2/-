@@ -324,7 +324,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         String memo = rq.getParameter("memo");
         String dogname = abdmp.findOneDog(num).get(0).getAdName().toString();
         LocalDate appdate = LocalDate.now();
-        
+
         abdmp.mindAbanDogAppInsert(id,name,num,dogname,phone,addr,saddr,memo,appdate);
         abdmp.mindAbanDogDelete(num);
 
