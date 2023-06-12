@@ -27,6 +27,8 @@ public interface AbanDogmapper {
 
     Integer mindAbanDogImageInsert(int num,String img_src);
     Integer mindAbanDogDelete(int num);
+
+    Integer mindAbanDogImageDelete(int num);
     Integer mindAbanDogUpdate(int num,String name,int age, String area,
                               String sex,String size,String spec,String vac,String neut,
                               String dead,String memo,String gallery);

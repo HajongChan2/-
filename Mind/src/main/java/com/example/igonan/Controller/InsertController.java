@@ -241,7 +241,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     public String AbandogDelete(HttpSession hs, HttpServletRequest rq){
 
         int num = Integer.parseInt(rq.getParameter("num"));
-
+        abdmp.mindAbanDogImageDelete(num);
         abdmp.mindAbanDogDelete(num);
 
         return "redirect:/abandog/list";
@@ -253,7 +253,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         int num = Integer.parseInt(rq.getParameter("num"));
 
         pmp.mindProductDelete(num);
-
+        pmp.mindProductImageDelete(num);
         return "redirect:/petcesary";
     }
 

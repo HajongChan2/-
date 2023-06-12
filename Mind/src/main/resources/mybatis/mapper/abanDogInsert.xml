@@ -14,9 +14,12 @@
         values (null,#{param1}, #{param2})
     </select>
 
-    <select id="mindAbanDogDelete">
+    <select id="mindAbanDogImageDelete">
 
         delete from abandog_image where f_num = #{param1};
+    </select>
+    <select id="mindAbanDogDelete">
+
         delete from ad_dog where ad_num = #{param1};
     </select>
 

@@ -39,6 +39,7 @@ public interface Productmapper {
     Integer mindProductImageInsert(int num,String imgsrc);
 
     Integer mindProductDelete(int num);
+    Integer mindProductImageDelete(int num);
 
     Integer mindProductUpdate(int num,String name,int price,int count,String memo,int dpay,int type,String gall,String seller,String content);
 
