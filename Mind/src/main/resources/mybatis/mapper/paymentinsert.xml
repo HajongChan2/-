@@ -14,8 +14,12 @@
 
     </select>
 
-
-
+    <select id="paymentDeleveryStatusUpdateStatus">
+        update ubuy set u_del=#{param2} where u_del=#{param1} and u_date <![CDATA[ < ]]> subdate(now(), 3)
+    </select>
+    <select id="paymentDataDelete">
+        delete from ubuy where u_num=#{param1}
+    </select>
 
 
 </mapper>

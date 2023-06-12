@@ -79,10 +79,16 @@ public class MindController {
     @RequestMapping("/admin/product/insert")
     public String dog_infomation_detail( ) {
 
+
         return "admin/product_insert";
     }
     @RequestMapping("/admin/abandog/insert")
     public String abandogdetailinsert( ) {
+
+        return "admin/abandog_insert";
+    }
+    @RequestMapping("/abandog/update")
+    public String abandogdetailupdate( ) {
 
         return "admin/abandog_insert";
     }

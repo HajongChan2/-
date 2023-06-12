@@ -51,7 +51,7 @@ List<PaymentDTO> oneUsersBuyListWireDateRange(String buyerId, String startDate, 
 
  Integer paymentDeleveryStatusUpdate(String Status,int num);
 
-
+ Integer paymentDeleveryStatusUpdateStatus(String nowStatus,String Status);
 
 }
 

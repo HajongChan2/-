@@ -45,7 +45,7 @@ public class AbanDogController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/abandog/detail/{param}", method = { RequestMethod.GET }) //데이터가 보내지는 주소와 메소드 설정
+    @RequestMapping(value = "/abandog/detail/{param}", method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
     public Object abandogone(@PathVariable("param")int parameter){ // Object 대신에 String, list<DTO>, Map<String,Object> 등 .. 도 사용 가능
         //유기견의 이름으로 검색하여 db에서 데이터를 찾아옴
 
