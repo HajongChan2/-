@@ -310,9 +310,26 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 
 
 
+///
 
+    @PostMapping("/abandog/add")
+    public String abandogApp(HttpSession hs, HttpServletRequest rq){
 
+        String id = hs.getAttribute("userid").toString();
+        int num = Integer.parseInt(rq.getParameter("num"));
+        String name = rq.getParameter("name");
+        String phone = rq.getParameter("phone");
+        String addr = rq.getParameter("addr");
+        String saddr = rq.getParameter("saddr");
+        String memo = rq.getParameter("memo");
+        String dogname = abdmp.findOneDog(num).get(0).getAdName().toString();
+        LocalDate appdate = LocalDate.now();
+        
+        abdmp.mindAbanDogAppInsert(id,name,num,dogname,phone,addr,saddr,memo,appdate);
+        abdmp.mindAbanDogDelete(num);
 
+        return "redirect:/abandog/list";
+    }
 
 
 

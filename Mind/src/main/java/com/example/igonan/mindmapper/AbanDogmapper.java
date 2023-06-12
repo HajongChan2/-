@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 @Mapper
 @Transactional
@@ -39,7 +40,7 @@ public interface AbanDogmapper {
     AbandogDTO Abandoginsertwire(String dogname);
 
 
-
+    Integer mindAbanDogAppInsert(String id, String name, int dognum, String dogname, String phone, String addr, String saddr, String memo, LocalDate date);
 
 }
 
