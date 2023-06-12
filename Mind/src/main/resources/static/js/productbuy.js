@@ -9,7 +9,7 @@ $(document).ready(function(){
             str += `
                  <li>${data.uName}</li>
                  <li>${data.uAddr + " " + data.uSaddr} </li>
-                 <li>${data.uPrname}</li>
+                 <li>${data.uCashsel}</li>
                  <li>${data.uTotalpay}</li>
             `
             $("#data_info").append(str);

@@ -1,6 +1,6 @@
 let count = 0;
 let imgs = ["list"];
-let dogNum = localStorage.getItem('num');
+//let dogNum = localStorage.getItem('num');
 
 function readURL(obj) {
     let reader = new FileReader();

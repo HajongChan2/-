@@ -11,6 +11,7 @@ $(document).ready(function(){
     if(localStorage.getItem('num')){
         dogNum = localStorage.getItem('num');
     }
+
     console.log(dogNum);
     let srt = '';
     $.ajax({
@@ -90,7 +91,25 @@ $(document).ready(function(){
         });
 
     }
+    $("#del_bt").click(function(){
+        if (confirm("확인(예) 또는 취소(아니오)를 선택해주세요.")) {
+            del_btn();
+        } else {
+            // 확인(예) 버튼 클릭 시 이벤트
+        }
+    });
 
+    function del_btn(){
+        $.ajax({
+            url : "/abandog/delete",
+            type : "POST",
+            data : {num : dogNum},
+            success : function(){
+                alert('삭제가 완료되었습니다.');
+                location.replace("/abandog/list");
+            }
+        });
+    }
 
 });
 
