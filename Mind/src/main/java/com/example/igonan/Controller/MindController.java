@@ -87,7 +87,7 @@ public class MindController {
 
         return "admin/abandog_insert";
     }
-    @RequestMapping("/abandog/update")
+    @RequestMapping("/admin/abandog/update")
     public String abandogdetailupdate( ) {
 
         return "admin/abandog_insert";

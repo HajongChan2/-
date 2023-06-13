@@ -5,7 +5,7 @@ $(document).ready(function(){
     let btn = '';
 
     $("#correct_bt a").click(function(){
-        location.replace("/abandog/update");
+        location.replace("/admin/abandog/update");
 
     });
     if(localStorage.getItem('num')){
