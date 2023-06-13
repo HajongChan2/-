@@ -327,6 +327,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         LocalDate appdate = LocalDate.now();
 
         abdmp.mindAbanDogAppInsert(id,name,num,dogname,phone,addr,saddr,memo,appdate);
+        abdmp.mindAbanDogImageDelete(num);
         abdmp.mindAbanDogDelete(num);
 
         return "redirect:/abandog/list";

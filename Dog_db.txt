@@ -100,7 +100,7 @@ Create table ubuy (u_num int primary key auto_increment,u_id varchar(50), u_name
 create table abandog_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references ad_dog(ad_num));
 create table product_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references product(pr_num));
 create table pet_image(num int primary key auto_increment,f_num int,img_src text(50000) not null, foreign key(f_num) references pet_dog(pet_num));
-Create table abandog_app (num int primary key auto_increment, id varchar(50),name varchar(50),dognum int,dogname varchar(50), phone char(11), addr varchar(150), saddr varchar(80), memo varchar(750),date date);
+Create table abandog_app (num int primary key auto_increment, id varchar(50),name varchar(50),dognum int,dogname varchar(50), phone char(13), addr varchar(150), saddr varchar(80), memo varchar(750),date date);
 
 
 
