@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class Schedule {
     @Autowired
     Paymentmapper paymentmapper;
-    @Scheduled(cron = "0 0/5 * * * ?")
+    @Scheduled(cron = "0 0/3 * * * ?")
     public void cronRun() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
