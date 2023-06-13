@@ -140,4 +140,7 @@ $(document).ready(function(){
         num = list;
         localStorage.setItem('num',num);
     });
+    $("#add_list").click(function(){
+        window.localStorage.clear();
+    });
 });

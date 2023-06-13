@@ -7,6 +7,24 @@ let addr;
 let saddr;
 let pw;
 $(document).ready(function(){
+    $("#txtPhone").on('propertychange change paste input',function(){
+        let phone = $('#txtPhone');
+        let orgin;
+        let zin;
+        let a;
+        let newPhone = phone.val().replace(/^(\d{3})(\d{4})(\d{4})$/, `$1-$2-$3`);
+        if(phone.val().length < 13){
+            zin = phone.val();
+
+            orgin = zin.replace("-", "");
+
+            let a = orgin.replace(/^(\d{3})(\d{4})(\d{4})$/, `$1-$2-$3`);
+
+            phone.val(a);
+        }else{
+            phone.val(newPhone);
+        }
+    });
     name = $("#user_name");
     id = $("#id");
     origin_pw = $("#origin_pw");

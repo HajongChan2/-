@@ -1,5 +1,5 @@
 const pwRegExp = /^[a-zA-Z0-9]{4,12}$/; //비밀번호
-            const idRegExp = /^[a-zA-Z0-9]{4,12}$/; //아이디
+const idRegExp = /^[a-zA-Z0-9]{4,12}$/; //아이디
 const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
 
             function checkAll(){
@@ -91,6 +91,25 @@ const regExp = /^(?:(010-\d{4})|(01[1|6|7|8|9]-\d{3,4}))-(\d{4})$/;
             }
 
 $(document).ready(function(){
+
+    $("#txtPhone").on('propertychange change paste input',function(){
+        let phone = $('#txtPhone');
+        let orgin;
+        let zin;
+        let a;
+        let newPhone = phone.val().replace(/^(\d{3})(\d{4})(\d{4})$/, `$1-$2-$3`);
+        if(phone.val().length < 13){
+            zin = phone.val();
+
+            orgin = zin.replace("-", "");
+
+            let a = orgin.replace(/^(\d{3})(\d{4})(\d{4})$/, `$1-$2-$3`);
+
+            phone.val(a);
+        }else{
+            phone.val(newPhone);
+        }
+    });
     $("#submit").click(function(){
             let name = $("#user_name").val();
             let id = $("#id").val();

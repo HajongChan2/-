@@ -24,6 +24,8 @@
         </div>
     </div>
 
+    <button type="button" class="adoption_button" th:if="${session.username != null}">입양 신청하러 가기</button>
+    <button type="button" class="adoption_button_none" th:if="${session.username == null}">입양 신청하러 가기</button>
 </div>
 
 <footer id="footer" th:replace="publicHF/footer::footer">

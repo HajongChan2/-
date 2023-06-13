@@ -148,19 +148,22 @@ img {
     margin: 20px 0 20px 0;
 }
 
-.abandogbox_img1 {
+.abandogbox_img {
     border: solid 1px #16448E;
     width: 100%;
     height: 800px;
     margin: 100px 0 100px 0;
 }
-
+.abandogbox_img img {
+    width: 100%;
+    height: 100%;
+}
 .center_line {
     border: solid 0.1px #16448E;
     margin: 50px 0 100px 0;
 }
 
-.adoption_button {
+.adoption_button, .adoption_button_none{
     font-size: 20px;
     color: #ffffff;
     border: solid 1px;

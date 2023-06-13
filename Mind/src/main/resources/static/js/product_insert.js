@@ -27,11 +27,31 @@ function productcontent(obj) {
     reader.onload = function (e) {
         let img = $('<img />');
         $(img).attr('src', e.target.result);
+        $(img).attr("class","content_img");
         $('.content').append(img);
+        iamge_resizing();
     }
 }
 
+function iamge_resizing(){
+    let con_div = $(".content_img").closest("div");
+    $(".content_img").resizable({
+        //함께 커질영역
+        //alsoResize:".ui-wrapper",
+        //커질때 애니메이션 발생
+        animate :  true,
+        animateDuration: 300,
+        animateEasing:"swing",
+        //비율유지
+        aspectRatio: true,
+        //마우스 hover 아닐때 핸들러 숨기기
+        autoHide: true,
+        //minHeight, maxHeight, minWidth, maxWidth 최소,최대 크기지정
+    });
+}
+
 $(document).ready(function(){
+    iamge_resizing();
     $("#imageFile").on("change",function(){
         if(imgs.length <= 4){
             readURL(this);
@@ -93,12 +113,23 @@ $(document).ready(function(){
     }
 
     function update_query(){
+
         $.ajax({
             url : "/product/detail/"+num,
             dataType : "json",
             type : "POST",
             success : function(data){
-                console.log(data);
+                let type = data[0].prType;
+                $("#title").val(data[0].prName);
+                $("#price").val(data[0].prPrice);
+                $("#dpay").val(data[0].prDpay);
+                $("#register").val(data[0].prSeller);
+                $("#count").val(data[0].prCount);
+                $("#memo").val(data[0].prMemo);
+                $("#type option:selected").val();
+                $("#type").val(data[0].prType).prop("selected", true);
+                $("#id option:eq(type - 1)").prop("selected", true);
+                $(".content").append(data[0].prContent);
             }
         });
 
@@ -106,6 +137,7 @@ $(document).ready(function(){
     if(num != null){
         update_query();
         update_image();
+        iamge_resizing();
         console.log("aa");
     }
 

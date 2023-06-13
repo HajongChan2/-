@@ -3,7 +3,8 @@ let dogNum;
 $(document).ready(function(){
     let img = '';
     let btn = '';
-
+    let img1 = '';
+    let img2 = '';
     $("#correct_bt a").click(function(){
         location.replace("/admin/abandog/update");
 
@@ -45,11 +46,11 @@ $(document).ready(function(){
         <div class="center_line"></div>
         <h1 class="center_text">마음이</h1>
         <p class="center_text2">마음이 따뜻한 보호소</p>
-        <div class="abandogbox_img1"></div>
+        <div class="abandogbox_img1 abandogbox_img"></div>
         <div id="container1">
             <p class=center_text2>마음이 입양 안내 보러가기 ></p>
         </div>
-        <div class="abandogbox_img1"></div>
+        <div class="abandogbox_img2 abandogbox_img"></div>
         <div class="abandogbox_wrap2">
             <p class="content_text">분양 지역 : ${data[0].adArea}</p>
             <p class="content_text">품종 : ${data[0].adSpec}</p>
@@ -58,9 +59,18 @@ $(document).ready(function(){
             <p class="content_text">안락사 예정일 :${data[0].adDead}</p>
             <p class="content_text">특이사항 :${data[0].adMemo}</p>
         </div>
-        <input type="button" class="adoption_button" value="입양 신청하러 가기 >" onclick="location.href='/abandog/form'">`
-            $("#container0").append(srt);
+        `
+            $("#container0").prepend(srt);
             abandogImage();
+        }
+    });
+
+    $(document).on('click','.adoption_button',function(){
+        location.replace("/abandog/form");
+    });
+    $(document).on("click",'.adoption_button_none',function(){
+        if (confirm("로그인 후 이용 가능합니다. \n 로그인 하시겠습니까?")) {
+            location.href="/login";
         }
     });
     function abandogImage(){
@@ -71,13 +81,20 @@ $(document).ready(function(){
             success : function(data){
                 console.log(data);
                 abandogimage(data);
+                contentImage(data);
                 $(".panel").append(img);
                 $(".dot").append(btn);
                 slide();
+                $(".abandogbox_img1").append(img1);
+                $(".abandogbox_img2").append(img2);
             }
         });
     };
-
+    function contentImage(data){
+        img1 = `<img src="${data[1].imgSrc}" alt=""/>`;
+        img2 = `<img src="${data[1].imgSrc}" alt=""/>`;
+        console.log(img1, img2);
+    }
 
     function abandogimage(list){
 

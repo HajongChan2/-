@@ -59,6 +59,7 @@ $(document).ready(function(){
             `
             $("form").prepend(str);
             productImage();
+            product_content(data);
             input = $(".inp");
         }
     });
@@ -88,6 +89,15 @@ $(document).ready(function(){
             `
         });
 
+    }
+
+    function product_content(data){
+
+        let contentHeader = `<h1>${data[0].prName}</h1>
+        <h4>${data[0].prMemo}</h4>`
+        let content = data[0].prContent;
+        $(".product_name").append(contentHeader);
+        $(".product_img").append(content);
     }
 
 
