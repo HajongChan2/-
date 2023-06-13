@@ -295,6 +295,7 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         int type = Integer.parseInt(rq.getParameter("type"));
         String seller = rq.getParameter("seller");
         String content = rq.getParameter("content");
+
         pmp.mindProductUpdate(num,name,price,count,memo,dpay,type,img.get(1),seller,content);
 
         int igonanProductNumber = num;
