@@ -92,6 +92,11 @@ public class MindController {
 
         return "admin/abandog_insert";
     }
+    @RequestMapping("/admin/product/update")
+    public String productdetailupdate( ) {
+
+        return "admin/abandog_insert";
+    }
 
     @RequestMapping("/petcesary")
     public String petcesary(){
