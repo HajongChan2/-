@@ -95,7 +95,7 @@ public class MindController {
     @RequestMapping("/admin/product/update")
     public String productdetailupdate( ) {
 
-        return "admin/abandog_insert";
+        return "admin/product_insert";
     }
 
     @RequestMapping("/petcesary")
