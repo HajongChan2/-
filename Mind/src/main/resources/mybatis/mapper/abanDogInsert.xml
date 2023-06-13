@@ -24,7 +24,7 @@
     </select>
 
     <select id="mindAbanDogUpdate">
-        update ad_dog set ad_name =#{param2},ad_age=#{param3},ad_area=#{param4},ad_sex=#{param5},ad_size=#{param6},ad_spec=#{param7},ad_vac=#{param8},ad_neut=#{param9},ad_dead=#{param10},ad_memo=#{param11},ad_gallery=#{param12} where ad_num = {param1};
+        update ad_dog set ad_name =#{param2},ad_age=#{param3},ad_area=#{param4},ad_sex=#{param5},ad_size=#{param6},ad_spec=#{param7},ad_vac=#{param8},ad_neut=#{param9},ad_dead=#{param10},ad_memo=#{param11},ad_gallery=#{param12} where ad_num = #{param1};
     </select>
 
     <select id="mindAbanDogAppInsert" > <!-- 해당 id를 호출하면 아래의 구문 실행-->
