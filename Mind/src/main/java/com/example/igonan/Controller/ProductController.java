@@ -53,7 +53,7 @@ public class ProductController {
     }
 */
     @ResponseBody
-    @RequestMapping(value = "/product/detail/{param}", method = { RequestMethod.GET }) //데이터가 보내지는 주소와 메소드 설정
+    @RequestMapping(value = "/product/detail/{param}", method = { RequestMethod.POST }) //데이터가 보내지는 주소와 메소드 설정
     public Object productOne(@PathVariable("param")int parameter){
 
         List<ProductDTO> list = productService.getOneProduct(parameter); // List에 select 결과 list를 담음
