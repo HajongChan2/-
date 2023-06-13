@@ -99,7 +99,6 @@ $(document).ready(function(){
             type : "POST",
             success : function(data){
                 console.log(data);
-
             }
         });
 
@@ -128,15 +127,16 @@ $(document).ready(function(){
             count : count,
             memo : memo,
             type : type,
-            content : content
+            content : content,
+            num : num
         }
         $.ajax({
-            url : "/abandog/update",
+            url : "/product/update",
             type : "POST",
             data : ad_update,
             success : function(){
                 alert("수정이 완료되었습니다.");
-                location.replace("/abandog/detail");
+                location.replace("/product/detail");
             }
         });
     }

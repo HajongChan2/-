@@ -10,7 +10,7 @@ $(document).ready(function(){
     });
 
     $.ajax({
-        type:"GET",
+        type:"POST",
         url:"/product/detail/"+num,
         dataType : "json",
         success : function(data){
