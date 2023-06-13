@@ -251,9 +251,9 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
     public String productDelete(HttpSession hs, HttpServletRequest rq){
 
         int num = Integer.parseInt(rq.getParameter("num"));
-
-        pmp.mindProductDelete(num);
         pmp.mindProductImageDelete(num);
+        pmp.mindProductDelete(num);
+
         return "redirect:/petcesary";
     }
 
