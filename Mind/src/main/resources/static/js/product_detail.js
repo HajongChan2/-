@@ -6,9 +6,7 @@ $(document).ready(function(){
     let btn = '';
 
     $("#correct_bt a").click(function(){
-        alert("aa");
-        location.replace("/product/update");
-
+        location.replace("/admin/product/update");
     });
 
     $.ajax({
