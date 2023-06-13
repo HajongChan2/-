@@ -162,7 +162,7 @@ $(document).ready(function(){
             type : type,
             content : content
         }
-        if(dogNum != null){
+        if(num != null){
             update_success();
         }else{
             $.ajax({
