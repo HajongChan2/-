@@ -36,7 +36,7 @@ public interface AbanDogmapper {
     Integer mindAbanDogUpdate(int num,String name,int age, String area,
                               String sex,String size,String spec,String vac,String neut,
                               String dead,String memo,String gallery);
-    @Select("select * from ad_dog order by ad_dead limit 9;")
+    @Select("select * from ad_dog order by ad_dead limit 6;")
     List<AbandogDTO> mainAbandogList();
 
     @Select("select * from ad_dog ad where ad.ad_name = #{dogname} order by ad.ad_num desc limit 1; ")

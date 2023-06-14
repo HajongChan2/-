@@ -353,10 +353,11 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
 
         }
 
+        System.out.println("입양 신청 완료 : "+dogname);
         abdmp.mindAbanDogImageDelete(num);
         abdmp.mindAbanDogDelete(num);
 
-        return "redirect:/abandog/list";
+        return "redirect:/dog/list";
     }
 
 
