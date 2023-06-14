@@ -23,7 +23,8 @@ public interface Imagemapper {
     List<ImageDTO> petDogImageReturn(int dogNumber);
 
 
-
+    @Select("select count(*) as num from abandog_image where f_num = #{igonanAbandogImageSearchNumber};")
+    ImageDTO findAbandogImageforeignNumber(int igonanAbandogImageSearchNumber);
 
 
 }

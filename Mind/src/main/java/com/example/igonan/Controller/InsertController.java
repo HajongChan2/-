@@ -35,6 +35,8 @@ public class InsertController {
     Productmapper pmp;
     @Autowired
     Imagemapper imp;
+    @Autowired
+    PetDogmapper petDogmapper;
 
     private PaymentService paymentService;
 
@@ -327,6 +329,30 @@ public String joinuserinsert(HttpServletRequest rq, HttpSession hs){ //보내진
         LocalDate appdate = LocalDate.now();
 
         abdmp.mindAbanDogAppInsert(id,name,num,dogname,phone,addr,saddr,memo,appdate);
+
+
+        int igonanAge = abdmp.findOneDog(num).get(0).getAdAge();
+        String igonanSex = abdmp.findOneDog(num).get(0).getAdSex();
+        String igonanSize = abdmp.findOneDog(num).get(0).getAdSize();
+        String igonanSpec = abdmp.findOneDog(num).get(0).getAdSpec();
+        String igonanVac = abdmp.findOneDog(num).get(0).getAdVac();
+        String igonanNeut = abdmp.findOneDog(num).get(0).getAdNeut();
+        String igonanMemo = abdmp.findOneDog(num).get(0).getAdMemo();
+        String igonanGallery = abdmp.findOneDog(num).get(0).getAdGallery();
+//(String name,int age, Date date,String sex,String size,String spec,String vac,String neut,String memo);
+        petDogmapper.mindAbanDogChangePetDogInsert(dogname,igonanAge,appdate,igonanSex,
+                igonanSize,igonanSpec,igonanVac,igonanNeut,igonanMemo,igonanGallery);
+
+        int igonanNumber = Integer.parseInt(petDogmapper.findOnePetNumber().getpetNum());
+
+        int imageCount = imp.findAbandogImageforeignNumber(num).getNum();
+
+        for(int i = 0;i<imageCount;i++){
+        String imgsrc = imp.abandogImageReturn(num).get(i).getImgSrc();
+        petDogmapper.mindPetImageInsert(igonanNumber,imgsrc);
+
+        }
+
         abdmp.mindAbanDogImageDelete(num);
         abdmp.mindAbanDogDelete(num);
 
