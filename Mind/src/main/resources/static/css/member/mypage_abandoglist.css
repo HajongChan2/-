@@ -2,52 +2,66 @@
     border: solid 3px #16448E;
     border-radius: 10px;
     width: 700px;
-    height: 500px;
+    height: 700px;
     margin-top: 50px;
+}
+#header_container {
+    font-weight: bold;
+    border-top: solid 1px #d9d9d9;
+    border-bottom: solid 1px #d9d9d9;
+    padding: 20px;
+}
+.mydog_content {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    margin: 20px 0 0 0;
+}
+
+.line {
+    border: solid 1px #d2d2d2;
+    margin-top: 50px;
+}
+
+.line2 {
+    border: solid 1px #d2d2d2;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#mydog_content > ul {
-    font-size: 22px;
-    color: #16448E;
+#member_infor {
     display: flex;
-    height: 500px;
+    width: 480px;
+    height: 200px;
+    font-size: 16px;
+    color: #16448E;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-#content_bt{
-    font-size: 17px;
-    width: 350px;
-    height: 40px;
-    background-color: #113267;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+#dog_infor {
+    display: flex;
+    width: 480px;
+    height: 200px;
+    font-size: 16px;
+    color: #16448E;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-#content_bt > a {
-    color: #ffffff;
+#date_infor {
+    display: flex;
+    width: 480px;
+    height: 200px;
+    font-size: 16px;
+    color: #16448E;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#infor_container {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: inline-block;
-    line-height: calc(100% * 2);
-}
-
-#content_bt2{
-    font-size: 17px;
-    width: 350px;
-    height: 40px;
-    background-color: #ffff;
-    border: solid 1px #113267;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#content_bt2 > a {
-    color: #113267;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    line-height: calc(100% * 2);
+    border-bottom: solid 1px #d9d9d9;
 }
