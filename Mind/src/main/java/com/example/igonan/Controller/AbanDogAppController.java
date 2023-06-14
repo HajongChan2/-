@@ -29,8 +29,8 @@ public class AbanDogAppController {
     @ResponseBody
     public Object AbandogApp(HttpSession hs) {
 
-        String appuserid = hs.getAttribute("userid").toString();
-        List<AbandogAppDTO> Applist = abanDogAppService.getMainAbanDogAppList(appuserid);
+        String id = hs.getAttribute("userid").toString();
+        List<AbandogAppDTO> Applist = ada.abanDogAppList(id);
 
         return Applist; // Ajax로 넘겨줄 select 결과값
 
