@@ -31,8 +31,6 @@
         insert into abandog_app(num,id,name,dognum,dogname,phone,addr,saddr,memo,date)
         values (null,#{param1}, #{param2},#{param3}, #{param4},#{param5}, #{param6},#{param7},#{param8}, #{param9})
 
-        <!--Create table a phone char(11), addr varchar(150), saddr varchar(80), memo varchar(750),date date);
--->
     </select>
 
 

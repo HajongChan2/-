@@ -1,6 +1,7 @@
 package com.example.igonan.mindmapper;
 
 import com.example.igonan.dto.AbandogDTO;
+import com.example.igonan.dto.ImageDTO;
 import com.example.igonan.dto.PaymentDTO;
 import com.example.igonan.dto.ProductDTO;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,9 +18,11 @@ public interface AbanDogmapper {
     List<AbandogDTO> abanDogList();
     // 모든 유기견의 정보를 List에 담음
 
+
     @Select("select * from ad_dog ad where ad.ad_num = #{dognum} ;")
     List<AbandogDTO> findOneDog(int dognum);
     // 특정 유기견의 정보를 List에 담음
+
 
 
     Integer mindAbanDogInsert(String name,int age, String area,
@@ -33,7 +36,7 @@ public interface AbanDogmapper {
     Integer mindAbanDogUpdate(int num,String name,int age, String area,
                               String sex,String size,String spec,String vac,String neut,
                               String dead,String memo,String gallery);
-    @Select("select * from ad_dog order by ad_dead limit 9;")
+    @Select("select * from ad_dog order by ad_dead limit 6;")
     List<AbandogDTO> mainAbandogList();
 
     @Select("select * from ad_dog ad where ad.ad_name = #{dogname} order by ad.ad_num desc limit 1; ")
@@ -41,6 +44,8 @@ public interface AbanDogmapper {
 
 
     Integer mindAbanDogAppInsert(String id, String name, int dognum, String dogname, String phone, String addr, String saddr, String memo, LocalDate date);
+
+
 
 }
 

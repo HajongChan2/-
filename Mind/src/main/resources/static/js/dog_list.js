@@ -18,13 +18,13 @@ $(document).ready(function(){
             str +=
                 `<div class="pet_dog-wrap">
                     <a href="${addr}">
-                    <div class="pet_dog-image">
-                        <img src="${petdog.petGallery}" alt="${petdog.petName}">
-                        <p>${petdog.petName}</p>
-                        <h2 id="number">${petdog.petNum}</h2>
+                        <div class="pet_dog-image">
+                            <img src="${petdog.petGallery}" alt="${petdog.petName}">
+                            <p>${petdog.petName}</p>
+                            <h2 id="number">${petdog.petNum}</h2>
                         </div>
-                </div>
-`
+                    </a>    
+                </div> `
 
         });
         $("#container2").append(str);

@@ -50,7 +50,105 @@ function iamge_resizing(){
     });
 }
 
+function all_check(){
+    if(!img_check()){
+        return false;
+    }else if(!title_check()){
+        return false;
+    }else if(!price_check()){
+        return false;
+    }else if(!dpay_check()){
+        return false;
+    }else if(!register_check()){
+        return false;
+    }else if(!count_check()){
+        return false;
+    }else if(!memo_check()){
+        return false;
+    }else if(!content_check()){
+        return false;
+    }
+    return true;
+}
+
+function img_check(){
+    let img = imgs.length;
+    if(img <= 1){
+        alert("상품의 사진을 첨부해주세요.");
+
+        let offset = $("#image_plus").offset();
+        $("html, body").animate({scrollTop: offset.top},400);
+        return false;
+    }
+    return true;
+}
+
+function title_check(){
+    let title = $("#title");
+    if(title.val() == ''){
+        alert("상품이름을 입력하지 않았습니다.");
+        title.focus();
+        return false;
+    }
+    return true;
+}
+
+function price_check(){
+    let price = $("#price");
+    if(price.val() == ''){
+        alert("상품가격을 입력하지 않았습니다.");
+        price.focus();
+        return false;
+    }
+    return true;
+}
+function dpay_check(){
+    let dpay = $("#dpay");
+    if(dpay.val() == ''){
+        alert("배송비를 입력하지 않았습니다.");
+        dpay.focus();
+        return false;
+    }
+    return true;
+}
+function register_check(){
+    let register = $("#register");
+    if(register.val() == ''){
+        alert("판매자를 입력하지 않았습니다.");
+        register.focus();
+        return false;
+    }
+    return true;
+}
+function count_check(){
+    let count = $("#count");
+    if(count.val() == ''){
+        alert("수량을 입력하지 않았습니다.");
+        count.focus();
+        return false;
+    }
+    return true;
+}
+function memo_check(){
+    let memo = $("#memo");
+    if(memo.val() == ''){
+        alert("소제목을 입력하지 않았습니다.");
+        memo.focus();
+        return false;
+    }
+    return true;
+}
+function content_check(){
+    let content = $(".content");
+    if(content.html() == ''){
+        alert("내용을 입력하지 않았습니다.");
+        content.focus();
+        return false;
+    }
+    return true;
+}
 $(document).ready(function(){
+    $(".content").html("");
     iamge_resizing();
     $("#imageFile").on("change",function(){
         if(imgs.length <= 4){
@@ -194,17 +292,19 @@ $(document).ready(function(){
             type : type,
             content : content
         }
-        if(num != null){
-            update_success();
-        }else{
-            $.ajax({
-                type : "POST",
-                url : "/product/insert",
-                data : product_data,
-                success : function (data){
-                    location.replace("/petcesary");
-                }
-            });
+        if(all_check()){
+            if(num != null){
+                update_success();
+            }else{
+                $.ajax({
+                    type : "POST",
+                    url : "/product/insert",
+                    data : product_data,
+                    success : function (data){
+                        location.replace("/petcesary");
+                    }
+                });
+            }
         }
     });
 
