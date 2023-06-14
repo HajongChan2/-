@@ -15,7 +15,7 @@ $(document).ready(function () {
         let str = '';
         list.map(function (mydog) {
             str +=
-                `
+                `<ul>
                             <li>${mydog.id}</li>
                             <li>${mydog.name}</li>
                             <li>${mydog.dognum}</li>
@@ -25,7 +25,10 @@ $(document).ready(function () {
                             <li>${mydog.saddr}</li>
                             <li>${mydog.memo}</li>
                             <li>${mydog.date}</li>
+                            <li>입양이 완료되었습니다.</li>
+                            </ul>
 `
+
         });
         $("#mydog_content").append(str);
     }
