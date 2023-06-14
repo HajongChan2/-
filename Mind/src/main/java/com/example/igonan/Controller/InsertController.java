@@ -12,15 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class InsertController {
@@ -91,8 +89,8 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
 }
 
     @PostMapping("/abandog/insert") //해당 url로 데이터가 post 되었을 경우 실행
-    public String abanDogInsert(HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
-
+  //  public String abanDogInsert(HttpServletRequest rq,@RequestPart(value = "image") MultipartFile img){ //보내진 데이터이용을 위해 HttpServletRequest를 rq로 선언하여 이용
+ public String abanDogInsert(HttpServletRequest rq,@RequestParam(name = "imgs[]") List<String> img){
         String name =rq.getParameter("name");
         int age = Integer.parseInt(rq.getParameter("age"));
         String area=  rq.getParameter("area");
@@ -104,8 +102,10 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
 
+        Base64.Encoder encoder = Base64.getEncoder();
 
-        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
+
+        abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(0));
         int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
         for(int i = 1; i < img.size();i++) {
 
