@@ -31,7 +31,7 @@
 
 #member_infor {
     display: flex;
-    width: 480px;
+    width: 360px;
     height: 200px;
     font-size: 16px;
     color: #16448E;
@@ -41,7 +41,7 @@
 
 #dog_infor {
     display: flex;
-    width: 480px;
+    width: 360px;
     height: 200px;
     font-size: 16px;
     color: #16448E;
@@ -51,7 +51,7 @@
 
 #date_infor {
     display: flex;
-    width: 480px;
+    width: 360px;
     height: 200px;
     font-size: 16px;
     color: #16448E;
@@ -69,4 +69,13 @@
 .ma_content{
     display: flex;
     border-bottom:solid 1px #d9d9d9;
+}
+#adoption_infor{
+    display: flex;
+    width: 360px;
+    height: 200px;
+    font-size: 16px;
+    color: #16448E;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
