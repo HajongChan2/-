@@ -60,7 +60,7 @@ $(document).ready(function(){
             data : abandogFormData,
             success : function (data){
                 alert("입양 신청이 완료되었습니다.");
-                location.replace("/main");
+                location.replace("/dog/list");
             }
         });
     });
