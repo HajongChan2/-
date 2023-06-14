@@ -38,4 +38,40 @@ $(document).ready(function(){
         location.href="/abandog/list"
     });
 
+    $.ajax({
+        type : "POST",
+        url : "/main/productlist",
+        dataType : "json",
+        success : function(data){
+            console.log(data);
+            mainProductList(data);
+        }
+    });
+
+    function mainProductList(productList) {
+        let name = '';
+        let addr = "/product/detail";
+        let str = '';
+        productList.map(function (pr) {
+            str +=
+                `<div class="dog-wrap">
+                    <a href="${addr}">
+                        <div class="dog-image">
+                            <img src="${pr.prGallery}" alt="${pr.prName}">
+                            <p>${pr.prName}</p>
+                            <h2 id="number">${pr.prNum}</h2>
+                        </div>
+                    </a>                    
+                </div>`
+        });
+        $("#product_content").append(str);
+
+
+        $("#ad_btn").click(function(){
+            location.href="/abandog/list";
+        });
+        $("#pr_btn").click(function(){
+            location.href="/petcesary";
+        });
+    }
 });
