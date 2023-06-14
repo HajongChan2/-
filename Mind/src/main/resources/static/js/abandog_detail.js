@@ -48,7 +48,7 @@ $(document).ready(function(){
         <p class="center_text2">마음이 따뜻한 보호소</p>
         <div class="abandogbox_img1 abandogbox_img"></div>
         <div id="container1">
-            <p class=center_text2>마음이 입양 안내 보러가기 ></p>
+            <div id="infor_bt"> <a href="/info"> 마음이 입양 안내 보러가기 > </a></div>
         </div>
         <div class="abandogbox_img2 abandogbox_img"></div>
         <div class="abandogbox_wrap2">
