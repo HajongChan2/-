@@ -19,6 +19,84 @@ function readURL(obj) {
 }
 
 
+function all_check(){
+    if(!img_check()){
+
+    }else if(!name_check()){
+        return false;
+    }else if(!age_check()){
+        return false;
+    }else if(!area_check()){
+        alert("gg");
+        return false;
+    }else if(!kind_check()){
+        return false;
+    }else if(!text_check()){
+        return false;
+    }
+    return true;
+}
+
+function img_check(){
+    let img = imgs.length;
+    if(img <= 1){
+        alert("유기견의 사진을 첨부해주세요.");
+
+        let offset = $("#image_plus").offset(); //해당 위치 반환
+        $("html, body").animate({scrollTop: offset.top},400);
+        return false;
+    }
+    return true;
+}
+function name_check(){
+    let name = $("#register");
+    if(name.val() == ''){
+        alert("이름을 입력하지 않았습니다.");
+        name.focus();
+        return false;
+    }
+    return true;
+}
+function age_check(){
+    let age = $("#age");
+    if(age.val() == ''){
+        alert("나이를 입력하지 않았습니다.");
+        age.focus();
+        return false;
+    }
+    return true;
+}
+function area_check(){
+    let area = $("#area");
+    if(area.val() == ''){
+        alert("분양지역을 입력하지 않았습니다.");
+        area.focus();
+        return false;
+    }
+    return true;
+}
+function kind_check(){
+    let kind = $("#kind");
+    if(kind.val() == ''){
+        alert("품종을 입력하지 않았습니다.");
+        kind.focus();
+        return false;
+    }
+    return true;
+}
+function text_check(){
+    let text = $("#text_box");
+    if(text.val() == ''){
+        alert("특이사항을 입력하지 않았습니다.");
+        text.focus();
+        return false;
+    }
+    return true;
+}
+
+
+
+
 $(document).ready(function(){
     let d = new Date();
 
@@ -183,17 +261,19 @@ $(document).ready(function(){
             size: size,
             imgs: imgs
         }
-        if(dogNum != null){
-            update_success();
-        }else{
-            $.ajax({
-                type : "POST",
-                url : "/abandog/insert",
-                data : ad_insert,
-                success : function (data){
-                    location.replace("/abandog/list");
-                }
-            });
+        if(all_check()){
+            if(dogNum != null){
+                update_success();
+            }else{
+                $.ajax({
+                    type : "POST",
+                    url : "/abandog/insert",
+                    data : ad_insert,
+                    success : function (data){
+                        location.replace("/abandog/list");
+                    }
+                });
+            }
         }
     });
 
