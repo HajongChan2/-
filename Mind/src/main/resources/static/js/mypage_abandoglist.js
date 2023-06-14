@@ -18,9 +18,11 @@ $(document).ready(function () {
             <li>${mydog.id}</li>
             <li>${mydog.name}</li>
             <li>${mydog.phone}</li>
-            <li>${mydog.addr}</li>
-            <li>${mydog.saddr}</li>
-            <li>${mydog.memo}</li>
+            <li>${mydog.addr}${mydog.saddr}</li>
+            
+        </ul>
+        <ul id="adoption_infor">
+        <li>${mydog.memo}</li>
         </ul>
         <ul id="dog_infor">
             <li>${mydog.dogname}</li>
