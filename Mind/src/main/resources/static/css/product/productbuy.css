@@ -58,7 +58,8 @@
 }
 .btn_content{
     display: flex;
-    width: 42%;
+    width: 50%;
+    justify-content: space-evenly;
 }
 .product_detail > a, .return > a{
     line-height: 36px;
