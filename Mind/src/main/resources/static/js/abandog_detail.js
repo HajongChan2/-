@@ -91,9 +91,15 @@ $(document).ready(function(){
         });
     };
     function contentImage(data){
-        img1 = `<img src="${data[1].imgSrc}" alt=""/>`;
-        img2 = `<img src="${data[1].imgSrc}" alt=""/>`;
-        console.log(img1, img2);
+
+
+        if(data.length == 3){
+            img1 = `<img src="${data[1].imgSrc}" alt=""/>`;
+            img2 = `<img src="${data[2].imgSrc}" alt=""/>`;
+        }else if(data.length == 2){
+            img1 = `<img src="${data[1].imgSrc}" alt=""/>`;
+            $(".abandogbox_img2").css({'display':'none'});
+        }
     }
 
     function abandogimage(list){

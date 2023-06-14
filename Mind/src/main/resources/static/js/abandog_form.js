@@ -1,11 +1,13 @@
-function checkNumber(event) {
-    if(event.key >= 0 && event.key <= 9) {
-      return true;
-    }
-    
-    return false;
-}
 
+function memo_check(){
+    let text_box = $('#text_box');
+    if(text_box.val() == ''){
+        alert("입양 희망 이유를 적어주세요.");
+        text_box.focus();
+        return false;
+    }
+    return true;
+}
 
 let num = localStorage.getItem("num");
 $(document).ready(function(){
@@ -53,15 +55,16 @@ $(document).ready(function(){
             memo : memo,
             num  : num
         }
-
-        $.ajax({
-            type : "POST",
-            url : "/abandog/add",
-            data : abandogFormData,
-            success : function (data){
-                alert("입양 신청이 완료되었습니다.");
-                location.replace("/dog/list");
-            }
-        });
+        if(memo_check()){
+            $.ajax({
+                type : "POST",
+                url : "/abandog/add",
+                data : abandogFormData,
+                success : function (data){
+                    alert("입양 신청이 완료되었습니다.");
+                    location.replace("/dog/list");
+                }
+            });
+        }
     });
 });

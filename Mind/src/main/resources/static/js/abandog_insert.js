@@ -21,7 +21,7 @@ function readURL(obj) {
 
 function all_check(){
     if(!img_check()){
-
+        return false;
     }else if(!name_check()){
         return false;
     }else if(!age_check()){
@@ -42,7 +42,12 @@ function img_check(){
     if(img <= 1){
         alert("유기견의 사진을 첨부해주세요.");
 
-        let offset = $("#image_plus").offset(); //해당 위치 반환
+        let offset = $("#image_plus").offset();
+        $("html, body").animate({scrollTop: offset.top},400);
+        return false;
+    }else if(img <= 2){
+        alert("사진을 두개이상 선택해주세요.");
+        let offset = $("#image_plus").offset();
         $("html, body").animate({scrollTop: offset.top},400);
         return false;
     }
