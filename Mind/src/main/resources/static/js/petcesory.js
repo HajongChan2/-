@@ -10,7 +10,6 @@ $(document).ready(function(){
             url: "/petcesary/"+type,
             dataType: "json",
             success: function (data) {
-                console.log(data);
                 productTag(data);
             }
         });
@@ -41,7 +40,6 @@ $(document).ready(function(){
     $(document).on('click','.pet_items',function(){
         type = $(this).attr("id");
         types_query();
-        console.log(type);
     });
     $("#tag").on("click", function(){
         $(".line").animate({left:0},"fast");
