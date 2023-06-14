@@ -1,0 +1,16 @@
+#mydog_container {
+    border: solid 3px #16448E;
+    border-radius: 10px;
+    width: 700px;
+    height: 700px;
+    margin-top: 50px;
+}
+
+#mydog_content > ul {
+    font-size: 22px;
+    color: #16448E;
+    display: flex;
+    height: 600px;
+    flex-direction: column;
+    justify-content: space-around;
+}
