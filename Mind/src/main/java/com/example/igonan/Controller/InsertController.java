@@ -101,7 +101,7 @@ public String paymentinsert(HttpServletRequest rq,HttpSession hs){ //보내진 �
         String neut = rq.getParameter("neut");
         String dead = rq.getParameter("dead");
         String memo = rq.getParameter("memo");
-        
+
 
         abdmp.mindAbanDogInsert(name,age,area,sex,size,spec,vac,neut,dead,memo,img.get(1));
         int dognum = Integer.parseInt(abdmp.Abandoginsertwire(name).getAdNum());
