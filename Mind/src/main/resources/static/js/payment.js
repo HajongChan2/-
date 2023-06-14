@@ -139,7 +139,7 @@ $(document).ready(function(){
             url : "/payment/insert",
             data : member_address,
             success : function(data){
-                location.href = "/productbuy";
+                location.replace("/productbuy");
             }
         });
     });
