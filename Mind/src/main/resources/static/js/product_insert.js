@@ -13,9 +13,8 @@ function readURL(obj) {
         $(img).addClass("imgs");
         $('#photo_sign_up').prepend(img);
         imgs.push(e.target.result);
+
     }
-    count++;
-    console.log(imgs);
 }
 
 function productcontent(obj) {
@@ -151,9 +150,10 @@ $(document).ready(function(){
     $(".content").html("");
     iamge_resizing();
     $("#imageFile").on("change",function(){
-        if(imgs.length <= 4){
+        if(imgs.length <= 3){
             readURL(this);
-        }else{
+        }
+        else{
             alert("3장 이상은 선택할 수 없습니다.");
             $("#image_plus").css('display', 'none');
         }

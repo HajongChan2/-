@@ -14,8 +14,6 @@ function readURL(obj) {
         $('#photo_sign_up').prepend(img);
         imgs.push(e.target.result);
     }
-    count++;
-    console.log(imgs);
 }
 
 
@@ -115,8 +113,9 @@ $(document).ready(function(){
     $("#date").attr('min', output);
 
     $("#imageFile").on("change",function(){
-        if(imgs.length <= 4){
+        if(imgs.length <= 3){
             readURL(this);
+            console.log(imgs.length)
         }else{
             alert("3장 이상은 선택할 수 없습니다.");
             $("#image_plus").css('display', 'none');
